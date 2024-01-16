@@ -2,6 +2,12 @@
 title: "Great Lakes Fishing"
 ---
 
+Evaluation Questions:
+Which lake has the highest fish populations?
+King salmon?
+Streamplot?
+
+
 ```{r packages, include=FALSE}
 library(tidyverse)
 library(stringr)

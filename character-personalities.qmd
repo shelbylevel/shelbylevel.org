@@ -2,6 +2,11 @@
 title: "Character Personalities"
 ---
 
+Evaluation Questions:
+Do characters of the same GOT houses share similar personality traits?
+Are there more 'strong' female or male characters in GOT?
+Do 'strong' characters hold the most power in Westeros?
+
 ```{r packages, include=FALSE}
 library(tidyverse)
 library(stringr)
