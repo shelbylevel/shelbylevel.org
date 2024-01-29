@@ -3,17 +3,24 @@ project:
   output-dir: docs
 
 website:
-  title: "slevel01"
+  title: "Shelby Level"
+  favicon: sl_logo_transparent.png
   navbar:
+    logo: white-sl-logo.png
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+    right:
+      - icon: github
+        href: https://github.com/shelbylevel
+        aria-label: GitHub
+
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: lux
+    css: lux-bootstrap.css
     toc: true
 
 editor: visual

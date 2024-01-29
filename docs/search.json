@@ -1,16 +1,30 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "great-lakes-fishing.html",
+    "href": "great-lakes-fishing.html",
+    "title": "Great Lakes Fishing",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Evaluation Questions: Which lake has the highest fish populations? King salmon? Streamplot?\n\n# Get the Data\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\ntuesdata &lt;- tidytuesdayR::tt_load('2021-06-08')\n\n--- Compiling #TidyTuesday Information for 2021-06-08 ----\n\n\n--- There are 2 files available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 2: `stocked.csv`\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n    Downloading file 2 of 2: `fishing.csv`\n\n\n--- Download complete ---\n\n#tuesdata &lt;- tidytuesdayR::tt_load(2021, week = 24)\n\nfishing &lt;- tuesdata$fishing\nstocked &lt;- tuesdata$stocked"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "slevel01",
+    "title": "Shelby Level",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "The standard Lorem Ipsum passage, used since the 1500s “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”\nSection 1.10.32 of “de Finibus Bonorum et Malorum”, written by Cicero in 45 BC “Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?”\nAbout Me"
+  },
+  {
+    "objectID": "character-personalities.html",
+    "href": "character-personalities.html",
+    "title": "Character Personalities",
+    "section": "",
+    "text": "Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more ‘strong’ female or male characters in GOT? Do ‘strong’ characters hold the most power in Westeros?\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load('2022-08-16')\n\n--- Compiling #TidyTuesday Information for 2022-08-16 ----\n\n\n--- There are 3 files available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 3: `characters.csv`\n    Downloading file 2 of 3: `myers_briggs.csv`\n    Downloading file 3 of 3: `psych_stats.csv`\n\n\n--- Download complete ---\n\n#tuesdata &lt;- tidytuesdayR::tt_load(2022, week = 33)\n\ncharacters &lt;- tuesdata$characters\nmyers_briggs &lt;- tuesdata$myers_briggs\npsych_stats &lt;- tuesdata$psych_stats\n\n\ncharacters %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; characters_got\n\nmyers_briggs %&gt;%\n  filter(\n    uni_id == 'GOT'\n    ) -&gt; myers_briggs_got\n\npsych_stats %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; psych_stats_got"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "The standard Lorem Ipsum passage, used since the 1500s “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”\nContact Me: sl165423@ohio.edu"
   }
 ]
