@@ -1,0 +1,19 @@
+[
+  {
+    "listing": "/pages/past-projects.html",
+    "items": [
+      "/pages/index.html",
+      "/pages/blog/posts/character-personalities.html",
+      "/pages/blog/posts/great-lakes-fishing.html",
+      "/pages/blog/blog.html",
+      "/pages/about.html"
+    ]
+  },
+  {
+    "listing": "/pages/blog/blog.html",
+    "items": [
+      "/pages/blog/posts/character-personalities.html",
+      "/pages/blog/posts/great-lakes-fishing.html"
+    ]
+  }
+]
