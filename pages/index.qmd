@@ -12,4 +12,3 @@
   gtag('config', 'G-S8RJYVFCYL');
 </script>
 ```
-

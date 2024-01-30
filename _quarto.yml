@@ -6,7 +6,7 @@ website:
   title: "Shelby Level"
   favicon: logos/sl_sticker.png
   navbar:
-    title: "SHELBY<span class='icon-line'></span>LEVEL"
+    title: "SHELBY LEVEL"
     logo: logos/white-sl-logo.png
     left:
       - href: pages/index.qmd
@@ -22,6 +22,12 @@ website:
         href: https://github.com/shelbylevel
         aria-label: GitHub
   #reader-mode: true
+
+#format:
+  #html:
+    #theme: sl-theme-light.scss
+    #css: sl-style.css
+    #toc: true
 
 format:
   html:
