@@ -4,9 +4,10 @@ project:
 
 website:
   title: "Shelby Level"
-  favicon: sl_logo_transparent.png
+  favicon: logos/sl_sticker.png
   navbar:
-    logo: white-sl-logo.png
+    title: "SHELBY<span class='icon-line'></span>LEVEL"
+    logo: logos/white-sl-logo.png
     left:
       - href: index.qmd
         text: Home

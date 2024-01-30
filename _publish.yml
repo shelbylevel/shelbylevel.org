@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 8299fcc8-b1de-4416-b040-e5f77299b5d0
+      url: 'https://spectacular-panda-ff34a0.netlify.app'

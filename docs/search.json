@@ -23,8 +23,22 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About Me",
+    "title": "Shelby Level",
     "section": "",
-    "text": "The standard Lorem Ipsum passage, used since the 1500s “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”\nContact Me: sl165423@ohio.edu"
+    "text": "Hello!"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Shelby Level",
+    "section": "Education",
+    "text": "Education\nOhio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Shelby Level",
+    "section": "Experience",
+    "text": "Experience\nOhio University Voinovich School of Leadership and Public Service | Graduate Assistant | August 2023 - present\nOhio Alliance for Population Health | Student Employee | July 2023 - present\nContact Me: sl165423@ohio.edu"
   }
 ]
