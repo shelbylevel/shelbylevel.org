@@ -1,5 +1,5 @@
 ---
-title: "Shelby Level"
+title: "About Me"
 about:
   template: solana
   image: logos/headshot.jpg
