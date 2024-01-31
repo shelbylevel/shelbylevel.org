@@ -9,7 +9,7 @@ about:
       href: https://github.com/shelbylevel
     - icon: send-fill
       text: Email
-      href: https://github.com/shelbylevel
+      href: mailto:sl165423@ohio.edu
 ---
 
 Hello!
