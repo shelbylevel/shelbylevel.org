@@ -2,14 +2,14 @@
   {
     "objectID": "pages/past-projects.html",
     "href": "pages/past-projects.html",
-    "title": "past-projects",
+    "title": "",
     "section": "",
-    "text": "Character Personalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreat Lakes Fishing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy Blog\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShelby Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "No matching items"
   },
   {
     "objectID": "pages/blog/blog.html",
     "href": "pages/blog/blog.html",
-    "title": "My Blog",
+    "title": "",
     "section": "",
     "text": "Character Personalities\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nGreat Lakes Fishing\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
@@ -19,6 +19,13 @@
     "title": "Character Personalities",
     "section": "",
     "text": "Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more ‘strong’ female or male characters in GOT? Do ‘strong’ characters hold the most power in Westeros?\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load('2022-08-16')\n#tuesdata &lt;- tidytuesdayR::tt_load(2022, week = 33)\n\ncharacters &lt;- tuesdata$characters\nmyers_briggs &lt;- tuesdata$myers_briggs\npsych_stats &lt;- tuesdata$psych_stats\n\n\ncharacters %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; characters_got\n\nmyers_briggs %&gt;%\n  filter(\n    uni_id == 'GOT'\n    ) -&gt; myers_briggs_got\n\npsych_stats %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; psych_stats_got"
+  },
+  {
+    "objectID": "pages/index.html",
+    "href": "pages/index.html",
+    "title": "",
+    "section": "",
+    "text": "Under Construction"
   },
   {
     "objectID": "pages/blog/posts/great-lakes-fishing.html",
@@ -32,20 +39,20 @@
     "href": "pages/about.html",
     "title": "Shelby Level",
     "section": "",
-    "text": "Hello!"
+    "text": "Ohio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
   },
   {
     "objectID": "pages/about.html#education",
     "href": "pages/about.html#education",
     "title": "Shelby Level",
-    "section": "Education",
-    "text": "Education\nOhio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
+    "section": "",
+    "text": "Ohio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
   },
   {
     "objectID": "pages/about.html#experience",
     "href": "pages/about.html#experience",
     "title": "Shelby Level",
     "section": "Experience",
-    "text": "Experience\nOhio University Voinovich School of Leadership and Public Service | Graduate Assistant | August 2023 - present\nOhio Alliance for Population Health | Student Employee | July 2023 - present\nContact Me: sl165423@ohio.edu"
+    "text": "Experience\nOhio University Voinovich School of Leadership and Public Service | Graduate Assistant | August 2023 - present\nOhio Alliance for Population Health | Student Employee | July 2023 - present"
   }
 ]

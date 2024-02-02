@@ -9,10 +9,8 @@ about:
      href: https://github.com/shelbylevel
    - icon: send-fill
      text: Email
-     href: mailto:sl165423\@ohio.edu
+     href: mailto:sl165423\\\@ohio.edu
 ---
-
-Hello!
 
 ## Education
 
@@ -25,5 +23,3 @@ Hello!
 Ohio University Voinovich School of Leadership and Public Service \| Graduate Assistant \| August 2023 - present
 
 Ohio Alliance for Population Health \| Student Employee \| July 2023 - present
-
-Contact Me: sl165423\@ohio.edu

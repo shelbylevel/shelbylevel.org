@@ -1,7 +1,7 @@
 ---
-title: "My Blog"
+#title: "My Blog"
 listing:
-  #contents: posts
+  contents: posts
   sort: "date desc"
   type: default
   categories: numbered
