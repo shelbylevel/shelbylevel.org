@@ -2,14 +2,14 @@
 title: "Shelby Level"
 about:
   template: solana
-  image: logos/headshot.jpg
+  image: /logos/headshot_sm.png
   links:
-    - icon: github
-      text: Github
-      href: https://github.com/shelbylevel
-    - icon: send-fill
-      text: Email
-      href: mailto:sl165423@ohio.edu
+   - icon: github
+     text: Github
+     href: https://github.com/shelbylevel
+   - icon: send-fill
+     text: Email
+     href: mailto:sl165423\@ohio.edu
 ---
 
 Hello!
