@@ -1,58 +1,72 @@
 [
   {
-    "objectID": "pages/past-projects.html",
-    "href": "pages/past-projects.html",
+    "objectID": "blog.html",
+    "href": "blog.html",
     "title": "",
     "section": "",
-    "text": "No matching items"
+    "text": "Character Personalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreat Lakes Fishing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "pages/blog/blog.html",
-    "href": "pages/blog/blog.html",
-    "title": "",
-    "section": "",
-    "text": "Character Personalities\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nGreat Lakes Fishing\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "pages/blog/posts/character-personalities.html",
-    "href": "pages/blog/posts/character-personalities.html",
+    "objectID": "myprojects/drafts/character-personalities.html",
+    "href": "myprojects/drafts/character-personalities.html",
     "title": "Character Personalities",
     "section": "",
     "text": "Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more ‘strong’ female or male characters in GOT? Do ‘strong’ characters hold the most power in Westeros?\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load('2022-08-16')\n#tuesdata &lt;- tidytuesdayR::tt_load(2022, week = 33)\n\ncharacters &lt;- tuesdata$characters\nmyers_briggs &lt;- tuesdata$myers_briggs\npsych_stats &lt;- tuesdata$psych_stats\n\n\ncharacters %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; characters_got\n\nmyers_briggs %&gt;%\n  filter(\n    uni_id == 'GOT'\n    ) -&gt; myers_briggs_got\n\npsych_stats %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; psych_stats_got"
   },
   {
-    "objectID": "pages/index.html",
-    "href": "pages/index.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "",
     "section": "",
     "text": "Under Construction"
   },
   {
-    "objectID": "pages/blog/posts/great-lakes-fishing.html",
-    "href": "pages/blog/posts/great-lakes-fishing.html",
+    "objectID": "blogs/drafts/great-lakes-fishing.html",
+    "href": "blogs/drafts/great-lakes-fishing.html",
     "title": "Great Lakes Fishing",
     "section": "",
     "text": "Evaluation Questions: Which lake has the highest fish populations? King salmon? Streamplot?\n\n# Get the Data\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\ntuesdata &lt;- tidytuesdayR::tt_load('2021-06-08')\n\n--- Compiling #TidyTuesday Information for 2021-06-08 ----\n\n\n--- There are 2 files available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 2: `stocked.csv`\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n    Downloading file 2 of 2: `fishing.csv`\n\n\n--- Download complete ---\n\n#tuesdata &lt;- tidytuesdayR::tt_load(2021, week = 24)\n\nfishing &lt;- tuesdata$fishing\nstocked &lt;- tuesdata$stocked"
   },
   {
-    "objectID": "pages/about.html",
-    "href": "pages/about.html",
+    "objectID": "blogs/drafts/character-personalities.html",
+    "href": "blogs/drafts/character-personalities.html",
+    "title": "Character Personalities",
+    "section": "",
+    "text": "Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more ‘strong’ female or male characters in GOT? Do ‘strong’ characters hold the most power in Westeros?\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load('2022-08-16')\n#tuesdata &lt;- tidytuesdayR::tt_load(2022, week = 33)\n\ncharacters &lt;- tuesdata$characters\nmyers_briggs &lt;- tuesdata$myers_briggs\npsych_stats &lt;- tuesdata$psych_stats\n\n\ncharacters %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; characters_got\n\nmyers_briggs %&gt;%\n  filter(\n    uni_id == 'GOT'\n    ) -&gt; myers_briggs_got\n\npsych_stats %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; psych_stats_got"
+  },
+  {
+    "objectID": "myprojects.html",
+    "href": "myprojects.html",
+    "title": "",
+    "section": "",
+    "text": "Character Personalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreat Lakes Fishing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
     "title": "Shelby Level",
     "section": "",
     "text": "Ohio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
   },
   {
-    "objectID": "pages/about.html#education",
-    "href": "pages/about.html#education",
+    "objectID": "about.html#education",
+    "href": "about.html#education",
     "title": "Shelby Level",
     "section": "",
     "text": "Ohio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
   },
   {
-    "objectID": "pages/about.html#experience",
-    "href": "pages/about.html#experience",
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
     "title": "Shelby Level",
     "section": "Experience",
     "text": "Experience\nOhio University Voinovich School of Leadership and Public Service | Graduate Assistant | August 2023 - present\nOhio Alliance for Population Health | Student Employee | July 2023 - present"
+  },
+  {
+    "objectID": "myprojects/drafts/great-lakes-fishing.html",
+    "href": "myprojects/drafts/great-lakes-fishing.html",
+    "title": "Great Lakes Fishing",
+    "section": "",
+    "text": "Evaluation Questions: Which lake has the highest fish populations? King salmon? Streamplot?\n\n# Get the Data\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\ntuesdata &lt;- tidytuesdayR::tt_load('2021-06-08')\n\n--- Compiling #TidyTuesday Information for 2021-06-08 ----\n\n\n--- There are 2 files available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 2: `stocked.csv`\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n    Downloading file 2 of 2: `fishing.csv`\n\n\n--- Download complete ---\n\n#tuesdata &lt;- tidytuesdayR::tt_load(2021, week = 24)\n\nfishing &lt;- tuesdata$fishing\nstocked &lt;- tuesdata$stocked"
   }
 ]

@@ -1,8 +1,8 @@
 ---
-#title: "My Blog"
+#title: "past-projects"
 listing:
-  contents: posts
+  contents: projects
   sort: "date desc"
-  type: default
+  type: grid
   categories: numbered
 ---

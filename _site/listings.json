@@ -1,13 +1,16 @@
 [
   {
-    "listing": "/pages/past-projects.html",
-    "items": []
+    "listing": "/blog.html",
+    "items": [
+      "/blogs/drafts/character-personalities.html",
+      "/blogs/drafts/great-lakes-fishing.html"
+    ]
   },
   {
-    "listing": "/pages/blog/blog.html",
+    "listing": "/myprojects.html",
     "items": [
-      "/pages/blog/posts/character-personalities.html",
-      "/pages/blog/posts/great-lakes-fishing.html"
+      "/myprojects/drafts/character-personalities.html",
+      "/myprojects/drafts/great-lakes-fishing.html"
     ]
   }
 ]

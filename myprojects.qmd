@@ -1,8 +1,9 @@
 ---
 #title: "past-projects"
 listing:
-  contents: pages/blog/posts
+  contents: myprojects
   sort: "date desc"
   type: grid
   categories: numbered
 ---
+

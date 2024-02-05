@@ -9,13 +9,13 @@ website:
     #title: "SHELBY LEVEL"
     logo: logos/white-sl-logo-crop.png
     left:
-      - href: pages/index.qmd
+      - href: index.qmd
         text: Home
-      - href: pages/about.qmd
-        text: About Me
-      - href: pages/past-projects.qmd
-        text: Past Projects
-      - href: pages/blog/blog.qmd
+      - href: about.qmd
+        text: "About Me"
+      - href: myprojects.qmd
+        text: "Past Projects"
+      - href: blog.qmd
         text: Blog
     right:
       - icon: github
