@@ -13,10 +13,10 @@ website:
         text: Home
       - href: about.qmd
         text: "About Me"
-      - href: myprojects.qmd
-        text: "Past Projects"
       - href: blog.qmd
         text: Blog
+      - href: projects.qmd
+        text: "Past Projects"
     right:
       - icon: github
         href: https://github.com/shelbylevel
