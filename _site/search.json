@@ -7,39 +7,74 @@
     "text": "Character Personalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreat Lakes Fishing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "myprojects/drafts/character-personalities.html",
-    "href": "myprojects/drafts/character-personalities.html",
-    "title": "Character Personalities",
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more ‘strong’ female or male characters in GOT? Do ‘strong’ characters hold the most power in Westeros?\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load('2022-08-16')\n#tuesdata &lt;- tidytuesdayR::tt_load(2022, week = 33)\n\ncharacters &lt;- tuesdata$characters\nmyers_briggs &lt;- tuesdata$myers_briggs\npsych_stats &lt;- tuesdata$psych_stats\n\n\ncharacters %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; characters_got\n\nmyers_briggs %&gt;%\n  filter(\n    uni_id == 'GOT'\n    ) -&gt; myers_briggs_got\n\npsych_stats %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; psych_stats_got"
+    "text": "sl165423@ohio.edu"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "",
-    "section": "",
-    "text": "Under Construction"
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\nMaster of Public Administration  Ohio University, Voinovich School of Leadership and Public Service July 2023 — Present\n\nGraduate Assistant\n\nBachelor of Science in Public Health  University of Toledo, College of Health and Human Services Aug 2020 — May 2023\n\nMagna cum laude"
   },
   {
-    "objectID": "blogs/drafts/great-lakes-fishing.html",
-    "href": "blogs/drafts/great-lakes-fishing.html",
-    "title": "Great Lakes Fishing",
-    "section": "",
-    "text": "Evaluation Questions: Which lake has the highest fish populations? King salmon? Streamplot?\n\n# Get the Data\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\ntuesdata &lt;- tidytuesdayR::tt_load('2021-06-08')\n\n--- Compiling #TidyTuesday Information for 2021-06-08 ----\n\n\n--- There are 2 files available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 2: `stocked.csv`\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n    Downloading file 2 of 2: `fishing.csv`\n\n\n--- Download complete ---\n\n#tuesdata &lt;- tidytuesdayR::tt_load(2021, week = 24)\n\nfishing &lt;- tuesdata$fishing\nstocked &lt;- tuesdata$stocked"
+    "objectID": "cv.html#work-experience",
+    "href": "cv.html#work-experience",
+    "title": "Curriculum Vitae",
+    "section": "Work Experience",
+    "text": "Work Experience\n\nData Scientist\nGraduate Assistant  Ohio University, Voinovich School of Leadership and Public Service Aug 2023 – Present\nProviding\nResearch Staff  Ohio Alliance for Population Health Aug 2023 – Present\nProviding\nHealth Policy Intern  Health Policy Institute of Ohio Jan 2023 – Jun 2023\nProviding"
   },
   {
-    "objectID": "blogs/drafts/character-personalities.html",
-    "href": "blogs/drafts/character-personalities.html",
-    "title": "Character Personalities",
-    "section": "",
-    "text": "Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more ‘strong’ female or male characters in GOT? Do ‘strong’ characters hold the most power in Westeros?\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load('2022-08-16')\n#tuesdata &lt;- tidytuesdayR::tt_load(2022, week = 33)\n\ncharacters &lt;- tuesdata$characters\nmyers_briggs &lt;- tuesdata$myers_briggs\npsych_stats &lt;- tuesdata$psych_stats\n\n\ncharacters %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; characters_got\n\nmyers_briggs %&gt;%\n  filter(\n    uni_id == 'GOT'\n    ) -&gt; myers_briggs_got\n\npsych_stats %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; psych_stats_got"
+    "objectID": "cv.html#certifications",
+    "href": "cv.html#certifications",
+    "title": "Curriculum Vitae",
+    "section": "CERTIFICATIONS",
+    "text": "CERTIFICATIONS\nCertified Health Education Specialist (CHES)\n\nCredential ID 38648"
   },
   {
-    "objectID": "myprojects.html",
-    "href": "myprojects.html",
-    "title": "",
+    "objectID": "cv.html#references",
+    "href": "cv.html#references",
+    "title": "Curriculum Vitae",
+    "section": "References",
+    "text": "References\nAvailable upon request"
+  },
+  {
+    "objectID": "cv.html#education-1",
+    "href": "cv.html#education-1",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\nOhio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
+  },
+  {
+    "objectID": "cv.html#experience",
+    "href": "cv.html#experience",
+    "title": "Curriculum Vitae",
+    "section": "Experience",
+    "text": "Experience\nOhio University Voinovich School of Leadership and Public Service | Graduate Assistant | August 2023 - present\nOhio Alliance for Population Health | Student Employee | July 2023 - present"
+  },
+  {
+    "objectID": "myprojects/qihub23/index.html",
+    "href": "myprojects/qihub23/index.html",
+    "title": "Social Determinants of Health in Ohio",
     "section": "",
-    "text": "Character Personalities\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreat Lakes Fishing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "The Social Determinants of Health (SDOH) database from AHRQ compiles SDOH-related variables across multiple domains from 87 sources including multiple federal and other data sources. The downloadable files contain a total of 675 variables available by year from 2009 through 2020. Data is available across three geography levels: all 675 variables are available by county level, 319 are available by ZIP code, and 321 variables are available by census tract.\nThese variables are organized into five main categories containing several topics each: social context (demographics, disability, immigration, living conditions), economic context (employment, income, poverty), education (attainment), physical infrastructure (environment, housing, internet, migration, transportation), and healthcare context (characteristics of facilities, characteristics of providers, distance to provider, health insurance status, health outcomes, health care quality, utilization and costs).\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each county in Ohio. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 1: Ohio’s Appalachian and Non-Appalachian Counties\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each zip code in Athens county. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 2: Athens County Zip Codes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each census tract in Athens county. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 3: Athens County Census Tracts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each county in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 4: Median Household Income by County\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each zip code in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 5: Median Household Income by Zip Code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each zip code in Athens county. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 6: Athens County Median Household Income by Zip Code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each census tract in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 7: Median Household Income by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each census tract in Athens county. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 8: Athens County Median Household Income by Census Tract\n\n\n\n\n\n\n\n\n\n\nTable 1: Table of SDOH Variables"
+  },
+  {
+    "objectID": "myprojects/qihub23/index.html#sdoh-variables-available-at-the-census-tract-level",
+    "href": "myprojects/qihub23/index.html#sdoh-variables-available-at-the-census-tract-level",
+    "title": "Social Determinants of Health in Ohio",
+    "section": "",
+    "text": "Table 1: Table of SDOH Variables"
+  },
+  {
+    "objectID": "myprojects/qihub23/index.html#ohio-childrens-opportunity-index",
+    "href": "myprojects/qihub23/index.html#ohio-childrens-opportunity-index",
+    "title": "Social Determinants of Health in Ohio",
+    "section": "Ohio Children’s Opportunity Index",
+    "text": "Ohio Children’s Opportunity Index\nThe Ohio Children’s Opportunity Index (OOI) compiles over 54 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher value means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.\nThe OCOI variables comprise eight key domains: access, children health, criminal justice, education, environment, family stability, housing, and infant health. Within each domain, several variables that met inclusion criteria and were available to cover the entire state at a census tract level were identified.\nConstruction of the OCOI consisted of the following broad steps: 1. Operationalize each measure from original, “raw” data 2. Summarize the measure for each Ohio census tract as a rate, count, or level 3. Standardize each variable, as needed, to yield consistency across measures and domains 4. Synthesize the measures in each domain to create a “domain score” 5. Create an overall Children’s Opportunity Index Score as the unweighted mean of the 8 domain scores\nA time varying version of the OCOI (spanning the two periods ending in 2014 and 2017) was created that incorporates 37 of the 53 variables within the same 8 domains.\nThe OCOI was validated by testing the association of the OCOI and the domain scores with five health outcomes:\n\nPre-term birth\nChild severe mental illness\nYouth asthma\nLife expectancy\nAll-cause age-adjusted mortality\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOhio Chilren’s Family Stability Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Infant Health Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Health Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Housing Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Access Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Education Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Environment Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Crime Index by Census Tract"
   },
   {
     "objectID": "about.html",
@@ -63,10 +98,52 @@
     "text": "Experience\nOhio University Voinovich School of Leadership and Public Service | Graduate Assistant | August 2023 - present\nOhio Alliance for Population Health | Student Employee | July 2023 - present"
   },
   {
-    "objectID": "myprojects/drafts/great-lakes-fishing.html",
-    "href": "myprojects/drafts/great-lakes-fishing.html",
+    "objectID": "myprojects.html",
+    "href": "myprojects.html",
+    "title": "",
+    "section": "",
+    "text": "Social Determinants of Health in Ohio\n\n\n\nPublic Health\n\n\nSDOH\n\n\n\nExploring the Social Determinants of Health and their relationship with diabetes in Ohio\n\n\n\nShelby Level\n\n\nFeb 7, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blogs/drafts/great-lakes-fishing.html",
+    "href": "blogs/drafts/great-lakes-fishing.html",
     "title": "Great Lakes Fishing",
     "section": "",
     "text": "Evaluation Questions: Which lake has the highest fish populations? King salmon? Streamplot?\n\n# Get the Data\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\ntuesdata &lt;- tidytuesdayR::tt_load('2021-06-08')\n\n--- Compiling #TidyTuesday Information for 2021-06-08 ----\n\n\n--- There are 2 files available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 2: `stocked.csv`\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\n    Downloading file 2 of 2: `fishing.csv`\n\n\n--- Download complete ---\n\n#tuesdata &lt;- tidytuesdayR::tt_load(2021, week = 24)\n\nfishing &lt;- tuesdata$fishing\nstocked &lt;- tuesdata$stocked"
+  },
+  {
+    "objectID": "blogs/drafts/character-personalities.html",
+    "href": "blogs/drafts/character-personalities.html",
+    "title": "Character Personalities",
+    "section": "",
+    "text": "Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more ‘strong’ female or male characters in GOT? Do ‘strong’ characters hold the most power in Westeros?\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load('2022-08-16')\n#tuesdata &lt;- tidytuesdayR::tt_load(2022, week = 33)\n\ncharacters &lt;- tuesdata$characters\nmyers_briggs &lt;- tuesdata$myers_briggs\npsych_stats &lt;- tuesdata$psych_stats\ncharacters %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; characters_got\n\nmyers_briggs %&gt;%\n  filter(\n    uni_id == 'GOT'\n    ) -&gt; myers_briggs_got\n\npsych_stats %&gt;%\n  filter(\n    uni_id == 'GOT'\n  ) -&gt; psych_stats_got\ncharacters &lt;- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-08-16/characters.csv')\npsychometrics &lt;-  readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-08-16/psych_stats.csv')"
+  },
+  {
+    "objectID": "blogs/drafts/character-personalities.html#network-vertices",
+    "href": "blogs/drafts/character-personalities.html#network-vertices",
+    "title": "Character Personalities",
+    "section": "Network vertices",
+    "text": "Network vertices\n\npsycho_ve &lt;- psycho_df %&gt;%\n             dplyr::group_by(to) %&gt;%\n             dplyr::summarise(links = sum(frequency)) %&gt;%\n             dplyr::select(to, links)"
+  },
+  {
+    "objectID": "blogs/drafts/character-personalities.html#network-object",
+    "href": "blogs/drafts/character-personalities.html#network-object",
+    "title": "Character Personalities",
+    "section": "Network object",
+    "text": "Network object\n\npsycho_ig &lt;- igraph::graph_from_data_frame(d = psycho_df, \n                                           vertices = psycho_ve, \n                                           directed = FALSE)"
+  },
+  {
+    "objectID": "blogs/drafts/character-personalities.html#network-tidy",
+    "href": "blogs/drafts/character-personalities.html#network-tidy",
+    "title": "Character Personalities",
+    "section": "Network tidy",
+    "text": "Network tidy\n\npsycho_tg &lt;- tidygraph::as_tbl_graph(psycho_ig) %&gt;% \n             tidygraph::activate(nodes) %&gt;% \n             dplyr::mutate(label = name)\n\nsize &lt;- igraph::V(psycho_tg)$links"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "Under Construction"
   }
 ]

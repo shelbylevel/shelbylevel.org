@@ -2,6 +2,8 @@
 #title: "My Blog"
 listing:
   contents: blogs
+  exclude:
+    contents: blogs/drafts
   sort: "date desc"
   type: default
   categories: numbered

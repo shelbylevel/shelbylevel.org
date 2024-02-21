@@ -1,9 +1,0 @@
----
-#title: "past-projects"
-listing:
-  contents: projects
-  sort: "date desc"
-  type: grid
-  categories: numbered
----
-

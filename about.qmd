@@ -7,7 +7,10 @@ about:
    - icon: github
      text: Github
      href: https://github.com/shelbylevel
-   - icon: send-fill
+   - icon: linkedin
+     text: LinkedIn
+     href: https://www.linkedin.com/in/shelby-level-ches-791791232/
+   - icon: envelope
      text: Email
      href: mailto:sl165423\\\@ohio.edu
 ---

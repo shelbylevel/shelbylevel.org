@@ -79,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -129,7 +129,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="css/lux-bootstrap.css">
+<link rel="stylesheet" href="css/sl-lux-bootstrap.css">
 </head>
 
 <body class="nav-fixed">
@@ -140,7 +140,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./logos/white-sl-logo-crop.png" alt="" class="navbar-logo">
+    <img src="./logos/white-sl-logo-final-crop.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -158,17 +158,22 @@ window.Quarto = {
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./myprojects.html" aria-current="page"> 
-<span class="menu-text">Past Projects</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./blog.html"> 
 <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./myprojects.html" aria-current="page"> 
+<span class="menu-text">Past Projects</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/shelbylevel"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/shelby-level-ches-791791232/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -185,7 +190,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Public Health">Public Health <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SDOH">SDOH <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -198,40 +203,33 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1707157073871" data-listing-reading-time-sort="1" data-listing-word-count-sort="120">
-<a href="./myprojects/drafts/character-personalities.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Public Health,SDOH" data-listing-date-sort="1707282000000" data-listing-file-modified-sort="1708489008396" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="53" data-listing-word-count-sort="10584">
+<a href="./myprojects/qihub23/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top">
+<img src="./myprojects/qihub23/preview-image.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Character Personalities
+Social Determinants of Health in Ohio
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Public Health'); return false;">
+Public Health
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SDOH'); return false;">
+SDOH
+</div>
+</div>
 <div class="card-text listing-description">
-Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more ‘strong’ female or male characters in GOT? Do ‘strong’ characters…
+Exploring the Social Determinants of Health and their relationship with diabetes in Ohio
 </div>
-<div class="card-attribution card-text-small start">
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
-
+Shelby Level
 </div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1707157073872" data-listing-reading-time-sort="1" data-listing-word-count-sort="53">
-<a href="./myprojects/drafts/great-lakes-fishing.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Great Lakes Fishing
-</h5>
-<div class="card-text listing-description">
-Evaluation Questions: Which lake has the highest fish populations? King salmon? Streamplot?
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
+<div class="listing-date">
+Feb 7, 2024
 </div>
 </div>
 </div>

@@ -7,7 +7,7 @@ website:
   favicon: logos/sl_sticker.png
   navbar:
     #title: "SHELBY LEVEL"
-    logo: logos/white-sl-logo-crop.png
+    logo: logos/white-sl-logo-final-crop.png
     left:
       - href: index.qmd
         text: Home
@@ -15,12 +15,15 @@ website:
         text: "About Me"
       - href: blog.qmd
         text: Blog
-      - href: projects.qmd
+      - href: myprojects.qmd
         text: "Past Projects"
     right:
       - icon: github
         href: https://github.com/shelbylevel
         aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/shelby-level-ches-791791232/
+        aria-label: LinkedIn
   #reader-mode: true
 
 #format:
@@ -32,7 +35,7 @@ website:
 format:
   html:
     theme: lux
-    css: css/lux-bootstrap.css
+    css: css/sl-lux-bootstrap.css
     toc: true
     page-layout: full
 

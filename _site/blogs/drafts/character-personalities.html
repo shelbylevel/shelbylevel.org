@@ -103,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../css/lux-bootstrap.css">
+<link rel="stylesheet" href="../../css/sl-lux-bootstrap.css">
 </head>
 
 <body class="nav-fixed">
@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../logos/white-sl-logo-crop.png" alt="" class="navbar-logo">
+    <img src="../../logos/white-sl-logo-final-crop.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -132,17 +132,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../myprojects.html"> 
-<span class="menu-text">Past Projects</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../myprojects.html"> 
+<span class="menu-text">Past Projects</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/shelbylevel"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/shelby-level-ches-791791232/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -157,11 +162,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link active" data-scroll-target="#data-wrangling">Data wrangling</a></li>
+  <li><a href="#intersection" id="toc-intersection" class="nav-link" data-scroll-target="#intersection">Intersection</a></li>
+  <li><a href="#network" id="toc-network" class="nav-link" data-scroll-target="#network">Network</a>
+  <ul class="collapse">
+  <li><a href="#network-vertices" id="toc-network-vertices" class="nav-link" data-scroll-target="#network-vertices">Network vertices</a></li>
+  <li><a href="#network-object" id="toc-network-object" class="nav-link" data-scroll-target="#network-object">Network object</a></li>
+  <li><a href="#network-tidy" id="toc-network-tidy" class="nav-link" data-scroll-target="#network-tidy">Network tidy</a></li>
+  </ul></li>
+  <li><a href="#legend-annotation" id="toc-legend-annotation" class="nav-link" data-scroll-target="#legend-annotation">Legend Annotation</a></li>
+  <li><a href="#plot-aesthetics" id="toc-plot-aesthetics" class="nav-link" data-scroll-target="#plot-aesthetics">Plot aesthetics</a></li>
+  <li><a href="#annotation" id="toc-annotation" class="nav-link" data-scroll-target="#annotation">Annotation</a></li>
+  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">Plot</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -170,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -215,8 +237,163 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    uni_id <span class="sc">==</span> <span class="st">'GOT'</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span> psych_stats_got</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>characters <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-08-16/characters.csv'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>psychometrics <span class="ot">&lt;-</span>  readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-08-16/psych_stats.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="data-wrangling" class="level1">
+<h1>Data wrangling</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Network to see similarities between GOT characters?</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">4321</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="intersection" class="level1">
+<h1>Intersection</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>psycho_df <span class="ot">&lt;-</span> psychometrics <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">filter</span>(uni_name <span class="sc">==</span> <span class="st">"Game of Thrones"</span> <span class="sc">&amp;</span> avg_rating <span class="sc">&gt;=</span> <span class="dv">80</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">group_by</span>(char_name, question) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">slice_max</span>(<span class="at">order_by =</span> avg_rating, <span class="at">n =</span> <span class="dv">1</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">group_by</span>(question) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">question_id =</span> dplyr<span class="sc">::</span><span class="fu">cur_group_id</span>(),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">personality =</span> stringr<span class="sc">::</span><span class="fu">str_c</span>(question_id, personality, <span class="at">sep =</span> <span class="st">"_"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">select</span>(char_name, question, personality) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">group_by</span>(char_name) <span class="sc">%&gt;%</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">personality =</span> <span class="fu">list</span>(<span class="fu">as.character</span>(personality))) <span class="sc">%&gt;%</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="st">"from"</span> <span class="ot">=</span> <span class="st">"char_name"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>             tidyr<span class="sc">::</span><span class="fu">crossing</span>(dplyr<span class="sc">::</span><span class="fu">rename</span>(., <span class="st">"to"</span> <span class="ot">=</span> <span class="st">"from"</span>, <span class="st">"personality_to"</span> <span class="ot">=</span> <span class="st">"personality"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">frequency =</span> purrr<span class="sc">::</span><span class="fu">map2_dbl</span>(personality, personality_to, <span class="sc">~</span><span class="fu">length</span>(base<span class="sc">::</span><span class="fu">intersect</span>(.x, .y)))) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">select</span>(from, to, frequency) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">filter</span>(from <span class="sc">!=</span> to) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">similarity =</span> <span class="fu">case_when</span>(frequency <span class="sc">&lt;=</span> <span class="fu">quantile</span>(frequency, <span class="at">probs =</span> <span class="fl">0.80</span>) <span class="sc">~</span> <span class="st">"q80"</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                                  frequency <span class="sc">&lt;=</span> <span class="fu">quantile</span>(frequency, <span class="at">probs =</span> <span class="fl">0.90</span>) <span class="sc">~</span> <span class="st">"q90"</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                                                  frequency <span class="sc">&lt;=</span> <span class="fu">quantile</span>(frequency, <span class="at">probs =</span> <span class="fl">0.95</span>) <span class="sc">~</span> <span class="st">"q95"</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                                                  frequency <span class="sc">&lt;=</span> <span class="fu">quantile</span>(frequency, <span class="at">probs =</span> <span class="fl">0.99</span>) <span class="sc">~</span> <span class="st">"q99"</span>,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                                                  <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Top1"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">arrange</span>(frequency)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="network" class="level1">
+<h1>Network</h1>
+<section id="network-vertices" class="level2">
+<h2 class="anchored" data-anchor-id="network-vertices">Network vertices</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>psycho_ve <span class="ot">&lt;-</span> psycho_df <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">group_by</span>(to) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">links =</span> <span class="fu">sum</span>(frequency)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">select</span>(to, links)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="network-object" class="level2">
+<h2 class="anchored" data-anchor-id="network-object">Network object</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>psycho_ig <span class="ot">&lt;-</span> igraph<span class="sc">::</span><span class="fu">graph_from_data_frame</span>(<span class="at">d =</span> psycho_df, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">vertices =</span> psycho_ve, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">directed =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="network-tidy" class="level2">
+<h2 class="anchored" data-anchor-id="network-tidy">Network tidy</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>psycho_tg <span class="ot">&lt;-</span> tidygraph<span class="sc">::</span><span class="fu">as_tbl_graph</span>(psycho_ig) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>             tidygraph<span class="sc">::</span><span class="fu">activate</span>(nodes) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>             dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">label =</span> name)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>size <span class="ot">&lt;-</span> igraph<span class="sc">::</span><span class="fu">V</span>(psycho_tg)<span class="sc">$</span>links</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="legend-annotation" class="level1">
+<h1>Legend Annotation</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data_label <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">seq</span>(<span class="fl">1.75</span>, <span class="fl">2.25</span>, <span class="at">length.out =</span> <span class="dv">30</span>),</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.35</span>, <span class="sc">-</span><span class="fl">1.35</span>, <span class="at">length.out =</span> <span class="dv">30</span>),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color  =</span> psycho_ve <span class="sc">%&gt;%</span> <span class="fu">pull</span>(links) <span class="sc">%&gt;%</span> <span class="fu">sort</span>(),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">alpha  =</span> psycho_ve <span class="sc">%&gt;%</span> <span class="fu">pull</span>(links) <span class="sc">%&gt;%</span> <span class="fu">sort</span>(),    </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size   =</span> psycho_ve <span class="sc">%&gt;%</span> <span class="fu">pull</span>(links) <span class="sc">%&gt;%</span> <span class="fu">sort</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plot-aesthetics" class="level1">
+<h1>Plot aesthetics</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>background     <span class="ot">&lt;-</span> <span class="st">"#141C26"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>lines_color    <span class="ot">&lt;-</span> <span class="st">"#A6444C"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>title_color    <span class="ot">&lt;-</span> <span class="st">"#F2C230"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>subtitle_color <span class="ot">&lt;-</span> <span class="st">"#FFAB16"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>text_color     <span class="ot">&lt;-</span> <span class="st">"#F2F2F2"</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>caption_color  <span class="ot">&lt;-</span> <span class="st">"#6C7D8C"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="annotation" class="level1">
+<h1>Annotation</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>annotation_title_text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Game of Thrones"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>annotation_text <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"The Open-Source Psychometrics Project, it has recruited more than 3 million volunteers to rate characters from different series, according to 400 descriptive adjectives and other properties. The responses can be aggregated to create profiles that users can match as part of a personality test. In total, the project collects information on more than 2,000 characters, with 400 descriptive adjectives rated on a scale of 1 to 100, depending on how strongly one would identify the character's particular characteristic. From the data set, GOT characters have been selected, to investigate which characters share the greatest number of the strongest characteristics (rating &gt;80%) in common or similarity."</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>annotation_text <span class="ot">&lt;-</span> stringr<span class="sc">::</span><span class="fu">str_wrap</span>(annotation_text, <span class="dv">70</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                   stringr<span class="sc">::</span><span class="fu">str_replace_all</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>,<span class="st">"&lt;br&gt;"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plot" class="level1">
+<h1>Plot</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Plot <span class="ot">&lt;-</span> psycho_tg <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>        ggraph<span class="sc">::</span><span class="fu">ggraph</span>(<span class="at">layout =</span> <span class="st">"igraph"</span>, <span class="at">algorithm =</span> <span class="st">'fr'</span>) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        ggraph<span class="sc">::</span><span class="fu">geom_edge_arc</span>(<span class="fu">aes</span>(<span class="at">edge_width =</span> similarity, <span class="at">alpha =</span> similarity, <span class="at">colour =</span> similarity), <span class="at">lineend =</span> <span class="st">"round"</span>, <span class="at">strength =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        ggraph<span class="sc">::</span><span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> links), <span class="at">fill =</span> background, <span class="at">size =</span> <span class="fu">log</span>(size) <span class="sc">*</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">1.0</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        ggraph<span class="sc">::</span><span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> links), <span class="at">size =</span> <span class="fu">log</span>(size) <span class="sc">*</span> <span class="fl">1.0</span>, <span class="at">alpha =</span> <span class="fl">1.0</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="do">### Annotations </span><span class="al">###</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        ggraph<span class="sc">::</span><span class="fu">geom_node_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), <span class="at">colour =</span> text_color, <span class="at">size =</span> <span class="fu">log</span>(size) <span class="sc">*</span> <span class="fl">0.60</span>, <span class="at">family =</span> <span class="st">"Cinzel Decorative"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">repel =</span> <span class="cn">FALSE</span>, <span class="at">nudge_y =</span> <span class="sc">-</span><span class="fl">0.04</span>, <span class="at">nudge_x =</span> <span class="fl">0.00</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">fill =</span> background, <span class="at">label.size =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        ggtext<span class="sc">::</span><span class="fu">geom_richtext</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">1.26</span>, <span class="at">y =</span> <span class="sc">-</span><span class="fl">1.33</span>), <span class="at">label =</span> annotation_text, <span class="at">color =</span> subtitle_color, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">family =</span> <span class="st">"Cinzel"</span>, <span class="at">face =</span> <span class="st">"plain"</span>, <span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">label.size =</span> <span class="cn">NA</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">halign =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">valign =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="fl">0.1</span>, <span class="at">r =</span> <span class="fl">0.1</span>, <span class="at">b =</span> <span class="fl">0.5</span>, <span class="at">l =</span> <span class="fl">0.1</span>, <span class="at">unit =</span> <span class="st">"cm"</span>)) <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="do">### Scales </span><span class="al">###</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        ggraph<span class="sc">::</span><span class="fu">scale_edge_width_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">1.0</span>, <span class="at">length.out =</span> <span class="dv">4</span>), <span class="fl">2.0</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">"q80"</span>,<span class="st">"q90"</span>,<span class="st">"q95"</span>,<span class="st">"q99"</span>,<span class="st">"Top1"</span>)) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        ggraph<span class="sc">::</span><span class="fu">scale_edge_alpha_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="fl">0.2</span>, <span class="fl">0.5</span>, <span class="at">length.out =</span> <span class="dv">4</span>), <span class="fl">0.8</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="st">"q80"</span>,<span class="st">"q90"</span>,<span class="st">"q95"</span>,<span class="st">"q99"</span>,<span class="st">"Top1"</span>)) <span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        ggraph<span class="sc">::</span><span class="fu">scale_edge_colour_manual</span>(<span class="at">values =</span> viridis<span class="sc">::</span><span class="fu">inferno</span>(<span class="at">n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(psycho_df<span class="sc">$</span>similarity)), <span class="at">begin =</span> <span class="fl">0.5</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">direction =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_colour_gradientn</span>(<span class="at">colors =</span> viridis<span class="sc">::</span><span class="fu">plasma</span>(<span class="at">n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(psycho_ve<span class="sc">$</span>links)), <span class="at">begin =</span> <span class="fl">0.5</span>, <span class="at">end =</span> <span class="fl">0.9</span>, <span class="at">direction =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">guides</span>(<span class="at">edge_width =</span> <span class="st">"none"</span>, <span class="at">edge_alpha =</span> <span class="st">"none"</span>, <span class="at">colour =</span> <span class="st">"none"</span>, <span class="at">edge_colour =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.4</span>, <span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="do">### Theme </span><span class="al">###</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme</span>(</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>          <span class="do">## Plot Aesthetic ##</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> background, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> background, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>          <span class="do">## Titles &amp; Caption ##</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title.position =</span> <span class="st">"panel"</span>,</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">color =</span> title_color, <span class="at">family =</span> <span class="st">"Cinzel"</span>, <span class="at">face =</span> <span class="st">"plain"</span>, <span class="at">size =</span> <span class="dv">42</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">halign =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">valign =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>), <span class="st">"cm"</span>)),</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.caption.position =</span> <span class="st">"panel"</span>,</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.caption =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(<span class="at">color =</span> caption_color, <span class="at">family =</span> <span class="st">"Menlo"</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">r =</span> <span class="fl">0.1</span>, <span class="at">b =</span> <span class="fl">0.1</span>, <span class="at">l =</span> <span class="fl">0.0</span>, <span class="at">unit =</span> <span class="st">"cm"</span>)),</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>          <span class="do">## Margin ##</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="fl">0.5</span>, <span class="at">r =</span> <span class="fl">1.5</span>, <span class="at">b =</span> <span class="fl">0.5</span>, <span class="at">l =</span> <span class="fl">1.5</span>, <span class="at">unit =</span> <span class="st">"cm"</span>)) <span class="sc">+</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>        <span class="do">### Labels </span><span class="al">###</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>                      <span class="at">title =</span> annotation_title_text,</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>                      <span class="at">caption =</span> <span class="st">"&lt;span style='font-family: </span><span class="sc">\"</span><span class="st">Font Awesome 6 Brands</span><span class="sc">\"</span><span class="st">'&gt;&amp;#xf099;&lt;/span&gt; @TamayoLeiva_J&lt;br&gt;</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="st">                                 &lt;span style='font-family: </span><span class="sc">\"</span><span class="st">Font Awesome 6 Brands</span><span class="sc">\"</span><span class="st">'&gt;&amp;#xf09b;&lt;/span&gt;  TamayoLeivaJ&lt;br&gt;&lt;br&gt; </span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="st">                                 Source: Open-Source Psychometrics Project courtesy of &lt;span style='font-family: </span><span class="sc">\"</span><span class="st">Font Awesome 6 Brands</span><span class="sc">\"</span><span class="st">'&gt;&amp;#xf099;&lt;/span&gt; @tanya_shapiro"</span>)</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>Plot <span class="sc">+</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>              <span class="do">### Legend Annotation </span><span class="al">###</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>              ggforce<span class="sc">::</span><span class="fu">geom_link2</span>(<span class="at">data =</span> data_label, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">colour =</span> color, <span class="at">alpha =</span> alpha, <span class="at">size =</span> size, <span class="at">group =</span> <span class="dv">1</span>), <span class="at">lineend =</span> <span class="st">'round'</span>) <span class="sc">+</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>              <span class="fu">geom_point</span>(<span class="at">data =</span> data_label[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">30</span>),], <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">colour =</span> color), <span class="at">fill =</span> background, <span class="at">alpha =</span> <span class="fl">1.0</span>, <span class="at">size =</span> <span class="fu">range</span>(<span class="fu">log</span>(size) <span class="sc">*</span> <span class="fl">1.5</span>), <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>              <span class="fu">geom_point</span>(<span class="at">data =</span> data_label[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">30</span>),], <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">colour =</span> color), <span class="at">alpha =</span> <span class="fl">1.0</span>, <span class="at">size =</span> <span class="fu">range</span>(<span class="fu">log</span>(size))) <span class="sc">+</span></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>              <span class="fu">geom_text</span>(<span class="at">data =</span> data_label[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">30</span>),], <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y <span class="sc">+</span> <span class="fl">0.002</span>), <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"-"</span>,<span class="st">"+"</span>), <span class="at">colour =</span> background, <span class="at">alpha =</span> <span class="fl">1.0</span>, <span class="at">size =</span> <span class="fu">sort</span>(<span class="fu">log</span>(size))[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">30</span>)], <span class="at">family =</span> <span class="st">"Cinzel Decorative"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>              <span class="fu">geom_text</span>(<span class="at">data =</span> data_label[<span class="dv">15</span>,], <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y <span class="sc">+</span> <span class="fl">0.100</span>), <span class="at">label =</span> <span class="st">"How to read the network?"</span>, <span class="at">colour =</span> subtitle_color, <span class="at">alpha =</span> <span class="fl">1.0</span>, <span class="at">size =</span> <span class="fu">sort</span>(<span class="fu">log</span>(size) <span class="sc">*</span> <span class="fl">1.5</span>)[<span class="dv">1</span>], <span class="at">family =</span> <span class="st">"Cinzel"</span>, <span class="at">fontface =</span> <span class="st">"plain"</span>) <span class="sc">+</span></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>              <span class="fu">geom_text</span>(<span class="at">data =</span> data_label[<span class="dv">15</span>,], <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y <span class="sc">+</span> <span class="fl">0.025</span>), <span class="at">label =</span> <span class="st">"Connections Scale"</span>, <span class="at">colour =</span> text_color, <span class="at">alpha =</span> <span class="fl">1.0</span>, <span class="at">size =</span> <span class="fu">sort</span>(<span class="fu">log</span>(size) <span class="sc">*</span> <span class="fl">0.8</span>)[<span class="dv">1</span>], <span class="at">family =</span> <span class="st">"Cinzel Decorative"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>              <span class="fu">geom_text</span>(<span class="at">data =</span> data_label[<span class="dv">15</span>,], <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y <span class="sc">-</span> <span class="fl">0.025</span>), <span class="at">label =</span> <span class="st">"Similarity Scale"</span>, <span class="at">colour =</span> text_color, <span class="at">alpha =</span> <span class="fl">1.0</span>, <span class="at">size =</span> <span class="fu">sort</span>(<span class="fu">log</span>(size) <span class="sc">*</span> <span class="fl">0.8</span>)[<span class="dv">1</span>], <span class="at">family =</span> <span class="st">"Cinzel Decorative"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>              <span class="fu">scale_alpha_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">1.0</span>)) <span class="sc">+</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>              <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">2.0</span>)) <span class="sc">+</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>              <span class="fu">guides</span>(<span class="at">colour =</span> <span class="st">"none"</span>, <span class="at">alpha =</span> <span class="st">"none"</span>, <span class="at">size =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

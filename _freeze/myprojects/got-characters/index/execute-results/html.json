@@ -1,0 +1,15 @@
+{
+  "hash": "07e35743645fe4b08893539dd936942b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Character Personalities\"\ndraft: true\n---\n\n\nEvaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more 'strong' female or male characters in GOT? Do 'strong' characters hold the most power in Westeros?\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\nlibrary(tidytuesdayR)\n\ntuesdata <- tidytuesdayR::tt_load('2022-08-16')\n#tuesdata <- tidytuesdayR::tt_load(2022, week = 33)\n\ncharacters <- tuesdata$characters\nmyers_briggs <- tuesdata$myers_briggs\npsych_stats <- tuesdata$psych_stats\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ncharacters %>%\n  filter(\n    uni_id == 'GOT'\n  ) -> characters_got\n\nmyers_briggs %>%\n  filter(\n    uni_id == 'GOT'\n    ) -> myers_briggs_got\n\npsych_stats %>%\n  filter(\n    uni_id == 'GOT'\n  ) -> psych_stats_got\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
