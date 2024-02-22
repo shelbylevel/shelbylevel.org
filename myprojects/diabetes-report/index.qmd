@@ -1,0 +1,1068 @@
+---
+title: "Diabetes Mortality Statistics: United States and Ohio"
+description: "Exploring diabetes mortality data at the national, state, and local levels"
+author: 
+  - name: __Ohio Alliance for Population Health__
+  - name: Shelby Level
+    url: https://github.com/shelbylevel
+  - name: Elizabeth Beverly, PhD
+  - name: Richard Hodges
+date: 1-24-2024
+categories: [Diabetes, Public Health] # self-defined categories
+citation: 
+  url: https://shelbylevel.org/myprojects/diabetes-report
+image: preview-image.png
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    bibliography: references.bib
+draft: false
+---
+
+# Background
+
+The OHIO Alliance for Population Health (OAPH) is a statewide collaborative focused on improving the health of all Ohioans by solving the most complex and pressing population health concerns across the state. In line with OAPH's overarching mission, this report aims to identify disparities in diabetes mortality among Ohioans and consider how these disparities can be addressed to improve health and well-being across the state.
+
+# Key Findings
+
+-   West Virginia had the highest diabetes mortality rate of any state in 2022 with 59.2 deaths per 100,000 population, 94.1% higher than the national average.
+
+-   Ohio ranked 41st (out of 51 states, with rank 1 indicating the lowest rate) in diabetes mortality in 2022 with a reported rate of 36.2 deaths per 100,000 population, 18.7% higher than the national average.
+
+-   Nevada saw the largest increase in diabetes mortality (63.2%) between 2013-2017 and 2018-2022.
+
+-   Vermont is the only state that saw a decrease in diabetes deaths (-1.1%) between 2013-2017 and 2018-2022.
+
+-   Coshocton County saw the largest increase in diabetes mortality in Ohio (159.3%) between 2013-2017 and 2018-2022.
+
+-   There were 15 counties in Ohio that saw a decrease in diabetes mortality between 2013-2017 and 2018-2022., with Miami, Madison, Monroe, Meigs, and Licking Counties experiencing the highest reductions.
+
+-   In 2018-2022 Southeast Ohio had the highest diabetes mortality rate in the state with 55.5 deaths per 100,000 population, 82% higher than the state average.
+
+-   In 2018-2022 Central Ohio had the lowest diabetes death rate in the state with 27.1 deaths per 100,000 population, 11.1% lower than the state average.
+
+-   In 2018-2022 Delaware County had the lowest diabetes death rate in Ohio and ranked 56th (out of 2,824) in diabetes mortality among all United States counties with a rate of 13.8 deaths per 100,000 population.
+
+-   In 2018-2022 Vinton County had the highest diabetes death rate in Ohio and ranked 2,743rd (out of 2,824) in diabetes mortality among all United States counties with a rate of 88.3 deaths per 100,000 population.
+
+# Methodology
+
+This report examines diabetes mellitus deaths across national, state, and local levels over an extended period of time.
+
+CDC WONDER collects and maintains data regarding deaths and their causes. All data were extracted from CDC WONDER using provisional @centersfordiseasecontrolandpreventioncdcMultipleCauseDeath or final mortality data @MultipleCauseDeath.
+
+All maps, graphs, and other figures for the United States and Ohio that are presented in this report were produced using R @rcoreteamLanguageEnvironmentStatistical2023a, RStudio @positteamRStudioIntegratedDevelopment2024a, ggplot2 @wickhamGgplot2ElegantGraphics2016a, sf @pebesmaSpatialDataScience2023 @pebesmaSimpleFeaturesStandardized2018a, tidyverse @wickhamWelcomeTidyverse2019a, and tidycensus @walkerTidycensusLoadUS2024.
+
+# Discussion
+
+Diabetes was the eight-leading cause of death in the United States last year (2022), killing more than 100,000 Americans. This chronic health condition is characterized by high blood sugar (hyperglycemia) and caused by reduced amounts of insulin produced by the pancreas or the body not responding properly to the effects of insulin @Diabetes2023. Despite all forms of diabetes being manageable with lifestyle changes and/or medications, death rates continue to rise in the United States due to sedentary lifestyles, unhealthy diets, and an aging population @WhatDiabetes2023. In the past decade the United States saw a 27.6% increase in diabetes mortality with only one state, Vermont, seeing death rates fall during the past five years.
+
+Similarly, Ohio experienced a roughly 18% increase in diabetes mortality over the past decade and ranked 41 out of 51 states in 2022 with a reported rate (36.2 deaths per 100,000 population) 19% higher than the national average. However, not all Ohioans are at equal risk of dying from diabetes. Nine out of ten counties with the highest mortality rates in Ohio are located in Appalachia, and residents of rural Appalachian counties are 1.7 times as likely to die from diabetes than their suburban counterparts.
+
+# Conclusion
+
+Diabetes is a serious condition that can affect a person’s heart, blood vessels, nerves, eyes, and kidneys. It will be the next major epidemic we face as a society and we know that rates of diabetes are much higher in southeast Ohio than other parts of the state and country. Findings from this report draw attention to the disparities that rural Appalachians face on a daily basis and existing inequalities will only accelerate the diabetes crisis that ultimately influences health outcomes and mortality. Depicting diabetes deaths by subregions in Ohio emphasizes the critical need to facilitate collaborations on the local, regional, state, and national level to improve diabetes care and address barriers that contribute to these high mortality rates.
+
+```{r setup, include=FALSE }
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning=FALSE, include = FALSE, cache = TRUE)
+```
+
+```{r packages, include=FALSE}
+library(tidyverse)
+library(stringr)
+library(scales)
+library(zoo)
+library(sjmisc)
+library(janitor)
+library(dplyr)
+library(tidycensus)
+library(tigris)
+library(sf)
+library(dplyr)
+library(classInt)
+
+```
+
+```{r acs, include=FALSE}
+
+get_acs(
+  geography = "state",
+  variables = "B01001_001",
+  year = 2019,
+  survey = "acs1",
+  geometry = TRUE,
+  resolution = "20m"
+) %>%
+  shift_geometry() %>%
+  mutate(
+    GEOID=as.integer(GEOID)
+    ) %>%
+  filter(
+    NAME!="Puerto Rico"
+    ) -> state
+
+get_acs(
+ geography = "county",
+ state = 39,
+ variables = c("B01001_001"),
+ geometry = TRUE) %>%
+  mutate(
+    GEOID=as.integer(GEOID)
+    ) -> county
+
+```
+
+# United States
+
+## Map 1: Diabetes Deaths by State, 2022
+
+```{r map1, include=TRUE}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.State.2022.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.State.Code
+    )-> diabetes
+
+diabetes$Notes = NULL
+
+left_join(state,diabetes, by='GEOID') -> diabetes
+
+#Create data breaks
+breaks_j <- classIntervals(c(min(diabetes$Rate),       
+                             diabetes$Rate),n=3,        
+                           style="quantile")              
+
+diabetes <- mutate(diabetes,Breaks=cut(Rate,breaks_j$brks,include.lowest=TRUE))
+
+#Change legend category labels based on breaks
+c('18.4 - 27.4','27.5 - 34.0','34.1 - 59.2') -> legend.labels
+
+#Create map
+ggplot() +
+  
+  #ggtitle("Diabetes Deaths by State, 2022") +
+  
+  geom_sf(data = diabetes, aes(fill = Breaks), color = "black",size=.4, alpha=1) +
+  
+  scale_fill_manual(values=c("#BFCEDB",
+                             
+                             "#6084A6",
+                             
+                             "#003A70"), na.value = "white", drop = FALSE, name="Rate per 100,000 population", label=legend.labels) +
+  
+  
+  #geom_sf_text(data=State,aes(label= Code), color = "black", size = 2.5, vjust = -.5) +
+  #geom_sf_text(data=State,aes(label= round(Rate,2)), color = "black", size = 2.5, vjust = 1.2) +
+  
+  theme_void() +
+  
+  theme(
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  theme(legend.position = 'bottom')
+```
+
+## Figure 1: Diabetes Deaths by State, 2022
+
+```{r figure1, include=TRUE, fig.height=9, fig.width = 8}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.State.2022.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    State=Residence.State,
+    GEOID=Residence.State.Code
+    )-> diabetes
+
+diabetes$Notes = NULL
+
+left_join(state,diabetes, by='GEOID') -> diabetes
+
+#Create rank variable based on rate
+diabetes %>% mutate(Rank = dense_rank(Rate)) -> diabetes
+
+#Sort by high to low rate
+diabetes$State <- factor(diabetes$State) %>% 
+  fct_reorder(diabetes$Rate)
+
+#Create horizontal bar chart
+ggplot(diabetes,aes(x=State, 
+                    y=Rate, 
+                    fill=Rate)) + 
+  geom_col(alpha=0.75) +   	#Alpha controls density of color, 
+  
+  #ggtitle("Diabetes Deaths by State, 2022") +
+  
+  #Creates breaks in graph & controls limits(min/max)
+  #scale_y_continuous(limits = c(-0.2, 0.7), breaks = c(-0.2,-0.1,0,0.1,0.2,0.3,0.4,0.5,0.6,0.7)) +
+  
+  #Flips graph from vertical bars to horizontal
+  coord_flip() +
+  labs(caption = "", 
+       y="Rate per 100,000 population",    		#Legend titles
+       x="") +
+  
+  #Create fill gradient in bars
+  scale_fill_gradient(name="Label",
+                      low = "#BFCEDB",
+                      high = "#003A70") + 	
+  
+  #Create average line
+  geom_hline(yintercept = mean(diabetes$Rate), color="grey40", linewidth=1, alpha=.5) +
+  annotate('text', x=5, y=31.4, color='grey40', fontface='bold', label="National Average") +
+  
+  #Control rate numbers on graph
+  geom_text(aes(label=round(Rate,1)), color='black', size=3, fontface="bold", hjust=1.2, vjust=.35) +
+  
+  #Control graph theme
+  theme_minimal() +
+  theme(axis.text.x = element_text(color="gray20", 
+                                   size=10),
+        axis.text.y = element_text(color="black", 
+                                   size=10)) +
+  theme(legend.position = 'none')
+```
+
+## Map 2: Diabetes Deaths by State, 2018-2022
+
+```{r map2, include=TRUE}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.State.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.State.Code
+    )-> diabetes
+
+diabetes$Notes = NULL
+
+left_join(state,diabetes, by='GEOID') -> diabetes
+
+#Create data breaks
+breaks_j <- classIntervals(c(min(diabetes$Rate),       
+                             diabetes$Rate),n=3,        
+                           style="quantile")              
+
+diabetes <- mutate(diabetes,Breaks=cut(Rate,breaks_j$brks,include.lowest=TRUE))
+
+#Change legend category labels based on breaks
+c('19.4 - 26.6','26.7 - 31.9','32.0 - 58.3') -> legend.labels
+
+#Create map
+ggplot() +
+  
+  #ggtitle("Diabetes Deaths by State, 2018-2022") +
+  
+  geom_sf(data = diabetes, aes(fill = Breaks), color = "black",size=.4, alpha=1) +
+  
+  scale_fill_manual(values=c("#BFCEDB",
+                             
+                             "#6084A6",
+                             
+                             "#003A70"), na.value = "white", drop = FALSE, name="Rate per 100,000 population", label=legend.labels) +
+  
+  #geom_sf_text(data=State,aes(label= Code), color = "black", size = 2.5, vjust = -.5) +
+  #geom_sf_text(data=State,aes(label= round(Rate,2)), color = "black", size = 2.5, vjust = 1.2) +
+  
+  theme_void() +
+  
+  theme(
+    axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  theme(legend.position = 'bottom')
+
+```
+
+## Map 3: Diabetes Deaths by State, 2013-2017
+
+```{r map3, include=TRUE}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.State.2013-17.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=State.Code
+    )-> diabetes
+
+diabetes$Notes = NULL
+
+left_join(state,diabetes, by='GEOID') -> diabetes
+
+#Create data breaks
+breaks_j <- classIntervals(c(min(diabetes$Rate),       
+                             diabetes$Rate),n=3,        
+                           style="quantile")              
+
+diabetes <- mutate(diabetes,Breaks=cut(Rate,breaks_j$brks,include.lowest=TRUE))
+
+#Change legend category labels based on breaks
+c('16.4 - 22.4','22.5 - 27.6','27.7 - 45.3') -> legend.labels
+
+#Create map
+ggplot() +
+  
+  #ggtitle("Diabetes Deaths by State, 2013-2017") +
+  
+  geom_sf(data = diabetes, aes(fill = Breaks), color = "black",size=.4, alpha=1) +
+  
+  scale_fill_manual(values=c("#BFCEDB",
+                             
+                             "#6084A6",
+                             
+                             "#003a70"), na.value = "white", drop = FALSE, name="Rate per 100,000 population", label=legend.labels) +
+  
+  #geom_sf_text(data=State,aes(label= Code), color = "black", size = 2.5, vjust = -.5) +
+  #geom_sf_text(data=State,aes(label= round(Rate,2)), color = "black", size = 2.5, vjust = 1.2) +
+  
+  theme_void() +
+  
+  theme(
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  theme(legend.position = 'bottom')
+```
+
+## Figure 2: Diabetes Deaths by State, Percent Change from 2013-2017 to 2018-2022
+
+```{r figure2, include=TRUE, fig.height=8, fig.width = 8}
+
+#Import 2013-17 diabetes data set
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.State.2013-17.txt'
+  ) %>% 
+  mutate(
+    Rate.Old=(Deaths/Population)*100000
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=State.Code
+    )-> diabetes.old
+
+diabetes.old$Notes = NULL
+
+#Import 2018-22 diabetes data set
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.State.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate.New=(Deaths/Population)*100000
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.State.Code
+    )-> diabetes.new
+
+diabetes.new$Notes = NULL
+
+#Merge data
+left_join(diabetes.old,diabetes.new, by='GEOID') -> diabetes
+
+#Calculate percent change & round to one decimal
+diabetes %>% mutate(Pct.Change=(Rate.New-Rate.Old)/Rate.Old,
+                    Pct.Change=round(Pct.Change, digits=3)) -> diabetes
+
+#Sort high to low percent change
+diabetes$State <- factor(diabetes$State) %>% 
+  fct_reorder(diabetes$Pct.Change)
+
+#Create horizontal bar chart
+ggplot(diabetes,aes(x=State, 
+                 y=Pct.Change, 
+                 fill=Pct.Change)) + 
+  geom_col(alpha=0.8) +   	#Alpha controls density of color, 
+  
+  #ggtitle("U.S. Diabetes Deaths by State Percent Change \n2013-2017 to 2018-2022") +
+  
+  #Creates breaks in graph & controls limits(min/max)
+  #scale_y_continuous(limits = c(-0.2, 0.7), breaks = c(-0.2,-0.1,0,0.1,0.2,0.3,0.4,0.5,0.6,0.7)) +
+  
+  #Flips graph from vertical bars to horizontal
+  coord_flip() +
+  labs(caption = "", 
+       y="Percent Change (%)",    		#Legend titles
+       x="") +
+  
+  #Create fill gradient in bars
+  scale_fill_gradient(name="Label",
+                      low = "#BFCEDB",
+                      high = "#003a70") + 	
+  
+  #Create average line
+  geom_hline(yintercept = mean(diabetes$Pct.Change), color="grey40", linewidth=1, alpha=.5) +
+  annotate('text', x=5, y=.179, color='grey40', fontface='bold', label="National Average") +
+  
+  #Control rate numbers on graph
+  geom_text(aes(label=(scales::percent(Pct.Change, accuracy=0.1))), color='black', size=3, fontface="bold", hjust=1.15, vjust=.35) + 
+                       #color = case_when(diabetes$State != 'Nevada' ~ 'black',
+                                      # diabetes$State == 'Nevada' ~ 'white')) +    		
+  
+  #Control graph theme
+  theme_minimal() +
+  theme(axis.text.x = element_text(color="gray20", 
+                                   size=10),
+        axis.text.y = element_text(color="black", 
+                                   size=10)) +
+  theme(legend.position = 'none')
+```
+
+# Ohio
+
+## Map 4: Diabetes Deaths by County, 2018-2022
+
+```{r map4, include=TRUE, fig.height=9, fig.width = 8}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/OH.Diabetes.County.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000,
+    Code = stringr::str_remove_all(Residence.County, " County, OH")
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.County.Code
+    )-> diabetes
+
+diabetes$Notes = NULL
+
+left_join(county,diabetes, by='GEOID') -> diabetes
+diabetes %>% filter(Rate!='NA') -> diabetes
+
+#Create data breaks
+breaks_j <- classIntervals(c(min(diabetes$Rate),       
+                             diabetes$Rate),n=3,        
+                           style="quantile")              
+
+diabetes <- mutate(diabetes,Breaks=cut(Rate,breaks_j$brks,include.lowest=TRUE))
+
+#Change legend category labels based on breaks
+c('13.8 - 36.5','36.6 - 45.5','45.6 - 88.3') -> legend.labels
+
+#Create map
+ggplot() +
+  
+  #ggtitle("Ohio Diabetes Deaths by County, 2018-2022") +
+  
+  geom_sf(data = diabetes, aes(fill = Breaks), color = "black",size=.4, alpha=1) +
+  
+  scale_fill_manual(values=c("#BFCEDB",
+                             
+                             "#6084A6",
+                             
+                             "#003a70"), na.value = "white", drop = FALSE, name="Rate per 100,000 population", label=legend.labels) +
+  
+  geom_sf_text(data=diabetes,aes(label= Code), size = 2.5, vjust = -.5,
+               color = case_when(diabetes$Breaks == '[13.8,36.6]' |
+                                 diabetes$Breaks == '(36.6,45.7]' ~ "black",
+                                 diabetes$Breaks == '(45.7,88.3]' ~ 'white')) +
+  #geom_sf_text(data=State,aes(label= round(Rate,2)), color = "black", size = 2.5, vjust = 1.2) +
+  
+  theme_void() +
+  
+  theme(
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  theme(legend.position = 'bottom')
+```
+
+## Figure 3: Diabetes Deaths by County, 2018-2022
+
+```{r figure3, include=TRUE, fig.height=15, fig.width = 8}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.County.2018-22.txt'
+  ) %>% 
+  mutate(
+    Deaths=as.numeric(Deaths),
+    Rate=(Deaths/Population)*100000,
+    Code = stringr::str_remove_all(Residence.County, " County, Ohio")
+    ) %>%
+  filter(
+    Notes=='') %>%
+  rename(
+    County=Residence.County
+    ) -> diabetes
+
+diabetes$Notes = NULL
+
+#Filter to OH only & create short name
+diabetes %>% filter(grepl('OH',County)) -> diabetes
+diabetes %>% mutate(Name=str_sub(County,1,-12)) -> diabetes
+
+#Create rank variable based on rate
+diabetes %>% mutate(Rank = dense_rank(Rate)) -> diabetes
+
+#Sort from high to low rate
+diabetes$Name <- factor(diabetes$Name) %>% 
+  fct_reorder(diabetes$Rate)
+
+#Create horizontal bar chart
+ggplot(diabetes,aes(x=Name, 
+                    y=Rate, 
+                    fill=Rate)) + 
+  geom_col(alpha=0.75) +   	#Alpha controls density of color, 
+  
+  #ggtitle("Ohio Diabetes Deaths by County, 2022") +
+  
+  #Creates breaks in graph & controls limits(min/max)
+  #scale_y_continuous(limits = c(-0.2, 0.7), breaks = c(-0.2,-0.1,0,0.1,0.2,0.3,0.4,0.5,0.6,0.7)) +
+  
+  #Flips graph from vertical bars to horizontal
+  coord_flip() +
+  labs(caption = "", 
+       y="Rate per 100,000 population",    		#Legend titles
+       x="") +
+  
+  #Create fill gradient in bars
+  scale_fill_gradient(name="Label",
+                      low = "#BFCEDB",
+                      high = "#003a70") + 	
+  
+  #Control rate numbers on graph
+  geom_text(aes(label=round(Rate,1)), color='black', size=2.9, fontface="bold", hjust=1.2, vjust=.35) +
+  
+  #Control graph theme
+  theme_minimal() +
+  theme(axis.text.x = element_text(color="gray20", 
+                                   size=10),
+        axis.text.y = element_text(color="black", 
+                                   size=10)) +
+  theme(legend.position = 'none')
+```
+
+## Map 5: Diabetes Deaths by County, 2013-2017
+
+```{r map5, include=TRUE, fig.height=8, fig.width = 8}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/OH.Diabetes.County.2013-17.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000,
+    Code = stringr::str_remove_all(County, " County, OH")
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=County.Code
+    )-> diabetes
+
+diabetes$Notes = NULL
+
+left_join(county,diabetes, by='GEOID') -> diabetes
+diabetes %>% filter(Rate!='NA') -> diabetes
+
+#Create data breaks
+breaks_j <- classIntervals(c(min(diabetes$Rate),       
+                             diabetes$Rate),n=3,        
+                           style="quantile")              
+
+diabetes <- mutate(diabetes,Breaks=cut(Rate,breaks_j$brks,include.lowest=TRUE))
+
+#Change legend category labels based on breaks
+c('12.4 - 30.7','30.8 - 37.2','37.3 - 61.5') -> legend.labels
+
+#Create map
+ggplot() +
+  
+  #ggtitle("Ohio Diabetes Deaths by County, 2013-2017") +
+  
+  geom_sf(data = diabetes, aes(fill = Breaks), color = "black",size=.4, alpha=1) +
+  
+  scale_fill_manual(values=c("#BFCEDB",
+                             
+                             "#6084A6",
+                             
+                             "#003a70"), na.value = "white", drop = FALSE, name="Rate per 100,000 population", label=legend.labels) +
+  
+  geom_sf_text(data=diabetes,aes(label= Code), size = 2.5, vjust = -.5,
+               color = case_when(diabetes$Breaks == '[12.4,30.8]' |
+                                 diabetes$Breaks == '(30.8,37.2]' ~ "black",
+                                 diabetes$Breaks == '(37.2,61.5]' ~ 'white')) +
+  #geom_sf_text(data=State,aes(label= round(Rate,2)), color = "black", size = 2.5, vjust = 1.2) +
+  
+  theme_void() +
+  
+  theme(
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  theme(legend.position = 'bottom')
+```
+
+## Figure 4: Diabetes Deaths by County, Percent Change from 2013-2017 to 2018-2022
+
+```{r figure4, include=TRUE, fig.height=15, fig.width = 8}
+
+#Import 2013-17 diabetes data set
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/OH.Diabetes.County.2013-17.txt'
+  ) %>%
+  mutate(
+    county = stringr::str_remove_all(County, " County, Ohio"),
+    Rate.Old = (Deaths/Population)*100000
+    ) %>%
+  filter(
+    Notes==''
+    ) %>%
+  rename(
+    GEOID = County.Code
+    ) -> diabetes.old
+
+#Import 2018-22 diabetes data set
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/OH.Diabetes.County.2018-22.txt'
+  ) %>%
+  mutate(
+    county = stringr::str_remove_all(Residence.County, " County, OH"),
+    Rate.New = (Deaths/Population)*100000
+    ) %>%
+  filter(
+    Notes == ''
+    ) %>%
+  rename(
+    GEOID = Residence.County.Code
+    ) -> diabetes.new
+
+#Merge data
+left_join(diabetes.old,diabetes.new, by='GEOID') -> diabetes
+
+#Calculate percent change & round to one decimal
+diabetes %>% mutate(Pct.Change=(Rate.New-Rate.Old)/Rate.Old,
+                    Pct.Change=round(Pct.Change, digits=3)) -> diabetes
+
+#Sort high to low percent change
+diabetes$county.y <- factor(diabetes$county.y) %>% 
+  fct_reorder(diabetes$Pct.Change)
+
+#Create horizontal bar chart
+ggplot(diabetes,aes(x=county.y, 
+                 y=Pct.Change, 
+                 fill=Pct.Change)) + 
+  geom_col(alpha=0.8) +   	#Alpha controls density of color, 
+  
+  #ggtitle("U.S. Diabetes Deaths by State Percent Change \n2013-2017 to 2018-2022") +
+  
+  #Creates breaks in graph & controls limits(min/max)
+  #scale_y_continuous(limits = c(-0.2, 0.7), breaks = c(-0.2,-0.1,0,0.1,0.2,0.3,0.4,0.5,0.6,0.7)) +
+  
+  #Flips graph from vertical bars to horizontal
+  coord_flip() +
+  labs(caption = "", 
+       y="Percent Change (%)",    		#Legend titles
+       x="") +
+  
+  #Create fill gradient in bars
+  scale_fill_gradient(name="Label",
+                      low = "#BFCEDB",
+                      high = "#003a70") + 	
+  
+  #Create average line
+  geom_hline(yintercept = mean(diabetes$Pct.Change), color="grey40", linewidth=1, alpha=.5) +
+  annotate('text', x=5, y=.285, color='grey40', fontface='bold', label="State Average") +
+  
+  #Control rate numbers on graph
+  geom_text(aes(label=(scales::percent(Pct.Change, accuracy=0.1))), color='black', size=3, fontface="bold", vjust=.35,
+            hjust= case_when(diabetes$Pct.Change > 0 ~ 1.15,
+                             diabetes$Pct.Change < 0 ~ -0.15)) + 
+                       #color = case_when(diabetes$State != 'Nevada' ~ 'black',
+                                      # diabetes$State == 'Nevada' ~ 'white')) +    		
+  
+  #Control graph theme
+  theme_minimal() +
+  theme(axis.text.x = element_text(color="gray20", 
+                                   size=10),
+        axis.text.y = element_text(color="black", 
+                                   size=10)) +
+  theme(legend.position = 'none')
+```
+
+## Map 6: Diabetes Deaths by Subregion, 2018-2022
+
+```{r map6, include=TRUE, fig.height=8, fig.width = 8}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/Diabetes.Central.OH.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000,
+    Code = stringr::str_remove_all(Residence.County, " County, OH"),
+    Region.Rate = 27.1
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.County.Code
+    ) %>%
+  mutate(
+    Notes = 'central'
+    ) -> central
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/Diabetes.NW.OH.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000,
+    Code = stringr::str_remove_all(Residence.County, " County, OH"),
+    Region.Rate = 41.2
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.County.Code
+    ) %>%
+  mutate(
+    Notes = 'nw'
+    ) -> nw
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/Diabetes.NE.OH.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000,
+    Code = stringr::str_remove_all(Residence.County, " County, OH"),
+    Region.Rate = 37.3
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.County.Code
+    ) %>%
+  mutate(
+    Notes = 'ne'
+    ) -> ne
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/Diabetes.SW.OH.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000,
+    Code = stringr::str_remove_all(Residence.County, " County, OH"),
+    Region.Rate = 32
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.County.Code
+    ) %>%
+  mutate(
+    Notes = 'sw'
+    ) -> sw
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/Diabetes.SE.OH.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate = (Deaths/Population)*100000,
+    Code = stringr::str_remove_all(Residence.County, " County, OH"),
+    Region.Rate = 55.5
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.County.Code
+    ) %>%
+  mutate(
+    Notes = 'se'
+    ) -> se
+
+rbind(central,nw,ne,sw,se) -> diabetes
+left_join(county,diabetes, by = 'GEOID') -> diabetes
+factor(diabetes$Region.Rate) -> diabetes$Region.Rate
+
+
+#Change legend category labels based on breaks
+c('27.1','32','37.3','41.2','55.5') -> legend.labels
+
+#Create map
+ggplot() +
+  
+  #ggtitle("Ohio Diabetes Deaths by Subregion, 2018-2022") +
+  
+  geom_sf(data = diabetes, aes(fill = Region.Rate), color = "black",size=.4, alpha=1) +
+  
+  scale_fill_manual(values=c("#BFCEDB",
+                             
+                             "#9FB5C9",
+                             
+                             "#6084A6",
+                             
+                             "#406B94",
+                             
+                             "#003a70"), na.value = "white", drop = FALSE, name="Rate per 100,000 population", label=legend.labels) +
+  
+  geom_sf_text(data=diabetes,aes(label= Code), size = 2.5, vjust = -.5,
+               color = case_when(diabetes$Region.Rate == 27.1 |
+                                 diabetes$Region.Rate == 32 | diabetes$Region.Rate == 37.3 ~ "black",
+                                 diabetes$Region.Rate == 41.2 | diabetes$Region.Rate == 55.5  ~ 'white')) +
+  #geom_sf_text(data=State,aes(label= round(Rate,2)), color = "black", size = 2.5, vjust = 1.2) +
+  
+  theme_void() +
+  
+  theme(
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank()) +
+  theme(legend.position = 'bottom')
+```
+
+## Figure 5: Diabetes Deaths by County Type, 20182-2022
+
+```{r include=TRUE}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/OH.Diabetes.County.2018-22.txt'
+  ) %>% 
+  mutate(
+    Rate=(Deaths/Population)*100000,
+    Code = stringr::str_remove_all(Residence.County, " County, OH")
+    ) %>%
+  filter(Notes==''
+  ) %>%
+  rename(
+    GEOID=Residence.County.Code
+    )-> diabetes
+
+diabetes$Notes = NULL
+
+readxl::read_excel(
+  '/Users/shelbylevel/Documents/github/diabetes/data/County Typologies.xlsx'
+  ) -> types
+
+left_join(county,diabetes, by='GEOID') -> diabetes
+diabetes %>% filter(Rate!='NA') -> diabetes
+left_join(diabetes,types, by = c('Code' = 'County')) -> diabetes
+
+diabetes %>%
+    group_by(`OMAS County Type`) %>%
+  summarise(
+    Type.Rate = mean(Rate, na.rm = TRUE)
+  ) %>%
+  ggplot(
+  aes(
+    x = `OMAS County Type`,
+    y = Type.Rate,
+    fill = `OMAS County Type`
+    )) + 
+  geom_col(
+    alpha=0.75, 
+    fill = c('#9FB5C9', '#003a70', '#406B94', '#BFCEDB')
+    ) +  
+  labs(caption = "", 
+       y="Rate per 100,000 population",
+       x="County Type") +
+  geom_text(aes(label=round(Type.Rate,1)), color='black', size=3, fontface="bold", vjust=1.5) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(color="gray20", 
+                                   size=10),
+        axis.text.y = element_text(color="black", 
+                                   size=10)) +
+  theme(legend.position = 'none')
+
+```
+
+# Tables
+
+## Table 1: Diabetes Deaths by State, 2022
+
+```{r include = TRUE}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.State.2022.txt'
+  ) %>%
+  filter(Notes == ''
+  ) %>%
+  rename(
+    State = Residence.State
+    ) %>%
+  mutate(
+    death.rate = (Deaths/Population)*100000,
+    state.rank = dense_rank(death.rate),
+    death.rate = round(death.rate, 1),
+    Deaths = comma(Deaths),
+    Population = comma(Population)
+    ) %>%
+  arrange(
+    -state.rank
+    ) %>%
+  select(
+    2,4,5,7,8
+  ) %>%
+  knitr::kable(
+    caption = 'Death rate per 100,000 population',
+    col.names = c('State', 'Deaths', 'Population', 'Death Rate', 'State Rank')
+  ) %>%
+  kableExtra::kable_styling(
+    full_width = TRUE,
+    'striped'
+  )
+
+```
+
+## Table 2: Ohio Diabetes Deaths by County, 2018-2022
+
+```{r include=TRUE}
+
+read.delim(
+  '/Users/shelbylevel/Documents/github/diabetes/data/US.Diabetes.County.2018-22.txt'
+  ) %>%
+  filter(Notes == ''
+  ) %>%
+  mutate(
+    Deaths = as.numeric(Deaths),
+    Rate = (Deaths/Population)*100000,
+    National.Rank = dense_rank(Rate),
+    Deaths = comma(Deaths),
+    Population = comma(Population)
+    ) %>%
+  filter(
+    grepl(
+      'OH', Residence.County)
+  ) %>%
+  mutate(
+    Residence.County = stringr::str_remove_all(Residence.County, " County, OH")
+  ) %>%
+  arrange(
+    -National.Rank
+    ) %>%
+  mutate(
+    National.Rank = comma(National.Rank),
+    State.Rank = dense_rank(Rate),
+    Rate = round(Rate, 1)
+  ) %>%
+  select(
+    2,4,5,7,9,8
+  ) %>%
+  knitr::kable(
+    caption = 'Death rate per 100,000 population / National rank out of 2,824 counties',
+    col.names = c('State', 'Deaths', 'Population', 'Death Rate', 'Ohio Rank', 'National Rank')
+  ) %>%
+  kableExtra::kable_styling(
+    full_width = TRUE,
+    'striped'
+  )
+
+```
+
+# Demographics
+
+## Table 3: Diabetes Deaths by Race, 2022
+
+```{r include=TRUE}
+
+readxl::read_excel(
+  '/Users/shelbylevel/Documents/github/diabetes/data/diabetes.race.2022.xlsx'
+  ) %>%
+  knitr::kable(
+    caption = 'Death rates per 100,000 population',
+    col.names = c('Race', 'U.S. Death Rate', 'Ohio Death Rate')
+  ) %>%
+  kableExtra::kable_styling(
+    full_width = TRUE,
+    'striped'
+  )
+
+```
+
+## Table 4: Diabetes Deaths by Hispanic Origin, 2022
+
+```{r include=TRUE}
+
+readxl::read_excel(
+  '/Users/shelbylevel/Documents/github/diabetes/data/diabetes.hispanic.2022.xlsx'
+  ) %>%
+  knitr::kable(
+    caption = 'Death rates per 100,000 population',
+    col.names = c('Hispanic Origin', 'U.S. Death Rate', 'Ohio Death Rate')
+  ) %>%
+  kableExtra::kable_styling(
+    full_width = TRUE,
+    'striped'
+  )
+
+```
+
+## Table 5: Diabetes Deaths by Sex, 2022
+
+```{r include=TRUE}
+
+readxl::read_excel(
+  '/Users/shelbylevel/Documents/github/diabetes/data/diabetes.sex.2022.xlsx'
+  ) %>%
+  knitr::kable(
+    caption = 'Death rates per 100,000 population',
+    col.names = c('Sex', 'U.S. Death Rate', 'Ohio Death Rate')
+  ) %>%
+  kableExtra::kable_styling(
+    full_width = TRUE,
+    'striped'
+  )
+
+```
+
+## Table 6: Diabetes Deaths by Age, 2022
+
+```{r include=TRUE}
+
+readxl::read_excel(
+  '/Users/shelbylevel/Documents/github/diabetes/data/diabetes.age.2022.xlsx'
+  ) %>%
+  knitr::kable(
+    caption = 'Death rates per 100,000 population',
+    col.names = c('Ten Year Age Group', 'U.S. Death Rate', 'Ohio Death Rate')
+  ) %>%
+  kableExtra::kable_styling(
+    full_width = TRUE,
+    'striped'
+  )
+
+```

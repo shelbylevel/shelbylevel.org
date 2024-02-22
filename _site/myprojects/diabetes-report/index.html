@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ohio Alliance for Population Health">
+<meta name="author" content="Shelby Level">
+<meta name="author" content="Elizabeth Beverly, PhD">
+<meta name="author" content="Richard Hodges">
+<meta name="dcterms.date" content="2024-01-24">
+<meta name="description" content="Exploring diabetes mortality data at the national, state, and local levels">
+
+<title>Diabetes Mortality Statistics: United States and Ohio</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logos/sl_sticker.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../css/sl-lux-bootstrap.css">
+<link rel="stylesheet" href="../css/sl_theme.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../logos/white-sl-logo-final-crop.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../myprojects.html"> 
+<span class="menu-text">Past Projects</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/shelbylevel"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/shelby-level-ches-791791232/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <h1 class="title">Diabetes Mortality Statistics: United States and Ohio</h1>
+                  <div>
+        <div class="description">
+          Exploring diabetes mortality data at the national, state, and local levels
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Diabetes</div>
+                <div class="quarto-category">Public Health</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-right">
+
+      <div>
+      <div class="quarto-title-meta-heading">Authors</div>
+      <div class="quarto-title-meta-contents">
+               <p><strong>Ohio Alliance for Population Health</strong> </p>
+               <p><a href="https://github.com/shelbylevel">Shelby Level</a> </p>
+               <p>Elizabeth Beverly, PhD </p>
+               <p>Richard Hodges </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 24, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#united-states" id="toc-united-states" class="nav-link" data-scroll-target="#united-states">United States</a>
+  <ul class="collapse">
+  <li><a href="#map-1-diabetes-deaths-by-state-2022" id="toc-map-1-diabetes-deaths-by-state-2022" class="nav-link" data-scroll-target="#map-1-diabetes-deaths-by-state-2022">Map 1: Diabetes Deaths by State, 2022</a></li>
+  <li><a href="#figure-1-diabetes-deaths-by-state-2022" id="toc-figure-1-diabetes-deaths-by-state-2022" class="nav-link" data-scroll-target="#figure-1-diabetes-deaths-by-state-2022">Figure 1: Diabetes Deaths by State, 2022</a></li>
+  <li><a href="#map-2-diabetes-deaths-by-state-2018-2022" id="toc-map-2-diabetes-deaths-by-state-2018-2022" class="nav-link" data-scroll-target="#map-2-diabetes-deaths-by-state-2018-2022">Map 2: Diabetes Deaths by State, 2018-2022</a></li>
+  <li><a href="#map-3-diabetes-deaths-by-state-2013-2017" id="toc-map-3-diabetes-deaths-by-state-2013-2017" class="nav-link" data-scroll-target="#map-3-diabetes-deaths-by-state-2013-2017">Map 3: Diabetes Deaths by State, 2013-2017</a></li>
+  <li><a href="#figure-2-diabetes-deaths-by-state-percent-change-from-2013-2017-to-2018-2022" id="toc-figure-2-diabetes-deaths-by-state-percent-change-from-2013-2017-to-2018-2022" class="nav-link" data-scroll-target="#figure-2-diabetes-deaths-by-state-percent-change-from-2013-2017-to-2018-2022">Figure 2: Diabetes Deaths by State, Percent Change from 2013-2017 to 2018-2022</a></li>
+  </ul></li>
+  <li><a href="#ohio" id="toc-ohio" class="nav-link" data-scroll-target="#ohio">Ohio</a>
+  <ul class="collapse">
+  <li><a href="#map-4-diabetes-deaths-by-county-2018-2022" id="toc-map-4-diabetes-deaths-by-county-2018-2022" class="nav-link" data-scroll-target="#map-4-diabetes-deaths-by-county-2018-2022">Map 4: Diabetes Deaths by County, 2018-2022</a></li>
+  <li><a href="#figure-3-diabetes-deaths-by-county-2018-2022" id="toc-figure-3-diabetes-deaths-by-county-2018-2022" class="nav-link" data-scroll-target="#figure-3-diabetes-deaths-by-county-2018-2022">Figure 3: Diabetes Deaths by County, 2018-2022</a></li>
+  <li><a href="#map-5-diabetes-deaths-by-county-2013-2017" id="toc-map-5-diabetes-deaths-by-county-2013-2017" class="nav-link" data-scroll-target="#map-5-diabetes-deaths-by-county-2013-2017">Map 5: Diabetes Deaths by County, 2013-2017</a></li>
+  <li><a href="#figure-4-diabetes-deaths-by-county-percent-change-from-2013-2017-to-2018-2022" id="toc-figure-4-diabetes-deaths-by-county-percent-change-from-2013-2017-to-2018-2022" class="nav-link" data-scroll-target="#figure-4-diabetes-deaths-by-county-percent-change-from-2013-2017-to-2018-2022">Figure 4: Diabetes Deaths by County, Percent Change from 2013-2017 to 2018-2022</a></li>
+  <li><a href="#map-6-diabetes-deaths-by-subregion-2018-2022" id="toc-map-6-diabetes-deaths-by-subregion-2018-2022" class="nav-link" data-scroll-target="#map-6-diabetes-deaths-by-subregion-2018-2022">Map 6: Diabetes Deaths by Subregion, 2018-2022</a></li>
+  <li><a href="#figure-5-diabetes-deaths-by-county-type-20182-2022" id="toc-figure-5-diabetes-deaths-by-county-type-20182-2022" class="nav-link" data-scroll-target="#figure-5-diabetes-deaths-by-county-type-20182-2022">Figure 5: Diabetes Deaths by County Type, 20182-2022</a></li>
+  </ul></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a>
+  <ul class="collapse">
+  <li><a href="#table-1-diabetes-deaths-by-state-2022" id="toc-table-1-diabetes-deaths-by-state-2022" class="nav-link" data-scroll-target="#table-1-diabetes-deaths-by-state-2022">Table 1: Diabetes Deaths by State, 2022</a></li>
+  <li><a href="#table-2-ohio-diabetes-deaths-by-county-2018-2022" id="toc-table-2-ohio-diabetes-deaths-by-county-2018-2022" class="nav-link" data-scroll-target="#table-2-ohio-diabetes-deaths-by-county-2018-2022">Table 2: Ohio Diabetes Deaths by County, 2018-2022</a></li>
+  </ul></li>
+  <li><a href="#demographics" id="toc-demographics" class="nav-link" data-scroll-target="#demographics">Demographics</a>
+  <ul class="collapse">
+  <li><a href="#table-3-diabetes-deaths-by-race-2022" id="toc-table-3-diabetes-deaths-by-race-2022" class="nav-link" data-scroll-target="#table-3-diabetes-deaths-by-race-2022">Table 3: Diabetes Deaths by Race, 2022</a></li>
+  <li><a href="#table-4-diabetes-deaths-by-hispanic-origin-2022" id="toc-table-4-diabetes-deaths-by-hispanic-origin-2022" class="nav-link" data-scroll-target="#table-4-diabetes-deaths-by-hispanic-origin-2022">Table 4: Diabetes Deaths by Hispanic Origin, 2022</a></li>
+  <li><a href="#table-5-diabetes-deaths-by-sex-2022" id="toc-table-5-diabetes-deaths-by-sex-2022" class="nav-link" data-scroll-target="#table-5-diabetes-deaths-by-sex-2022">Table 5: Diabetes Deaths by Sex, 2022</a></li>
+  <li><a href="#table-6-diabetes-deaths-by-age-2022" id="toc-table-6-diabetes-deaths-by-age-2022" class="nav-link" data-scroll-target="#table-6-diabetes-deaths-by-age-2022">Table 6: Diabetes Deaths by Age, 2022</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+
+
+
+
+
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>The OHIO Alliance for Population Health (OAPH) is a statewide collaborative focused on improving the health of all Ohioans by solving the most complex and pressing population health concerns across the state. In line with OAPH’s overarching mission, this report aims to identify disparities in diabetes mortality among Ohioans and consider how these disparities can be addressed to improve health and well-being across the state.</p>
+</section>
+<section id="key-findings" class="level1">
+<h1>Key Findings</h1>
+<ul>
+<li><p>West Virginia had the highest diabetes mortality rate of any state in 2022 with 59.2 deaths per 100,000 population, 94.1% higher than the national average.</p></li>
+<li><p>Ohio ranked 41st (out of 51 states, with rank 1 indicating the lowest rate) in diabetes mortality in 2022 with a reported rate of 36.2 deaths per 100,000 population, 18.7% higher than the national average.</p></li>
+<li><p>Nevada saw the largest increase in diabetes mortality (63.2%) between 2013-2017 and 2018-2022.</p></li>
+<li><p>Vermont is the only state that saw a decrease in diabetes deaths (-1.1%) between 2013-2017 and 2018-2022.</p></li>
+<li><p>Coshocton County saw the largest increase in diabetes mortality in Ohio (159.3%) between 2013-2017 and 2018-2022.</p></li>
+<li><p>There were 15 counties in Ohio that saw a decrease in diabetes mortality between 2013-2017 and 2018-2022., with Miami, Madison, Monroe, Meigs, and Licking Counties experiencing the highest reductions.</p></li>
+<li><p>In 2018-2022 Southeast Ohio had the highest diabetes mortality rate in the state with 55.5 deaths per 100,000 population, 82% higher than the state average.</p></li>
+<li><p>In 2018-2022 Central Ohio had the lowest diabetes death rate in the state with 27.1 deaths per 100,000 population, 11.1% lower than the state average.</p></li>
+<li><p>In 2018-2022 Delaware County had the lowest diabetes death rate in Ohio and ranked 56th (out of 2,824) in diabetes mortality among all United States counties with a rate of 13.8 deaths per 100,000 population.</p></li>
+<li><p>In 2018-2022 Vinton County had the highest diabetes death rate in Ohio and ranked 2,743rd (out of 2,824) in diabetes mortality among all United States counties with a rate of 88.3 deaths per 100,000 population.</p></li>
+</ul>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<p>This report examines diabetes mellitus deaths across national, state, and local levels over an extended period of time.</p>
+<p>CDC WONDER collects and maintains data regarding deaths and their causes. All data were extracted from CDC WONDER using provisional<span class="citation" data-cites="centersfordiseasecontrolandpreventioncdcMultipleCauseDeath"><sup><a href="#ref-centersfordiseasecontrolandpreventioncdcMultipleCauseDeath" role="doc-biblioref">1</a></sup></span> or final mortality data<span class="citation" data-cites="MultipleCauseDeath"><sup><a href="#ref-MultipleCauseDeath" role="doc-biblioref">2</a></sup></span>.</p>
+<p>All maps, graphs, and other figures for the United States and Ohio that are presented in this report were produced using R<span class="citation" data-cites="rcoreteamLanguageEnvironmentStatistical2023a"><sup><a href="#ref-rcoreteamLanguageEnvironmentStatistical2023a" role="doc-biblioref">3</a></sup></span>, RStudio<span class="citation" data-cites="positteamRStudioIntegratedDevelopment2024a"><sup><a href="#ref-positteamRStudioIntegratedDevelopment2024a" role="doc-biblioref">4</a></sup></span>, ggplot2<span class="citation" data-cites="wickhamGgplot2ElegantGraphics2016a"><sup><a href="#ref-wickhamGgplot2ElegantGraphics2016a" role="doc-biblioref">5</a></sup></span>, sf<span class="citation" data-cites="pebesmaSpatialDataScience2023"><sup><a href="#ref-pebesmaSpatialDataScience2023" role="doc-biblioref">6</a></sup></span> <span class="citation" data-cites="pebesmaSimpleFeaturesStandardized2018a"><sup><a href="#ref-pebesmaSimpleFeaturesStandardized2018a" role="doc-biblioref">7</a></sup></span>, tidyverse<span class="citation" data-cites="wickhamWelcomeTidyverse2019a"><sup><a href="#ref-wickhamWelcomeTidyverse2019a" role="doc-biblioref">8</a></sup></span>, and tidycensus<span class="citation" data-cites="walkerTidycensusLoadUS2024"><sup><a href="#ref-walkerTidycensusLoadUS2024" role="doc-biblioref">9</a></sup></span>.</p>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>Diabetes was the eight-leading cause of death in the United States last year (2022), killing more than 100,000 Americans. This chronic health condition is characterized by high blood sugar (hyperglycemia) and caused by reduced amounts of insulin produced by the pancreas or the body not responding properly to the effects of insulin<span class="citation" data-cites="Diabetes2023"><sup><a href="#ref-Diabetes2023" role="doc-biblioref">10</a></sup></span>. Despite all forms of diabetes being manageable with lifestyle changes and/or medications, death rates continue to rise in the United States due to sedentary lifestyles, unhealthy diets, and an aging population<span class="citation" data-cites="WhatDiabetes2023"><sup><a href="#ref-WhatDiabetes2023" role="doc-biblioref">11</a></sup></span>. In the past decade the United States saw a 27.6% increase in diabetes mortality with only one state, Vermont, seeing death rates fall during the past five years.</p>
+<p>Similarly, Ohio experienced a roughly 18% increase in diabetes mortality over the past decade and ranked 41 out of 51 states in 2022 with a reported rate (36.2 deaths per 100,000 population) 19% higher than the national average. However, not all Ohioans are at equal risk of dying from diabetes. Nine out of ten counties with the highest mortality rates in Ohio are located in Appalachia, and residents of rural Appalachian counties are 1.7 times as likely to die from diabetes than their suburban counterparts.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Diabetes is a serious condition that can affect a person’s heart, blood vessels, nerves, eyes, and kidneys. It will be the next major epidemic we face as a society and we know that rates of diabetes are much higher in southeast Ohio than other parts of the state and country. Findings from this report draw attention to the disparities that rural Appalachians face on a daily basis and existing inequalities will only accelerate the diabetes crisis that ultimately influences health outcomes and mortality. Depicting diabetes deaths by subregions in Ohio emphasizes the critical need to facilitate collaborations on the local, regional, state, and national level to improve diabetes care and address barriers that contribute to these high mortality rates.</p>
+</section>
+<section id="united-states" class="level1">
+<h1>United States</h1>
+<section id="map-1-diabetes-deaths-by-state-2022" class="level2">
+<h2 class="anchored" data-anchor-id="map-1-diabetes-deaths-by-state-2022">Map 1: Diabetes Deaths by State, 2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/map1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-1-diabetes-deaths-by-state-2022" class="level2">
+<h2 class="anchored" data-anchor-id="figure-1-diabetes-deaths-by-state-2022">Figure 1: Diabetes Deaths by State, 2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/figure1-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="map-2-diabetes-deaths-by-state-2018-2022" class="level2">
+<h2 class="anchored" data-anchor-id="map-2-diabetes-deaths-by-state-2018-2022">Map 2: Diabetes Deaths by State, 2018-2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/map2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="map-3-diabetes-deaths-by-state-2013-2017" class="level2">
+<h2 class="anchored" data-anchor-id="map-3-diabetes-deaths-by-state-2013-2017">Map 3: Diabetes Deaths by State, 2013-2017</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/map3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-2-diabetes-deaths-by-state-percent-change-from-2013-2017-to-2018-2022" class="level2">
+<h2 class="anchored" data-anchor-id="figure-2-diabetes-deaths-by-state-percent-change-from-2013-2017-to-2018-2022">Figure 2: Diabetes Deaths by State, Percent Change from 2013-2017 to 2018-2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/figure2-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ohio" class="level1">
+<h1>Ohio</h1>
+<section id="map-4-diabetes-deaths-by-county-2018-2022" class="level2">
+<h2 class="anchored" data-anchor-id="map-4-diabetes-deaths-by-county-2018-2022">Map 4: Diabetes Deaths by County, 2018-2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/map4-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-3-diabetes-deaths-by-county-2018-2022" class="level2">
+<h2 class="anchored" data-anchor-id="figure-3-diabetes-deaths-by-county-2018-2022">Figure 3: Diabetes Deaths by County, 2018-2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/figure3-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="map-5-diabetes-deaths-by-county-2013-2017" class="level2">
+<h2 class="anchored" data-anchor-id="map-5-diabetes-deaths-by-county-2013-2017">Map 5: Diabetes Deaths by County, 2013-2017</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/map5-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-4-diabetes-deaths-by-county-percent-change-from-2013-2017-to-2018-2022" class="level2">
+<h2 class="anchored" data-anchor-id="figure-4-diabetes-deaths-by-county-percent-change-from-2013-2017-to-2018-2022">Figure 4: Diabetes Deaths by County, Percent Change from 2013-2017 to 2018-2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/figure4-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="map-6-diabetes-deaths-by-subregion-2018-2022" class="level2">
+<h2 class="anchored" data-anchor-id="map-6-diabetes-deaths-by-subregion-2018-2022">Map 6: Diabetes Deaths by Subregion, 2018-2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/map6-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="figure-5-diabetes-deaths-by-county-type-20182-2022" class="level2">
+<h2 class="anchored" data-anchor-id="figure-5-diabetes-deaths-by-county-type-20182-2022">Figure 5: Diabetes Deaths by County Type, 20182-2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="tables" class="level1">
+<h1>Tables</h1>
+<section id="table-1-diabetes-deaths-by-state-2022" class="level2">
+<h2 class="anchored" data-anchor-id="table-1-diabetes-deaths-by-state-2022">Table 1: Diabetes Deaths by State, 2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<caption>Death rate per 100,000 population</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">State</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Deaths</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Population</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Death Rate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">State Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">West Virginia</td>
+<td style="text-align: left;">1,056</td>
+<td style="text-align: left;">1,782,959</td>
+<td style="text-align: right;">59.2</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arkansas</td>
+<td style="text-align: left;">1,397</td>
+<td style="text-align: left;">3,025,891</td>
+<td style="text-align: right;">46.2</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maine</td>
+<td style="text-align: left;">603</td>
+<td style="text-align: left;">1,372,247</td>
+<td style="text-align: right;">43.9</td>
+<td style="text-align: right;">49</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mississippi</td>
+<td style="text-align: left;">1,256</td>
+<td style="text-align: left;">2,949,965</td>
+<td style="text-align: right;">42.6</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New Mexico</td>
+<td style="text-align: left;">859</td>
+<td style="text-align: left;">2,115,877</td>
+<td style="text-align: right;">40.6</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oklahoma</td>
+<td style="text-align: left;">1,586</td>
+<td style="text-align: left;">3,986,639</td>
+<td style="text-align: right;">39.8</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tennessee</td>
+<td style="text-align: left;">2,722</td>
+<td style="text-align: left;">6,975,218</td>
+<td style="text-align: right;">39.0</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">South Dakota</td>
+<td style="text-align: left;">339</td>
+<td style="text-align: left;">895,376</td>
+<td style="text-align: right;">37.9</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kentucky</td>
+<td style="text-align: left;">1,668</td>
+<td style="text-align: left;">4,509,394</td>
+<td style="text-align: right;">37.0</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indiana</td>
+<td style="text-align: left;">2,493</td>
+<td style="text-align: left;">6,805,985</td>
+<td style="text-align: right;">36.6</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ohio</td>
+<td style="text-align: left;">4,267</td>
+<td style="text-align: left;">11,780,017</td>
+<td style="text-align: right;">36.2</td>
+<td style="text-align: right;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Delaware</td>
+<td style="text-align: left;">361</td>
+<td style="text-align: left;">1,003,384</td>
+<td style="text-align: right;">36.0</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Louisiana</td>
+<td style="text-align: left;">1,653</td>
+<td style="text-align: left;">4,624,047</td>
+<td style="text-align: right;">35.7</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">North Carolina</td>
+<td style="text-align: left;">3,721</td>
+<td style="text-align: left;">10,551,162</td>
+<td style="text-align: right;">35.3</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Florida</td>
+<td style="text-align: left;">7,549</td>
+<td style="text-align: left;">21,781,128</td>
+<td style="text-align: right;">34.7</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">South Carolina</td>
+<td style="text-align: left;">1,783</td>
+<td style="text-align: left;">5,190,705</td>
+<td style="text-align: right;">34.3</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oregon</td>
+<td style="text-align: left;">1,456</td>
+<td style="text-align: left;">4,246,155</td>
+<td style="text-align: right;">34.3</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Michigan</td>
+<td style="text-align: left;">3,419</td>
+<td style="text-align: left;">10,050,811</td>
+<td style="text-align: right;">34.0</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Arizona</td>
+<td style="text-align: left;">2,423</td>
+<td style="text-align: left;">7,276,316</td>
+<td style="text-align: right;">33.3</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Virginia</td>
+<td style="text-align: left;">2,875</td>
+<td style="text-align: left;">8,642,274</td>
+<td style="text-align: right;">33.3</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kansas</td>
+<td style="text-align: left;">963</td>
+<td style="text-align: left;">2,934,582</td>
+<td style="text-align: right;">32.8</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New Hampshire</td>
+<td style="text-align: left;">454</td>
+<td style="text-align: left;">1,388,992</td>
+<td style="text-align: right;">32.7</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Alabama</td>
+<td style="text-align: left;">1,645</td>
+<td style="text-align: left;">5,039,877</td>
+<td style="text-align: right;">32.6</td>
+<td style="text-align: right;">29</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pennsylvania</td>
+<td style="text-align: left;">4,124</td>
+<td style="text-align: left;">12,964,056</td>
+<td style="text-align: right;">31.8</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Iowa</td>
+<td style="text-align: left;">1,009</td>
+<td style="text-align: left;">3,193,079</td>
+<td style="text-align: right;">31.6</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wyoming</td>
+<td style="text-align: left;">180</td>
+<td style="text-align: left;">578,803</td>
+<td style="text-align: right;">31.1</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Missouri</td>
+<td style="text-align: left;">1,878</td>
+<td style="text-align: left;">6,168,187</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">North Dakota</td>
+<td style="text-align: left;">234</td>
+<td style="text-align: left;">774,948</td>
+<td style="text-align: right;">30.2</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Montana</td>
+<td style="text-align: left;">329</td>
+<td style="text-align: left;">1,104,271</td>
+<td style="text-align: right;">29.8</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">California</td>
+<td style="text-align: left;">11,615</td>
+<td style="text-align: left;">39,237,836</td>
+<td style="text-align: right;">29.6</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maryland</td>
+<td style="text-align: left;">1,795</td>
+<td style="text-align: left;">6,165,129</td>
+<td style="text-align: right;">29.1</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nevada</td>
+<td style="text-align: left;">898</td>
+<td style="text-align: left;">3,143,991</td>
+<td style="text-align: right;">28.6</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Washington</td>
+<td style="text-align: left;">2,198</td>
+<td style="text-align: left;">7,738,692</td>
+<td style="text-align: right;">28.4</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Vermont</td>
+<td style="text-align: left;">179</td>
+<td style="text-align: left;">645,570</td>
+<td style="text-align: right;">27.7</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nebraska</td>
+<td style="text-align: left;">539</td>
+<td style="text-align: left;">1,963,692</td>
+<td style="text-align: right;">27.4</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Illinois</td>
+<td style="text-align: left;">3,463</td>
+<td style="text-align: left;">12,671,469</td>
+<td style="text-align: right;">27.3</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rhode Island</td>
+<td style="text-align: left;">293</td>
+<td style="text-align: left;">1,095,610</td>
+<td style="text-align: right;">26.7</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Texas</td>
+<td style="text-align: left;">7,851</td>
+<td style="text-align: left;">29,527,941</td>
+<td style="text-align: right;">26.6</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Minnesota</td>
+<td style="text-align: left;">1,514</td>
+<td style="text-align: left;">5,707,390</td>
+<td style="text-align: right;">26.5</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wisconsin</td>
+<td style="text-align: left;">1,489</td>
+<td style="text-align: left;">5,895,908</td>
+<td style="text-align: right;">25.3</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hawaii</td>
+<td style="text-align: left;">363</td>
+<td style="text-align: left;">1,441,553</td>
+<td style="text-align: right;">25.2</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">184</td>
+<td style="text-align: left;">732,673</td>
+<td style="text-align: right;">25.1</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Georgia</td>
+<td style="text-align: left;">2,691</td>
+<td style="text-align: left;">10,799,566</td>
+<td style="text-align: right;">24.9</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Idaho</td>
+<td style="text-align: left;">473</td>
+<td style="text-align: left;">1,900,923</td>
+<td style="text-align: right;">24.9</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New York</td>
+<td style="text-align: left;">4,786</td>
+<td style="text-align: left;">19,835,913</td>
+<td style="text-align: right;">24.1</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Utah</td>
+<td style="text-align: left;">763</td>
+<td style="text-align: left;">3,337,975</td>
+<td style="text-align: right;">22.9</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New Jersey</td>
+<td style="text-align: left;">2,099</td>
+<td style="text-align: left;">9,267,130</td>
+<td style="text-align: right;">22.6</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Massachusetts</td>
+<td style="text-align: left;">1,503</td>
+<td style="text-align: left;">6,984,723</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Colorado</td>
+<td style="text-align: left;">1,214</td>
+<td style="text-align: left;">5,812,069</td>
+<td style="text-align: right;">20.9</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Connecticut</td>
+<td style="text-align: left;">746</td>
+<td style="text-align: left;">3,605,597</td>
+<td style="text-align: right;">20.7</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">District of Columbia</td>
+<td style="text-align: left;">123</td>
+<td style="text-align: left;">670,050</td>
+<td style="text-align: right;">18.4</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="table-2-ohio-diabetes-deaths-by-county-2018-2022" class="level2">
+<h2 class="anchored" data-anchor-id="table-2-ohio-diabetes-deaths-by-county-2018-2022">Table 2: Ohio Diabetes Deaths by County, 2018-2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<caption>Death rate per 100,000 population / National rank out of 2,824 counties</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">State</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Deaths</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Population</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Death Rate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ohio Rank</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">National Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Vinton</td>
+<td style="text-align: left;">57</td>
+<td style="text-align: left;">64,588</td>
+<td style="text-align: right;">88.3</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: left;">2,744</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tuscarawas</td>
+<td style="text-align: left;">404</td>
+<td style="text-align: left;">460,939</td>
+<td style="text-align: right;">87.6</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: left;">2,740</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jackson</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">162,312</td>
+<td style="text-align: right;">73.9</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: left;">2,646</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Scioto</td>
+<td style="text-align: left;">272</td>
+<td style="text-align: left;">371,855</td>
+<td style="text-align: right;">73.1</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: left;">2,639</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Belmont</td>
+<td style="text-align: left;">242</td>
+<td style="text-align: left;">332,141</td>
+<td style="text-align: right;">72.9</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: left;">2,633</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Coshocton</td>
+<td style="text-align: left;">127</td>
+<td style="text-align: left;">182,914</td>
+<td style="text-align: right;">69.4</td>
+<td style="text-align: right;">83</td>
+<td style="text-align: left;">2,596</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Williams</td>
+<td style="text-align: left;">124</td>
+<td style="text-align: left;">183,493</td>
+<td style="text-align: right;">67.6</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: left;">2,560</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Morgan</td>
+<td style="text-align: left;">47</td>
+<td style="text-align: left;">70,781</td>
+<td style="text-align: right;">66.4</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: left;">2,542</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Harrison</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">74,182</td>
+<td style="text-align: right;">66.1</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: left;">2,537</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lawrence</td>
+<td style="text-align: left;">187</td>
+<td style="text-align: left;">293,310</td>
+<td style="text-align: right;">63.8</td>
+<td style="text-align: right;">79</td>
+<td style="text-align: left;">2,507</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ross</td>
+<td style="text-align: left;">239</td>
+<td style="text-align: left;">383,799</td>
+<td style="text-align: right;">62.3</td>
+<td style="text-align: right;">78</td>
+<td style="text-align: left;">2,470</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Guernsey</td>
+<td style="text-align: left;">119</td>
+<td style="text-align: left;">193,250</td>
+<td style="text-align: right;">61.6</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: left;">2,453</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jefferson</td>
+<td style="text-align: left;">195</td>
+<td style="text-align: left;">325,609</td>
+<td style="text-align: right;">59.9</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: left;">2,419</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Carroll</td>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">134,274</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: left;">2,412</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Washington</td>
+<td style="text-align: left;">175</td>
+<td style="text-align: left;">298,564</td>
+<td style="text-align: right;">58.6</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: left;">2,389</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shelby</td>
+<td style="text-align: left;">140</td>
+<td style="text-align: left;">241,508</td>
+<td style="text-align: right;">58.0</td>
+<td style="text-align: right;">73</td>
+<td style="text-align: left;">2,371</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Paulding</td>
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">93,822</td>
+<td style="text-align: right;">55.4</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: left;">2,294</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Crawford</td>
+<td style="text-align: left;">114</td>
+<td style="text-align: left;">207,890</td>
+<td style="text-align: right;">54.8</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: left;">2,278</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Clark</td>
+<td style="text-align: left;">367</td>
+<td style="text-align: left;">673,527</td>
+<td style="text-align: right;">54.5</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">2,268</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Monroe</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: left;">67,688</td>
+<td style="text-align: right;">53.2</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: left;">2,237</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Columbiana</td>
+<td style="text-align: left;">261</td>
+<td style="text-align: left;">508,286</td>
+<td style="text-align: right;">51.3</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: left;">2,165</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sandusky</td>
+<td style="text-align: left;">149</td>
+<td style="text-align: left;">293,098</td>
+<td style="text-align: right;">50.8</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: left;">2,147</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marion</td>
+<td style="text-align: left;">165</td>
+<td style="text-align: left;">325,751</td>
+<td style="text-align: right;">50.7</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: left;">2,139</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Meigs</td>
+<td style="text-align: left;">57</td>
+<td style="text-align: left;">112,789</td>
+<td style="text-align: right;">50.5</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: left;">2,130</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Clinton</td>
+<td style="text-align: left;">104</td>
+<td style="text-align: left;">209,954</td>
+<td style="text-align: right;">49.5</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: left;">2,088</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pike</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">137,712</td>
+<td style="text-align: right;">47.2</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: left;">1,994</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mahoning</td>
+<td style="text-align: left;">526</td>
+<td style="text-align: left;">1,137,924</td>
+<td style="text-align: right;">46.2</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: left;">1,956</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Noble</td>
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">71,494</td>
+<td style="text-align: right;">46.2</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: left;">1,951</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fayette</td>
+<td style="text-align: left;">66</td>
+<td style="text-align: left;">143,582</td>
+<td style="text-align: right;">46.0</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">1,940</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Highland</td>
+<td style="text-align: left;">99</td>
+<td style="text-align: left;">216,231</td>
+<td style="text-align: right;">45.8</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: left;">1,934</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Logan</td>
+<td style="text-align: left;">104</td>
+<td style="text-align: left;">228,426</td>
+<td style="text-align: right;">45.5</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: left;">1,917</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Defiance</td>
+<td style="text-align: left;">85</td>
+<td style="text-align: left;">190,318</td>
+<td style="text-align: right;">44.7</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: left;">1,867</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Trumbull</td>
+<td style="text-align: left;">444</td>
+<td style="text-align: left;">996,071</td>
+<td style="text-align: right;">44.6</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: left;">1,862</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adams</td>
+<td style="text-align: left;">61</td>
+<td style="text-align: left;">138,037</td>
+<td style="text-align: right;">44.2</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: left;">1,844</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wyandot</td>
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">108,834</td>
+<td style="text-align: right;">44.1</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: left;">1,834</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hardin</td>
+<td style="text-align: left;">68</td>
+<td style="text-align: left;">155,556</td>
+<td style="text-align: right;">43.7</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: left;">1,818</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ashtabula</td>
+<td style="text-align: left;">212</td>
+<td style="text-align: left;">485,921</td>
+<td style="text-align: right;">43.6</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: left;">1,811</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;">95</td>
+<td style="text-align: left;">217,772</td>
+<td style="text-align: right;">43.6</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: left;">1,809</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ottawa</td>
+<td style="text-align: left;">87</td>
+<td style="text-align: left;">201,755</td>
+<td style="text-align: right;">43.1</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: left;">1,776</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Preble</td>
+<td style="text-align: left;">88</td>
+<td style="text-align: left;">204,449</td>
+<td style="text-align: right;">43.0</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: left;">1,766</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Putnam</td>
+<td style="text-align: left;">73</td>
+<td style="text-align: left;">169,931</td>
+<td style="text-align: right;">43.0</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">1,761</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gallia</td>
+<td style="text-align: left;">63</td>
+<td style="text-align: left;">147,995</td>
+<td style="text-align: right;">42.6</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: left;">1,740</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hocking</td>
+<td style="text-align: left;">59</td>
+<td style="text-align: left;">140,938</td>
+<td style="text-align: right;">41.9</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: left;">1,698</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lucas</td>
+<td style="text-align: left;">897</td>
+<td style="text-align: left;">2,144,923</td>
+<td style="text-align: right;">41.8</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: left;">1,691</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Henry</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;">136,072</td>
+<td style="text-align: right;">41.2</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: left;">1,664</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Van Wert</td>
+<td style="text-align: left;">58</td>
+<td style="text-align: left;">142,179</td>
+<td style="text-align: right;">40.8</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: left;">1,645</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hancock</td>
+<td style="text-align: left;">153</td>
+<td style="text-align: left;">376,432</td>
+<td style="text-align: right;">40.6</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: left;">1,635</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stark</td>
+<td style="text-align: left;">755</td>
+<td style="text-align: left;">1,859,620</td>
+<td style="text-align: right;">40.6</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: left;">1,632</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Erie</td>
+<td style="text-align: left;">151</td>
+<td style="text-align: left;">372,304</td>
+<td style="text-align: right;">40.6</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">1,630</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Huron</td>
+<td style="text-align: left;">118</td>
+<td style="text-align: left;">291,483</td>
+<td style="text-align: right;">40.5</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: left;">1,626</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Muskingum</td>
+<td style="text-align: left;">170</td>
+<td style="text-align: left;">431,234</td>
+<td style="text-align: right;">39.4</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: left;">1,573</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Seneca</td>
+<td style="text-align: left;">108</td>
+<td style="text-align: left;">275,135</td>
+<td style="text-align: right;">39.3</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: left;">1,565</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Auglaize</td>
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">229,422</td>
+<td style="text-align: right;">39.2</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: left;">1,564</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Darke</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">256,835</td>
+<td style="text-align: right;">38.9</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: left;">1,546</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wayne</td>
+<td style="text-align: left;">226</td>
+<td style="text-align: left;">580,791</td>
+<td style="text-align: right;">38.9</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: left;">1,541</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Champaign</td>
+<td style="text-align: left;">74</td>
+<td style="text-align: left;">193,997</td>
+<td style="text-align: right;">38.1</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: left;">1,498</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Montgomery</td>
+<td style="text-align: left;">987</td>
+<td style="text-align: left;">2,667,308</td>
+<td style="text-align: right;">37.0</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">1,416</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ashland</td>
+<td style="text-align: left;">98</td>
+<td style="text-align: left;">265,223</td>
+<td style="text-align: right;">37.0</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: left;">1,411</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Union</td>
+<td style="text-align: left;">113</td>
+<td style="text-align: left;">306,786</td>
+<td style="text-align: right;">36.8</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">1,399</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fulton</td>
+<td style="text-align: left;">77</td>
+<td style="text-align: left;">211,191</td>
+<td style="text-align: right;">36.5</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: left;">1,373</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Summit</td>
+<td style="text-align: left;">980</td>
+<td style="text-align: left;">2,697,063</td>
+<td style="text-align: right;">36.3</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">1,363</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Morrow</td>
+<td style="text-align: left;">63</td>
+<td style="text-align: left;">176,153</td>
+<td style="text-align: right;">35.8</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: left;">1,339</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Knox</td>
+<td style="text-align: left;">111</td>
+<td style="text-align: left;">312,432</td>
+<td style="text-align: right;">35.5</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">1,321</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Richland</td>
+<td style="text-align: left;">217</td>
+<td style="text-align: left;">613,534</td>
+<td style="text-align: right;">35.4</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">1,312</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Licking</td>
+<td style="text-align: left;">306</td>
+<td style="text-align: left;">891,533</td>
+<td style="text-align: right;">34.3</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">1,241</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Portage</td>
+<td style="text-align: left;">277</td>
+<td style="text-align: left;">812,740</td>
+<td style="text-align: right;">34.1</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: left;">1,225</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Allen</td>
+<td style="text-align: left;">169</td>
+<td style="text-align: left;">510,334</td>
+<td style="text-align: right;">33.1</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: left;">1,140</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lorain</td>
+<td style="text-align: left;">511</td>
+<td style="text-align: left;">1,562,656</td>
+<td style="text-align: right;">32.7</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">1,114</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Madison</td>
+<td style="text-align: left;">72</td>
+<td style="text-align: left;">222,475</td>
+<td style="text-align: right;">32.4</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">1,097</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cuyahoga</td>
+<td style="text-align: left;">2,000</td>
+<td style="text-align: left;">6,205,586</td>
+<td style="text-align: right;">32.2</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;">1,085</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mercer</td>
+<td style="text-align: left;">66</td>
+<td style="text-align: left;">208,023</td>
+<td style="text-align: right;">31.7</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">1,047</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fairfield</td>
+<td style="text-align: left;">248</td>
+<td style="text-align: left;">795,193</td>
+<td style="text-align: right;">31.2</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">1,005</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wood</td>
+<td style="text-align: left;">205</td>
+<td style="text-align: left;">657,570</td>
+<td style="text-align: right;">31.2</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">1,004</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lake</td>
+<td style="text-align: left;">351</td>
+<td style="text-align: left;">1,154,278</td>
+<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">959</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pickaway</td>
+<td style="text-align: left;">89</td>
+<td style="text-align: left;">293,867</td>
+<td style="text-align: right;">30.3</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">949</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Athens</td>
+<td style="text-align: left;">96</td>
+<td style="text-align: left;">320,738</td>
+<td style="text-align: right;">29.9</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">915</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hamilton</td>
+<td style="text-align: left;">1,224</td>
+<td style="text-align: left;">4,104,420</td>
+<td style="text-align: right;">29.8</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">908</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Clermont</td>
+<td style="text-align: left;">287</td>
+<td style="text-align: left;">1,038,627</td>
+<td style="text-align: right;">27.6</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">747</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Greene</td>
+<td style="text-align: left;">225</td>
+<td style="text-align: left;">843,878</td>
+<td style="text-align: right;">26.7</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">677</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Medina</td>
+<td style="text-align: left;">236</td>
+<td style="text-align: left;">905,988</td>
+<td style="text-align: right;">26.0</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">638</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Geauga</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">472,081</td>
+<td style="text-align: right;">25.4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">591</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Butler</td>
+<td style="text-align: left;">489</td>
+<td style="text-align: left;">1,931,628</td>
+<td style="text-align: right;">25.3</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">578</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Holmes</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">220,398</td>
+<td style="text-align: right;">23.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">434</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Franklin</td>
+<td style="text-align: left;">1,514</td>
+<td style="text-align: left;">6,594,508</td>
+<td style="text-align: right;">23.0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">424</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Miami</td>
+<td style="text-align: left;">109</td>
+<td style="text-align: left;">539,253</td>
+<td style="text-align: right;">20.2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">268</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Warren</td>
+<td style="text-align: left;">241</td>
+<td style="text-align: left;">1,198,293</td>
+<td style="text-align: right;">20.1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">263</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Perry</td>
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">179,302</td>
+<td style="text-align: right;">19.5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">243</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Delaware</td>
+<td style="text-align: left;">147</td>
+<td style="text-align: left;">1,069,037</td>
+<td style="text-align: right;">13.8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">57</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+</section>
+<section id="demographics" class="level1">
+<h1>Demographics</h1>
+<section id="table-3-diabetes-deaths-by-race-2022" class="level2">
+<h2 class="anchored" data-anchor-id="table-3-diabetes-deaths-by-race-2022">Table 3: Diabetes Deaths by Race, 2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<caption>Death rates per 100,000 population</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Race</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">U.S. Death Rate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Ohio Death Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">American Indian/Alaska Native&nbsp;</td>
+<td style="text-align: left;">30.1&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Asian&nbsp;</td>
+<td style="text-align: left;">18.5&nbsp;</td>
+<td style="text-align: left;">10.5&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Black/African American&nbsp;</td>
+<td style="text-align: left;">40.3&nbsp;</td>
+<td style="text-align: left;">42.0&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Native Hawaiian/Pacific Islander&nbsp;</td>
+<td style="text-align: left;">35.8&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">White&nbsp;</td>
+<td style="text-align: left;">30.6&nbsp;</td>
+<td style="text-align: left;">37.3&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">More than one race&nbsp;</td>
+<td style="text-align: left;">6.5&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total&nbsp;</td>
+<td style="text-align: left;">30.5&nbsp;</td>
+<td style="text-align: left;">36.2&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="table-4-diabetes-deaths-by-hispanic-origin-2022" class="level2">
+<h2 class="anchored" data-anchor-id="table-4-diabetes-deaths-by-hispanic-origin-2022">Table 4: Diabetes Deaths by Hispanic Origin, 2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<caption>Death rates per 100,000 population</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Hispanic Origin</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">U.S. Death Rate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Ohio Death Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hispanic/Latino&nbsp;</td>
+<td style="text-align: left;">20.0&nbsp;</td>
+<td style="text-align: left;">13.8&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Not Hispanic/Latino&nbsp;</td>
+<td style="text-align: left;">32.8&nbsp;</td>
+<td style="text-align: left;">37.2&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total&nbsp;</td>
+<td style="text-align: left;">30.5&nbsp;</td>
+<td style="text-align: left;">36.2&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">White&nbsp;</td>
+<td style="text-align: left;">30.6&nbsp;</td>
+<td style="text-align: left;">37.3&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">More than one race&nbsp;</td>
+<td style="text-align: left;">6.5&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total&nbsp;</td>
+<td style="text-align: left;">30.5&nbsp;</td>
+<td style="text-align: left;">36.2&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="table-5-diabetes-deaths-by-sex-2022" class="level2">
+<h2 class="anchored" data-anchor-id="table-5-diabetes-deaths-by-sex-2022">Table 5: Diabetes Deaths by Sex, 2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<caption>Death rates per 100,000 population</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Sex</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">U.S. Death Rate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Ohio Death Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Female&nbsp;</td>
+<td style="text-align: left;">26.0&nbsp;</td>
+<td style="text-align: left;">31.4&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Male&nbsp;</td>
+<td style="text-align: left;">35.0&nbsp;</td>
+<td style="text-align: left;">41.2&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total&nbsp;</td>
+<td style="text-align: left;">30.5&nbsp;</td>
+<td style="text-align: left;">36.2&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="table-6-diabetes-deaths-by-age-2022" class="level2">
+<h2 class="anchored" data-anchor-id="table-6-diabetes-deaths-by-age-2022">Table 6: Diabetes Deaths by Age, 2022</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<caption>Death rates per 100,000 population</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Ten Year Age Group</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">U.S. Death Rate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Ohio Death Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt; 1 year&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1-4 years&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5-14 years&nbsp;</td>
+<td style="text-align: left;">0.1&nbsp;</td>
+<td style="text-align: left;">N/A&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">15-24 years&nbsp;</td>
+<td style="text-align: left;">0.8&nbsp;</td>
+<td style="text-align: left;">1.0&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">25-34 years&nbsp;</td>
+<td style="text-align: left;">2.6&nbsp;</td>
+<td style="text-align: left;">2.4&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">35-44 years&nbsp;</td>
+<td style="text-align: left;">6.6&nbsp;</td>
+<td style="text-align: left;">6.6&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">45-54 years&nbsp;</td>
+<td style="text-align: left;">18.1&nbsp;</td>
+<td style="text-align: left;">20.9&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">55-64 years&nbsp;</td>
+<td style="text-align: left;">40.6&nbsp;</td>
+<td style="text-align: left;">46.4&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">65-74 years&nbsp;</td>
+<td style="text-align: left;">80.0&nbsp;</td>
+<td style="text-align: left;">91.6&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">75-84 years&nbsp;</td>
+<td style="text-align: left;">162.7&nbsp;</td>
+<td style="text-align: left;">189.6&nbsp;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">85+ years&nbsp;</td>
+<td style="text-align: left;">311.6&nbsp;</td>
+<td style="text-align: left;">345.6&nbsp;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total&nbsp;</td>
+<td style="text-align: left;">30.5&nbsp;</td>
+<td style="text-align: left;">36.2&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-centersfordiseasecontrolandpreventioncdcMultipleCauseDeath" class="csl-entry" role="listitem">
+1. Centers for Disease Control and Prevention (CDC). (n.d.). <em>Multiple <span>Cause</span> of <span>Death</span> (<span>Provisional</span>)</em>. <span>CDC WONDER</span>.
+</div>
+<div id="ref-MultipleCauseDeath" class="csl-entry" role="listitem">
+2. Multiple <span>Cause</span> of <span>Death Data</span>. (n.d.). In <em>National Center for Health Statistics Mortality Data on CDC WONDER</em>. https://wonder.cdc.gov/mcd.html.
+</div>
+<div id="ref-rcoreteamLanguageEnvironmentStatistical2023a" class="csl-entry" role="listitem">
+3. R Core Team. (2023). <em>R: <span>A</span> language and environment for statistical computing</em> [Manual]. <span>R Foundation for Statistical Computing</span>.
+</div>
+<div id="ref-positteamRStudioIntegratedDevelopment2024a" class="csl-entry" role="listitem">
+4. Posit team. (2024). <em><span>RStudio</span>: <span>Integrated</span> development environment for <span>R</span></em> [Manual]. <span>Posit Software, PBC</span>.
+</div>
+<div id="ref-wickhamGgplot2ElegantGraphics2016a" class="csl-entry" role="listitem">
+5. Wickham, H. (2016). <em>Ggplot2: <span>Elegant</span> graphics for data analysis</em>. <span>Springer-Verlag New York</span>.
+</div>
+<div id="ref-pebesmaSpatialDataScience2023" class="csl-entry" role="listitem">
+6. Pebesma, E., &amp; Bivand, R. (2023). <em>Spatial data science: <span>With</span> applications in <span>R</span></em>. <span>Chapman and Hall/CRC</span>. <a href="https://doi.org/10.1201/9780429459016">https://doi.org/10.1201/9780429459016</a>
+</div>
+<div id="ref-pebesmaSimpleFeaturesStandardized2018a" class="csl-entry" role="listitem">
+7. Pebesma, E. (2018). Simple features for <span>R</span>: <span>Standardized</span> support for spatial vector data. <em>The R Journal</em>, <em>10</em>(1), 439–446. <a href="https://doi.org/10.32614/RJ-2018-009">https://doi.org/10.32614/RJ-2018-009</a>
+</div>
+<div id="ref-wickhamWelcomeTidyverse2019a" class="csl-entry" role="listitem">
+8. Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., … Yutani, H. (2019). Welcome to the {tidyverse}. <em>Journal of Open Source Software</em>, <em>4</em>(43), 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>
+</div>
+<div id="ref-walkerTidycensusLoadUS2024" class="csl-entry" role="listitem">
+9. Walker, K., &amp; Herman, M. (2024). <em>Tidycensus: <span>Load US</span> census boundary and attribute data as ’tidyverse’ and ’sf’-<span>Ready</span> data frames</em> [Manual].
+</div>
+<div id="ref-Diabetes2023" class="csl-entry" role="listitem">
+10. Diabetes. (2023). In <em>Cleveland Clinic</em>. https://my.clevelandclinic.org/health/diseases/7104-diabetes.
+</div>
+<div id="ref-WhatDiabetes2023" class="csl-entry" role="listitem">
+11. What is <span>Diabetes</span>? (2023). In <em>Centers for Disease Control and Prevention</em>. https://www.cdc.gov/diabetes/basics/diabetes.html.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{alliance for population health__2024,
+  author = {Alliance for Population Health\_\_, \_\_Ohio and Level,
+    Shelby and Beverly, PhD, Elizabeth and Hodges, Richard},
+  title = {Diabetes {Mortality} {Statistics:} {United} {States} and
+    {Ohio}},
+  date = {2024-01-24},
+  url = {https://shelbylevel.org/myprojects/diabetes-report},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-alliance for population health__2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+1. Alliance for Population Health__, __Ohio., Level, S., Beverly, PhD,
+E., &amp; Hodges, R. (2024, January 24). <em>Diabetes Mortality
+Statistics: United States and Ohio</em>. <a href="https://shelbylevel.org/myprojects/diabetes-report">https://shelbylevel.org/myprojects/diabetes-report</a>
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Copyright 2024, Shelby Level
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/shelbylevel">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/shelby-level-ches-791791232/">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

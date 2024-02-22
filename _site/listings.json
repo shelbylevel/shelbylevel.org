@@ -6,8 +6,9 @@
   {
     "listing": "/myprojects.html",
     "items": [
-      "/myprojects/researchposter/index.html",
-      "/myprojects/qihub23/index.html"
+      "/myprojects/research-poster/index.html",
+      "/myprojects/qihub23/index.html",
+      "/myprojects/diabetes-report/index.html"
     ]
   }
 ]

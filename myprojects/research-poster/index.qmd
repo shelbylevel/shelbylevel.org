@@ -1,0 +1,2134 @@
+---
+title: "A Comparative Analysis of the Social Determinants of Health in Ohio's Counties and Census Tracts"
+description: "Comparing commonly used SDOH indices and exploring their association with health outcomes in Ohio’s counties and census tracts."
+author: 
+  - name: Shelby Level
+    url: https://github.com/shelbylevel
+date: 2-21-2024
+categories: [Public Health, SDOH] # self-defined categories
+citation: 
+  url: https://shelbylevel.org/myprojects/researchposter
+image: preview-image.png
+format: 
+  html:
+    number-sections: true
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    self-contained: true
+draft: false
+---
+
+# Purpose of Study
+
+This project aims to compare commonly used Social Determinants of Health (SDOH) indices and explore their association with health outcomes in Ohio’s counties and census tracts.
+
+# Methods
+
+The indices used include (1) the 2022 Neighborhood Atlas Area Deprivation Index (ADI), (2) the 2020 CDC/ATSDR Social Vulnerability Index (SVI), and (3) the 2018 Ohio Opportunity Index (OOI). Selected health outcome indicators come from (1) the 2021 CDC PLACES data and (2) the 2021 OMAS Small Area Estimate Series.
+
+All data visualizations and statistics referenced in this poster and document were created using the statistical package R and RStudio.
+
+# Discussion
+
+Given the well known challenges Appalachia and Appalachians have faced for decades, of course the default expectation was that both social determinants of health, as measured by ADI and other indices, would paint Appalachia as most resource deprived, and because SDOH drive health, that health outcomes would be the worst for Appalachians too. There is a lot to unpack here but these are some things that struck me ...
+
+1.  Ohio’s most deprived census tracts (measured by the ADI) are not located in the most deprived counties. In particular, the most deprived counties in Ohio are located Appalachia while the most deprived census tracts are in cities and large metropolitan areas.
+2.  The SDOHs measured by the ADI are highly correlated with adult health outcomes, but not as as much for child health outcomes. For example, .....
+3.  Even within health outcomes, there is a good bit of variation. For example, the SDOHs measured by the ADI are more correlated with diabetes rates than with the prevalence of obesity. Ths is surprising to me since I expected a greater overlap between obesity and diabetes.
+4.  It is also clear to me that because of significant within-county variation in deprivation, county-level estimates tend to wash out these nuances. Think about Franklin county ... how varied are the census tracts? However, tract-level data are hard to come by on the health outcome side, and that forces analysts to use county-level data. I am convinced more than ever that we need to do a better job of getting at tract-level data if we really want to unpack how SDOH are linked to health.
+
+# Limitations
+
+-  Variation in census tract boundaries, when joining indices and health outcomes, resulted in roughly 18% data loss of tracts.
+-  Limited adult health outcomes data are available at the county- and tract-level in CDC PLACES. Tract-level data also suffer from substantial missingness. No child health outcome data are available in PLACES.
+-  County-level analyses attenuate variation that exists across tracts both in terms of SDOH and adult/child outcomes.
+-  Census tracts are not all equal, therefore even tract-level analysis isn’t taking into account the fact that some tracts will be more populous than others.
+-  More tract-level health outcomes data for adults and children would lead to more accurate analyses and hence, policies and programs.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE, warning = FALSE, message = FALSE, include = FALSE)
+```
+
+```{r index-1 }
+
+remotes::install_github("ClevelandClinicQHS/sociome")
+
+library(sociome)
+library(ggplot2)
+library(tidyverse)
+library(biscale)
+library(cowplot)
+library(sf)
+
+```
+
+```{r index-2 }
+
+map_theme <- function() {
+  ggthemes::theme_map() +
+  theme(
+  # color palette
+  # text
+  #text = element_text(family = "Montserrat"),
+    # legend at the bottom 6)
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+}
+
+scatter_plot_theme <- function() {
+  theme_minimal() +
+  theme(
+  # color palette
+  # text
+  #text = element_text(family = "Montserrat"),
+    # legend at the bottom 6)
+    legend.position = "bottom"
+  )
+}
+
+```
+
+```{r index-3, message = FALSE, warning = FALSE, cache = TRUE}
+
+get_adi(
+  geography = "county",
+  state = "OH",
+  year = 2022,
+  dataset = "acs5",
+  geometry = TRUE
+  ) -> adi_cty22
+
+get_adi(
+  geography = "tract",
+  state = "OH",
+  year = 2022,
+  dataset = "acs5",
+  geometry = TRUE
+  ) -> adi_tract22
+
+```
+
+```{r index-4 }
+
+read.csv(
+  "/Users/shelbylevel/Documents/github/researchposter/data/oh-svi-cty-2020.csv",
+  header = TRUE,
+  sep = ","
+) -> svi_cty20
+
+read.csv(
+  "/Users/shelbylevel/Documents/github/researchposter/data/oh-svi-tract-2020.csv",
+  header = TRUE,
+  sep = ","
+) -> svi_tract20
+
+```
+
+```{r index-5 }
+
+read.csv(
+  "/Users/shelbylevel/Documents/github/researchposter/data/oi_v2_tract_18.csv",
+  header = TRUE,
+  sep = ","
+) -> ooi_tract18
+
+read.csv(
+  "/Users/shelbylevel/Documents/github/researchposter/data/coi_v2_tract_22.csv",
+  header = TRUE,
+  sep = ","
+) -> coi_tract22
+
+```
+
+```{r index-6, include = FALSE}
+
+library(tigris)
+
+c(
+  "Adams", "Ashtabula", "Athens", "Belmont", "Brown", 
+  "Carroll", "Clermont", "Columbiana", "Coshocton", 
+  "Gallia", "Guernsey", "Harrison", "Highland", "Hocking",
+  "Holmes", "Jackson", "Jefferson", "Lawrence", "Mahoning",
+  "Meigs", "Monroe", "Morgan", "Muskingum", "Noble", 
+  "Perry", "Pike", "Ross", "Scioto", "Trumbull", 
+  "Tuscarawas", "Vinton", "Washington"
+  ) -> appalachian.ohio 
+
+counties(
+  state = 'OH',
+  cb = TRUE,  #clip boundaries
+  year = 2020
+) %>% 
+  mutate(
+    appalachian = ifelse(
+      NAME %in% appalachian.ohio, 
+      "Appalachian", 
+      "Non Appalachian"
+      )
+  ) %>% 
+  filter(appalachian == "Appalachian") -> appmapcounty
+
+tracts(
+  cb = TRUE,
+  year = 2020
+) %>%
+  filter(
+    STATEFP == 39
+  ) %>%
+  mutate(
+    county = stringr::str_remove_all(NAMELSADCO, " County"),
+    appalachian = ifelse(
+      county %in% appalachian.ohio, 
+      "Appalachian", 
+      "Non Appalachian"
+      )
+  ) %>% 
+  filter(
+    appalachian == "Appalachian"
+    ) -> appmaptract
+
+
+```
+
+```{r index-7, cache = TRUE}
+
+RSocrata::read.socrata("https://data.cdc.gov/api/views/swc5-untb") %>%
+  janitor::clean_names() %>%
+  filter(
+    stateabbr == 'OH',
+    year == 2021,
+    data_value_type == 'Age-adjusted prevalence'
+  ) -> places_cty21 
+
+RSocrata::read.socrata("https://data.cdc.gov/resource/cwsq-ngmh.csv") %>% 
+  janitor::clean_names() %>%
+  filter(
+    stateabbr == 'OH',
+    year == 2021
+  ) -> places_tract21
+
+```
+
+```{r index-8 }
+
+places_tract21 %>%
+  select(
+    4:5
+    ) %>%
+  unique() %>%
+  mutate(
+    countyfips = as.character(countyfips)
+    ) -> oh_cty_geoids
+
+places_cty21 %>%
+  left_join(
+    oh_cty_geoids,
+    by = c('locationname' = 'countyname'),
+    relationship = 'many-to-many'
+  ) -> places_cty21
+
+```
+
+```{r index-9}
+
+read.csv(
+  '/Users/shelbylevel/Documents/github/researchposter/data/omas-2021-sae.csv'
+  ) %>% 
+  janitor::clean_names() -> omas_cty21
+
+omas_cty21 %>%
+  select(
+    1:3
+  ) %>%
+  mutate(
+    measure = case_when(
+      measure == "Percentage of Adults (Age 19-64) Who Have Delayed or Avoided Needed Health Care in the Past 12 Months" ~ "delayed_health_care",
+      measure == "Percentage of Adults Who Are the Parent of a Child Living in Their Household Who Are Not Working" ~ "child_not_working",
+      measure == "Percentage of Adults (Age 19-64) With A Disability" ~ "disability",
+      measure == "Percentage of Adults (Age 19-64) Who Currently Smoke Cigarettes" ~ "currently_smoke",
+      measure == "Percentage of Adults (Age 19-64) Who Have Binge Drank Alcohol in the Past 30 Days" ~ "binge_drink",
+      measure == "Percentage of Children Who Have Ever Experienced a Parent or Guardian That Served Time in Jail After the Child Was Born" ~ "parent_jail",
+      measure == "Percentage of Children Who Have Ever Experienced Living With Anyone Who Was Mentally Ill, Suicidal, or Severely Depressed" ~ "parent_mentally_ill",
+      measure == "Percentage of Children Who Have Ever Experienced Living With Anyone Who Had a Problem With Alcohol or Drugs" ~ "parent_alcohol_drugs"
+    )) %>%
+  spread(
+    key = measure,
+    value = estimate
+    ) -> omas_cty21_clean
+
+```
+
+```{r index-10 }
+
+adi_cty22 %>%
+  select(
+    1,3
+  ) %>%
+  mutate(
+    pct_rank_adi = percent_rank(ADI)
+  ) -> adi_cty22_clean
+
+svi_cty20 %>%
+  select(
+    5,6,104
+  ) %>%
+  mutate(
+    FIPS = as.character(FIPS),
+    pct_rank_rpl_themes = percent_rank(RPL_THEMES)
+    ) -> svi_cty20_clean
+
+adi_cty22_clean %>%
+  left_join(
+    svi_cty20_clean,
+    by = c('GEOID' = 'FIPS')
+  ) %>%
+  mutate(
+    appalachian = ifelse(
+      COUNTY %in% appalachian.ohio, 
+      "Appalachian", 
+      "Non Appalachian"
+      )) -> index_cty_clean
+
+```
+
+```{r index-12}
+
+adi_tract22 %>%
+  select(
+    1,3
+  ) %>%
+  mutate(
+    GEOID = as.numeric(GEOID),
+    pct_rank_adi = percent_rank(ADI)
+    ) -> adi_tract22_clean
+
+svi_tract20 %>%
+  select(
+    5,6,104
+  ) %>%
+  mutate(
+    RPL_THEMES = case_when(
+      RPL_THEMES == -999 ~ NA, 
+      .default = RPL_THEMES),
+    pct_rank_rpl_themes = percent_rank(RPL_THEMES)
+  ) -> svi_tract20_clean
+
+ooi_tract18 %>%
+  select(
+    1,2
+  ) %>%
+  mutate(
+    pct_rank_oi_18 = percent_rank(oi_18)
+    ) -> ooi_tract18_clean
+
+coi_tract22 %>%
+  select(
+    1,2
+  ) %>%
+  mutate(
+    pct_rank_coi_v2 = percent_rank(coi_v2)
+    ) -> coi_tract22_clean
+
+adi_tract22_clean %>%
+  inner_join(
+    svi_tract20_clean,
+    by = c('GEOID' = 'FIPS')
+  ) %>%
+  mutate(
+    appalachian = ifelse(
+      COUNTY %in% appalachian.ohio, 
+      "Appalachian", 
+      "Non Appalachian"
+      )) -> index_tract20_clean
+
+index_tract20_clean %>%
+  inner_join(
+    ooi_tract18_clean,
+    by = c('GEOID' = 'tract')
+  ) %>%
+  inner_join(
+    coi_tract22_clean,
+    by = c('GEOID' = 'tract')
+  ) %>%
+  na.omit() %>%
+  mutate(
+    appalachian = ifelse(
+      COUNTY %in% appalachian.ohio, 
+      "Appalachian", 
+      "Non Appalachian"
+      )) -> index_tract18_clean
+
+```
+
+```{r poster}
+
+read.csv(
+  "/Users/shelbylevel/Documents/github/researchposter/data/County Typologies.csv",
+  header = TRUE,
+  sep = ","
+) -> cty_types
+
+index_cty_clean %>%
+  left_join(
+    cty_types,
+    by = c('COUNTY' = 'County')
+  ) -> cty
+
+cty %>%
+  group_by(appalachian) %>%
+  summarize(
+    count = n(),
+    median_adi = median(ADI, na.rm = TRUE),
+    mean_adi = mean(ADI, na.rm = TRUE),
+    min_adi = min(ADI, na.rm = TRUE),
+    max_adi = max(ADI, na.rm = TRUE)
+    ) -> app_cty
+
+cty %>%
+  group_by(OMAS.County.Type) %>%
+  summarize(
+    count = n(),
+    median_adi = median(ADI, na.rm = TRUE),
+    mean_adi = mean(ADI, na.rm = TRUE),
+    min_adi = min(ADI, na.rm = TRUE),
+    max_adi = max(ADI, na.rm = TRUE)
+    ) -> type_cty
+
+index_tract20_clean %>%
+  left_join(
+    cty_types,
+    by = c('COUNTY' = 'County')
+  ) -> tract
+
+tract %>%
+  group_by(appalachian) %>%
+  summarize(
+    count = n(),
+    median_adi = median(ADI, na.rm = TRUE),
+    mean_adi = mean(ADI, na.rm = TRUE),
+    min_adi = min(ADI, na.rm = TRUE),
+    max_adi = max(ADI, na.rm = TRUE)
+    ) -> app_tract
+
+tract %>%
+  group_by(OMAS.County.Type) %>%
+  summarize(
+    count = n(),
+    median_adi = median(ADI, na.rm = TRUE),
+    mean_adi = mean(ADI, na.rm = TRUE),
+    min_adi = min(ADI, na.rm = TRUE),
+    max_adi = max(ADI, na.rm = TRUE)
+    ) -> type_tract
+
+```
+
+# Index Measures
+
+## Area Deprivation Index (ADI)
+
+The [Area Deprivation Index](https://www.neighborhoodatlas.medicine.wisc.edu/) is based on a measure created by the Health Resources & Services Administration (HRSA) over three decades ago, and was refined, adapted, and validated to the Census block group neighborhood level by Amy Kind, MD, PhD and her research team at the University of Wisconsin-Madison. It allows for rankings of neighborhoods by socioeconomic disadvantage in a region of interest (e.g., at the state or national level).
+
+The [ADI](https://www.cdc.gov/pcd/issues/2016/16_0221.htm) is a composite measure of 17 census variables designed to describe socioeconomic disadvantage based on the four domains of income, education, household characteristics, and housing. It can be used to inform health delivery and policy, especially for the most disadvantaged neighborhood groups.
+
++---------------------------+-----------------------------------------------------------------------------------+
+| Domain                    | Census Variables                                                                  |
++===========================+===================================================================================+
+| Education                 | -   \% Population aged 25 years or older with less than 9 years of education      |
+|                           | -   \% Population aged 25 years or older with at least a high school diploma      |
+|                           | -   \% Employed population aged 16 years or older in white-collar occupations     |
++---------------------------+-----------------------------------------------------------------------------------+
+| Income/Employment         | -   Median family income in US dollars                                            |
+|                           | -   Income disparity                                                              |
+|                           | -   \% Families below federal poverty level                                       |
+|                           | -   \% Population below 150% of federal poverty level                             |
+|                           | -   \% Civilian labor force population aged 16 years and older who are unemployed |
++---------------------------+-----------------------------------------------------------------------------------+
+| Housing                   | -   Median home value in US dollars                                               |
+|                           | -   Median gross rent in US dollars                                               |
+|                           | -   Median monthly mortgage in US dollars                                         |
+|                           | -   \% Owner-occupied housing units                                               |
+|                           | -   \% Occupied housing units without complete plumbing                           |
++---------------------------+-----------------------------------------------------------------------------------+
+| Household Characteristics | -   \% Single-parent households with children younger than 18                     |
+|                           | -   \% Households without a motor vehicle                                         |
+|                           | -   \% Households without a telephone                                             |
+|                           | -   \% Households with more than 1 person per room                                |
++---------------------------+-----------------------------------------------------------------------------------+
+
+### ADI by County
+
+```{r adi-cty-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+#| fig-cap: ADI by County, 2022
+#| fig-subcap: This map displays the Area Deprivation Index for each county in Ohio. Darker shades of green represent higher socioeconomic disadvantage and lighter shades represent lower socioeconomic disadvantage.
+
+index_cty_clean %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = ADI),
+    #color = 'white',
+    alpha = 1) +
+  geom_sf_text(
+    aes(
+      label = COUNTY
+      ),
+    color = ifelse(index_cty_clean$ADI < 111, "black", "white"),
+    size = 2.75
+    ) + 
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 5, alpha = 0
+    ) +   
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#005C44", na.value = 'white') + 
+  labs(fill = "Area Deprivation Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+#ggsave('adi-cty-map.svg', dpi=300, units = "in", width = 9, height = 9)
+
+```
+
+::: {.column-margin}
+
+```{r table-1, include = TRUE}
+
+index_cty_clean %>%
+  select(4,2) %>%
+  filter(
+    ADI >= 118.5 
+  ) %>%
+  sf::st_drop_geometry(data_all) %>%
+  arrange(-ADI) %>%
+  knitr::kable() %>%
+  kableExtra::kable_styling('striped')
+
+```
+
+:::
+
+### ADI by Census Tract
+
+```{r adi-tract-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+index_tract20_clean %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = ADI),
+    #color = 'white',
+    alpha = 1) +
+   geom_sf(
+    data = index_cty_clean,
+    color = 'white', size = 5, alpha = 0
+  ) +
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 5, alpha = 0
+    ) +   
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#005C44", na.value = 'white') + 
+  labs(fill = "Area Deprivation Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+#ggsave('adi-tract-map.svg', dpi=300, units = "in", width = 9, height = 9)
+
+```
+
+::: {.column-margin}
+
+```{r table-2, include = TRUE}
+
+index_tract20_clean %>%
+  select(4,2) %>%
+  filter(
+    ADI >= 156.5 
+  ) %>%
+  sf::st_drop_geometry(data_all) %>%
+  arrange(-ADI) %>%
+  knitr::kable() %>%
+  kableExtra::kable_styling('striped')
+
+```
+
+:::
+
+## Social Vulnerability Index (SVI)
+
+The [Social Vulnerability Index](https://www.atsdr.cdc.gov/placeandhealth/svi/index.html) indicates the relative vulnerability of every U.S. Census tract and was created to help public health officials and emergency response planners identify and map the communities that will most likely need support before, during, and after a hazardous event. 
+
+The [SVI](https://www.atsdr.cdc.gov/placeandhealth/svi/documentation/pdf/SVI2020Documentation_08.05.22.pdf) ranks census tracts on 16 social factors, including unemployment, racial and ethnic minority status, and disability, and further groups them into four related themes. Thus, each tract receives a ranking for each Census variable and for each of the four themes as well as an overall ranking.
+
++---------------------------------+-------------------------------------------------------------------------------------------------------+
+| Domain                          | Census Variables                                                                                      |
++=================================+=======================================================================================================+
+| Socioeconomic Status            | -   Below 150% Poverty                                                                                |
+|                                 |                                                                                                       |
+|                                 | -   Unemployed                                                                                        |
+|                                 |                                                                                                       |
+|                                 | -   Housing Cost Burden                                                                               |
+|                                 |                                                                                                       |
+|                                 | -   No High School Diploma                                                                            |
+|                                 |                                                                                                       |
+|                                 | -   No Health Insurance                                                                               |
++---------------------------------+-------------------------------------------------------------------------------------------------------+
+| Household Characteristics       | -   Aged 65 & Older                                                                                   |
+|                                 | -   Aged 17 & Younger                                                                                 |
+|                                 | -   Civilian with a Disability                                                                        |
+|                                 | -   Single-Parent Households                                                                          |
+|                                 | -   English Language Proficiency                                                                      |
++---------------------------------+-------------------------------------------------------------------------------------------------------+
+| Racial & Ethnic Minority Status | -   Hispanic or Latino (of any race)                                                                  |
+|                                 | -   Black and African American, Not Hispanic or Latino                                                |
+|                                 | -   American Indian and Alaska Native, Not Hispanic or Latino                                         |
+|                                 | -   Asian, Not Hispanic or Latino; Native Hawaiian and Other Pacific Islander, Not Hispanic or Latino |
+|                                 | -   Two or More Races, Not Hispanic or Latino                                                         |
+|                                 | -   Other Races, Not Hispanic or Latino                                                               |
++---------------------------------+-------------------------------------------------------------------------------------------------------+
+| Housing Type & Transportation   | -   Multi-Unit Structures                                                                             |
+|                                 | -   Mobile Homes                                                                                      |
+|                                 | -   Crowding                                                                                          |
+|                                 | -   No Vehicle                                                                                        |
+|                                 | -   Group Quarters                                                                                    |
++---------------------------------+-------------------------------------------------------------------------------------------------------+
+
+### SVI by County
+
+```{r svi-cty-map, fig.height = 9, fig.width = 9, out.width = '100%', include = TRUE}
+
+#| label: fig-svi-cty-map
+#| fig-cap: SVI by County, 2020
+#| fig-subcap: This map displays the Social Vulnerability Index for each county in Ohio. Darker shades of green represent higher community vulnerability and lighter shades represent lower community vulnerability.
+
+index_cty_clean %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = RPL_THEMES),
+    #color = 'white',
+    alpha = 1) +
+  geom_sf_text(
+    aes(
+      label = COUNTY
+      ),
+    color = "black",
+    size = 2.75
+    ) + 
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 3, alpha = 0
+    ) +   
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#00694E", na.value = 'white') + 
+  labs(fill = "Social Vulnerability Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+```
+
+### SVI by Census Tract
+
+```{r svi-tract-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+#| label: fig-svi-tract-map
+#| fig-cap: SVI by Census Tract, 2020
+#| fig-subcap: This map displays the Social Vulnerability Index for each census tract in Ohio. Darker shades of green represent higher community vulnerability and lighter shades represent lower community vulnerability.
+
+index_tract20_clean %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = RPL_THEMES),
+    #color = 'white',
+    alpha = 1) +
+  geom_sf(
+    data = index_cty_clean,
+    color = 'white', size = 5, alpha = 0
+  ) +
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 3, alpha = 0
+    ) +   
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#00694E", na.value = 'white') + 
+  labs(fill = "Social Vulnerability Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+```
+
+## Ohio Opportunity Index (OOI)
+
+The [Ohio Opportunity Index (OOI)](https://grc.osu.edu/Projects/OhioOpportunityIndex) compiles over 34 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher values means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.
+
+The OOI variables comprise seven key domains: 
+
+-   Transportation
+-   Education
+-   Employment
+-   Housing
+-   Health
+-   Access
+-   Crime
+
+Within each domain, several variables that met validity criteria and were available to cover the entire state at a census tract level were identified. To standardize these variables they were converted into a z-score and some z-scores were reversed in order to make positive and negative values comparable across indicators. Variable z-scores were combined using an unweighted mean and then domain scores were re-standardized to have a mean of zero and a standard deviation of one. 
+**For each domain a high score indicates a positive outcome and a low score indicates a negative outcome.**
+
+The overall Opportunity Index Score was created by using factor analysis methods to weight the contribution of each domain. Regression methods were used to validate the OOI by testing the association between the OOI domain scores and five health outcomes:
+
+-   Pre-term birth
+-   Child severe mental illness
+-   Youth asthma
+-   Life expectancy
+-   All-cause age-adjusted mortality
+
+# Comparing Indices to Each Other, County Level
+
+## ADI & SVI
+
+```{r index-11, include = TRUE}
+
+index_cty_clean %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_rpl_themes,
+      color = appalachian
+    )) +
+  geom_point() +
+  ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "SVI")
+
+```
+
+::: {.column-margin}
+
+```{r output-1, include = TRUE}
+
+cor.test(index_cty_clean$pct_rank_adi, index_cty_clean$pct_rank_rpl_themes, method = "spearman")
+
+```
+
+:::
+
+# Comparing Indices to Each Other, Tract Level
+
+## ADI & SVI
+
+```{r index-13, include = TRUE}
+
+index_tract20_clean %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_rpl_themes,
+      color = appalachian
+    )) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "SVI")
+
+```
+
+::: {.column-margin}
+
+```{r output-2, include = TRUE}
+
+cor.test(index_tract20_clean$pct_rank_adi, index_tract20_clean$pct_rank_rpl_themes, method = "spearman")
+
+# S = 820294287, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.8425331 
+
+```
+
+:::
+
+## ADI & OOI
+
+```{r index-14, include = TRUE}
+
+index_tract18_clean %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_oi_18,
+      color = appalachian
+    )) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI Score",
+       y = "OOI Score",
+       caption = "")
+
+```
+
+::: {.column-margin}
+
+```{r output-3, include = TRUE}
+
+cor.test(index_tract18_clean$pct_rank_adi, index_tract18_clean$pct_rank_oi_18, method = "spearman")
+
+# S = 5204609232, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho -0.7685466 
+
+```
+
+:::
+
+## SVI & OOI
+
+```{r index-15, include = TRUE}
+
+index_tract18_clean %>%
+  ggplot(
+    aes(
+      x = pct_rank_rpl_themes,
+      y = pct_rank_oi_18,
+      color = appalachian
+    )) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "SVI Score",
+       y = "OOI Score",
+       caption = "")
+
+```
+
+```{r output-4}
+
+cor.test(index_tract18_clean$pct_rank_rpl_themes, index_tract18_clean$pct_rank_oi_18, method = "spearman")
+
+```
+
+::: {.column-margin}
+
+Spearman's rank correlation rho
+
+data:  index_tract18_clean$pct_rank_rpl_themes and index_tract18_clean$pct_rank_oi_18
+S = 4950123424, p-value < 2.2e-16
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+-0.6820713
+
+:::
+
+# Comparing Indices to Health Outcomes, County Level
+
+```{r index-16 }
+
+places_cty21 %>%
+  filter(
+    measureid == 'DIABETES'
+  ) %>%
+  select(
+    4,10,22
+    ) %>%
+  rename(
+    diabetes_value = data_value
+  ) %>%
+  mutate(
+    pct_rank_diabetes = percent_rank(diabetes_value)
+    ) -> diabetes_cty_21
+
+places_cty21 %>%
+  filter(
+    measureid == 'OBESITY'
+  ) %>%
+  select(
+    4,10
+    ) %>%
+  rename(
+    obesity_value = data_value
+    ) %>%
+  mutate(
+    pct_rank_obesity = percent_rank(obesity_value)
+  ) -> obesity_cty_21
+
+omas_cty21_clean %>%
+  mutate(
+    pct_rank_binge_drink = percent_rank(binge_drink),
+    pct_rank_child_not_working = percent_rank(child_not_working),
+    pct_rank_currently_smoke = percent_rank(currently_smoke),
+    pct_rank_delayed_health_care = percent_rank(delayed_health_care),
+    pct_rank_disability = percent_rank(disability),
+    pct_rank_parent_jail = percent_rank(parent_jail),
+    pct_rank_parent_mentally_ill = percent_rank(parent_mentally_ill),
+    pct_rank_parent_alcohol_drugs = percent_rank(parent_alcohol_drugs)
+  ) %>%
+  inner_join(
+    diabetes_cty_21,
+    by = c('county' = 'locationname')
+  ) %>%
+  inner_join(
+    obesity_cty_21,
+    by = c('county' = 'locationname')
+  ) -> outcomes_cty
+
+index_cty_clean %>%
+  inner_join(
+    outcomes_cty,
+    by = c('GEOID' = 'countyfips')
+  ) %>%
+  mutate(
+    appalachian = ifelse(
+      COUNTY %in% appalachian.ohio, 
+      "Appalachian", 
+      "Non Appalachian"
+      )) -> index_outcomes_cty
+
+```
+
+## ADI & PLACES Adult Health Outcomes, County Level
+
+### ADI & Adult Diabetes, County Level
+
+```{r index-17, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_diabetes,
+      color = appalachian
+    )) +
+  geom_point() +
+  ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "Adults with Diabetes")
+
+```
+
+::: {.column-margin}
+
+```{r output-5, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_diabetes, method = "spearman")
+
+# S = 11364, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.8999357 
+
+```
+
+:::
+
+### ADI & Adult Obesity, County Level
+
+```{r , include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_obesity,
+      color = appalachian
+    )) +
+  geom_point() +
+  ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "Adults with Obesity")
+
+```
+
+::: {.column-margin}
+
+```{r output-5.1, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_obesity, method = "spearman")
+
+# S = 48983, p-value = 7.471e-09
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.5686731 
+
+```
+
+:::
+
+## ADI & OMAS Adult Outcomes, County Level
+
+### ADI & Adults who Delayed or Avoided Health Care, County Level
+
+```{r, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_delayed_health_care,
+      color = appalachian
+    )) +
+  geom_point() +
+  ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "Adults Delayed or Avoided Health Care")
+
+```
+
+::: {.column-margin}
+
+```{r output-6, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_delayed_health_care, method = "spearman")
+
+# S = 81287, p-value = 0.007282
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.2842204 
+
+```
+
+:::
+
+### ADI & Adults with a Disability, County Level
+
+```{r, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_disability,
+      color = appalachian
+    )) +
+  geom_point() +
+  ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "Adults with a Disability")
+
+```
+
+::: {.column-margin}
+
+```{r output-6.2, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_disability, method = "spearman")
+
+# S = 59862, p-value = 3.283e-06
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.4728816  
+
+```
+
+:::
+
+### ADI & Adults who Currently Smoke, County Level
+
+```{r, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_currently_smoke,
+      color = appalachian
+    )) +
+  geom_point() +
+ ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "Adults Currently Smoke")
+
+#ggsave('adi-smoke-plot.svg', dpi=300, units = "in", width = 8, height = 5)
+
+```
+
+::: {.column-margin}
+
+```{r output-6.3, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_currently_smoke, method = "spearman")
+
+# S = 28392, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.7499934
+
+```
+
+:::
+
+## ADI & OMAS Child Outcomes (ACEs), County Level
+
+### ADI & Children with a Parent who Spent Time in Jail, County Level
+
+```{r index-17.1, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_parent_jail,
+      color = appalachian
+    )) +
+  geom_point() +
+  ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "ACE: Parent Spent Time in Jail")
+
+#ggsave('adi-parent-jail-plot.svg', dpi=300, units = "in", width = 8, height = 5)
+
+```
+
+::: {.column-margin}
+
+```{r output 7.1, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_parent_jail, method = "spearman")
+
+# S = 84026, p-value = 0.01439
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.2601034  
+
+```
+
+:::
+
+### ADI & Children who Lived with a Person who was Mentally Ill, Suicidal, and/or Severely Depressed, County Level
+
+```{r index-17.2, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_parent_mentally_ill,
+      color = appalachian
+    )) +
+  geom_point() +
+  ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "ACE: Lived with Anyone Mentally Ill/Suicidal/Severely Depressed")
+
+```
+
+::: {.column-margin}
+
+```{r output 7.2, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_parent_mentally_ill, method = "spearman")
+
+# S = 101483, p-value = 0.3239
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.1063803
+
+```
+
+:::
+
+### ADI & Children who Lived with a Person who had a Problem with Alcohol or Drugs, County Level
+
+```{r index-17.3, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_parent_alcohol_drugs,
+      color = appalachian
+    )) +
+  geom_point() +
+  ggforce::geom_mark_ellipse(
+   aes(label = COUNTY,
+       description = NULL,
+       filter = COUNTY == 'Clermont')) +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "ACE: Living with Anyone Problem with Alcohol/Drugs")
+
+```
+
+::: {.column-margin}
+
+```{r output 7.3, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_parent_alcohol_drugs, method = "spearman")
+
+# S = 87074, p-value = 0.02873
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.2332597
+
+```
+
+:::
+
+## SVI & PLACES Adult Health Outcomes, County Level
+
+### SVI & Adult Diabetes, County Level
+
+```{r index-18, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_rpl_themes,
+      y = pct_rank_diabetes,
+      color = appalachian
+    )) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "SVI",
+       y = "Adults with Diabetes")
+
+```
+
+::: {.column-margin}
+
+```{r output-8.1, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_rpl_themes, index_outcomes_cty$pct_rank_diabetes, method = "spearman")
+
+# S = 16322, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.8562732 
+
+```
+
+:::
+
+### SVI & Adult Obesity, County Level
+
+```{r index-18.2, include = TRUE}
+
+index_outcomes_cty %>%
+  ggplot(
+    aes(
+      x = pct_rank_rpl_themes,
+      y = pct_rank_obesity,
+      color = appalachian
+    )) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "SVI",
+       y = "Adults with Obesity")
+
+```
+
+::: {.column-margin}
+
+```{r output-8.2, include = TRUE}
+
+cor.test(index_outcomes_cty$pct_rank_rpl_themes, index_outcomes_cty$pct_rank_obesity, method = "spearman")
+
+# S = 66093, p-value = 5.07e-05
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.4180094
+
+```
+
+:::
+
+# Comparing Indices to Health Outcomes, Tract Level
+
+```{r index-19 }
+
+places_tract21 %>%
+  filter(
+    measureid == 'DIABETES'
+  ) %>%
+  select(
+    4,6,12
+    ) %>%
+  rename(
+    diabetes_value = data_value
+    ) %>%
+  mutate(
+    pct_rank_diabetes = percent_rank(diabetes_value)
+    ) -> diabetes_tract_21
+
+places_tract21 %>%
+  filter(
+    measureid == 'OBESITY'
+  ) %>%
+  select(
+    6,12
+    ) %>%
+  rename(
+    obesity_value = data_value
+    ) %>%
+  mutate(
+    pct_rank_obesity = percent_rank(obesity_value)
+  ) -> obesity_tract_21
+
+diabetes_tract_21 %>%
+  inner_join(
+    obesity_tract_21,
+    by = 'locationname'
+  ) -> outcomes_tract
+  
+index_tract20_clean %>%
+  inner_join(
+    outcomes_tract,
+    by = c('GEOID' = 'locationname')
+  ) %>%
+  mutate(
+    appalachian = ifelse(
+      COUNTY %in% appalachian.ohio, 
+      "Appalachian", 
+      "Non Appalachian"
+      )) -> index_outcomes20_tract
+
+index_tract18_clean %>%
+  inner_join(
+    outcomes_tract,
+    by = c('GEOID' = 'locationname')
+  ) %>%
+  mutate(
+    appalachian = ifelse(
+      COUNTY %in% appalachian.ohio, 
+      "Appalachian", 
+      "Non Appalachian"
+      )) -> index_outcomes18_tract
+
+```
+
+## ADI & PLACES Adult Health Outcomes, Tract Level
+
+### ADI & Adult Diabetes, Tract Level
+
+```{r adi-outcomes-tract-scatterplot, include = TRUE}
+
+index_outcomes20_tract %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_diabetes,
+      color = appalachian
+    )) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "Adults with Diabetes")
+
+```
+
+::: {.column-margin}
+
+```{r output-9.1, include = TRUE}
+
+cor.test(index_outcomes20_tract$pct_rank_adi, index_outcomes20_tract$pct_rank_diabetes, method = "spearman")
+
+# S = 667432074, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.773204 
+
+```
+
+:::
+
+### ADI & Adult Obesity, Tract Level
+
+```{r adi-outcomes-tract-scatterplot-2, include = TRUE}
+
+index_outcomes20_tract %>%
+  ggplot(
+    aes(
+      x = pct_rank_adi,
+      y = pct_rank_obesity,
+      color = appalachian
+    )) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "ADI",
+       y = "Adults with Obesity")
+
+```
+
+::: {.column-margin}
+
+```{r output-9.2, include = TRUE}
+
+cor.test(index_outcomes20_tract$pct_rank_adi, index_outcomes20_tract$pct_rank_obesity, method = "spearman")
+
+# S = 849691182, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.7112716 
+
+```
+
+:::
+
+## SVI & PLACES Adult Health Outcomes, Tract Level
+
+### SVI & Adult Diabetes, Tract Level
+
+```{r index-21, include = TRUE}
+
+index_outcomes20_tract %>%
+  ggplot(
+    aes(
+      x = pct_rank_rpl_themes,
+      y = pct_rank_diabetes,
+      color = appalachian
+    )) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "SVI",
+       y = "Adults with Diabetes",
+       caption = "")
+
+```
+
+::: {.column-margin}
+
+```{r output-10.1, include = TRUE}
+
+cor.test(index_outcomes20_tract$pct_rank_rpl_themes, index_outcomes20_tract$pct_rank_diabetes, method = "spearman")
+
+# S = 797265840, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.7290859 
+
+```
+
+:::
+
+### SVI & Adult Obesity, Tract Level
+
+```{r index-21.2, include = TRUE}
+
+index_outcomes20_tract %>%
+  ggplot(
+    aes(
+      x = pct_rank_rpl_themes,
+      y = pct_rank_obesity,
+      color = appalachian
+    )
+  ) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "SVI",
+       y = "Adults with Obesity",
+       caption = "")
+
+```
+
+::: {.column-margin}
+
+```{r output-10.2, include = TRUE}
+
+cor.test(index_outcomes20_tract$pct_rank_rpl_themes, index_outcomes20_tract$pct_rank_obesity, method = "spearman")
+
+# S = 1190875701, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho 0.5953358  
+
+```
+
+:::
+
+## OOI & PLACES Adult Health Outcomes, Tract Level
+
+### OOI & Adult Diabetes, Tract Level
+
+```{r index-22.1, include = TRUE}
+
+index_outcomes18_tract %>%
+  ggplot(
+    aes(
+      x = pct_rank_oi_18,
+      y = pct_rank_diabetes,
+      color = appalachian
+    )
+  ) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "OOI",
+       y = "Adults with Diabetes",
+       caption = "")
+
+```
+
+::: {.column-margin}
+
+```{r output-11.1, include = TRUE}
+
+cor.test(index_outcomes18_tract$pct_rank_oi_18, index_outcomes18_tract$pct_rank_diabetes, method = "spearman")
+
+# S = 4983708795, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho -0.6934837
+
+```
+
+:::
+
+### OOI & Adult Obesity, Tract Level
+
+```{r index-22.2, include = TRUE}
+
+index_outcomes18_tract %>%
+  ggplot(
+    aes(
+      x = pct_rank_oi_18,
+      y = pct_rank_obesity,
+      color = appalachian
+    )
+  ) +
+  geom_point() +
+  theme_minimal() +
+  scale_color_manual(values = c("#FA4616", "#D0D0D0")) +
+  theme(legend.position = "bottom") +
+  labs(color = NULL,
+       x = "OOI",
+       y = "Adults with Obesity",
+       caption = "")
+
+```
+
+::: {.column-margin}
+
+```{r output-11.2, include = TRUE}
+
+cor.test(index_outcomes18_tract$pct_rank_oi_18, index_outcomes18_tract$pct_rank_obesity, method = "spearman")
+
+# S = 4.749e+09, p-value < 2.2e-16
+# alternative hypothesis: true rho is not equal to 0
+# sample estimates:
+# rho -0.6137198  
+
+```
+
+:::
+
+# Individual County ADI Maps, by Census Tract
+
+## Metropolitan Counties
+
+### Franklin County ADI, by Census Tract
+
+```{r adi-tract-franklin-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Franklin'
+  ) %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = ADI),
+    #color = 'white',
+    alpha = 1) +
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#005C44", na.value = 'white') + 
+  labs(fill = "Area Deprivation Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+```
+
+::: {.column-margin}
+
+```{r summary-1, include = TRUE}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Franklin'
+  ) -> index_tract_franklin
+
+summary(index_tract_franklin$ADI)
+
+```
+
+:::
+
+### Lucas County ADI, by Census Tract
+
+```{r adi-tract-lucas-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Lucas'
+  ) %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = ADI),
+    #color = 'white',
+    alpha = 1) +
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#005C44", na.value = 'white') + 
+  labs(fill = "Area Deprivation Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+```
+
+::: {.column-margin}
+
+```{r summary-2, include = TRUE}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Lucas'
+  ) -> index_tract_lucas
+
+summary(index_tract_lucas$ADI)
+
+```
+
+:::
+
+### Cuyahoga County ADI, by Census Tract
+
+```{r adi-tract-cuyahoga-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Cuyahoga'
+  ) %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = ADI),
+    #color = 'white',
+    alpha = 1) +
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#005C44", na.value = 'white') + 
+  labs(fill = "Area Deprivation Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+```
+
+::: {.column-margin}
+
+```{r summary-3, include = TRUE}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Cuyahoga'
+  ) -> index_tract_cuyahoga
+
+summary(index_tract_cuyahoga$ADI)
+
+```
+
+:::
+
+### Hamilton County ADI, by Census Tract
+
+```{r adi-tract-hamilton-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Hamilton'
+  ) %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = ADI),
+    #color = 'white',
+    alpha = 1) +
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#005C44", na.value = 'white') + 
+  labs(fill = "Area Deprivation Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+```
+
+::: {.column-margin}
+
+```{r summary-4, include = TRUE}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Hamilton'
+  ) -> index_tract_hamilton
+
+summary(index_tract_hamilton$ADI)
+
+```
+
+:::
+
+## Appalachian Counties
+
+### Scioto County ADI, by Census Tract
+
+```{r adi-tract-scioto-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Scioto'
+  ) %>%
+  ggplot() +
+  geom_sf(
+    aes(fill = ADI),
+    #color = 'white',
+    alpha = 1) +
+  coord_sf(crs = 4326) +
+  ggthemes::theme_map() +
+  scale_fill_gradient2(low = "#F9F7ED", mid = "#E7ECC3", high = "#005C44", na.value = 'white') + 
+  labs(fill = "Area Deprivation Index") +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.5, 'cm')
+  )
+
+```
+
+::: {.column-margin}
+
+```{r summary-5, include = TRUE}
+
+index_tract20_clean %>%
+  filter(
+    COUNTY == 'Scioto'
+  ) -> index_tract_scioto
+
+summary(index_tract_scioto$ADI)
+
+```
+
+:::
+
+# Bivariate Maps
+
+### ADI & Adult Diabetes, by County
+
+```{r adi-diabetes-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+breaks_df <- bi_class(
+  index_outcomes_cty,
+  x = ADI,
+  y = diabetes_value,
+  style = "quantile",
+  dim = 3)
+
+# create map
+map <- ggplot() +
+  geom_sf(data = breaks_df,
+          mapping = aes(fill = bi_class),
+          color = "white",
+          size = 0.1,
+          show.legend = FALSE) +
+  geom_sf_text(
+    data = index_outcomes_cty,
+    aes(
+      label = COUNTY
+      ),
+    color = ifelse(breaks_df$bi_class == '3-3', 'white', 'black'),
+    size = 2.75
+    ) + 
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 10, alpha = 0
+    ) + 
+  bi_scale_fill(pal = "DkCyan2", dim = 3) +
+  labs(
+    x = NULL,
+    y = NULL
+    #subtitle = "Gray Pink (GrPink) Palette"
+  ) +
+  bi_theme()
+
+# create legend
+legend <- bi_legend(pal = "DkCyan2",
+                    dim = 3,
+                    xlab = "Higher ADI",
+                    ylab = "Higher Diabetes",
+                    size = 8)
+
+# combine map with legend
+ggdraw() +
+  draw_plot(map, 0, 0, 1, 1) +
+  draw_plot(legend, 0.63, .04, 0.2, 0.2)
+
+#ggsave('adi-diabetes-map.svg', dpi=300, units = "in", width = 9, height = 9)
+
+```
+
+### Adult Diabetes & Obesity, by County
+
+```{r diabetes-obesity-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+breaks_df <- bi_class(
+  index_outcomes_cty,
+  x = obesity_value,
+  y = diabetes_value,
+  style = "quantile",
+  dim = 3)
+
+# create map
+map <- ggplot() +
+  geom_sf(data = breaks_df,
+          mapping = aes(fill = bi_class),
+          color = "white",
+          size = 0.1,
+          show.legend = FALSE) +
+  geom_sf_text(
+    data = index_outcomes_cty,
+    aes(
+      label = COUNTY
+      ),
+    color = ifelse(breaks_df$bi_class == '3-3', 'white', 'black'),
+    size = 2.75
+    ) + 
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 10, alpha = 0
+    ) + 
+  bi_scale_fill(pal = "DkCyan2", dim = 3) +
+  labs(
+    x = NULL,
+    y = NULL
+    #subtitle = "Gray Pink (GrPink) Palette"
+  ) +
+  bi_theme()
+
+# create legend
+legend <- bi_legend(pal = "DkCyan2",
+                    dim = 3,
+                    xlab = "Higher Obesity",
+                    ylab = "Higher Diabetes",
+                    size = 8)
+
+# combine map with legend
+ggdraw() +
+  draw_plot(map, 0, 0, 1, 1) +
+  draw_plot(legend, 0.63, .04, 0.2, 0.2)
+
+#ggsave('diabetes-obesity-map.svg', dpi=300, units = "in", width = 9, height = 9)
+
+```
+
+### ADI & Children with a Parent who Spent Time in Jail, by County
+
+```{r adi-jail-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+breaks_df <- bi_class(
+  index_outcomes_cty,
+  x = ADI,
+  y = parent_jail,
+  style = "quantile",
+  dim = 3)
+
+# create map
+map <- ggplot() +
+  geom_sf(data = breaks_df,
+          mapping = aes(fill = bi_class),
+          color = "white",
+          size = 0.1,
+          show.legend = FALSE) +
+  geom_sf_text(
+    data = index_outcomes_cty,
+    aes(
+      label = COUNTY
+      ),
+    color = ifelse(breaks_df$bi_class == '3-3', 'white', 'black'),
+    size = 2.75
+    ) + 
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 10, alpha = 0
+    ) + 
+  bi_scale_fill(pal = "DkCyan2", dim = 3) +
+  labs(
+    x = NULL,
+    y = NULL
+    #subtitle = "Gray Pink (GrPink) Palette"
+  ) +
+  bi_theme()
+
+# create legend
+legend <- bi_legend(pal = "DkCyan2",
+                    dim = 3,
+                    xlab = "Higher ADI",
+                    ylab = "Higher ACE",
+                    size = 8)
+
+# combine map with legend
+ggdraw() +
+  draw_plot(map, 0, 0, 1, 1) +
+  draw_plot(legend, 0.63, .04, 0.2, 0.2)
+
+```
+
+### ADI & Children who Lived with a Person who was Mentally Ill, Suicidal, and/or Severely Depressed, by County
+
+```{r adi-mentally-ill-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+breaks_df <- bi_class(
+  index_outcomes_cty,
+  x = ADI,
+  y = parent_mentally_ill,
+  style = "quantile",
+  dim = 3)
+
+# create map
+map <- ggplot() +
+  geom_sf(data = breaks_df,
+          mapping = aes(fill = bi_class),
+          color = "white",
+          size = 0.1,
+          show.legend = FALSE) +
+  geom_sf_text(
+    data = index_outcomes_cty,
+    aes(
+      label = COUNTY
+      ),
+    color = ifelse(breaks_df$bi_class == '3-3', 'white', 'black'),
+    size = 2.75
+    ) + 
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 10, alpha = 0
+    ) + 
+  bi_scale_fill(pal = "DkCyan2", dim = 3) +
+  labs(
+    x = NULL,
+    y = NULL
+    #subtitle = "Gray Pink (GrPink) Palette"
+  ) +
+  bi_theme()
+
+# create legend
+legend <- bi_legend(pal = "DkCyan2",
+                    dim = 3,
+                    xlab = "Higher ADI",
+                    ylab = "Higher ACE",
+                    size = 8)
+
+# combine map with legend
+ggdraw() +
+  draw_plot(map, 0, 0, 1, 1) +
+  draw_plot(legend, 0.63, .04, 0.2, 0.2)
+
+#ggsave('adi-mental-map.svg', dpi=300, units = "in", width = 9, height = 9)
+
+```
+
+### ADI & Children who Lived with a Person who had a Problem with Alcohol or Drugs, by County
+
+```{r adi-drugs-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+breaks_df <- bi_class(
+  index_outcomes_cty,
+  x = ADI,
+  y = parent_alcohol_drugs,
+  style = "quantile",
+  dim = 3)
+
+# create map
+map <- ggplot() +
+  geom_sf(data = breaks_df,
+          mapping = aes(fill = bi_class),
+          color = "white",
+          size = 0.1,
+          show.legend = FALSE) +
+  geom_sf_text(
+    data = index_outcomes_cty,
+    aes(
+      label = COUNTY
+      ),
+    color = ifelse(breaks_df$bi_class == '3-3', 'white', 'black'),
+    size = 2.75
+    ) + 
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 10, alpha = 0
+    ) + 
+  bi_scale_fill(pal = "DkCyan2", dim = 3) +
+  labs(
+    x = NULL,
+    y = NULL
+    #subtitle = "Gray Pink (GrPink) Palette"
+  ) +
+  bi_theme()
+
+# create legend
+legend <- bi_legend(pal = "DkCyan2",
+                    dim = 3,
+                    xlab = "Higher ADI",
+                    ylab = "Higher ACE",
+                    size = 8)
+
+# combine map with legend
+ggdraw() +
+  draw_plot(map, 0, 0, 1, 1) +
+  draw_plot(legend, 0.63, .04, 0.2, 0.2)
+
+#ggsave('adi-alc-drugs-map.svg', dpi=300, units = "in", width = 9, height = 9)
+
+```
+
+### ADI & Adult Diabetes, by Census Tract
+
+```{r adi-diabetes-bi-map-tract, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
+
+breaks_df <- bi_class(
+  index_outcomes20_tract,
+  x = ADI,
+  y = diabetes_value,
+  style = "quantile",
+  dim = 3)
+
+# create map
+map <- ggplot() +
+  geom_sf(data = breaks_df,
+          mapping = aes(fill = bi_class),
+          color = "white",
+          size = 0.1,
+          show.legend = FALSE) +
+  #geom_sf_text(
+    #data = index_outcomes_cty,
+    #aes(
+      #label = COUNTY
+      #),
+    #color = "black",
+    #size = 2.75
+    #) + 
+  geom_sf(
+    data = sf::st_union(appmapcounty), 
+    color = "#FA4616", size = 10, alpha = 0
+    ) + 
+  bi_scale_fill(pal = "DkCyan2", dim = 3) +
+  labs(
+    #title = "ADI and Adult Diabetes",
+    x = NULL,
+    y = NULL
+    #subtitle = "Gray Pink (GrPink) Palette"
+  ) +
+  bi_theme()
+
+# create legend
+legend <- bi_legend(pal = "DkCyan2",
+                    dim = 3,
+                    xlab = "Higher ADI",
+                    ylab = "Higher Diabetes",
+                    size = 8)
+
+# combine map with legend
+ggdraw() +
+  draw_plot(map, 0, 0, 1, 1) +
+  draw_plot(legend, 0.63, .04, 0.2, 0.2)
+
+```
