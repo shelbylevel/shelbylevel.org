@@ -3,6 +3,6 @@
 listing:
   contents: myprojects
   sort: "date desc"
-  type: grid
+  type: grid  #or default
   categories: numbered
 ---

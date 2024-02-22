@@ -8,7 +8,7 @@ website:
   navbar:
     #title: "SHELBY LEVEL"
     logo: logos/white-sl-logo-final-crop.png
-    left:
+    right:
       - href: index.qmd
         text: Home
       - href: about.qmd
@@ -17,13 +17,21 @@ website:
         text: Blog
       - href: myprojects.qmd
         text: "Past Projects"
-    right:
       - icon: github
         href: https://github.com/shelbylevel
         aria-label: GitHub
       - icon: linkedin
         href: https://www.linkedin.com/in/shelby-level-ches-791791232/
         aria-label: LinkedIn
+  page-footer:
+    background: light # or dark
+    left:
+      - "Copyright 2024, Shelby Level"
+    right:
+      - icon: github
+        href: https://github.com/shelbylevel
+      - icon: linkedin
+        href: https://www.linkedin.com/in/shelby-level-ches-791791232/
   #reader-mode: true
 
 #format:
@@ -34,7 +42,9 @@ website:
 
 format:
   html:
-    theme: lux
+    theme:
+      -  lux
+      -  css/lux-variables.scss
     css: css/sl-lux-bootstrap.css
     toc: true
     page-layout: full
