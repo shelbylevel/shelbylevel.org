@@ -16,6 +16,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&display=swap");
+:root,
 
 [data-bs-theme=light] {
   --bs-blue: #007bff;
@@ -88,7 +89,7 @@
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 300;
+  --bs-body-font-weight: 350;
   --bs-body-line-height: 1.5;
   --bs-body-color: #55595c;
   --bs-body-color-rgb: 85, 89, 92;

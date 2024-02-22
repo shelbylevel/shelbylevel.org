@@ -5,9 +5,9 @@ author:
   - name: Shelby Level
     url: https://github.com/shelbylevel
 date: 2-7-2024
-categories: [Public Health, SDOH] # self-defined categories
+categories: [Public Health, SDOH, Diabetes] # self-defined categories
 citation: 
-  url: https://shelbylevel.org/myprojects/qihub23/social-determinants-of-health-in-ohio 
+  url: https://shelbylevel.org/myprojects/qihub23 
 image: preview-image.png
 format: 
   html:
@@ -15,7 +15,6 @@ format:
     toc-depth: 2
     toc-location: left
     self-contained: true
-    css: css/sl_theme.css
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
 

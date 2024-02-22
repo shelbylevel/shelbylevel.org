@@ -15,6 +15,10 @@ about:
      href: mailto:sl165423\\\@ohio.edu
 ---
 
+Hello! I am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.
+
+Check out my CV and example work within the projects and blogs tabs!
+
 ## Education
 
 **Ohio University \| Athens, OH** <br> Master of Public Administration \| July 2023 - May 2024

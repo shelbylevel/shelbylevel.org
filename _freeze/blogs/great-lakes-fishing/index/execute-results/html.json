@@ -1,0 +1,15 @@
+{
+  "hash": "a119d350d056644d7638aa4b1cf3e591",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Great Lakes Fishing\"\ndescription: \"Exploring the GOT\"\nauthor: \n  - name: Shelby Level\n    url: https://github.com/shelbylevel\ndate: 2-7-2024\ncategories: [Public Health, SDOH] # self-defined categories\n#citation: \n  #url: \n#image: preview-image.png\nformat: \n  html:\n    toc: true\n    toc-depth: 2\n    toc-location: left\n    self-contained: true\n    #css: css/sl_theme.css\ndraft: true\n---\n\n\nEvaluation Questions:\nWhich lake has the highest fish populations?\nKing salmon?\nStreamplot?\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Get the Data\n\n# Read in with tidytuesdayR package \n# Install from CRAN via: install.packages(\"tidytuesdayR\")\n# This loads the readme and all the datasets for the week of interest\n\n# Either ISO-8601 date or year/week works!\n\ntuesdata <- tidytuesdayR::tt_load('2021-06-08')\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n--- Compiling #TidyTuesday Information for 2021-06-08 ----\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n--- There are 2 files available ---\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n--- Starting Download ---\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\n\tDownloading file 1 of 2: `stocked.csv`\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat <- vroom(...)\n  problems(dat)\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\tDownloading file 2 of 2: `fishing.csv`\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n--- Download complete ---\n```\n\n\n:::\n\n```{.r .cell-code}\n#tuesdata <- tidytuesdayR::tt_load(2021, week = 24)\n\nfishing <- tuesdata$fishing\nstocked <- tuesdata$stocked\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

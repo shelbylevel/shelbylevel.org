@@ -1,14 +1,12 @@
 [
   {
     "listing": "/blog.html",
-    "items": [
-      "/blogs/drafts/character-personalities.html",
-      "/blogs/drafts/great-lakes-fishing.html"
-    ]
+    "items": []
   },
   {
     "listing": "/myprojects.html",
     "items": [
+      "/myprojects/researchposter/index.html",
       "/myprojects/qihub23/index.html"
     ]
   }
