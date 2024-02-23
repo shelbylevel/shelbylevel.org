@@ -7,228 +7,11 @@
     "text": "No matching items"
   },
   {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "sl165423@ohio.edu"
-  },
-  {
-    "objectID": "cv.html#education",
-    "href": "cv.html#education",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\nMaster of Public Administration  Ohio University, Voinovich School of Leadership and Public Service July 2023 — Present\n\nGraduate Assistant\n\nBachelor of Science in Public Health  University of Toledo, College of Health and Human Services Aug 2020 — May 2023\n\nMagna cum laude"
-  },
-  {
-    "objectID": "cv.html#work-experience",
-    "href": "cv.html#work-experience",
-    "title": "Curriculum Vitae",
-    "section": "Work Experience",
-    "text": "Work Experience\n\nData Scientist\nGraduate Assistant  Ohio University, Voinovich School of Leadership and Public Service Aug 2023 – Present\nProviding\nResearch Staff  Ohio Alliance for Population Health Aug 2023 – Present\nProviding\nHealth Policy Intern  Health Policy Institute of Ohio Jan 2023 – Jun 2023\nProviding"
-  },
-  {
-    "objectID": "cv.html#certifications",
-    "href": "cv.html#certifications",
-    "title": "Curriculum Vitae",
-    "section": "CERTIFICATIONS",
-    "text": "CERTIFICATIONS\nCertified Health Education Specialist (CHES)\n\nCredential ID 38648"
-  },
-  {
-    "objectID": "cv.html#references",
-    "href": "cv.html#references",
-    "title": "Curriculum Vitae",
-    "section": "References",
-    "text": "References\nAvailable upon request"
-  },
-  {
-    "objectID": "cv.html#education-1",
-    "href": "cv.html#education-1",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\nOhio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
-  },
-  {
-    "objectID": "cv.html#experience",
-    "href": "cv.html#experience",
-    "title": "Curriculum Vitae",
-    "section": "Experience",
-    "text": "Experience\nOhio University Voinovich School of Leadership and Public Service | Graduate Assistant | August 2023 - present\nOhio Alliance for Population Health | Student Employee | July 2023 - present"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html",
-    "href": "myprojects/research-poster/index.html",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "",
-    "text": "This project aims to compare commonly used Social Determinants of Health (SDOH) indices and explore their association with health outcomes in Ohio’s counties and census tracts."
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#area-deprivation-index-adi",
-    "href": "myprojects/research-poster/index.html#area-deprivation-index-adi",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "5.1 Area Deprivation Index (ADI)",
-    "text": "5.1 Area Deprivation Index (ADI)\nThe Area Deprivation Index is based on a measure created by the Health Resources & Services Administration (HRSA) over three decades ago, and was refined, adapted, and validated to the Census block group neighborhood level by Amy Kind, MD, PhD and her research team at the University of Wisconsin-Madison. It allows for rankings of neighborhoods by socioeconomic disadvantage in a region of interest (e.g., at the state or national level).\nThe ADI is a composite measure of 17 census variables designed to describe socioeconomic disadvantage based on the four domains of income, education, household characteristics, and housing. It can be used to inform health delivery and policy, especially for the most disadvantaged neighborhood groups.\n\n\n\n\n\n\n\nDomain\nCensus Variables\n\n\n\n\nEducation\n\n% Population aged 25 years or older with less than 9 years of education\n% Population aged 25 years or older with at least a high school diploma\n% Employed population aged 16 years or older in white-collar occupations\n\n\n\nIncome/Employment\n\nMedian family income in US dollars\nIncome disparity\n% Families below federal poverty level\n% Population below 150% of federal poverty level\n% Civilian labor force population aged 16 years and older who are unemployed\n\n\n\nHousing\n\nMedian home value in US dollars\nMedian gross rent in US dollars\nMedian monthly mortgage in US dollars\n% Owner-occupied housing units\n% Occupied housing units without complete plumbing\n\n\n\nHousehold Characteristics\n\n% Single-parent households with children younger than 18\n% Households without a motor vehicle\n% Households without a telephone\n% Households with more than 1 person per room\n\n\n\n\n\n5.1.1 ADI by County\n\n\n\n\n\nThis map displays the Area Deprivation Index for each county in Ohio. Darker shades of green represent higher socioeconomic disadvantage and lighter shades represent lower socioeconomic disadvantage.\n\n\n\nADI by County, 2022\n\n\n\n\n\n\n\n\nCOUNTY\nADI\n\n\n\n\nScioto\n131.9304\n\n\nMeigs\n130.3645\n\n\nPike\n128.2748\n\n\nAdams\n125.7251\n\n\nAshtabula\n125.3152\n\n\nCoshocton\n124.8854\n\n\nMorgan\n124.7816\n\n\nVinton\n120.8092\n\n\nMahoning\n120.5733\n\n\nJefferson\n120.2479\n\n\nTrumbull\n120.1964\n\n\nJackson\n119.5455\n\n\nHarrison\n119.0267\n\n\nGuernsey\n118.9697\n\n\nMonroe\n118.7387\n\n\n\n\n\n\n\n\n\n5.1.2 ADI by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCOUNTY\nADI\n\n\n\n\nLucas\n174.6392\n\n\nCuyahoga\n171.6284\n\n\nHamilton\n170.8793\n\n\nCuyahoga\n170.0033\n\n\nCuyahoga\n168.2760\n\n\nMahoning\n164.3199\n\n\nHamilton\n161.3625\n\n\nCuyahoga\n160.7161\n\n\nHamilton\n160.2420\n\n\nStark\n159.2998\n\n\nHamilton\n158.3423\n\n\nLorain\n157.4967\n\n\nLucas\n157.4605\n\n\nFranklin\n156.9975\n\n\nCuyahoga\n156.7205"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#social-vulnerability-index-svi",
-    "href": "myprojects/research-poster/index.html#social-vulnerability-index-svi",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "5.2 Social Vulnerability Index (SVI)",
-    "text": "5.2 Social Vulnerability Index (SVI)\nThe Social Vulnerability Index indicates the relative vulnerability of every U.S. Census tract and was created to help public health officials and emergency response planners identify and map the communities that will most likely need support before, during, and after a hazardous event.\nThe SVI ranks census tracts on 16 social factors, including unemployment, racial and ethnic minority status, and disability, and further groups them into four related themes. Thus, each tract receives a ranking for each Census variable and for each of the four themes as well as an overall ranking.\n\n\n\n\n\n\n\nDomain\nCensus Variables\n\n\n\n\nSocioeconomic Status\n\nBelow 150% Poverty\nUnemployed\nHousing Cost Burden\nNo High School Diploma\nNo Health Insurance\n\n\n\nHousehold Characteristics\n\nAged 65 & Older\nAged 17 & Younger\nCivilian with a Disability\nSingle-Parent Households\nEnglish Language Proficiency\n\n\n\nRacial & Ethnic Minority Status\n\nHispanic or Latino (of any race)\nBlack and African American, Not Hispanic or Latino\nAmerican Indian and Alaska Native, Not Hispanic or Latino\nAsian, Not Hispanic or Latino; Native Hawaiian and Other Pacific Islander, Not Hispanic or Latino\nTwo or More Races, Not Hispanic or Latino\nOther Races, Not Hispanic or Latino\n\n\n\nHousing Type & Transportation\n\nMulti-Unit Structures\nMobile Homes\nCrowding\nNo Vehicle\nGroup Quarters\n\n\n\n\n\n5.2.1 SVI by County\n\n\n\n\n\n\n\n\n\n\n\n5.2.2 SVI by Census Tract"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#ohio-opportunity-index-ooi",
-    "href": "myprojects/research-poster/index.html#ohio-opportunity-index-ooi",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "5.3 Ohio Opportunity Index (OOI)",
-    "text": "5.3 Ohio Opportunity Index (OOI)\nThe Ohio Opportunity Index (OOI) compiles over 34 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher values means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.\nThe OOI variables comprise seven key domains:\n\nTransportation\nEducation\nEmployment\nHousing\nHealth\nAccess\nCrime\n\nWithin each domain, several variables that met validity criteria and were available to cover the entire state at a census tract level were identified. To standardize these variables they were converted into a z-score and some z-scores were reversed in order to make positive and negative values comparable across indicators. Variable z-scores were combined using an unweighted mean and then domain scores were re-standardized to have a mean of zero and a standard deviation of one. For each domain a high score indicates a positive outcome and a low score indicates a negative outcome.\nThe overall Opportunity Index Score was created by using factor analysis methods to weight the contribution of each domain. Regression methods were used to validate the OOI by testing the association between the OOI domain scores and five health outcomes:\n\nPre-term birth\nChild severe mental illness\nYouth asthma\nLife expectancy\nAll-cause age-adjusted mortality"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#adi-svi",
-    "href": "myprojects/research-poster/index.html#adi-svi",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "6.1 ADI & SVI",
-    "text": "6.1 ADI & SVI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_cty_clean$pct_rank_adi and index_cty_clean$pct_rank_rpl_themes\nS = 29536, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7399153"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#adi-svi-1",
-    "href": "myprojects/research-poster/index.html#adi-svi-1",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "7.1 ADI & SVI",
-    "text": "7.1 ADI & SVI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_tract20_clean$pct_rank_adi and index_tract20_clean$pct_rank_rpl_themes\nS = 821661104, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.8422707"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#adi-ooi",
-    "href": "myprojects/research-poster/index.html#adi-ooi",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "7.2 ADI & OOI",
-    "text": "7.2 ADI & OOI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_tract18_clean$pct_rank_adi and index_tract18_clean$pct_rank_oi_18\nS = 5205383722, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n       rho \n-0.7688098"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#svi-ooi",
-    "href": "myprojects/research-poster/index.html#svi-ooi",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "7.3 SVI & OOI",
-    "text": "7.3 SVI & OOI\n\n\n\n\n\n\n\n\n\n\n\nSpearman’s rank correlation rho\ndata: index_tract18_clean\\(pct_rank_rpl_themes and index_tract18_clean\\)pct_rank_oi_18 S = 4950123424, p-value &lt; 2.2e-16 alternative hypothesis: true rho is not equal to 0 sample estimates: rho -0.6820713"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#adi-places-adult-health-outcomes-county-level",
-    "href": "myprojects/research-poster/index.html#adi-places-adult-health-outcomes-county-level",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "8.1 ADI & PLACES Adult Health Outcomes, County Level",
-    "text": "8.1 ADI & PLACES Adult Health Outcomes, County Level\n\n8.1.1 ADI & Adult Diabetes, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_diabetes\nS = 11364, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.8999357 \n\n\n\n\n8.1.2 ADI & Adult Obesity, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_obesity\nS = 48983, p-value = 7.471e-09\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.5686731"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#adi-omas-adult-outcomes-county-level",
-    "href": "myprojects/research-poster/index.html#adi-omas-adult-outcomes-county-level",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "8.2 ADI & OMAS Adult Outcomes, County Level",
-    "text": "8.2 ADI & OMAS Adult Outcomes, County Level\n\n8.2.1 ADI & Adults who Delayed or Avoided Health Care, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_delayed_health_care\nS = 81287, p-value = 0.007282\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.2842204 \n\n\n\n\n8.2.2 ADI & Adults with a Disability, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_disability\nS = 59862, p-value = 3.283e-06\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.4728816 \n\n\n\n\n8.2.3 ADI & Adults who Currently Smoke, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_currently_smoke\nS = 28392, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7499934"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#adi-omas-child-outcomes-aces-county-level",
-    "href": "myprojects/research-poster/index.html#adi-omas-child-outcomes-aces-county-level",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "8.3 ADI & OMAS Child Outcomes (ACEs), County Level",
-    "text": "8.3 ADI & OMAS Child Outcomes (ACEs), County Level\n\n8.3.1 ADI & Children with a Parent who Spent Time in Jail, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_parent_jail\nS = 84026, p-value = 0.01439\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.2601034 \n\n\n\n\n8.3.2 ADI & Children who Lived with a Person who was Mentally Ill, Suicidal, and/or Severely Depressed, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_parent_mentally_ill\nS = 101483, p-value = 0.3239\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.1063803 \n\n\n\n\n8.3.3 ADI & Children who Lived with a Person who had a Problem with Alcohol or Drugs, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_parent_alcohol_drugs\nS = 87074, p-value = 0.02873\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.2332597"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#svi-places-adult-health-outcomes-county-level",
-    "href": "myprojects/research-poster/index.html#svi-places-adult-health-outcomes-county-level",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "8.4 SVI & PLACES Adult Health Outcomes, County Level",
-    "text": "8.4 SVI & PLACES Adult Health Outcomes, County Level\n\n8.4.1 SVI & Adult Diabetes, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_rpl_themes and index_outcomes_cty$pct_rank_diabetes\nS = 16322, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.8562732 \n\n\n\n\n8.4.2 SVI & Adult Obesity, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_rpl_themes and index_outcomes_cty$pct_rank_obesity\nS = 66093, p-value = 5.07e-05\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.4180094"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#adi-places-adult-health-outcomes-tract-level",
-    "href": "myprojects/research-poster/index.html#adi-places-adult-health-outcomes-tract-level",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "9.1 ADI & PLACES Adult Health Outcomes, Tract Level",
-    "text": "9.1 ADI & PLACES Adult Health Outcomes, Tract Level\n\n9.1.1 ADI & Adult Diabetes, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes20_tract$pct_rank_adi and index_outcomes20_tract$pct_rank_diabetes\nS = 667806716, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7730767 \n\n\n\n\n9.1.2 ADI & Adult Obesity, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes20_tract$pct_rank_adi and index_outcomes20_tract$pct_rank_obesity\nS = 850523154, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7109889"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#svi-places-adult-health-outcomes-tract-level",
-    "href": "myprojects/research-poster/index.html#svi-places-adult-health-outcomes-tract-level",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "9.2 SVI & PLACES Adult Health Outcomes, Tract Level",
-    "text": "9.2 SVI & PLACES Adult Health Outcomes, Tract Level\n\n9.2.1 SVI & Adult Diabetes, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes20_tract$pct_rank_rpl_themes and index_outcomes20_tract$pct_rank_diabetes\nS = 797265840, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7290859 \n\n\n\n\n9.2.2 SVI & Adult Obesity, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes20_tract$pct_rank_rpl_themes and index_outcomes20_tract$pct_rank_obesity\nS = 1190875701, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.5953358"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#ooi-places-adult-health-outcomes-tract-level",
-    "href": "myprojects/research-poster/index.html#ooi-places-adult-health-outcomes-tract-level",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "9.3 OOI & PLACES Adult Health Outcomes, Tract Level",
-    "text": "9.3 OOI & PLACES Adult Health Outcomes, Tract Level\n\n9.3.1 OOI & Adult Diabetes, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes18_tract$pct_rank_oi_18 and index_outcomes18_tract$pct_rank_diabetes\nS = 4983708795, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n       rho \n-0.6934837 \n\n\n\n\n9.3.2 OOI & Adult Obesity, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes18_tract$pct_rank_oi_18 and index_outcomes18_tract$pct_rank_obesity\nS = 4.749e+09, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n       rho \n-0.6137198"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#metropolitan-counties",
-    "href": "myprojects/research-poster/index.html#metropolitan-counties",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "10.1 Metropolitan Counties",
-    "text": "10.1 Metropolitan Counties\n\n10.1.1 Franklin County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n  45.83   80.17   96.39   96.77  113.86  157.00       1 \n\n\n\n\n10.1.2 Lucas County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  61.15   92.47  105.61  107.67  124.01  174.64 \n\n\n\n\n10.1.3 Cuyahoga County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n  42.21   86.07  102.24  104.90  124.48  171.63       6 \n\n\n\n\n10.1.4 Hamilton County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  33.85   83.50   96.08   98.21  114.53  170.88"
-  },
-  {
-    "objectID": "myprojects/research-poster/index.html#appalachian-counties",
-    "href": "myprojects/research-poster/index.html#appalachian-counties",
-    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
-    "section": "10.2 Appalachian Counties",
-    "text": "10.2 Appalachian Counties\n\n10.2.1 Scioto County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  91.65  102.46  107.61  111.79  124.14  142.32"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Shelby Level",
     "section": "",
-    "text": "Hello!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nCheck out my CV and example work within the projects and blogs tabs!"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "Shelby Level",
-    "section": "Education",
-    "text": "Education\nOhio University | Athens, OH  Master of Public Administration | July 2023 - May 2024\nUniversity of Toledo | Toledo, OH  B.S in Public Health | Aug 2020 - May 2023"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "Shelby Level",
-    "section": "Experience",
-    "text": "Experience\nOhio University Voinovich School of Leadership and Public Service | Graduate Assistant | August 2023 - present\nOhio Alliance for Population Health | Student Employee | July 2023 - present"
-  },
-  {
-    "objectID": "myprojects.html",
-    "href": "myprojects.html",
-    "title": "",
-    "section": "",
-    "text": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts\n\n\n\nPublic Health\n\n\nSDOH\n\n\n\nComparing commonly used SDOH indices and exploring their association with health outcomes in Ohio’s counties and census tracts.\n\n\n\nShelby Level\n\n\nFeb 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSocial Determinants of Health in Ohio\n\n\n\nPublic Health\n\n\nSDOH\n\n\nDiabetes\n\n\n\nExploring the Social Determinants of Health and their relationship with diabetes in Ohio\n\n\n\nShelby Level\n\n\nFeb 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiabetes Mortality Statistics: United States and Ohio\n\n\n\nDiabetes\n\n\nPublic Health\n\n\n\nExploring diabetes mortality data at the national, state, and local levels\n\n\n\nOhio Alliance for Population Health, Shelby Level, Elizabeth Beverly, PhD, Richard Hodges\n\n\nJan 24, 2024\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "",
-    "section": "",
-    "text": "Under Construction"
-  },
-  {
-    "objectID": "myprojects/qihub23/index.html",
-    "href": "myprojects/qihub23/index.html",
-    "title": "Social Determinants of Health in Ohio",
-    "section": "",
-    "text": "The Social Determinants of Health (SDOH) database from AHRQ compiles SDOH-related variables across multiple domains from 87 sources including multiple federal and other data sources. The downloadable files contain a total of 675 variables available by year from 2009 through 2020. Data is available across three geography levels: all 675 variables are available by county level, 319 are available by ZIP code, and 321 variables are available by census tract.\nThese variables are organized into five main categories containing several topics each: social context (demographics, disability, immigration, living conditions), economic context (employment, income, poverty), education (attainment), physical infrastructure (environment, housing, internet, migration, transportation), and healthcare context (characteristics of facilities, characteristics of providers, distance to provider, health insurance status, health outcomes, health care quality, utilization and costs).\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each county in Ohio. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 1: Ohio’s Appalachian and Non-Appalachian Counties\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each zip code in Athens county. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 2: Athens County Zip Codes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each census tract in Athens county. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 3: Athens County Census Tracts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each county in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 4: Median Household Income by County\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each zip code in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 5: Median Household Income by Zip Code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each zip code in Athens county. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 6: Athens County Median Household Income by Zip Code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each census tract in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 7: Median Household Income by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each census tract in Athens county. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 8: Athens County Median Household Income by Census Tract\n\n\n\n\n\n\n\n\n\n\nTable 1: Table of SDOH Variables"
-  },
-  {
-    "objectID": "myprojects/qihub23/index.html#sdoh-variables-available-at-the-census-tract-level",
-    "href": "myprojects/qihub23/index.html#sdoh-variables-available-at-the-census-tract-level",
-    "title": "Social Determinants of Health in Ohio",
-    "section": "",
-    "text": "Table 1: Table of SDOH Variables"
-  },
-  {
-    "objectID": "myprojects/qihub23/index.html#ohio-childrens-opportunity-index",
-    "href": "myprojects/qihub23/index.html#ohio-childrens-opportunity-index",
-    "title": "Social Determinants of Health in Ohio",
-    "section": "Ohio Children’s Opportunity Index",
-    "text": "Ohio Children’s Opportunity Index\nThe Ohio Children’s Opportunity Index (OOI) compiles over 54 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher value means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.\nThe OCOI variables comprise eight key domains: access, children health, criminal justice, education, environment, family stability, housing, and infant health. Within each domain, several variables that met inclusion criteria and were available to cover the entire state at a census tract level were identified.\nConstruction of the OCOI consisted of the following broad steps: 1. Operationalize each measure from original, “raw” data 2. Summarize the measure for each Ohio census tract as a rate, count, or level 3. Standardize each variable, as needed, to yield consistency across measures and domains 4. Synthesize the measures in each domain to create a “domain score” 5. Create an overall Children’s Opportunity Index Score as the unweighted mean of the 8 domain scores\nA time varying version of the OCOI (spanning the two periods ending in 2014 and 2017) was created that incorporates 37 of the 53 variables within the same 8 domains.\nThe OCOI was validated by testing the association of the OCOI and the domain scores with five health outcomes:\n\nPre-term birth\nChild severe mental illness\nYouth asthma\nLife expectancy\nAll-cause age-adjusted mortality\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOhio Chilren’s Family Stability Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Infant Health Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Health Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Housing Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Access Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Education Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Environment Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Crime Index by Census Tract"
+    "text": "Hello! Welcome to my level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nCheck out my CV and example work within the projects and blogs tabs!\nCV\n{css echo=FALSE} .embed-container {     position: relative;     padding-bottom: 129%;     height: 0;     overflow: hidden;     max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed {     position: absolute;     top: 0;     left: 0;     width: 100%;     height: 100%; }\n\n  \n     Current CV"
   },
   {
     "objectID": "myprojects/diabetes-report/index.html",
@@ -355,5 +138,166 @@
     "title": "Diabetes Mortality Statistics: United States and Ohio",
     "section": "Table 6: Diabetes Deaths by Age, 2022",
     "text": "Table 6: Diabetes Deaths by Age, 2022\n\n\n\nDeath rates per 100,000 population\n\n\nTen Year Age Group\nU.S. Death Rate\nOhio Death Rate\n\n\n\n\n&lt; 1 year \nN/A \nN/A \n\n\n1-4 years \nN/A \nN/A \n\n\n5-14 years \n0.1 \nN/A \n\n\n15-24 years \n0.8 \n1.0 \n\n\n25-34 years \n2.6 \n2.4 \n\n\n35-44 years \n6.6 \n6.6 \n\n\n45-54 years \n18.1 \n20.9 \n\n\n55-64 years \n40.6 \n46.4 \n\n\n65-74 years \n80.0 \n91.6 \n\n\n75-84 years \n162.7 \n189.6 \n\n\n85+ years \n311.6 \n345.6 \n\n\nTotal \n30.5 \n36.2"
+  },
+  {
+    "objectID": "myprojects/qihub23/index.html",
+    "href": "myprojects/qihub23/index.html",
+    "title": "Social Determinants of Health in Ohio",
+    "section": "",
+    "text": "The Social Determinants of Health (SDOH) database from AHRQ compiles SDOH-related variables across multiple domains from 87 sources including multiple federal and other data sources. The downloadable files contain a total of 675 variables available by year from 2009 through 2020. Data is available across three geography levels: all 675 variables are available by county level, 319 are available by ZIP code, and 321 variables are available by census tract.\nThese variables are organized into five main categories containing several topics each: social context (demographics, disability, immigration, living conditions), economic context (employment, income, poverty), education (attainment), physical infrastructure (environment, housing, internet, migration, transportation), and healthcare context (characteristics of facilities, characteristics of providers, distance to provider, health insurance status, health outcomes, health care quality, utilization and costs).\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each county in Ohio. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 1: Ohio’s Appalachian and Non-Appalachian Counties\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each zip code in Athens county. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 2: Athens County Zip Codes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the total population for each census tract in Athens county. Darker shades of blue represent higher population totals and lighter shades represent lower population totals.\n\n\n\n\n\n\nFigure 3: Athens County Census Tracts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each county in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 4: Median Household Income by County\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each zip code in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 5: Median Household Income by Zip Code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each zip code in Athens county. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 6: Athens County Median Household Income by Zip Code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each census tract in Ohio. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 7: Median Household Income by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n(a) This map displays the median household income for each census tract in Athens county. Darker shades of blue represent higher household incomes and lighter shades represent lower household incomes.\n\n\n\n\n\n\nFigure 8: Athens County Median Household Income by Census Tract\n\n\n\n\n\n\n\n\n\n\nTable 1: Table of SDOH Variables"
+  },
+  {
+    "objectID": "myprojects/qihub23/index.html#sdoh-variables-available-at-the-census-tract-level",
+    "href": "myprojects/qihub23/index.html#sdoh-variables-available-at-the-census-tract-level",
+    "title": "Social Determinants of Health in Ohio",
+    "section": "",
+    "text": "Table 1: Table of SDOH Variables"
+  },
+  {
+    "objectID": "myprojects/qihub23/index.html#ohio-childrens-opportunity-index",
+    "href": "myprojects/qihub23/index.html#ohio-childrens-opportunity-index",
+    "title": "Social Determinants of Health in Ohio",
+    "section": "Ohio Children’s Opportunity Index",
+    "text": "Ohio Children’s Opportunity Index\nThe Ohio Children’s Opportunity Index (OOI) compiles over 54 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher value means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.\nThe OCOI variables comprise eight key domains: access, children health, criminal justice, education, environment, family stability, housing, and infant health. Within each domain, several variables that met inclusion criteria and were available to cover the entire state at a census tract level were identified.\nConstruction of the OCOI consisted of the following broad steps: 1. Operationalize each measure from original, “raw” data 2. Summarize the measure for each Ohio census tract as a rate, count, or level 3. Standardize each variable, as needed, to yield consistency across measures and domains 4. Synthesize the measures in each domain to create a “domain score” 5. Create an overall Children’s Opportunity Index Score as the unweighted mean of the 8 domain scores\nA time varying version of the OCOI (spanning the two periods ending in 2014 and 2017) was created that incorporates 37 of the 53 variables within the same 8 domains.\nThe OCOI was validated by testing the association of the OCOI and the domain scores with five health outcomes:\n\nPre-term birth\nChild severe mental illness\nYouth asthma\nLife expectancy\nAll-cause age-adjusted mortality\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOhio Chilren’s Family Stability Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Infant Health Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Health Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Housing Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Access Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Education Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Environment Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Crime Index by Census Tract"
+  },
+  {
+    "objectID": "myprojects.html",
+    "href": "myprojects.html",
+    "title": "",
+    "section": "",
+    "text": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts\n\n\n\n\n\n\nPublic Health\n\n\nSDOH\n\n\n\nComparing commonly used SDOH indices and exploring their association with health outcomes in Ohio’s counties and census tracts.\n\n\n\n\n\nFeb 21, 2024\n\n\nShelby Level\n\n\n\n\n\n\n\n\n\n\n\n\nSocial Determinants of Health in Ohio\n\n\n\n\n\n\nPublic Health\n\n\nSDOH\n\n\nDiabetes\n\n\n\nExploring the Social Determinants of Health and their relationship with diabetes in Ohio\n\n\n\n\n\nFeb 7, 2024\n\n\nShelby Level\n\n\n\n\n\n\n\n\n\n\n\n\nDiabetes Mortality Statistics: United States and Ohio\n\n\n\n\n\n\nDiabetes\n\n\nPublic Health\n\n\n\nExploring diabetes mortality data at the national, state, and local levels\n\n\n\n\n\nJan 24, 2024\n\n\nOhio Alliance for Population Health, Shelby Level, Elizabeth Beverly, PhD, Richard Hodges\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shelby Level",
+    "section": "",
+    "text": "Hello! Welcome to my level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nCheck out my CV below and example work in my Past Projects and Blog!\n\n  \n     Current CV"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html",
+    "href": "myprojects/research-poster/index.html",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "",
+    "text": "This project aims to compare commonly used Social Determinants of Health (SDOH) indices and explore their association with health outcomes in Ohio’s counties and census tracts."
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#area-deprivation-index-adi",
+    "href": "myprojects/research-poster/index.html#area-deprivation-index-adi",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "5.1 Area Deprivation Index (ADI)",
+    "text": "5.1 Area Deprivation Index (ADI)\nThe Area Deprivation Index is based on a measure created by the Health Resources & Services Administration (HRSA) over three decades ago, and was refined, adapted, and validated to the Census block group neighborhood level by Amy Kind, MD, PhD and her research team at the University of Wisconsin-Madison. It allows for rankings of neighborhoods by socioeconomic disadvantage in a region of interest (e.g., at the state or national level).\nThe ADI is a composite measure of 17 census variables designed to describe socioeconomic disadvantage based on the four domains of income, education, household characteristics, and housing. It can be used to inform health delivery and policy, especially for the most disadvantaged neighborhood groups.\n\n\n\n\n\n\n\nDomain\nCensus Variables\n\n\n\n\nEducation\n\n% Population aged 25 years or older with less than 9 years of education\n% Population aged 25 years or older with at least a high school diploma\n% Employed population aged 16 years or older in white-collar occupations\n\n\n\nIncome/Employment\n\nMedian family income in US dollars\nIncome disparity\n% Families below federal poverty level\n% Population below 150% of federal poverty level\n% Civilian labor force population aged 16 years and older who are unemployed\n\n\n\nHousing\n\nMedian home value in US dollars\nMedian gross rent in US dollars\nMedian monthly mortgage in US dollars\n% Owner-occupied housing units\n% Occupied housing units without complete plumbing\n\n\n\nHousehold Characteristics\n\n% Single-parent households with children younger than 18\n% Households without a motor vehicle\n% Households without a telephone\n% Households with more than 1 person per room\n\n\n\n\n\n5.1.1 ADI by County\n\n\n\n\n\nThis map displays the Area Deprivation Index for each county in Ohio. Darker shades of green represent higher socioeconomic disadvantage and lighter shades represent lower socioeconomic disadvantage.\n\n\n\nADI by County, 2022\n\n\n\n\n\n\n\n\nCOUNTY\nADI\n\n\n\n\nScioto\n131.9304\n\n\nMeigs\n130.3645\n\n\nPike\n128.2748\n\n\nAdams\n125.7251\n\n\nAshtabula\n125.3152\n\n\nCoshocton\n124.8854\n\n\nMorgan\n124.7816\n\n\nVinton\n120.8092\n\n\nMahoning\n120.5733\n\n\nJefferson\n120.2479\n\n\nTrumbull\n120.1964\n\n\nJackson\n119.5455\n\n\nHarrison\n119.0267\n\n\nGuernsey\n118.9697\n\n\nMonroe\n118.7387\n\n\n\n\n\n\n\n\n\n5.1.2 ADI by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCOUNTY\nADI\n\n\n\n\nLucas\n174.6392\n\n\nCuyahoga\n171.6284\n\n\nHamilton\n170.8793\n\n\nCuyahoga\n170.0033\n\n\nCuyahoga\n168.2760\n\n\nMahoning\n164.3199\n\n\nHamilton\n161.3625\n\n\nCuyahoga\n160.7161\n\n\nHamilton\n160.2420\n\n\nStark\n159.2998\n\n\nHamilton\n158.3423\n\n\nLorain\n157.4967\n\n\nLucas\n157.4605\n\n\nFranklin\n156.9975\n\n\nCuyahoga\n156.7205"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#social-vulnerability-index-svi",
+    "href": "myprojects/research-poster/index.html#social-vulnerability-index-svi",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "5.2 Social Vulnerability Index (SVI)",
+    "text": "5.2 Social Vulnerability Index (SVI)\nThe Social Vulnerability Index indicates the relative vulnerability of every U.S. Census tract and was created to help public health officials and emergency response planners identify and map the communities that will most likely need support before, during, and after a hazardous event.\nThe SVI ranks census tracts on 16 social factors, including unemployment, racial and ethnic minority status, and disability, and further groups them into four related themes. Thus, each tract receives a ranking for each Census variable and for each of the four themes as well as an overall ranking.\n\n\n\n\n\n\n\nDomain\nCensus Variables\n\n\n\n\nSocioeconomic Status\n\nBelow 150% Poverty\nUnemployed\nHousing Cost Burden\nNo High School Diploma\nNo Health Insurance\n\n\n\nHousehold Characteristics\n\nAged 65 & Older\nAged 17 & Younger\nCivilian with a Disability\nSingle-Parent Households\nEnglish Language Proficiency\n\n\n\nRacial & Ethnic Minority Status\n\nHispanic or Latino (of any race)\nBlack and African American, Not Hispanic or Latino\nAmerican Indian and Alaska Native, Not Hispanic or Latino\nAsian, Not Hispanic or Latino; Native Hawaiian and Other Pacific Islander, Not Hispanic or Latino\nTwo or More Races, Not Hispanic or Latino\nOther Races, Not Hispanic or Latino\n\n\n\nHousing Type & Transportation\n\nMulti-Unit Structures\nMobile Homes\nCrowding\nNo Vehicle\nGroup Quarters\n\n\n\n\n\n5.2.1 SVI by County\n\n\n\n\n\n\n\n\n\n\n\n5.2.2 SVI by Census Tract"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#ohio-opportunity-index-ooi",
+    "href": "myprojects/research-poster/index.html#ohio-opportunity-index-ooi",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "5.3 Ohio Opportunity Index (OOI)",
+    "text": "5.3 Ohio Opportunity Index (OOI)\nThe Ohio Opportunity Index (OOI) compiles over 34 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher values means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.\nThe OOI variables comprise seven key domains:\n\nTransportation\nEducation\nEmployment\nHousing\nHealth\nAccess\nCrime\n\nWithin each domain, several variables that met validity criteria and were available to cover the entire state at a census tract level were identified. To standardize these variables they were converted into a z-score and some z-scores were reversed in order to make positive and negative values comparable across indicators. Variable z-scores were combined using an unweighted mean and then domain scores were re-standardized to have a mean of zero and a standard deviation of one. For each domain a high score indicates a positive outcome and a low score indicates a negative outcome.\nThe overall Opportunity Index Score was created by using factor analysis methods to weight the contribution of each domain. Regression methods were used to validate the OOI by testing the association between the OOI domain scores and five health outcomes:\n\nPre-term birth\nChild severe mental illness\nYouth asthma\nLife expectancy\nAll-cause age-adjusted mortality"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#adi-svi",
+    "href": "myprojects/research-poster/index.html#adi-svi",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "6.1 ADI & SVI",
+    "text": "6.1 ADI & SVI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_cty_clean$pct_rank_adi and index_cty_clean$pct_rank_rpl_themes\nS = 29536, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7399153"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#adi-svi-1",
+    "href": "myprojects/research-poster/index.html#adi-svi-1",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "7.1 ADI & SVI",
+    "text": "7.1 ADI & SVI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_tract20_clean$pct_rank_adi and index_tract20_clean$pct_rank_rpl_themes\nS = 821661104, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.8422707"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#adi-ooi",
+    "href": "myprojects/research-poster/index.html#adi-ooi",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "7.2 ADI & OOI",
+    "text": "7.2 ADI & OOI\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_tract18_clean$pct_rank_adi and index_tract18_clean$pct_rank_oi_18\nS = 5205383722, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n       rho \n-0.7688098"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#svi-ooi",
+    "href": "myprojects/research-poster/index.html#svi-ooi",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "7.3 SVI & OOI",
+    "text": "7.3 SVI & OOI\n\n\n\n\n\n\n\n\n\n\n\nSpearman’s rank correlation rho\ndata: index_tract18_clean\\(pct_rank_rpl_themes and index_tract18_clean\\)pct_rank_oi_18 S = 4950123424, p-value &lt; 2.2e-16 alternative hypothesis: true rho is not equal to 0 sample estimates: rho -0.6820713"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#adi-places-adult-health-outcomes-county-level",
+    "href": "myprojects/research-poster/index.html#adi-places-adult-health-outcomes-county-level",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "8.1 ADI & PLACES Adult Health Outcomes, County Level",
+    "text": "8.1 ADI & PLACES Adult Health Outcomes, County Level\n\n8.1.1 ADI & Adult Diabetes, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_diabetes\nS = 11364, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.8999357 \n\n\n\n\n8.1.2 ADI & Adult Obesity, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_obesity\nS = 48983, p-value = 7.471e-09\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.5686731"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#adi-omas-adult-outcomes-county-level",
+    "href": "myprojects/research-poster/index.html#adi-omas-adult-outcomes-county-level",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "8.2 ADI & OMAS Adult Outcomes, County Level",
+    "text": "8.2 ADI & OMAS Adult Outcomes, County Level\n\n8.2.1 ADI & Adults who Delayed or Avoided Health Care, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_delayed_health_care\nS = 81287, p-value = 0.007282\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.2842204 \n\n\n\n\n8.2.2 ADI & Adults with a Disability, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_disability\nS = 59862, p-value = 3.283e-06\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.4728816 \n\n\n\n\n8.2.3 ADI & Adults who Currently Smoke, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_currently_smoke\nS = 28392, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7499934"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#adi-omas-child-outcomes-aces-county-level",
+    "href": "myprojects/research-poster/index.html#adi-omas-child-outcomes-aces-county-level",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "8.3 ADI & OMAS Child Outcomes (ACEs), County Level",
+    "text": "8.3 ADI & OMAS Child Outcomes (ACEs), County Level\n\n8.3.1 ADI & Children with a Parent who Spent Time in Jail, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_parent_jail\nS = 84026, p-value = 0.01439\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.2601034 \n\n\n\n\n8.3.2 ADI & Children who Lived with a Person who was Mentally Ill, Suicidal, and/or Severely Depressed, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_parent_mentally_ill\nS = 101483, p-value = 0.3239\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.1063803 \n\n\n\n\n8.3.3 ADI & Children who Lived with a Person who had a Problem with Alcohol or Drugs, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_adi and index_outcomes_cty$pct_rank_parent_alcohol_drugs\nS = 87074, p-value = 0.02873\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.2332597"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#svi-places-adult-health-outcomes-county-level",
+    "href": "myprojects/research-poster/index.html#svi-places-adult-health-outcomes-county-level",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "8.4 SVI & PLACES Adult Health Outcomes, County Level",
+    "text": "8.4 SVI & PLACES Adult Health Outcomes, County Level\n\n8.4.1 SVI & Adult Diabetes, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_rpl_themes and index_outcomes_cty$pct_rank_diabetes\nS = 16322, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.8562732 \n\n\n\n\n8.4.2 SVI & Adult Obesity, County Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes_cty$pct_rank_rpl_themes and index_outcomes_cty$pct_rank_obesity\nS = 66093, p-value = 5.07e-05\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.4180094"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#adi-places-adult-health-outcomes-tract-level",
+    "href": "myprojects/research-poster/index.html#adi-places-adult-health-outcomes-tract-level",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "9.1 ADI & PLACES Adult Health Outcomes, Tract Level",
+    "text": "9.1 ADI & PLACES Adult Health Outcomes, Tract Level\n\n9.1.1 ADI & Adult Diabetes, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes20_tract$pct_rank_adi and index_outcomes20_tract$pct_rank_diabetes\nS = 667806716, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7730767 \n\n\n\n\n9.1.2 ADI & Adult Obesity, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes20_tract$pct_rank_adi and index_outcomes20_tract$pct_rank_obesity\nS = 850523154, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7109889"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#svi-places-adult-health-outcomes-tract-level",
+    "href": "myprojects/research-poster/index.html#svi-places-adult-health-outcomes-tract-level",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "9.2 SVI & PLACES Adult Health Outcomes, Tract Level",
+    "text": "9.2 SVI & PLACES Adult Health Outcomes, Tract Level\n\n9.2.1 SVI & Adult Diabetes, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes20_tract$pct_rank_rpl_themes and index_outcomes20_tract$pct_rank_diabetes\nS = 797265840, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.7290859 \n\n\n\n\n9.2.2 SVI & Adult Obesity, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes20_tract$pct_rank_rpl_themes and index_outcomes20_tract$pct_rank_obesity\nS = 1190875701, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n      rho \n0.5953358"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#ooi-places-adult-health-outcomes-tract-level",
+    "href": "myprojects/research-poster/index.html#ooi-places-adult-health-outcomes-tract-level",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "9.3 OOI & PLACES Adult Health Outcomes, Tract Level",
+    "text": "9.3 OOI & PLACES Adult Health Outcomes, Tract Level\n\n9.3.1 OOI & Adult Diabetes, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes18_tract$pct_rank_oi_18 and index_outcomes18_tract$pct_rank_diabetes\nS = 4983708795, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n       rho \n-0.6934837 \n\n\n\n\n9.3.2 OOI & Adult Obesity, Tract Level\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Spearman's rank correlation rho\n\ndata:  index_outcomes18_tract$pct_rank_oi_18 and index_outcomes18_tract$pct_rank_obesity\nS = 4.749e+09, p-value &lt; 2.2e-16\nalternative hypothesis: true rho is not equal to 0\nsample estimates:\n       rho \n-0.6137198"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#metropolitan-counties",
+    "href": "myprojects/research-poster/index.html#metropolitan-counties",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "10.1 Metropolitan Counties",
+    "text": "10.1 Metropolitan Counties\n\n10.1.1 Franklin County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n  45.83   80.17   96.39   96.77  113.86  157.00       1 \n\n\n\n\n10.1.2 Lucas County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  61.15   92.47  105.61  107.67  124.01  174.64 \n\n\n\n\n10.1.3 Cuyahoga County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n  42.21   86.07  102.24  104.90  124.48  171.63       6 \n\n\n\n\n10.1.4 Hamilton County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  33.85   83.50   96.08   98.21  114.53  170.88"
+  },
+  {
+    "objectID": "myprojects/research-poster/index.html#appalachian-counties",
+    "href": "myprojects/research-poster/index.html#appalachian-counties",
+    "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
+    "section": "10.2 Appalachian Counties",
+    "text": "10.2 Appalachian Counties\n\n10.2.1 Scioto County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  91.65  102.46  107.61  111.79  124.14  142.32"
+  },
+  {
+    "objectID": "index2.html",
+    "href": "index2.html",
+    "title": "",
+    "section": "",
+    "text": "Under Construction"
   }
 ]

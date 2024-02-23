@@ -11,7 +11,7 @@ date: 1-24-2024
 categories: [Diabetes, Public Health] # self-defined categories
 citation: 
   url: https://shelbylevel.org/myprojects/diabetes-report
-image: preview-image.png
+image: preview-image2.png
 format:
   html:
     toc: true
@@ -19,6 +19,8 @@ format:
     toc-location: left
     bibliography: references.bib
 draft: false
+execute:
+  freeze: auto
 ---
 
 # Background

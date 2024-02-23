@@ -1,21 +1,35 @@
 ---
-#title: "Shelby Level"
-home:
+title: "Shelby Level"
+about:
+  template: solana
+  image: /logos/headshot_sm.png
+  links:
+   - icon: github
+     text: Github
+     href: https://github.com/shelbylevel
+   - icon: linkedin
+     text: LinkedIn
+     href: https://www.linkedin.com/in/shelby-level-ches-791791232/
+   - icon: envelope
+     text: Email
+     href: mailto:slevel20\\\@gmail.com
 ---
 
-<!-- Google tag (gtag.js) -->
+__Hello!__ Welcome to my _level_ of the internet!
+
+I am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.
+
+Check out my CV below and example work in my [Past Projects](myprojects.qmd) and [Blog](blog.qmd)!
+
 
 ```{=html}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8RJYVFCYL"></script>
-```
-```{=html}
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-S8RJYVFCYL');
-</script>
+<p class="text-center">
+  <a class="btn btn-primary btn-default cv-download" href="_site/cv/cv.pdf" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Current CV
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="_site/cv/cv.pdf#toolbar=0" style="border: 0.5px;width: 100%"></iframe>
+</div>
 ```
 
-Under Construction

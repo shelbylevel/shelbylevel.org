@@ -17,6 +17,8 @@ format:
     self-contained: true
     #css: css/sl_theme.css
 draft: true
+execute:
+  freeze: auto
 ---
 
 Evaluation Questions:

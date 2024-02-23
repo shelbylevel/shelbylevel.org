@@ -10,9 +10,9 @@ website:
     logo: logos/white-sl-logo-final-crop.png
     right:
       - href: index.qmd
-        text: Home
-      - href: about.qmd
         text: "About Me"
+      #- href: index.qmd
+        #text: Home
       - href: blog.qmd
         text: Blog
       - href: myprojects.qmd
@@ -44,8 +44,10 @@ format:
   html:
     theme:
       -  lux
-      -  css/lux-variables.scss
-    css: css/sl-lux-bootstrap.css
+      -  css/sl-lux-variables.scss
+    css:
+      -  css/sl-bootstrap.min.css
+      -  css/sl-lux-bootstrap.css
     toc: true
     page-layout: full
 

@@ -17,6 +17,8 @@ format:
     self-contained: true
     #css: css/sl_theme.css
 draft: true
+execute:
+  freeze: auto
 ---
 
 Evaluation Questions: Do characters of the same GOT houses share similar personality traits? Are there more 'strong' female or male characters in GOT? Do 'strong' characters hold the most power in Westeros?

@@ -8,7 +8,7 @@ date: 2-7-2024
 categories: [Public Health, SDOH, Diabetes] # self-defined categories
 citation: 
   url: https://shelbylevel.org/myprojects/qihub23 
-image: preview-image.png
+image: preview-image2.png
 format: 
   html:
     toc: true
@@ -16,6 +16,8 @@ format:
     toc-location: left
     self-contained: true
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+execute:
+  freeze: auto
 ---
 
 ```{r setup, include=FALSE}
