@@ -172,7 +172,7 @@
     "href": "index.html",
     "title": "Shelby Level",
     "section": "",
-    "text": "Hello! Welcome to my level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nCheck out my CV below and example work in my Past Projects and Blog!\n\n  \n     Current CV"
+    "text": "Hello! Welcome to my level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nCheck out my CV below and example work in my Past Projects and Blog!\n\n  \n     Click Here for Current CV\n  \n\n{=html, eval = FALSE, echo = FALSE} &lt;div class=\"embed-container\"&gt;   &lt;iframe src=\"_site/cv/cv.pdf#toolbar=0\" style=\"border: 0.5px;width: 100%\"&gt;&lt;/iframe&gt; &lt;/div&gt;"
   },
   {
     "objectID": "myprojects/research-poster/index.html",
