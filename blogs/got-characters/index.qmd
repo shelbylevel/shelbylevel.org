@@ -113,7 +113,24 @@ psycho_df <- psychometrics %>%
              dplyr::select(char_name, question, personality) %>% 
              dplyr::group_by(char_name) %>%
              dplyr::summarise(personality = list(as.character(personality))) %>%
-             dplyr::rename("from" = "char_name") %>% 
+             dplyr::mutate(house = case_when(
+               str_detect(char_name, 'Stark') ~ 'Stark',
+               str_detect(char_name, 'Snow') ~ 'Stark',
+               str_detect(char_name, 'Greyjoy') ~ 'Greyjoy',
+               str_detect(char_name, 'Tarth') ~ 'Tarth',
+               str_detect(char_name, 'Bronn') ~ 'Blackwater',
+               str_detect(char_name, 'Lannister') ~ 'Lannister',
+               str_detect(char_name, 'Targaryen') ~ 'Targaryen',
+               str_detect(char_name, 'Seaworth') ~ 'Seaworth',
+               str_detect(char_name, 'Baratheon') ~ 'Baratheon',
+               str_detect(char_name, 'Mormont') ~ 'Mormont',
+               str_detect(char_name, 'Tyrell') ~ 'Tyrell',
+               str_detect(char_name, 'Martell') ~ 'Martell',
+               str_detect(char_name, 'Baelish') ~ 'Baelish',
+               str_detect(char_name, 'Tarly') ~ 'Tarly',
+               str_detect(char_name, 'Clegane') ~ 'Clegane'
+             ))
+  dplyr::rename("from" = "char_name") %>% 
              tidyr::crossing(dplyr::rename(., "to" = "from", "personality_to" = "personality")) %>% 
              dplyr::mutate(frequency = purrr::map2_dbl(personality, personality_to, ~length(base::intersect(.x, .y)))) %>% 
              dplyr::select(from, to, frequency) %>% 
