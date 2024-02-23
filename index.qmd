@@ -32,11 +32,12 @@ Check out my CV below and example work in my [Past Projects](myprojects.qmd) and
     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Click Here for Current CV
   </a>
 </p>
-```
 
-```{=html, eval = FALSE, echo = FALSE}
+<!-- 
 <div class="embed-container">
   <iframe src="_site/cv/cv.pdf#toolbar=0" style="border: 0.5px;width: 100%"></iframe>
 </div>
+-->
+
 ```
 
