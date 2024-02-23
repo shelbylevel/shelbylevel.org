@@ -28,7 +28,7 @@ Check out my CV below and example work in my [Past Projects](myprojects.qmd) and
 
 ```{=html}
 <p class="text-center">
-  <a class="btn btn-primary btn-default cv-download" href="_site/cv/cv.pdf" target="_blank">
+  <a class="btn btn-primary btn-default cv-download" a href="_site/cv/cv.pdf" target="_blank">
     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Current CV
   </a>
 </p>
