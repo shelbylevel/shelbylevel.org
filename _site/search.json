@@ -172,7 +172,7 @@
     "href": "index.html",
     "title": "Shelby Level",
     "section": "",
-    "text": "Hello! Welcome to my level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nCheck out my CV below and example work in my Past Projects and Blog!\n\n  \n     Click Here for Current CV"
+    "text": "Hello! Welcome to my Level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nOutside of the classroom and my RStudio panel I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!\nCheck out my CV below and example work in my Past Projects and Blog!\n\n\n\n\n  \n     Click Here for Current CV"
   },
   {
     "objectID": "myprojects/research-poster/index.html",
@@ -299,5 +299,12 @@
     "title": "",
     "section": "",
     "text": "Under Construction"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Summary",
+    "section": "",
+    "text": "Summary\nHealth data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\n\n\nEducation\n\n\n\nWork Experience\n\n\n\nData Projects\n\n\n\nCertifications\n\n\n\nLeadership \\& Community Engagement"
   }
 ]

@@ -20,6 +20,7 @@ cvmeta:
     right: '__GitHub__: https://www.github.com/shelbylevel'
 execute:
   echo: false
+  freeze: auto
 ---
 
 ```{r}

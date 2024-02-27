@@ -12,32 +12,52 @@ about:
      href: https://www.linkedin.com/in/shelby-level-ches-791791232/
    - icon: envelope
      text: Email
-     href: mailto:slevel20\\\@gmail.com
+     href: mailto:slevel20@gmail.com
+engine: knitr
+jupyter: python3
 resources:
   - "_site/cv/cv.pdf"
 cv:
   pdf: "_site/cv/cv.pdf"
 ---
 
-__Hello!__ Welcome to my _level_ of the internet!
+**Hello!** Welcome to my *Level* of the internet!
 
 I am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.
 
+Outside of the classroom and my RStudio panel I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!
+
 Check out my CV below and example work in my [Past Projects](myprojects.qmd) and [Blog](blog.qmd)!
 
+```{css echo=FALSE}
+.embed-container {
+    position: relative;
+    padding-bottom: 129%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+```
 
 ```{=html}
 <p class="text-center">
-  <a class="btn btn-primary btn-default cv-download" a href="_site/cv/cv.pdf" target="_blank">
+  <a class="btn btn-primary btn-default cv-download" href="_site/cv/index.pdf" target="_blank">
     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Click Here for Current CV
   </a>
 </p>
 
 <!-- 
 <div class="embed-container">
-  <iframe src="_site/cv/cv.pdf#toolbar=0" style="border: 0.5px;width: 100%"></iframe>
+  <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px;width: 100%"></iframe>
 </div>
 -->
-
 ```
-
