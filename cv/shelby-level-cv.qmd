@@ -11,10 +11,10 @@ cvfont: lato #texlive fonts like raleway,fetamont,gillius,comfortaa,inconsolata
 cvmeta:
   - title: Status
     left: Research Assistant
-    right: '__Website__: https://www.shelbylevel.org'
+    right: '__Email__: slevel20@gmail.com'
   - title: Field
     left: Public Health, Data Analytics, Data Visualization
-    right: '__Email__: slevel20@gmail.com'
+    right: '__Website__: https://www.shelbylevel.org'
   - title: Techs
     left: R, Git, GitHub, SAS, SPSS
     right: '__GitHub__: https://www.github.com/shelbylevel'

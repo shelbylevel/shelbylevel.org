@@ -16,9 +16,9 @@ about:
 engine: knitr
 jupyter: python3
 resources:
-  - "_site/cv/cv.pdf"
+  - "_site/cv/shelby-level-cv.pdf"
 cv:
-  pdf: "_site/cv/cv.pdf"
+  pdf: "_site/cv/shelby-level-cv.pdf"
 ---
 
 **Hello!** Welcome to my *Level* of the internet!
@@ -50,7 +50,7 @@ Check out my CV below and example work in my [Past Projects](myprojects.qmd) and
 
 ```{=html}
 <p class="text-center">
-  <a class="btn btn-primary btn-default cv-download" href="_site/cv/index.pdf" target="_blank">
+  <a class="btn btn-primary btn-default cv-download" href="_site/cv/shelby-level-cv.pdf" target="_blank">
     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Click Here for Current CV
   </a>
 </p>
