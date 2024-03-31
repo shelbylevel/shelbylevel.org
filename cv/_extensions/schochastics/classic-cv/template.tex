@@ -154,6 +154,47 @@
 \footnotesize{#2} \hspace*{\fill} \footnotesize{#1}\\[1pt]
 }
 
+% create bullet list for skills section
+\newcommand{\tightlist}
+
+% change bullet style
+\renewcommand{\labelitemi}{\textbf{*}}
+
+%----------------------------------------------------------------------------------------
+%	 CV SKILLS
+%----------------------------------------------------------------------------------------
+
+% creates a stretched box as cv entry headline followed by some paragraphs about
+% the work you did
+% param 1:	event time i.e. 2014 or 2011-2014 etc.
+% param 2:	event name (what did you do?)
+% param 3:	institution (where did you work / study)
+% param 4:	list of paragraphs
+%
+\newcommand{\cvskill}[4]
+{
+
+\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+	\textbf{#2} \small \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
+\end{tabular*}
+
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+\foreach \desc in {#4}{
+	*  \desc\\[3pt]
+}
+
+\vspace{3pt}
+}
+
+% creates a stretched box as
+\newcommand{\cvskillmeta}[2]
+{
+	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+	#2
+}
+
 %----------------------------------------------------------------------------------------
 %	 CV EVENT
 %----------------------------------------------------------------------------------------

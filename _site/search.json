@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "",
     "section": "",
-    "text": "No matching items"
+    "text": "Under Construction\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -161,18 +161,18 @@
     "text": "Ohio Children’s Opportunity Index\nThe Ohio Children’s Opportunity Index (OOI) compiles over 54 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher value means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.\nThe OCOI variables comprise eight key domains: access, children health, criminal justice, education, environment, family stability, housing, and infant health. Within each domain, several variables that met inclusion criteria and were available to cover the entire state at a census tract level were identified.\nConstruction of the OCOI consisted of the following broad steps: 1. Operationalize each measure from original, “raw” data 2. Summarize the measure for each Ohio census tract as a rate, count, or level 3. Standardize each variable, as needed, to yield consistency across measures and domains 4. Synthesize the measures in each domain to create a “domain score” 5. Create an overall Children’s Opportunity Index Score as the unweighted mean of the 8 domain scores\nA time varying version of the OCOI (spanning the two periods ending in 2014 and 2017) was created that incorporates 37 of the 53 variables within the same 8 domains.\nThe OCOI was validated by testing the association of the OCOI and the domain scores with five health outcomes:\n\nPre-term birth\nChild severe mental illness\nYouth asthma\nLife expectancy\nAll-cause age-adjusted mortality\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOhio Chilren’s Family Stability Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Infant Health Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Health Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Housing Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Access Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Education Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Environment Index by Census Tract\n\n\n\n\n\n\n\n\n\nOhio Children’s Crime Index by Census Tract"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shelby Level",
+    "section": "",
+    "text": "Hello! Welcome to my Level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nOutside of the classroom and my RStudio panel I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!\nCheck out my resume below and example work in my Past Projects and Blog!\n\n\n\n\n  \n     Click Here for Current Resume"
+  },
+  {
     "objectID": "myprojects.html",
     "href": "myprojects.html",
     "title": "",
     "section": "",
     "text": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts\n\n\n\n\n\n\nPublic Health\n\n\nSDOH\n\n\n\nComparing commonly used SDOH indices and exploring their association with health outcomes in Ohio’s counties and census tracts.\n\n\n\n\n\nFeb 21, 2024\n\n\nShelby Level\n\n\n\n\n\n\n\n\n\n\n\n\nSocial Determinants of Health in Ohio\n\n\n\n\n\n\nPublic Health\n\n\nSDOH\n\n\nDiabetes\n\n\n\nExploring the Social Determinants of Health and their relationship with diabetes in Ohio\n\n\n\n\n\nFeb 7, 2024\n\n\nShelby Level\n\n\n\n\n\n\n\n\n\n\n\n\nDiabetes Mortality Statistics: United States and Ohio\n\n\n\n\n\n\nDiabetes\n\n\nPublic Health\n\n\n\nExploring diabetes mortality data at the national, state, and local levels\n\n\n\n\n\nJan 24, 2024\n\n\nOhio Alliance for Population Health, Shelby Level, Elizabeth Beverly, PhD, Richard Hodges\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shelby Level",
-    "section": "",
-    "text": "Hello! Welcome to my Level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nOutside of the classroom and my RStudio panel I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!\nCheck out my CV below and example work in my Past Projects and Blog!\n\n\n\n\n  \n     Click Here for Current CV"
   },
   {
     "objectID": "myprojects/research-poster/index.html",

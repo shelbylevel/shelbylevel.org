@@ -1,0 +1,42 @@
+---
+title: "Policy Brief: The Hidden Importance of Publicly Available Government Data"
+#description: "Comparing commonly used SDOH indices and exploring their association with health outcomes in Ohio’s counties and census tracts."
+author: 
+  - name: Shelby Level
+    url: https://github.com/shelbylevel
+date: 3-6-2024
+#categories: [Public Health, SDOH] # self-defined categories
+#citation: 
+ # url: https://shelbylevel.org/myprojects/researchposter
+#image: preview-image2.png
+format: 
+  html:
+    number-sections: true
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    self-contained: true
+draft: true
+execute:
+  freeze: auto
+---
+
+# Executive Summary
+This policy brief examines various opportunities to increase the utilization and accessibility of open government data in the United States. It starts with a brief overview of the current policy context along with key stakeholders and their varying perspectives. Next, it explores the scope and severity of the problem and the rationale for government intervention. The policy brief offers five proposed policy alternatives: (1) status quo, (2) prioritize funding for federal data infrastructure in the federal budget, (3) expand and support the role of the chief data officer (CDO) for federal agencies and establish a federal CDO, (4) independent monitoring of the United States statistical system, and (5) implement the once-only principle (OOP), along with a set of criteria and accompanying metrics for evaluating the five proposed policy alternatives. Lastly, the policy brief recommends expanding and supporting the role of CDO, establishing a federal CDO, and independent monitoring of the United States statistical system and explores the political and implementation feasibility of this recommendation. 
+
+\newpage
+
+# Part 1
+
+## Problem Statement
+In a world surrounded by technology and data, it’s no surprise that a substantial amount of our understanding of public policy relies on high-quality data (Eberstadt et al., 2017). However, available technology is being widely underutilized for the collection, analysis, and dissemination of data by the federal government (Esty & Rushing, 2007). Government datasets are often siloed within a single federal agency or even a single department, leaving large gaps in the data and limiting interdisciplinary research and analysis (Esty & Rushing, 2007). Policymakers are left unable to utilize data to clearly understand problems, evaluate government policies, and make effective policy decisions that ultimately affect millions of Americans and cost them billions of dollars (Eberstadt et al., 2017). 
+
+## Current Policy Context
+	In 2018 the OPEN Government Data Act was passed by Congress, requiring federal agencies to publish their information online as open data, use standardized, machine-readable data formats, and include their metadata in an online catalog (General Services Administration, n.d.). The Federal Government is currently implementing this law through an open data site, Data.gov, that aims to increase citizen participation in government, create economic development opportunities, and inform decision-making in the private and public sectors by making government open and accountable (General Services Administration, n.d.). The OPEN Government Data Act also requires the General Services Administration, the Office of Management and Budget, and the Office of Government Information Services to collectively establish resources.data.gov, an online repository of tools, best practices, and schema standards to promote the adoption of open data practices across the Federal Government (General Services Administration, n.d.).
+Simultaneously, the President’s Management Agenda laid out a new Cross-Agency
+Priority (CAP) Goal: Leveraging Data as a Strategic Asset in March 2018 aimed at developing and implementing a comprehensive, government-wide data strategy (OMB et al., n.d.). The Federal Data Strategy, released in June 2019, was the first of its kind and included a mission statement, ten timeless, guiding principles for agencies, and 40 practices that served as aspirational goals to further these principles within 5 to 10 years (OMB et al., n.d.). This was followed closely by the 2020 Action Plan, released in December 2019, which identified priority practices for the given year and included 20 measurable activities to implement these practices (OMB et al., n.d.). The Annual Action Plan also identifies responsible parties and provides specific timeframes for the implementation of the 20 activities (OMB et al., n.d.). Combined, these documents serve as a strategic framework for federal agencies to advance the goals of the OPEN Government Data Act by improving their data management, use, and sharing (OMB et al., n.d.). 
+
+## Stakeholder Analysis
+	Improving the use, management, and sharing of government data requires support from a variety of stakeholders both inside and outside of the Federal Government. Federal stakeholder and agency input is needed to work across government silos and capture the wide range of data produced by the Federal Government (OMB et al., n.d.). In contrast, non-federal stakeholder input strengthens the utilization of government data in a variety of ways across sectors (OMB et al., 2019). The table below explores primary and secondary stakeholders and their unique perspectives on the problem.
+
+_Table 1: Primary and Secondary Stakeholders and their Perspectives_

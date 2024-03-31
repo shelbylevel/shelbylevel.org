@@ -1,0 +1,153 @@
+---
+author: Shelby L Level
+#title: 
+format:
+  classic-cv-pdf: default
+cvfooter:
+  left: "shelbylevel.org"
+  right: "github.com/shelbylevel"
+cvcolor: 45767A #without `#`
+cvfont: lato #texlive fonts like raleway,fetamont,comfortaa,inconsolata
+cvmeta:
+  - title: Status
+    left: Research Assistant
+    right: '__Email__: slevel20@gmail.com'
+  - title: Field
+    left: Public Health, Data Analytics, Data Visualization
+    right: '__Website__: https://www.shelbylevel.org'
+  - title: Techs
+    left: R, Git, GitHub, Shiny, SAS, SPSS
+    right: '__GitHub__: https://www.github.com/shelbylevel'
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: cvevents
+cvevents <- function(tbl, when, what, where, details) {
+
+    command_start <- "\\cvevent"
+
+    res <- paste0(
+        command_start, "{", tbl[[when]], "}", 
+        "{", tbl[[what]], "}",
+        "{", tbl[[where]], "}")
+    
+    tbl[[details]] <- sapply(tbl[[details]], function(x) paste0("{", x, "}", collapse = ","))
+    res <- paste0(res, "{",tbl[[details]],"}")
+
+    cat(res, sep = "\n")
+}
+```
+
+```{r}
+#| label: cvskills
+cvskills <- function(tbl, when, what, where, details) {
+
+    command_start <- "\\cvskill"
+
+    res <- paste0(
+        command_start, "{", tbl[[when]], "}", 
+        "{", tbl[[what]], "}",
+        "{", tbl[[where]], "}")
+    
+    tbl[[details]] <- sapply(tbl[[details]], function(x) paste0("{", x, "}", collapse = ","))
+    res <- paste0(res, "{",tbl[[details]],"}")
+
+    cat(res, sep = "\n")
+}
+```
+
+# Summary
+
+Health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R. \newline
+
+# Skills
+
+```{r }
+#| label: skills
+#| output: asis
+tibble::tribble(
+    ~area, ~uni, ~loc, ~dates, ~details,
+    "Technical", "", "", "", c("Experience utilizing publicly available secondary data (socrata, tidycensus, tigris)", "Expertise in securing, cleaning, and preparing data for analysis in R and/or archive for storage (tidyr, dplyr)", "Experience using R to create basic descriptive statistics and analyses that include tables, charts, and other visualizations (kable, kableExtra, ggplot2, plotly, highcharter)", "Skilled at using R to create static and dynamic maps (sf, leaflet, ggplot2, highcharter)", "Skilled at literate computing and creating HTML documents, PDFs, Word documents, websites, and presentations using R Markdown and Quarto (revealjs, beamer, Bootswatch, bookdown)", "Skilled at creating a Quarto website and hosting via Netlify as well as through github pages (GH-pages)", "Functional HTML, CSS, and LaTeX coding experience", "Developing programmer in R Shiny: learning to create interactive applications and dashboards"),
+    "Communication \\& Project Management", "", "", "", c("Experience working in a collaborative development environment using version control (Git, GitHub, GitLab, GitKraken)", "Excellent oral and written communication skills", "Project management experience including client and stakeholder relationship building, maintanence, and deliverables")
+) |>
+    cvskills(when = "dates", what = "area", where = "uni", details = "details")
+```
+
+# Education
+
+```{r }
+#| label: education
+#| output: asis
+tibble::tribble(
+    ~degree, ~uni, ~loc, ~dates, ~details,
+    "Master of Public Administration", "Ohio University", "Athens, Ohio", "Jul. 2023 - May. 2024", c("Graduate Research Assistant"),
+    "Bachelor of Science in Public Health", "University of Toledo", "Toledo, Ohio", "Aug. 2020 - May. 2023", c("Magna cum laude")
+) |>
+    cvevents(when = "dates", what = "degree", where = "uni", details = "details")
+```
+
+# Work Experience
+
+```{r}
+#| label: experience
+#| output: asis
+tibble::tribble(
+    ~role, ~institution, ~dates, ~details, ~tasks,
+    "Research Assistant", "Ohio University, Voinovich School of Leadership \\& Public Service", "Aug. 2023 - Present",
+    "", c("Assisted with gathering 2012-2021 Ohio Medicaid Assessment Survey (OMAS) data for the Appalachian addendum and the Disability addendum of the 2023-2025 State Health Assessment (SHA)", "Created a brief report for the Regional QI Hub Quality Improvement Project (QIP) - Diabetes Institute, Ohio University on the connections between social determinants of health and chronic health outcomes and behaviors at the county and census tract levels in Ohio", "Analyzing survey data, social vulnerability indices, other Census Bureau data, and mapped transportation options and ADA compliant resources in Athens county for the Creating Healthy Communities Ohio Hub (Athens City County Health Department)", "Building interactive dashboards and applications with Shiny"),
+    "Research Staff", "Ohio University, Ohio Alliance for Population Health (OAPH)", "Jul. 2023 - Present",
+    "Ohio University College of Health Sciences and Professions", c("Analyzing CDC WONDER mortality data to identify health disparities in Ohio across geographic regions, time, and demographics", "Authoring several reports (diabetes, firearm mortality, disease mortality, etc.) focused on Ohio most generally and Appalachian Ohio in particular", "Providing ad hoc analytics and visualization support for OAPH members and clients"),
+    "Health Policy Intern", "Health Policy Institute of Ohio (HPIO)", "Jan. 2023 - Jun. 2023", 
+    "Data Intern", c("Used secondary data to create data visualizations by Ohio's counties, zip codes, and census tract levels", "Provided ad hoc analytics and visualization support for HPIO members and clients", "Reviewed data entry, statistical calculations, and proper citation formatting for reports and other materials as part of quality control measures"),
+    "Data Analytics Intern", "Ohio University, Ohio Alliance for Population Health (OAPH)", "Aug. 2022 - Dec. 2022", 
+    "Ohio University College of Health Sciences and Professions", c("Used R to gather and clean Census Bureau data, National Survey on Drug Use and Health (NSDUH) data, Ohio Department of Health (ODH) data (various), and CDC WONDER mortality data", "Profiled drug overdoses at the national, state, and county levels (Lucas County, Ohio in particular) with series of illustrations including tables, charts, maps"),
+    "Student Research Assistant", "University of Toledo, Department of Medicine", "May. 2022 - Aug. 2022", 
+    "Department of Medical Microbiology and Immunology", c("Replicated HIV-1 Protease molecular dynamics simulations in vitro", "Induced mutations in the HIV-1 Protease, purified each mutated protease including four mutations and one wild type, and ran small angle x-ray scattering (BioSAXS) to confirm protein confirmation in simulated data", "Learned wet lab techniques in recombinant DNA transformation and protein purification", "Presented project updates to primary investigator and research team through weekly team meetings")
+) |>
+    cvevents(when = "dates", what = "role", where = "institution", details = "tasks")
+```
+
+# Data Projects
+
+```{r}
+#| label: projects
+#| output: asis
+tibble::tribble(
+    ~project, ~organization, ~dates, ~details, ~tasks,
+    "Social Determinants of Health in Ohio's Counties and Census Tracts", "Ohio University", "Dec. 2023 - Present",
+    "", c("This project involved comparing and exploring commonly used Social Determinants of Health (SDOH) indices and their association with health outcomes in Ohio’s counties and census tracts"),
+    "Case for State-Supported Public Osteopathic Medical School", "Morgan State University", "Jun. 2023 - Jul. 2023",
+    "", c("Assisted with gathering demographic, Health Professional Shortage Areas (HPSAs), Medically Underserved Areas (MUAs), physician workforce, health status, and health outcomes data for Maryland and the Baltimore City and County metro area"),
+    "Vaccination Rates, COVID-19 Case Rates, and Excess Mortality", "University of Toledo", "May. 2022",
+    "", c("Used SAS to clean and analyze data from Our World in Data and the Worldbank International Database", "Performed regression analyses to determine if COVID-19 vaccination rates significantly reduced new COVID-19 cases or excess mortality in approximately 185 nations during Fall of 2021"),
+) |>
+    cvevents(when = "dates", what = "project", where = "organization", details = "tasks")
+```
+
+# Certifications
+
+```{r}
+#| label: certifications
+#| output: asis
+tibble::tribble(
+    ~project, ~organization, ~dates, ~details, ~tasks,
+    "Certified Health Education Specialist (CHES)", "NCHEC", "Jun. 2023",
+    "", c("National Commission for Health Education Credentialing Credential ID: 38648")
+) |>
+    cvevents(when = "dates", what = "project", where = "organization", details = "tasks")
+```
+
+# Leadership \\& Community Engagement
+
+```{r}
+#| label: leadership
+#| output: asis
+tibble::tribble(
+    ~role, ~institution, ~dates, ~details, ~tasks,
+    "KLAR Leadership Academy", "University of Toledo, Neff College of Business \\& Innovation", "May. 2022 - Mar. 2023",
+    "", c("Nominated to become a member of the 2022-2023 KLAR Leadership Academy through the University of Toledo Neff College of Business and Innovation", "Strengthened leadership, teamwork, communication, and critical thinking skills by participating in learning and service events on campus and within the local community")
+) |>
+    cvevents(when = "dates", what = "role", where = "institution", details = "tasks")
+```

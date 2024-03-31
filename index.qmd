@@ -15,10 +15,10 @@ about:
      href: mailto:slevel20@gmail.com
 engine: knitr
 jupyter: python3
-resources:
-  - "_site/cv/shelby-level-cv.pdf"
+resources: 
+  - '_site/cv/shelby-level-resume.pdf'
 cv:
-  pdf: "_site/cv/shelby-level-cv.pdf"
+  pdf: "_site/cv/shelby-level-resume.pdf"
 ---
 
 **Hello!** Welcome to my *Level* of the internet!
@@ -27,7 +27,7 @@ I am a graduate student studying Public Administration at Ohio University with a
 
 Outside of the classroom and my RStudio panel I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!
 
-Check out my CV below and example work in my [Past Projects](myprojects.qmd) and [Blog](blog.qmd)!
+Check out my resume below and example work in my [Past Projects](myprojects.qmd) and [Blog](blog.qmd)!
 
 ```{css echo=FALSE}
 .embed-container {
@@ -50,8 +50,8 @@ Check out my CV below and example work in my [Past Projects](myprojects.qmd) and
 
 ```{=html}
 <p class="text-center">
-  <a class="btn btn-primary btn-default cv-download" href="_site/cv/shelby-level-cv.pdf" target="_blank">
-    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Click Here for Current CV
+  <a class="btn btn-primary btn-default resume-download" href="_site/cv/shelby-level-resume.pdf" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Click Here for Current Resume
   </a>
 </p>
 

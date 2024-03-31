@@ -16,11 +16,10 @@ cvmeta:
     left: Public Health, Data Analytics, Data Visualization
     right: '__Website__: https://www.shelbylevel.org'
   - title: Techs
-    left: R, Git, GitHub, SAS, SPSS
+    left: R, Git, GitHub, Shiny, SAS, SPSS
     right: '__GitHub__: https://www.github.com/shelbylevel'
-execute:
+execute: 
   echo: false
-  freeze: auto
 ---
 
 ```{r}
@@ -66,7 +65,7 @@ tibble::tribble(
 tibble::tribble(
     ~role, ~institution, ~dates, ~details, ~tasks,
     "Research Assistant", "Ohio University, Voinovich School of Leadership \\& Public Service", "Aug. 2023 - Present",
-    "", c("Assisted with gathering 2012-2021 Ohio Medicaid Assessment Survey (OMAS) data for the Appalachian addendum and the Disability addendum of the 2023-2025 State Health Assessment (SHA)", "Created a brief report for the Regional QI Hub Quality Improvement Project (QIP) - Diabetes Institute, Ohio University on the connections between social determinants of health and chronic health outcomes and behaviors at the county and census tract levels in Ohio", "Analyzing survey data, social vulnerability indices, other Census Bureau data, and mapped transportation options and ADA compliant resources in Athens county for the Creating Healthy Communities Ohio Hub (Athens City County Health Department)"),
+    "", c("Assisted with gathering 2012-2021 Ohio Medicaid Assessment Survey (OMAS) data for the Appalachian addendum and the Disability addendum of the 2023-2025 State Health Assessment (SHA)", "Created a brief report for the Regional QI Hub Quality Improvement Project (QIP) - Diabetes Institute, Ohio University on the connections between social determinants of health and chronic health outcomes and behaviors at the county and census tract levels in Ohio", "Analyzing survey data, social vulnerability indices, other Census Bureau data, and mapped transportation options and ADA compliant resources in Athens county for the Creating Healthy Communities Ohio Hub (Athens City County Health Department)", "Building interactive dashboards and applications with Shiny"),
     "Research Staff", "Ohio University, Ohio Alliance for Population Health (OAPH)", "Jul. 2023 - Present",
     "Ohio University College of Health Sciences and Professions", c("Analyzing CDC WONDER mortality data to identify health disparities in Ohio across geographic regions, time, and demographics", "Authoring several reports (diabetes, firearm mortality, disease mortality, etc.) focused on Ohio most generally and Appalachian Ohio in particular", "Providing ad hoc analytics and visualization support for OAPH members and clients"),
     "Health Policy Intern", "Health Policy Institute of Ohio (HPIO)", "Jan. 2023 - Jun. 2023", 
