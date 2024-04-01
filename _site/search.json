@@ -7,13 +7,6 @@
     "text": "Under Construction\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Shelby Level",
-    "section": "",
-    "text": "Hello! Welcome to my level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nCheck out my CV and example work within the projects and blogs tabs!\nCV\n{css echo=FALSE} .embed-container {     position: relative;     padding-bottom: 129%;     height: 0;     overflow: hidden;     max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed {     position: absolute;     top: 0;     left: 0;     width: 100%;     height: 100%; }\n\n  \n     Current CV"
-  },
-  {
     "objectID": "myprojects/diabetes-report/index.html",
     "href": "myprojects/diabetes-report/index.html",
     "title": "Diabetes Mortality Statistics: United States and Ohio",
@@ -168,6 +161,13 @@
     "text": "Hello! Welcome to my Level of the internet!\nI am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.\nOutside of the classroom and my RStudio panel I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!\nCheck out my resume below and example work in my Past Projects and Blog!\n\n\n\n\n  \n     Click Here for Current Resume"
   },
   {
+    "objectID": "scratchpad/index2.html",
+    "href": "scratchpad/index2.html",
+    "title": "",
+    "section": "",
+    "text": "Under Construction"
+  },
+  {
     "objectID": "myprojects.html",
     "href": "myprojects.html",
     "title": "",
@@ -292,12 +292,5 @@
     "title": "A Comparative Analysis of the Social Determinants of Health in Ohio’s Counties and Census Tracts",
     "section": "10.2 Appalachian Counties",
     "text": "10.2 Appalachian Counties\n\n10.2.1 Scioto County ADI, by Census Tract\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  91.65  102.46  107.61  111.79  124.14  142.32"
-  },
-  {
-    "objectID": "index2.html",
-    "href": "index2.html",
-    "title": "",
-    "section": "",
-    "text": "Under Construction"
   }
 ]
