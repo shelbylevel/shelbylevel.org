@@ -22,8 +22,10 @@ $gray-900: #1a1a1a !default;
 $black:    #000 !default;
 
 // Colors
+$deep-jade: #254D56;
 $faded-jade: #45767a;
-$gulf-stream: #7fa6ad;
+$faded-jade-50: #a2bbbd;
+$gulfstream: #7fa6ad;
 $edgewater: #d3dfdd;
 $cascade: #b3c2c9;
 $boulder: #727E70;
@@ -35,9 +37,9 @@ $storm-cloud:#64635E;
 $plum-crazy: #59224A;
 
 // Base document colors
-$navbar-bg: $faded-jade; // navbar
-$navbar-fg: $edgewater; // navbar foreground elements
-$navbar-hl: $timberwolf; // highlight color when hovering over navbar links
+$navbar-bg: $faded-jade-50; // navbar
+$navbar-fg: $faded-jade; // navbar foreground elements
+$navbar-hl: $deep-jade; // highlight color when hovering over navbar links
 $body-bg: $white; // page background
 $body-color: $black; // page text
 $footer-bg: $edgewater; // footer
@@ -72,6 +74,100 @@ $dark:          $gray-800 !default;
 
 $min-contrast-ratio:   2.3 !default;
 
+// Animated Logo
+
+// the line in the navbar logo
+// animation defined in ek-styles.css
+.icon-line {
+  display: block;
+  background: $white;
+  width: 100%;
+  height: 1.2px;
+  margin: auto;
+  display: table;
+  margin-top: -2.6px;
+  margin-bottom: -2.6px;
+}
+
+/* covers line inside of letter v */
+.icon-line2 {
+  display: block;
+  background: $faded-jade;
+  width: 14%;
+  height: 1.7px;
+  margin: auto;
+  display: table;
+  margin-top: 1px;
+  margin-bottom: -12px;
+  margin-left: 50.5px;
+}
+
+/* right inner square to smooth out where line and v meet */
+.icon-line2:after {
+  content: "";
+  position: absolute;
+  margin: -20px;
+  width: 4px;
+  height: 4px;
+  transform: rotate(24deg);
+  margin-left: 13.2px;
+  margin-top: -1.2px;
+  background-color: $faded-jade;
+}
+
+/* left inner square to smooth out where line and v meet */
+.icon-line2:before {
+  content: "";
+  position: absolute;
+  margin: 0px;
+  width: 4px;
+  height: 5px;
+  transform: rotate(336deg);
+  margin-left: -0.8px;
+  margin-top: -1.2px;
+  background-color: $faded-jade;
+}
+
+.first-name {
+  font-family: "Nunito Sans";
+  font-size: 1.25rem;
+  font-weight: 200;
+  letter-spacing: .46rem;
+  margin-right: -7px;
+}
+
+.v {
+  font-family: "Nunito Sans";
+  font-size: 1.9rem;
+  font-weight: 100;
+  padding-left: 0px;
+  padding-right: 4.5px;
+}
+
+// navbar
+.navbar-title {
+  font-family: "Nunito Sans";
+  font-size: 1.25rem;
+  font-weight: 200;
+  letter-spacing: .46rem;
+}
+
+.last-name {
+  font-family: "Nunito Sans";
+  font-size: 1.25rem;
+  font-weight: 200;
+  letter-spacing: .46rem;
+  padding-left: 9px;
+}
+
+.last-name2 {
+  font-family: "Nunito Sans";
+  font-size: 1.25rem;
+  font-weight: 200;
+  letter-spacing: .46rem;
+  margin-left: -17px;
+}
+
 // Options
 
 $enable-rounded:            false !default;
@@ -95,6 +191,7 @@ $font-weight-semibold:        500 !default;
 $font-weight-bold:            600 !default;
 $font-weight-bolder:          bolder !default;
 
+$font-size-base:              1rem;
 $h1-font-size:                2rem !default;
 $h2-font-size:                1.75rem !default;
 $h3-font-size:                1.5rem !default;

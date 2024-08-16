@@ -1,0 +1,23 @@
+---
+title: "Apple Health Data"
+description: "Apple Watch Data"
+author: 
+  - name: Shelby Level
+    url: https://github.com/shelbylevel
+date: 2-7-2024
+categories: [Public Health, SDOH] # self-defined categories
+#citation: 
+  #url: 
+#image: preview-image.png
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    self-contained: true
+    #css: css/sl_theme.css
+draft: true
+execute:
+  freeze: true
+---
+

@@ -11,11 +11,11 @@
  * Copyright 2011-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@100;200;250;300;400;500;600;700&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700&display=swap");
 :root,
 
 [data-bs-theme=light] {
@@ -42,6 +42,7 @@
   --bs-gray-700: #55595c;
   --bs-gray-800: #343a40;
   --bs-gray-900: #1a1a1a;
+  --bs-default: #fff; /* added in comparison */
   --bs-primary: #1a1a1a;
   --bs-secondary: #fff;
   --bs-success: #4bbf73;
@@ -50,6 +51,7 @@
   --bs-danger: #d9534f;
   --bs-light: #fff;
   --bs-dark: #343a40;
+  --bs-default-rgb: 255, 255, 255; /* added in comparison */
   --bs-primary-rgb: 26, 26, 26;
   --bs-secondary-rgb: 255, 255, 255;
   --bs-success-rgb: 75, 191, 115;
@@ -88,6 +90,7 @@
   --bs-font-monospace: "Open Sans", SFMono-Regular, Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-root-font-size: 17px; /* added in comparison */
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 350;
   --bs-body-line-height: 1.5;
@@ -193,6 +196,24 @@
   --bs-form-invalid-color: #e89895;
   --bs-form-invalid-border-color: #e89895;
 }
+
+/* Logo Animation */
+
+.navbar-title:hover > .icon-line {
+  animation-duration: 600ms;
+  animation-name: line-expand;
+}
+
+@keyframes line-expand {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
 
 *,
 *::before,
@@ -3876,17 +3897,18 @@ textarea.form-control-lg {
 }
 
 .navbar {
+  background-color: #45767a;
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 1.5rem;
-  --bs-navbar-color: #45767A;
+  /*--bs-navbar-color: #45767a;*/
   --bs-navbar-hover-color: #1a1a1a;
   --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
   --bs-navbar-active-color: #1a1a1a;
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: #1a1a1a;
-  --bs-navbar-brand-hover-color: #1a1a1a;
+  --bs-navbar-brand-color: #d3dfdd;
+  --bs-navbar-brand-hover-color: #727E70;
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
@@ -3922,6 +3944,10 @@ textarea.form-control-lg {
   font-size: var(--bs-navbar-brand-font-size);
   color: var(--bs-navbar-brand-color);
   text-decoration: none;
+  -webkit-text-decoration: none;
+  -moz-text-decoration: none;
+  -ms-text-decoration: none;
+  -o-text-decoration: none;
   white-space: nowrap;
 }
 .navbar-brand:hover, .navbar-brand:focus {

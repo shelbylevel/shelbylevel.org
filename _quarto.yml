@@ -6,8 +6,8 @@ website:
   #title: "Shelby Level"
   favicon: logos/sl_sticker.png
   navbar:
-    #title: "SHELBY LEVEL"
-    logo: logos/white-sl-logo-final-crop.png
+    title: "<span class='first-name' >SHELBY</span><span class='icon-line' ></span><span class ='icon-line2'></span> <span class='last-name' >LE</span><span class='v' >v</span> <span class='last-name2' >EL</span>"
+    #logo: logos/white-sl-logo-final-crop.png
     right:
       - href: index.qmd
         text: "About Me"
@@ -46,8 +46,8 @@ format:
       -  lux
       -  css/sl-lux-variables.scss
     css:
-      -  css/sl-bootstrap.min.css
-      -  css/sl-lux-bootstrap.css
+      #-  css/sl-bootstrap.min.css #header color
+      -  css/sl-lux-bootstrap.css #bold font weight and hover color for header
     toc: true
     page-layout: full
 

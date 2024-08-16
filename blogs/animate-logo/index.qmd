@@ -1,0 +1,40 @@
+---
+title: "Animated Logo"
+description: "Stumbling my way through CSS, SCSS, and HTML"
+author: 
+  - name: Shelby Level
+    url: https://github.com/shelbylevel
+date: 2-7-2024
+categories: [Styling, Website, Quarto, CSS/SCSS] # self-defined categories
+#citation: 
+  #url: 
+#image: preview-image.png
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    self-contained: true
+    #css: css/sl_theme.css
+draft: true
+execute:
+  freeze: true
+---
+
+# Introduction
+
+Hello! Welcome to my first ever blog post, I'm so glad you're here! As I continue to learn new things and expand my coding skill set, I hope to document my journey, and maybe even earn a few laughs along the way, through my blog. But first and foremost, we are starting with one of my favorite elements of this site: my logo.
+
+# Inspiration
+
+I would like to start by giving credit to [Ella Kaye's](https://ellakaye.co.uk/posts/2023-04-11_animated-logo/) blog post detailing how she animated her Quarto website logo. This was the main inspiration behind my efforts to animate my logo and her source code was extremely helpful along the way.
+
+Now working off Ella Kaye's source code, I quickly realized my logo was less straightforward. I originally created my logo in Adobe Express and uploaded it as a PNG file into my website's navbar.
+
+![](/logos/black-sl-logo-final-crop.png){width="300"}
+
+This would have been good enough for most, but alas, as coders we are always looking for our next challenge to solve.
+
+# Starting Off
+
+I began by 
