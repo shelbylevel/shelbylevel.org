@@ -25,8 +25,10 @@ $black:    #000 !default;
 $deep-jade: #254D56;
 $faded-jade: #45767a;
 $faded-jade-50: #a2bbbd;
+$faded-jade-10: #ecf1f2;
 $gulfstream: #7fa6ad;
 $edgewater: #d3dfdd;
+$edgewater-20: #dce5e4;
 $cascade: #b3c2c9;
 $boulder: #727E70;
 $spring-rain: #b2c5b4;
@@ -42,8 +44,9 @@ $navbar-fg: $faded-jade; // navbar foreground elements
 $navbar-hl: $deep-jade; // highlight color when hovering over navbar links
 $body-bg: $white; // page background
 $body-color: $black; // page text
-$footer-bg: $edgewater; // footer
-$link-color: $boulder; // hyperlinks
+$footer-bg: $faded-jade-50; // footer
+$footer-fg: $deep-jade; // footer text color
+$link-color: $deep-jade; // hyperlinks
 
 // Inline code
 $code-bg: $timberwolf; // inline code background color
@@ -80,7 +83,7 @@ $min-contrast-ratio:   2.3 !default;
 // animation defined in ek-styles.css
 .icon-line {
   display: block;
-  background: $white;
+  background: $faded-jade;
   width: 100%;
   height: 1.2px;
   margin: auto;
@@ -92,7 +95,7 @@ $min-contrast-ratio:   2.3 !default;
 /* covers line inside of letter v */
 .icon-line2 {
   display: block;
-  background: $faded-jade;
+  background: $faded-jade-10;
   width: 14%;
   height: 1.7px;
   margin: auto;
@@ -112,7 +115,7 @@ $min-contrast-ratio:   2.3 !default;
   transform: rotate(24deg);
   margin-left: 13.2px;
   margin-top: -1.2px;
-  background-color: $faded-jade;
+  background-color: $faded-jade-10;
 }
 
 /* left inner square to smooth out where line and v meet */
@@ -125,7 +128,7 @@ $min-contrast-ratio:   2.3 !default;
   transform: rotate(336deg);
   margin-left: -0.8px;
   margin-top: -1.2px;
-  background-color: $faded-jade;
+  background-color: $faded-jade-10;
 }
 
 .first-name {
@@ -150,6 +153,7 @@ $min-contrast-ratio:   2.3 !default;
   font-size: 1.25rem;
   font-weight: 200;
   letter-spacing: .46rem;
+  color: $faded-jade;
 }
 
 .last-name {
@@ -232,7 +236,7 @@ $form-select-disabled-bg:           $input-disabled-bg !default;
 
 // Navbar
 
-$navbar-padding-y:                  1.5rem !default;
+$navbar-padding-y:                  0.5rem !default; // changed from 1.5rem to 0.5 rem
 $navbar-dark-hover-color:           $white !default;
 $navbar-light-color:                rgba($black, .3) !default;
 $navbar-light-hover-color:          $gray-900 !default;
