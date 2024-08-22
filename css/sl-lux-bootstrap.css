@@ -4317,7 +4317,7 @@ textarea.form-control-lg {
 .navbar-dark,
 .navbar[data-bs-theme=dark] {
   --bs-navbar-color: #45767a;
-  --bs-navbar-hover-color: #fff;
+  --bs-navbar-hover-color: #254D56; /*changed from white to deep jade*/
   --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
   --bs-navbar-active-color: #254D56;
   --bs-navbar-brand-color: #fff;
@@ -11979,4 +11979,16 @@ th {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/* Blog Posts */
+
+.quarto-title-banner {
+    margin-bottom: 1em;
+    color: #45767a;
+    background: #ecf1f2;
+}
+
+.quarto {
+  background: #ecf1f2;
 }

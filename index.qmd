@@ -23,9 +23,12 @@ cv:
 
 **Hello!** Welcome to my *Level* of the internet!
 
-I am a graduate student studying Public Administration at Ohio University with an expected graduation of May 2024. I am also a health data analytics and visualization enthusiast looking for an opportunity to continue my learning journey with R.
+I am a health informatics analyst in the [Government Resource Center](https://grc.osu.edu/) at the Ohio State University. I have a special interest in data visualization and R Shiny dashboard development, and am always looking for new opportunities to continue my learning journey with R.
 
-Outside of the classroom and my RStudio panel I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!
+
+Prior to my current role, I received a Master of Public Administration (2024) from Ohio University's Voinovich School of Leadership and Public Service and worked as a Graduate Research Assistant on a variety of data analytics and visualization projects. I also hold a Bachelor of Science in Public Health (2023) from the University of Toledo.
+
+Outside of RStudio, I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!
 
 Check out my resume below and example work in my [Past Projects](myprojects.qmd) and [Blog](blog.qmd)!
 
