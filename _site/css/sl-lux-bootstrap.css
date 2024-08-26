@@ -110,13 +110,13 @@
   --bs-tertiary-color-rgb: 85, 89, 92;
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
-  --bs-heading-color: #45767a; /* changed from black to deep jade */
+  --bs-heading-color: #45767a; /* changed from black to faded jade */
   --bs-link-color: #1a1a1a;
   --bs-link-color-rgb: 26, 26, 26;
   --bs-link-decoration: underline;
   --bs-link-hover-color: #151515;
   --bs-link-hover-color-rgb: 21, 21, 21;
-  --bs-code-color: #e83e8c;
+  --bs-code-color: #59224A;
   --bs-highlight-color: #55595c;
   --bs-highlight-bg: #fcefdc;
   --bs-border-width: 1px;
@@ -255,7 +255,8 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 300; /* changed from 600 to 300 */
   line-height: 1.2;
-  color: var(--bs-heading-color);
+  /*color: var(--bs-heading-color); */
+  color: #45767a;
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -270,10 +271,12 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.3rem + 0.6vw);
+  border-bottom: 1px solid #a2bbbd; /* changed added */
 }
 @media (min-width: 1200px) {
   h2, .h2 {
     font-size: 1.75rem;
+    color: #45767a;
   }
 }
 
@@ -11834,7 +11837,7 @@ textarea.form-control-lg {
   padding-bottom: 0.715rem;
 }
 .navbar-brand {
-  margin-right: 2rem;
+  margin-right: 0rem; /* changed from 2 to 0 */
 }
 
 .bg-light {

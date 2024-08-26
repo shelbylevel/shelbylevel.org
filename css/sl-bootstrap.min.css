@@ -20293,6 +20293,7 @@ h2,
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  border-bottom: 1px solid black; /* changed added */
 }
 h1.title,
 .title.h1 {
