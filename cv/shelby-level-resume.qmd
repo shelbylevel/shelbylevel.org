@@ -10,13 +10,13 @@ cvcolor: 45767A #without `#`
 cvfont: lato #texlive fonts like raleway,fetamont,comfortaa,inconsolata
 cvmeta:
   - title: Status
-    left: Research Assistant
+    left: Heath Informatics Analyst
     right: '__Email__: slevel20@gmail.com'
   - title: Field
     left: Public Health, Data Analytics, Data Visualization
     right: '__Website__: https://www.shelbylevel.org'
   - title: Techs
-    left: R, Git, GitHub, Shiny, SAS, SPSS
+    left: R, Git, Shiny, GitHub, GitLab, SAS
     right: '__GitHub__: https://www.github.com/shelbylevel'
 execute: 
   echo: false
@@ -69,7 +69,7 @@ Health data analytics and visualization enthusiast looking for an opportunity to
 #| output: asis
 tibble::tribble(
     ~area, ~uni, ~loc, ~dates, ~details,
-    "Technical", "", "", "", c("Experience utilizing publicly available secondary data (socrata, tidycensus, tigris)", "Expertise in securing, cleaning, and preparing data for analysis in R and/or archive for storage (tidyr, dplyr)", "Experience using R to create basic descriptive statistics and analyses that include tables, charts, and other visualizations (kable, kableExtra, ggplot2, plotly, highcharter)", "Skilled at using R to create static and dynamic maps (sf, leaflet, ggplot2, highcharter)", "Skilled at literate computing and creating HTML documents, PDFs, Word documents, websites, and presentations using R Markdown and Quarto (revealjs, beamer, Bootswatch, bookdown)", "Skilled at creating a Quarto website and hosting via Netlify as well as through github pages (GH-pages)", "Functional HTML, CSS, and LaTeX coding experience", "Developing programmer in R Shiny: learning to create interactive applications and dashboards"),
+    "Technical", "", "", "", c("Experience utilizing publicly available secondary data (socrata, tidycensus, tigris)", "Expertise in securing, cleaning, and preparing data for analysis in R and/or archive for storage (tidyr, dplyr)", "Experience using R to create basic descriptive statistics and analyses that include tables, charts, and other visualizations (kable, kableExtra, ggplot2, plotly, highcharter)", "Skilled at using R to create static and dynamic maps (sf, leaflet, ggplot2, highcharter)", "Skilled at literate computing and creating HTML documents, PDFs, Word documents, websites, and presentations using R Markdown and Quarto (revealjs, beamer, Bootswatch, bookdown)", "Skilled at creating a Quarto website and hosting via Netlify as well as through github pages (GH-pages)", "Functional HTML, CSS, and LaTeX coding experience", "R Shiny Dashboard Development: Experience building and maintaining interactive applications and dashboards"),
     "Communication \\& Project Management", "", "", "", c("Experience working in a collaborative development environment using version control (Git, GitHub, GitLab, GitKraken)", "Excellent oral and written communication skills", "Project management experience including client and stakeholder relationship building, maintanence, and deliverables")
 ) |>
     cvskills(when = "dates", what = "area", where = "uni", details = "details")
@@ -95,9 +95,11 @@ tibble::tribble(
 #| output: asis
 tibble::tribble(
     ~role, ~institution, ~dates, ~details, ~tasks,
-    "Research Assistant", "Ohio University, Voinovich School of Leadership \\& Public Service", "Aug. 2023 - Present",
+    "Health Informatics Analyst", "Government Resource Center, The Ohio State University", "Jun. 2024 - Present",
+    "", c("Developing and maintaining interactive dashboards and applications using R Shiny", "Expanding brand identity using dynamic and interactive documents such as Quarto, Revealjs, and other HTML formats"),
+    "Research Assistant", "Ohio University, Voinovich School of Leadership \\& Public Service", "Aug. 2023 - May 2024",
     "", c("Assisted with gathering 2012-2021 Ohio Medicaid Assessment Survey (OMAS) data for the Appalachian addendum and the Disability addendum of the 2023-2025 State Health Assessment (SHA)", "Created a brief report for the Regional QI Hub Quality Improvement Project (QIP) - Diabetes Institute, Ohio University on the connections between social determinants of health and chronic health outcomes and behaviors at the county and census tract levels in Ohio", "Analyzing survey data, social vulnerability indices, other Census Bureau data, and mapped transportation options and ADA compliant resources in Athens county for the Creating Healthy Communities Ohio Hub (Athens City County Health Department)", "Building interactive dashboards and applications with Shiny"),
-    "Research Staff", "Ohio University, Ohio Alliance for Population Health (OAPH)", "Jul. 2023 - Present",
+    "Research Staff", "Ohio University, Ohio Alliance for Population Health (OAPH)", "Jul. 2023 - May 2024",
     "Ohio University College of Health Sciences and Professions", c("Analyzing CDC WONDER mortality data to identify health disparities in Ohio across geographic regions, time, and demographics", "Authoring several reports (diabetes, firearm mortality, disease mortality, etc.) focused on Ohio most generally and Appalachian Ohio in particular", "Providing ad hoc analytics and visualization support for OAPH members and clients"),
     "Health Policy Intern", "Health Policy Institute of Ohio (HPIO)", "Jan. 2023 - Jun. 2023", 
     "Data Intern", c("Used secondary data to create data visualizations by Ohio's counties, zip codes, and census tract levels", "Provided ad hoc analytics and visualization support for HPIO members and clients", "Reviewed data entry, statistical calculations, and proper citation formatting for reports and other materials as part of quality control measures"),

@@ -3,16 +3,14 @@ project:
   output-dir: _site
 
 website:
-  #title: "Shelby Level"
+  title: "Shelby Level"
   favicon: logos/sl_sticker.png
   navbar:
     title: "<span class='first-name' >SHELBY</span><span class='icon-line' ></span><span class ='icon-line2'></span> <span class='last-name' >LE</span><span class='v' >v</span> <span class='last-name2' >EL</span>"
-    #logo: logos/white-sl-logo-final-crop.png
     right:
       - href: index.qmd
         text: "About Me"
-      #- href: index.qmd
-        #text: Home
+
       - href: blog.qmd
         text: Blog
       - href: myprojects.qmd

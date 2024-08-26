@@ -15,26 +15,88 @@ format:
     toc-depth: 2
     toc-location: left
     self-contained: true
-    #css: css/sl_theme.css
+    css: ../../css/sl-lux-bootstrap.css
 draft: true
 execute:
   freeze: true
 ---
 
-# Introduction
+## Introduction
 
-Hello! Welcome to my first ever blog post, I'm so glad you're here! As I continue to learn new things and expand my coding skill set, I hope to document my journey, and maybe even earn a few laughs along the way, through my blog. But first and foremost, we are starting with one of my favorite elements of this site: my logo.
+Hello! Welcome to my first ever blog post, I'm so glad you're here! As I continue to learn new things and expand my coding skill set, I hope to document my journey, and maybe even earn a few laughs, through my blog. But first and foremost, this blog post is all about one of my favorite elements of this site: my logo.
 
-# Inspiration
+## Inspiration
 
-I would like to start by giving credit to [Ella Kaye's](https://ellakaye.co.uk/posts/2023-04-11_animated-logo/) blog post detailing how she animated her Quarto website logo. This was the main inspiration behind my efforts to animate my logo and her source code was extremely helpful along the way.
+I would like to start by giving credit to [Ella Kaye's](https://ellakaye.co.uk/posts/2023-04-11_animated-logo/) blog post detailing how she animated her Quarto website logo. This was the main inspiration behind my efforts to animate my logo and her source code was extremely helpful along the way. I recommending checking out her post for a more in-depth explanation.
 
-Now working off Ella Kaye's source code, I quickly realized my logo was less straightforward. I originally created my logo in Adobe Express and uploaded it as a PNG file into my website's navbar.
+Now working off Ella Kaye's source code, I quickly realized my logo was less straightforward. I originally created my logo in Adobe Express and uploaded it as a PNG file into my website's navbar. This would have been good enough for most, but alas, as coders we are always looking for our next challenge to solve. 
 
-![](/logos/black-sl-logo-final-crop.png){width="300"}
+## Using HTML in YAML
 
-This would have been good enough for most, but alas, as coders we are always looking for our next challenge to solve.
+Working from Ella's code, I began by editing the navbar title specified in my site's `_quarto.yml` file by using a combination of HTML `<span>` tags and classes that I could apply CSS styling to. I started with `SHELBY<span class='icon-line'></span>LEVEL` and then used a second line `icon-line2` matching the navbar background color above the letter V in my last name. 
 
-# Starting Off
+```{.yaml}
 
-I began by 
+website:
+  title: "Shelby Level"
+  navbar:
+    title: "<span class='first-name'>SHELBY</span><span class='icon-line' ></span><span class ='icon-line2'></span><span class='last-name'>LE</span><span class='v'>v</span><span class='last-name2'>EL</span>"
+
+```
+
+## Adding Styling to the Static Logo
+
+```{.scss}
+.icon-line {
+  display: block;
+  background: $primary;
+  width: 100%;
+  height: 6px;
+  margin: auto;
+  display: table;
+  margin-top: -6px;
+  margin-bottom: -6px;
+}
+```
+
+```{.sass}
+$pink:      #D4006A;
+$primary:   $pink !default;
+```
+
+and similarly in `ek-theme-dark.scss`: 
+
+```{.sass}
+$green:     #00D46A;
+$primary:   $green !default;
+```
+
+## Animating the Logo Using CSS
+
+```{.css}
+.navbar-title:hover > .icon-line {
+  animation-duration: 600ms;
+  animation-name: line-expand;
+}
+```
+
+```{.css}
+@keyframes line-expand {
+  from {
+    width: 0%;
+  }
+  
+  to {
+    width: 100%;
+  }
+}
+```
+
+```{.yaml}
+format:
+  html:
+    theme: 
+      light: assets/ek-theme-light.scss
+      dark: assets/ek-theme-dark.scss
+    css: assets/ek-styles.css
+```
