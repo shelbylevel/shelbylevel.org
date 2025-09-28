@@ -98,7 +98,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #55595c;
   --bs-body-color-rgb: 85, 89, 92;
-  --bs-body-bg: #ecf1f2; /* changed from white to edgewater-20 */
+  --bs-body-bg: #ecf1f2; /* changed from white to faded-jade-10 */
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -111,7 +111,7 @@
   --bs-tertiary-bg: #f8f9fa;
   --bs-tertiary-bg-rgb: 248, 249, 250;
   --bs-heading-color: #45767a; /* changed from black to faded jade */
-  --bs-link-color: #1a1a1a;
+  --bs-link-color: #45767a; /* changed from #1a1a1a to faded jade */
   --bs-link-color-rgb: 26, 26, 26;
   --bs-link-decoration: underline;
   --bs-link-hover-color: #151515;
@@ -184,7 +184,7 @@
   --bs-light-border-subtle: #55595c;
   --bs-dark-border-subtle: #343a40;
   --bs-heading-color: inherit;
-  --bs-link-color: #767676;
+  --bs-link-color: #dce5e4; /* changed from #767676 */
   --bs-link-hover-color: #919191;
   --bs-link-color-rgb: 118, 118, 118;
   --bs-link-hover-color-rgb: 145, 145, 145;
@@ -255,7 +255,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 300; /* changed from 600 to 300 */
   line-height: 1.2;
-  /*color: var(--bs-heading-color); */
+  color: var(--bs-heading-color);
   color: #45767a;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -272,6 +272,9 @@ h1, .h1 {
 h2, .h2 {
   font-size: calc(1.3rem + 0.6vw);
   border-bottom: 1px solid #a2bbbd; /* changed added */
+  padding-bottom: 0.5rem;
+  font-weight: 300;
+  color: #45767a;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -419,7 +422,8 @@ pre code {
 
 code {
   font-size: 0.875em;
-  color: var(--bs-code-color);
+  /*color: var(--bs-code-color);*/
+  color: #59224A !important;
   word-wrap: break-word;
 }
 a > code {
@@ -3792,7 +3796,8 @@ textarea.form-control-lg {
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
   font-size: var(--bs-nav-link-font-size);
   font-weight: var(--bs-nav-link-font-weight);
-  color: var(--bs-nav-link-color);
+  /*color: var(--bs-nav-link-color);*/
+  color: #45767a !important;
   text-decoration: none;
   background: none;
   border: 0;
@@ -3964,7 +3969,8 @@ textarea.form-control-lg {
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: ;
   /*--bs-nav-link-font-size: 15px; */
-  --bs-nav-link-color: var(--bs-navbar-color);
+  /*--bs-nav-link-color: var(--bs-navbar-color);*/
+  --bs-nav-link-color: #45767a;
   --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
   --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
   display: flex;
@@ -11992,6 +11998,17 @@ th {
     background: #ecf1f2;
 }
 
-.quarto {
-  background: #ecf1f2;
+/* Set the background color for the main blog post content */
+.quarto-light {
+    background-color: white;
+}
+
+h2 {
+  color: #45767a !important;
+
+}
+
+.nav-link {
+  color: #45767a;
+
 }

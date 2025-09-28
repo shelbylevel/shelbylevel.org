@@ -13,9 +13,9 @@ format:
   html:
     toc: true
     toc-depth: 2
-    toc-location: left
+    toc-location: right
     self-contained: true
-    css: ../../css/sl-lux-bootstrap.css
+    css: [../../css/sl-lux-variables.scss, ../../css/sl-lux-bootstrap.css]
 draft: true
 execute:
   freeze: true
@@ -23,17 +23,17 @@ execute:
 
 ## Introduction
 
-Hello! Welcome to my first ever blog post, I'm so glad you're here! As I continue to learn new things and expand my coding skill set, I hope to document my journey, and maybe even earn a few laughs, through my blog. But first and foremost, this blog post is all about one of my favorite elements of this site: my logo.
+Hello! Welcome to my first ever blog post! As I continue to learn new things and expand my coding skill set, I hope to document my journey, and maybe even earn a few laughs, through my blog. But first and foremost, this blog post is all about one of my favorite elements of this site: my logo. I originally created my logo in Adobe Express and uploaded it as a PNG file into my website's navbar.
 
 ## Inspiration
 
 I would like to start by giving credit to [Ella Kaye's](https://ellakaye.co.uk/posts/2023-04-11_animated-logo/) blog post detailing how she animated her Quarto website logo. This was the main inspiration behind my efforts to animate my logo and her source code was extremely helpful along the way. I recommending checking out her post for a more in-depth explanation.
 
-Now working off Ella Kaye's source code, I quickly realized my logo was less straightforward. I originally created my logo in Adobe Express and uploaded it as a PNG file into my website's navbar. This would have been good enough for most, but alas, as coders we are always looking for our next challenge to solve. 
-
 ## Using HTML in YAML
 
-Working from Ella's code, I began by editing the navbar title specified in my site's `_quarto.yml` file by using a combination of HTML `<span>` tags and classes that I could apply CSS styling to. I started with `SHELBY<span class='icon-line'></span>LEVEL` and then used a second line `icon-line2` matching the navbar background color above the letter V in my last name. 
+Now working from Ella Kaye's source code, I began by editing the navbar title specified in my site's `_quarto.yml` file. I used a combination of HTML `<span>` tags and classes that I could apply CSS styling to: `SHELBY<span class='icon-line'></span>LEVEL`. However, I quickly realized that my last name needed some extra styling to achieve the effect I was going for. The letter V needed to have its own class 
+
+Working from Ella's code, and then used a second line `icon-line2` matching the navbar background color above the letter V in my last name.
 
 ```{.yaml}
 

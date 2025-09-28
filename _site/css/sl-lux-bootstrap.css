@@ -98,7 +98,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #55595c;
   --bs-body-color-rgb: 85, 89, 92;
-  --bs-body-bg: #ecf1f2; /* changed from white to edgewater-20 */
+  --bs-body-bg: #ecf1f2; /* changed from white to faded-jade-10 */
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color: #000;
   --bs-emphasis-color-rgb: 0, 0, 0;
@@ -255,7 +255,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 300; /* changed from 600 to 300 */
   line-height: 1.2;
-  /*color: var(--bs-heading-color); */
+  color: var(--bs-heading-color);
   color: #45767a;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -272,6 +272,9 @@ h1, .h1 {
 h2, .h2 {
   font-size: calc(1.3rem + 0.6vw);
   border-bottom: 1px solid #a2bbbd; /* changed added */
+  padding-bottom: 0.5rem;
+  font-weight: 300;
+  color: #45767a;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -11992,6 +11995,20 @@ th {
     background: #ecf1f2;
 }
 
-.quarto {
-  background: #ecf1f2;
+.quarto-menu-text {
+    color: #45767a;
+}
+
+/* Set the background color for the main blog post content */
+.quarto-light {
+    background-color: #ecf1f2;
+}
+
+.quarto-sidebar {
+    background-color: #ecf1f2;
+}
+
+h2, .h2, .h2.anchored {
+  color: #45767a;
+
 }
