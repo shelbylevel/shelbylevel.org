@@ -9,7 +9,7 @@ about:
      href: https://github.com/shelbylevel
    - icon: linkedin
      text: LinkedIn
-     href: https://www.linkedin.com/in/shelby-level-ches-791791232/
+     href: https://www.linkedin.com/in/shelby-level//
    - icon: envelope
      text: Email
      href: mailto:slevel20@gmail.com
