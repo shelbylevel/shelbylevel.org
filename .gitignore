@@ -7,3 +7,4 @@ _site/site_libs/*
 _site/_site/*
 
 **/*.quarto_ipynb
+myprojects/qihub23/data/*

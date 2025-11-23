@@ -17,8 +17,6 @@ format:
     toc-location: left
     self-contained: true
 draft: false
-execute:
-  freeze: auto
 ---
 
 # Purpose of Study

@@ -19,8 +19,6 @@ format:
     toc-location: left
     bibliography: references.bib
 draft: false
-execute:
-  freeze: auto
 ---
 
 # Background

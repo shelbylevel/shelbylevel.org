@@ -16,8 +16,6 @@ format:
     toc-location: left
     self-contained: true
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
-execute:
-  freeze: auto
 ---
 
 ```{r setup, include=FALSE}
