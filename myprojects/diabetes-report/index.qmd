@@ -14,20 +14,17 @@ citation:
 image: preview-image2.png
 format:
   html:
-    toc: true
-    toc-depth: 2
-    toc-location: left
     bibliography: references.bib
 draft: false
 execute:
   freeze: auto
 ---
 
-# Background
+## Background
 
 The OHIO Alliance for Population Health (OAPH) is a statewide collaborative focused on improving the health of all Ohioans by solving the most complex and pressing population health concerns across the state. In line with OAPH's overarching mission, this report aims to identify disparities in diabetes mortality among Ohioans and consider how these disparities can be addressed to improve health and well-being across the state.
 
-# Key Findings
+## Key Findings
 
 -   West Virginia had the highest diabetes mortality rate of any state in 2022 with 59.2 deaths per 100,000 population, 94.1% higher than the national average.
 
@@ -49,7 +46,7 @@ The OHIO Alliance for Population Health (OAPH) is a statewide collaborative focu
 
 -   In 2018-2022 Vinton County had the highest diabetes death rate in Ohio and ranked 2,743rd (out of 2,824) in diabetes mortality among all United States counties with a rate of 88.3 deaths per 100,000 population.
 
-# Methodology
+## Methodology
 
 This report examines diabetes mellitus deaths across national, state, and local levels over an extended period of time.
 
@@ -57,13 +54,13 @@ CDC WONDER collects and maintains data regarding deaths and their causes. All da
 
 All maps, graphs, and other figures for the United States and Ohio that are presented in this report were produced using R @rcoreteamLanguageEnvironmentStatistical2023a, RStudio @positteamRStudioIntegratedDevelopment2024a, ggplot2 @wickhamGgplot2ElegantGraphics2016a, sf @pebesmaSpatialDataScience2023 @pebesmaSimpleFeaturesStandardized2018a, tidyverse @wickhamWelcomeTidyverse2019a, and tidycensus @walkerTidycensusLoadUS2024.
 
-# Discussion
+## Discussion
 
 Diabetes was the eight-leading cause of death in the United States last year (2022), killing more than 100,000 Americans. This chronic health condition is characterized by high blood sugar (hyperglycemia) and caused by reduced amounts of insulin produced by the pancreas or the body not responding properly to the effects of insulin @Diabetes2023. Despite all forms of diabetes being manageable with lifestyle changes and/or medications, death rates continue to rise in the United States due to sedentary lifestyles, unhealthy diets, and an aging population @WhatDiabetes2023. In the past decade the United States saw a 27.6% increase in diabetes mortality with only one state, Vermont, seeing death rates fall during the past five years.
 
 Similarly, Ohio experienced a roughly 18% increase in diabetes mortality over the past decade and ranked 41 out of 51 states in 2022 with a reported rate (36.2 deaths per 100,000 population) 19% higher than the national average. However, not all Ohioans are at equal risk of dying from diabetes. Nine out of ten counties with the highest mortality rates in Ohio are located in Appalachia, and residents of rural Appalachian counties are 1.7 times as likely to die from diabetes than their suburban counterparts.
 
-# Conclusion
+## Conclusion
 
 Diabetes is a serious condition that can affect a person’s heart, blood vessels, nerves, eyes, and kidneys. It will be the next major epidemic we face as a society and we know that rates of diabetes are much higher in southeast Ohio than other parts of the state and country. Findings from this report draw attention to the disparities that rural Appalachians face on a daily basis and existing inequalities will only accelerate the diabetes crisis that ultimately influences health outcomes and mortality. Depicting diabetes deaths by subregions in Ohio emphasizes the critical need to facilitate collaborations on the local, regional, state, and national level to improve diabetes care and address barriers that contribute to these high mortality rates.
 
@@ -116,9 +113,9 @@ get_acs(
 
 ```
 
-# United States
+## United States
 
-## Map 1: Diabetes Deaths by State, 2022
+### Map 1: Diabetes Deaths by State, 2022
 
 ```{r map1, include=TRUE}
 
@@ -177,7 +174,7 @@ ggplot() +
   theme(legend.position = 'bottom')
 ```
 
-## Figure 1: Diabetes Deaths by State, 2022
+### Figure 1: Diabetes Deaths by State, 2022
 
 ```{r figure1, include=TRUE, fig.height=9, fig.width = 8}
 
@@ -243,7 +240,7 @@ ggplot(diabetes,aes(x=State,
   theme(legend.position = 'none')
 ```
 
-## Map 2: Diabetes Deaths by State, 2018-2022
+### Map 2: Diabetes Deaths by State, 2018-2022
 
 ```{r map2, include=TRUE}
 
@@ -302,7 +299,7 @@ ggplot() +
 
 ```
 
-## Map 3: Diabetes Deaths by State, 2013-2017
+### Map 3: Diabetes Deaths by State, 2013-2017
 
 ```{r map3, include=TRUE}
 
@@ -360,7 +357,7 @@ ggplot() +
   theme(legend.position = 'bottom')
 ```
 
-## Figure 2: Diabetes Deaths by State, Percent Change from 2013-2017 to 2018-2022
+### Figure 2: Diabetes Deaths by State, Percent Change from 2013-2017 to 2018-2022
 
 ```{r figure2, include=TRUE, fig.height=8, fig.width = 8}
 
@@ -445,9 +442,9 @@ ggplot(diabetes,aes(x=State,
   theme(legend.position = 'none')
 ```
 
-# Ohio
+## Ohio
 
-## Map 4: Diabetes Deaths by County, 2018-2022
+### Map 4: Diabetes Deaths by County, 2018-2022
 
 ```{r map4, include=TRUE, fig.height=9, fig.width = 8}
 
@@ -510,7 +507,7 @@ ggplot() +
   theme(legend.position = 'bottom')
 ```
 
-## Figure 3: Diabetes Deaths by County, 2018-2022
+### Figure 3: Diabetes Deaths by County, 2018-2022
 
 ```{r figure3, include=TRUE, fig.height=15, fig.width = 8}
 
@@ -575,7 +572,7 @@ ggplot(diabetes,aes(x=Name,
   theme(legend.position = 'none')
 ```
 
-## Map 5: Diabetes Deaths by County, 2013-2017
+### Map 5: Diabetes Deaths by County, 2013-2017
 
 ```{r map5, include=TRUE, fig.height=8, fig.width = 8}
 
@@ -638,7 +635,7 @@ ggplot() +
   theme(legend.position = 'bottom')
 ```
 
-## Figure 4: Diabetes Deaths by County, Percent Change from 2013-2017 to 2018-2022
+### Figure 4: Diabetes Deaths by County, Percent Change from 2013-2017 to 2018-2022
 
 ```{r figure4, include=TRUE, fig.height=15, fig.width = 8}
 
@@ -725,7 +722,7 @@ ggplot(diabetes,aes(x=county.y,
   theme(legend.position = 'none')
 ```
 
-## Map 6: Diabetes Deaths by Subregion, 2018-2022
+### Map 6: Diabetes Deaths by Subregion, 2018-2022
 
 ```{r map6, include=TRUE, fig.height=8, fig.width = 8}
 
@@ -857,7 +854,7 @@ ggplot() +
   theme(legend.position = 'bottom')
 ```
 
-## Figure 5: Diabetes Deaths by County Type, 20182-2022
+### Figure 5: Diabetes Deaths by County Type, 20182-2022
 
 ```{r include=TRUE}
 
@@ -912,9 +909,9 @@ diabetes %>%
 
 ```
 
-# Tables
+## Tables
 
-## Table 1: Diabetes Deaths by State, 2022
+### Table 1: Diabetes Deaths by State, 2022
 
 ```{r include = TRUE}
 
@@ -950,7 +947,7 @@ read.delim(
 
 ```
 
-## Table 2: Ohio Diabetes Deaths by County, 2018-2022
+### Table 2: Ohio Diabetes Deaths by County, 2018-2022
 
 ```{r include=TRUE}
 
@@ -995,9 +992,9 @@ read.delim(
 
 ```
 
-# Demographics
+## Demographics
 
-## Table 3: Diabetes Deaths by Race, 2022
+### Table 3: Diabetes Deaths by Race, 2022
 
 ```{r include=TRUE}
 
@@ -1015,7 +1012,7 @@ readxl::read_excel(
 
 ```
 
-## Table 4: Diabetes Deaths by Hispanic Origin, 2022
+### Table 4: Diabetes Deaths by Hispanic Origin, 2022
 
 ```{r include=TRUE}
 
@@ -1033,7 +1030,7 @@ readxl::read_excel(
 
 ```
 
-## Table 5: Diabetes Deaths by Sex, 2022
+### Table 5: Diabetes Deaths by Sex, 2022
 
 ```{r include=TRUE}
 
@@ -1051,7 +1048,7 @@ readxl::read_excel(
 
 ```
 
-## Table 6: Diabetes Deaths by Age, 2022
+### Table 6: Diabetes Deaths by Age, 2022
 
 ```{r include=TRUE}
 

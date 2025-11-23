@@ -271,7 +271,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.3rem + 0.6vw);
-  border-bottom: 1px solid #a2bbbd; /* changed added */
+  border-bottom: 1px solid #d3dfdd;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -11987,6 +11987,8 @@ th {
 /* Blog Posts */
 
 .quarto-title-banner {
+    padding-top:1em;
+    padding-bottom: 1em;
     margin-bottom: 1em;
     color: #45767a;
     background: #ecf1f2;

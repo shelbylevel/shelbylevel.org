@@ -12,10 +12,6 @@ date: 3-6-2024
 format: 
   html:
     number-sections: true
-    toc: true
-    toc-depth: 2
-    toc-location: left
-    self-contained: true
 draft: true
 execute:
   freeze: auto

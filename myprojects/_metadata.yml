@@ -1,6 +1,13 @@
 # options specified here will apply to all posts in this folder
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    page-layout: full
+    self-contained: true
 
-# prevents posts from re-rendering unless explicitly told to do so (for more, see https://quarto.org/docs/projects/code-execution.html#freeze)
+# prevents posts from re-rendering unless source changes (for more, see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: auto
 
 # enable banner style title blocks (see https://quarto.org/docs/authoring/title-blocks.html)

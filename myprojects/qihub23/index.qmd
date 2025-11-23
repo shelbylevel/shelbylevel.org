@@ -9,12 +9,7 @@ categories: [Public Health, SDOH, Diabetes] # self-defined categories
 citation: 
   url: https://shelbylevel.org/myprojects/qihub23 
 image: preview-image2.png
-format: 
-  html:
-    toc: true
-    toc-depth: 2
-    toc-location: left
-    self-contained: true
+format: html
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 execute:
   freeze: auto
@@ -53,7 +48,7 @@ scatter_plot_theme <- function() {
 
 ```
 
-# Contents of AHRQ SDOH Database
+## Contents of AHRQ SDOH Database
 
 The [Social Determinants of Health (SDOH)](https://www.ahrq.gov/sdoh/data-analytics/sdoh-data.html) database from AHRQ compiles SDOH-related variables across multiple domains from 87 sources including multiple federal and other data sources. The downloadable files contain a total of 675 variables available by year from 2009 through 2020. Data is available across three geography levels: all 675 variables are available by county level, 319 are available by ZIP code, and 321 variables are available by census tract.
 
@@ -67,33 +62,33 @@ library(ggplot2)
 ```{r readin-2020-data, include=FALSE, cahce=TRUE}
 library(readxl)
 
-url0 = "https://www.ahrq.gov/sites/default/files/wysiwyg/sdoh/SDOH_2020_COUNTY_1_0.xlsx"
-destfile <- tempfile()
-download.file(url0, destfile, mode = 'wb')
+# url0 = "https://www.ahrq.gov/sites/default/files/wysiwyg/sdoh/SDOH_2020_COUNTY_1_0.xlsx"
+# destfile <- tempfile()
+# download.file(url0, destfile, mode = 'wb')
 readxl::read_excel(
-  destfile, sheet = 2
+  "data/sdoh-cty-2020.xlsx", sheet = 2
   ) %>%
   janitor::clean_names() %>%
   filter(
     statefips == 39
     ) -> sdoh_county
 
-url0 = "https://www.ahrq.gov/sites/default/files/wysiwyg/sdoh/SDOH_2020_ZIPCODE_1_0.xlsx"
-destfile <- tempfile()
-download.file(url0, destfile, mode = 'wb')
+# url0 = "https://www.ahrq.gov/sites/default/files/wysiwyg/sdoh/SDOH_2020_ZIPCODE_1_0.xlsx"
+# destfile <- tempfile()
+# download.file(url0, destfile, mode = 'wb')
 readxl::read_excel(
-  destfile, sheet = 2
+  "data/sdoh-zip-2020.xlsx", sheet = 2
   ) %>%
   janitor::clean_names() %>%
   filter(
     statefips == 39
     ) -> sdoh_zip
 
-url0 = "https://www.ahrq.gov/downloads/sdoh/sdoh_2020_tract_1_0.xlsx"
-destfile <- tempfile()
-download.file(url0, destfile, mode = 'wb')
+# url0 = "https://www.ahrq.gov/downloads/sdoh/sdoh_2020_tract_1_0.xlsx"
+# destfile <- tempfile()
+# download.file(url0, destfile, mode = 'wb')
 readxl::read_excel(
-  destfile, sheet = 2
+  "data/sdoh-tract-2020.xlsx", sheet = 2
   ) %>%
   janitor::clean_names() %>%
   filter(
@@ -479,7 +474,7 @@ tract_df %>%
 
 ```
 
-## SDOH Variables Available at the Census Tract Level
+### SDOH Variables Available at the Census Tract Level
 
 ```{r tbl01}
 #| label: tbl-tbl01
@@ -497,7 +492,7 @@ readxl::read_excel(
 
 ```
 
-# PLACES Data
+## PLACES Data
 
 ```{r readin-places-data, include=FALSE, eval=FALSE}
 
@@ -572,7 +567,7 @@ places_tract %>%
              ) -> placestract
 ```
 
-# County Health Rankings Data
+## County Health Rankings Data
 
 ```{r readin-chr-data, cache=TRUE}
 
@@ -1186,7 +1181,7 @@ county_sdoh_chr %>%
 
 ```
 
-# Ohio Opportunity Index
+## Ohio Opportunity Index
 
 The [Ohio Opportunity Index (OOI)](https://grc.osu.edu/Projects/OhioOpportunityIndex) compiles over 34 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher values means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.
 
@@ -1457,7 +1452,7 @@ ooi %>%
 
 ```
 
-## Ohio Children's Opportunity Index
+### Ohio Children's Opportunity Index
 
 The [Ohio Children's Opportunity Index (OOI)](https://grc.osu.edu/Projects/OhioOpportunityIndex) compiles over 54 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher value means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.
 
