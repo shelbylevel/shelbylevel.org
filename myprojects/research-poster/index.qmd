@@ -13,8 +13,6 @@ format:
   html:
     number-sections: true
 draft: false
-execute:
-  freeze: auto
 ---
 
 ## Purpose of Study

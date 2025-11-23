@@ -16,8 +16,6 @@ format:
   html:
     bibliography: references.bib
 draft: false
-execute:
-  freeze: auto
 ---
 
 ## Background

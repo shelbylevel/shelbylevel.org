@@ -8,7 +8,8 @@ format:
     self-contained: true
 
 # prevents posts from re-rendering unless source changes (for more, see https://quarto.org/docs/projects/code-execution.html#freeze)
-freeze: auto
+execute:
+  freeze: auto
 
 # enable banner style title blocks (see https://quarto.org/docs/authoring/title-blocks.html)
 title-block-banner: true
