@@ -12,33 +12,29 @@ image: preview-image2.png
 format: 
   html:
     number-sections: true
-    toc: true
-    toc-depth: 2
-    toc-location: left
-    self-contained: true
 draft: false
 ---
 
-# Purpose of Study
+## Purpose of Study
 
 This project aims to compare commonly used Social Determinants of Health (SDOH) indices and explore their association with health outcomes in Ohio’s counties and census tracts.
 
-# Methods
+## Methods
 
 The indices used include (1) the 2022 Neighborhood Atlas Area Deprivation Index (ADI), (2) the 2020 CDC/ATSDR Social Vulnerability Index (SVI), and (3) the 2018 Ohio Opportunity Index (OOI). Selected health outcome indicators come from (1) the 2021 CDC PLACES data and (2) the 2021 OMAS Small Area Estimate Series.
 
 All data visualizations and statistics referenced in this poster and document were created using the statistical package R and RStudio.
 
-# Discussion
+## Discussion
 
 Given the well known challenges Appalachia and Appalachians have faced for decades, of course the default expectation was that both social determinants of health, as measured by ADI and other indices, would paint Appalachia as most resource deprived, and because SDOH drive health, that health outcomes would be the worst for Appalachians too. There is a lot to unpack here but these are some things that struck me ...
 
 1.  Ohio’s most deprived census tracts (measured by the ADI) are not located in the most deprived counties. In particular, the most deprived counties in Ohio are located Appalachia while the most deprived census tracts are in cities and large metropolitan areas.
-2.  The SDOHs measured by the ADI are highly correlated with adult health outcomes, but not as as much for child health outcomes. For example, .....
+2.  The SDOHs measured by the ADI are highly correlated with adult health outcomes, but not as as much for child health outcomes.
 3.  Even within health outcomes, there is a good bit of variation. For example, the SDOHs measured by the ADI are more correlated with diabetes rates than with the prevalence of obesity. Ths is surprising to me since I expected a greater overlap between obesity and diabetes.
 4.  It is also clear to me that because of significant within-county variation in deprivation, county-level estimates tend to wash out these nuances. Think about Franklin county ... how varied are the census tracts? However, tract-level data are hard to come by on the health outcome side, and that forces analysts to use county-level data. I am convinced more than ever that we need to do a better job of getting at tract-level data if we really want to unpack how SDOH are linked to health.
 
-# Limitations
+## Limitations
 
 -  Variation in census tract boundaries, when joining indices and health outcomes, resulted in roughly 18% data loss of tracts.
 -  Limited adult health outcomes data are available at the county- and tract-level in CDC PLACES. Tract-level data also suffer from substantial missingness. No child health outcome data are available in PLACES.
@@ -424,9 +420,9 @@ tract %>%
 
 ```
 
-# Index Measures
+## Index Measures
 
-## Area Deprivation Index (ADI)
+### Area Deprivation Index (ADI)
 
 The [Area Deprivation Index](https://www.neighborhoodatlas.medicine.wisc.edu/) is based on a measure created by the Health Resources & Services Administration (HRSA) over three decades ago, and was refined, adapted, and validated to the Census block group neighborhood level by Amy Kind, MD, PhD and her research team at the University of Wisconsin-Madison. It allows for rankings of neighborhoods by socioeconomic disadvantage in a region of interest (e.g., at the state or national level).
 
@@ -457,7 +453,7 @@ The [ADI](https://www.cdc.gov/pcd/issues/2016/16_0221.htm) is a composite measur
 |                           | -   \% Households with more than 1 person per room                                |
 +---------------------------+-----------------------------------------------------------------------------------+
 
-### ADI by County
+#### ADI by County
 
 ```{r adi-cty-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 #| fig-cap: ADI by County, 2022
@@ -511,7 +507,7 @@ index_cty_clean %>%
 
 :::
 
-### ADI by Census Tract
+#### ADI by Census Tract
 
 ```{r adi-tract-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -560,7 +556,7 @@ index_tract20_clean %>%
 
 :::
 
-## Social Vulnerability Index (SVI)
+### Social Vulnerability Index (SVI)
 
 The [Social Vulnerability Index](https://www.atsdr.cdc.gov/placeandhealth/svi/index.html) indicates the relative vulnerability of every U.S. Census tract and was created to help public health officials and emergency response planners identify and map the communities that will most likely need support before, during, and after a hazardous event. 
 
@@ -599,7 +595,7 @@ The [SVI](https://www.atsdr.cdc.gov/placeandhealth/svi/documentation/pdf/SVI2020
 |                                 | -   Group Quarters                                                                                    |
 +---------------------------------+-------------------------------------------------------------------------------------------------------+
 
-### SVI by County
+#### SVI by County
 
 ```{r svi-cty-map, fig.height = 9, fig.width = 9, out.width = '100%', include = TRUE}
 
@@ -635,7 +631,7 @@ index_cty_clean %>%
 
 ```
 
-### SVI by Census Tract
+#### SVI by Census Tract
 
 ```{r svi-tract-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -668,7 +664,7 @@ index_tract20_clean %>%
 
 ```
 
-## Ohio Opportunity Index (OOI)
+### Ohio Opportunity Index (OOI)
 
 The [Ohio Opportunity Index (OOI)](https://grc.osu.edu/Projects/OhioOpportunityIndex) compiles over 34 variables measuring neighborhood conditions and opportunities, known to be associated with health and well-being, from a variety of domains into a single index score. This index score represents the degree of opportunity available at the Census tract level across Ohio (higher values means more opportunity) and can be used to assess overall neighborhood conditions, target interventions, and adjust evaluations for neighborhood-level risk. It can also be used to learn what types of factors are driving opportunity in specific Census tracts.
 
@@ -693,9 +689,9 @@ The overall Opportunity Index Score was created by using factor analysis methods
 -   Life expectancy
 -   All-cause age-adjusted mortality
 
-# Comparing Indices to Each Other, County Level
+## Comparing Indices to Each Other, County Level
 
-## ADI & SVI
+### ADI & SVI
 
 ```{r index-11, include = TRUE}
 
@@ -730,9 +726,9 @@ cor.test(index_cty_clean$pct_rank_adi, index_cty_clean$pct_rank_rpl_themes, meth
 
 :::
 
-# Comparing Indices to Each Other, Tract Level
+## Comparing Indices to Each Other, Tract Level
 
-## ADI & SVI
+### ADI & SVI
 
 ```{r index-13, include = TRUE}
 
@@ -768,7 +764,7 @@ cor.test(index_tract20_clean$pct_rank_adi, index_tract20_clean$pct_rank_rpl_them
 
 :::
 
-## ADI & OOI
+### ADI & OOI
 
 ```{r index-14, include = TRUE}
 
@@ -805,7 +801,7 @@ cor.test(index_tract18_clean$pct_rank_adi, index_tract18_clean$pct_rank_oi_18, m
 
 :::
 
-## SVI & OOI
+### SVI & OOI
 
 ```{r index-15, include = TRUE}
 
@@ -846,7 +842,7 @@ sample estimates:
 
 :::
 
-# Comparing Indices to Health Outcomes, County Level
+## Comparing Indices to Health Outcomes, County Level
 
 ```{r index-16 }
 
@@ -912,9 +908,9 @@ index_cty_clean %>%
 
 ```
 
-## ADI & PLACES Adult Health Outcomes, County Level
+### ADI & PLACES Adult Health Outcomes, County Level
 
-### ADI & Adult Diabetes, County Level
+#### ADI & Adult Diabetes, County Level
 
 ```{r index-17, include = TRUE}
 
@@ -954,7 +950,7 @@ cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_diabetes, 
 
 :::
 
-### ADI & Adult Obesity, County Level
+#### ADI & Adult Obesity, County Level
 
 ```{r , include = TRUE}
 
@@ -994,9 +990,9 @@ cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_obesity, m
 
 :::
 
-## ADI & OMAS Adult Outcomes, County Level
+### ADI & OMAS Adult Outcomes, County Level
 
-### ADI & Adults who Delayed or Avoided Health Care, County Level
+#### ADI & Adults who Delayed or Avoided Health Care, County Level
 
 ```{r, include = TRUE}
 
@@ -1036,7 +1032,7 @@ cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_delayed_he
 
 :::
 
-### ADI & Adults with a Disability, County Level
+#### ADI & Adults with a Disability, County Level
 
 ```{r, include = TRUE}
 
@@ -1076,7 +1072,7 @@ cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_disability
 
 :::
 
-### ADI & Adults who Currently Smoke, County Level
+#### ADI & Adults who Currently Smoke, County Level
 
 ```{r, include = TRUE}
 
@@ -1118,9 +1114,9 @@ cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_currently_
 
 :::
 
-## ADI & OMAS Child Outcomes (ACEs), County Level
+### ADI & OMAS Child Outcomes (ACEs), County Level
 
-### ADI & Children with a Parent who Spent Time in Jail, County Level
+#### ADI & Children with a Parent who Spent Time in Jail, County Level
 
 ```{r index-17.1, include = TRUE}
 
@@ -1162,7 +1158,7 @@ cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_parent_jai
 
 :::
 
-### ADI & Children who Lived with a Person who was Mentally Ill, Suicidal, and/or Severely Depressed, County Level
+#### ADI & Children who Lived with a Person who was Mentally Ill, Suicidal, and/or Severely Depressed, County Level
 
 ```{r index-17.2, include = TRUE}
 
@@ -1202,7 +1198,7 @@ cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_parent_men
 
 :::
 
-### ADI & Children who Lived with a Person who had a Problem with Alcohol or Drugs, County Level
+#### ADI & Children who Lived with a Person who had a Problem with Alcohol or Drugs, County Level
 
 ```{r index-17.3, include = TRUE}
 
@@ -1242,9 +1238,9 @@ cor.test(index_outcomes_cty$pct_rank_adi, index_outcomes_cty$pct_rank_parent_alc
 
 :::
 
-## SVI & PLACES Adult Health Outcomes, County Level
+### SVI & PLACES Adult Health Outcomes, County Level
 
-### SVI & Adult Diabetes, County Level
+#### SVI & Adult Diabetes, County Level
 
 ```{r index-18, include = TRUE}
 
@@ -1280,7 +1276,7 @@ cor.test(index_outcomes_cty$pct_rank_rpl_themes, index_outcomes_cty$pct_rank_dia
 
 :::
 
-### SVI & Adult Obesity, County Level
+#### SVI & Adult Obesity, County Level
 
 ```{r index-18.2, include = TRUE}
 
@@ -1316,7 +1312,7 @@ cor.test(index_outcomes_cty$pct_rank_rpl_themes, index_outcomes_cty$pct_rank_obe
 
 :::
 
-# Comparing Indices to Health Outcomes, Tract Level
+## Comparing Indices to Health Outcomes, Tract Level
 
 ```{r index-19 }
 
@@ -1380,9 +1376,9 @@ index_tract18_clean %>%
 
 ```
 
-## ADI & PLACES Adult Health Outcomes, Tract Level
+### ADI & PLACES Adult Health Outcomes, Tract Level
 
-### ADI & Adult Diabetes, Tract Level
+#### ADI & Adult Diabetes, Tract Level
 
 ```{r adi-outcomes-tract-scatterplot, include = TRUE}
 
@@ -1418,7 +1414,7 @@ cor.test(index_outcomes20_tract$pct_rank_adi, index_outcomes20_tract$pct_rank_di
 
 :::
 
-### ADI & Adult Obesity, Tract Level
+#### ADI & Adult Obesity, Tract Level
 
 ```{r adi-outcomes-tract-scatterplot-2, include = TRUE}
 
@@ -1454,9 +1450,9 @@ cor.test(index_outcomes20_tract$pct_rank_adi, index_outcomes20_tract$pct_rank_ob
 
 :::
 
-## SVI & PLACES Adult Health Outcomes, Tract Level
+### SVI & PLACES Adult Health Outcomes, Tract Level
 
-### SVI & Adult Diabetes, Tract Level
+#### SVI & Adult Diabetes, Tract Level
 
 ```{r index-21, include = TRUE}
 
@@ -1493,7 +1489,7 @@ cor.test(index_outcomes20_tract$pct_rank_rpl_themes, index_outcomes20_tract$pct_
 
 :::
 
-### SVI & Adult Obesity, Tract Level
+#### SVI & Adult Obesity, Tract Level
 
 ```{r index-21.2, include = TRUE}
 
@@ -1531,9 +1527,9 @@ cor.test(index_outcomes20_tract$pct_rank_rpl_themes, index_outcomes20_tract$pct_
 
 :::
 
-## OOI & PLACES Adult Health Outcomes, Tract Level
+### OOI & PLACES Adult Health Outcomes, Tract Level
 
-### OOI & Adult Diabetes, Tract Level
+#### OOI & Adult Diabetes, Tract Level
 
 ```{r index-22.1, include = TRUE}
 
@@ -1571,7 +1567,7 @@ cor.test(index_outcomes18_tract$pct_rank_oi_18, index_outcomes18_tract$pct_rank_
 
 :::
 
-### OOI & Adult Obesity, Tract Level
+#### OOI & Adult Obesity, Tract Level
 
 ```{r index-22.2, include = TRUE}
 
@@ -1609,11 +1605,11 @@ cor.test(index_outcomes18_tract$pct_rank_oi_18, index_outcomes18_tract$pct_rank_
 
 :::
 
-# Individual County ADI Maps, by Census Tract
+## Individual County ADI Maps, by Census Tract
 
-## Metropolitan Counties
+### Metropolitan Counties
 
-### Franklin County ADI, by Census Tract
+#### Franklin County ADI, by Census Tract
 
 ```{r adi-tract-franklin-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -1652,7 +1648,7 @@ summary(index_tract_franklin$ADI)
 
 :::
 
-### Lucas County ADI, by Census Tract
+#### Lucas County ADI, by Census Tract
 
 ```{r adi-tract-lucas-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -1691,7 +1687,7 @@ summary(index_tract_lucas$ADI)
 
 :::
 
-### Cuyahoga County ADI, by Census Tract
+#### Cuyahoga County ADI, by Census Tract
 
 ```{r adi-tract-cuyahoga-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -1730,7 +1726,7 @@ summary(index_tract_cuyahoga$ADI)
 
 :::
 
-### Hamilton County ADI, by Census Tract
+#### Hamilton County ADI, by Census Tract
 
 ```{r adi-tract-hamilton-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -1769,9 +1765,9 @@ summary(index_tract_hamilton$ADI)
 
 :::
 
-## Appalachian Counties
+### Appalachian Counties
 
-### Scioto County ADI, by Census Tract
+#### Scioto County ADI, by Census Tract
 
 ```{r adi-tract-scioto-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -1810,9 +1806,9 @@ summary(index_tract_scioto$ADI)
 
 :::
 
-# Bivariate Maps
+## Bivariate Maps
 
-### ADI & Adult Diabetes, by County
+#### ADI & Adult Diabetes, by County
 
 ```{r adi-diabetes-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -1866,7 +1862,7 @@ ggdraw() +
 
 ```
 
-### Adult Diabetes & Obesity, by County
+#### Adult Diabetes & Obesity, by County
 
 ```{r diabetes-obesity-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -1920,7 +1916,7 @@ ggdraw() +
 
 ```
 
-### ADI & Children with a Parent who Spent Time in Jail, by County
+#### ADI & Children with a Parent who Spent Time in Jail, by County
 
 ```{r adi-jail-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -1972,7 +1968,7 @@ ggdraw() +
 
 ```
 
-### ADI & Children who Lived with a Person who was Mentally Ill, Suicidal, and/or Severely Depressed, by County
+#### ADI & Children who Lived with a Person who was Mentally Ill, Suicidal, and/or Severely Depressed, by County
 
 ```{r adi-mentally-ill-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -2026,7 +2022,7 @@ ggdraw() +
 
 ```
 
-### ADI & Children who Lived with a Person who had a Problem with Alcohol or Drugs, by County
+#### ADI & Children who Lived with a Person who had a Problem with Alcohol or Drugs, by County
 
 ```{r adi-drugs-bi-map, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
@@ -2080,7 +2076,7 @@ ggdraw() +
 
 ```
 
-### ADI & Adult Diabetes, by Census Tract
+#### ADI & Adult Diabetes, by Census Tract
 
 ```{r adi-diabetes-bi-map-tract, include = TRUE, fig.height = 9, fig.width = 9, out.width = '100%'}
 
