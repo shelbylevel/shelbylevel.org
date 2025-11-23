@@ -11,19 +11,11 @@ date: 3-6-2024
 citation:
   url: https://shelbylevel.org/myprojects/data-policy-brief
 #image: preview-image2.png
-format: 
-<<<<<<< Updated upstream
-  html:
-    number-sections: true
-draft: true
-execute:
-  freeze: auto
-=======
+format:
   html: default
   pdf: default
 draft: false
 bibliography: references.bib
->>>>>>> Stashed changes
 ---
 
 \newpage
