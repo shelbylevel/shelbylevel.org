@@ -1,0 +1,47 @@
+---
+title: "Lyme Disease and Climate Change in the United States"
+author: 
+  - name: Shelby Level
+    url: https://github.com/shelbylevel
+    affiliation:
+      - "PUBHEPI 6410: Foundations of Epidemiology"
+      - "The Ohio State University"
+date: 12-19-2025
+categories: [Shiny, Public Health] # self-defined categories
+citation:
+  url: https://shelbylevel.org/myprojects/lyme-disease-dashboard
+#image: preview-image2.png
+format:
+  html:
+    toc: false
+draft: true
+---
+
+```{=html}
+<a 
+  class="btn btn-primary" 
+  href="https://shelbylevel-lyme-disease.share.connect.posit.cloud/" 
+  target="_blank"
+>
+  &ensp;Launch Shiny Dashboard
+</a>
+```
+
+```{=html}
+<div class="dashboard-container" style="margin: 2rem 0;">
+  <iframe 
+    src="https://shelbylevel-lyme-disease.share.connect.posit.cloud/"
+    width="100%" 
+    height="800px"
+    style="border: 2px solid #B2C5B4; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+    title="Lyme Disease Dashboard"
+    data-external="1"
+    allowfullscreen>
+  </iframe>
+  <p style="text-align: center; margin-top: 1rem; color: #4B4C4B;">
+    <em>Interactive dashboard embedded above. <a href="https://shelbylevel-lyme-disease.share.connect.posit.cloud/" target="_blank">Open in new tab ↗</a></em>
+  </p>
+</div>
+```
+
+
