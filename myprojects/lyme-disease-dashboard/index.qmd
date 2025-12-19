@@ -14,7 +14,7 @@ citation:
 format:
   html:
     toc: false
-draft: true
+draft: false
 ---
 
 ```{=html}
