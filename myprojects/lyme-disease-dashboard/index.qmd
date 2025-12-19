@@ -10,7 +10,7 @@ date: 12-19-2025
 categories: [Shiny, Public Health] # self-defined categories
 citation:
   url: https://shelbylevel.org/myprojects/lyme-disease-dashboard
-#image: preview-image2.png
+image: lyme-dashboard-preview.png
 format:
   html:
     toc: false
