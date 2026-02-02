@@ -53,8 +53,8 @@ Check out my resume below and example work in my [Past Projects](myprojects.qmd)
 
 ```{=html}
 <p class="text-center">
-  <a class="btn btn-primary btn-default cv-download" href="cv/shelby-level-resume.pdf" target="_blank">
-    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Current Resume
+  <a class="btn btn-primary" href="cv/shelby-level-resume.pdf" target="_blank">
+    <i class="bi bi-file-earmark-person fs-5"></i>&ensp;Current Resume
   </a>
 </p>
 

@@ -15,7 +15,7 @@ execute:
 title-block-banner: true
 
 # set theme to custom sl theme
-css: css/sl_theme.css
+# css: css/sl_theme.css
 
 # set citation style to APA with number superscript
 csl: citation-styles/APA Numeric Superscript Style.csl
