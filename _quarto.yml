@@ -30,6 +30,7 @@ website:
         href: https://github.com/shelbylevel
       - icon: linkedin
         href: https://www.linkedin.com/in/shelby-level/
+  google-analytics: "G-S8RJYVFCYL"
   #reader-mode: true
 
 #format:
@@ -50,4 +51,6 @@ format:
     page-layout: full
 
 editor: source
+execute:
+  freeze: auto
 
