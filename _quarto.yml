@@ -3,10 +3,9 @@ project:
   output-dir: _site
 
 website:
-  title: "Shelby Level"
+  # title: "Shelby Level"
   favicon: logos/sl_sticker.png
   navbar:
-    title: "<span class='first-name' >SHELBY</span><span class='icon-line' ></span><span class ='icon-line2'></span> <span class='last-name' >LE</span><span class='v' >v</span> <span class='last-name2' >EL</span>"
     right:
       - href: index.qmd
         text: "About Me"
@@ -41,6 +40,8 @@ website:
 
 format:
   html:
+    include-in-header:
+      - _extensions/shelbylevel/brand/logo-header.html
     theme:
       -  lux
       -  css/sl-lux-variables.scss
