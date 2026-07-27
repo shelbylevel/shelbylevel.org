@@ -4,7 +4,7 @@ project:
 
 website:
   # title: "Shelby Level"
-  favicon: logos/sl_sticker.png
+  favicon: logos/sl-hex-sticker.png
   navbar:
     right:
       - href: index.qmd
