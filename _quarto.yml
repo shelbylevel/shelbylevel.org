@@ -40,12 +40,12 @@ website:
 
 format:
   html:
-    theme:
-      -  lux
-      -  ../scss-branding-project/css/sl-theme.scss
+    theme: [lux, css/sl-lux-overrides.scss]
+      # -  lux
+      # -  ../scss-branding-project/css/sl-theme.scss
       # -  css/sl-lux-variables.scss
-    css:
-      - css/sl-theme-simple.css
+    # css:
+    #   - css/sl-theme-simple.css
       # -  ../scss-branding-project/css/sl-theme.css
       # -  css/sl-lux-bootstrap.css #bold font weight and hover color for header
       # -  css/sl-bootstrap.min.css #header color
