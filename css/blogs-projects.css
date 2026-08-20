@@ -1,0 +1,19 @@
+/* Page Background */
+body {
+    background-color: white;
+}
+
+/* Citations and Appendicies */
+#quarto-appendix.default {
+    background-color: white;
+}
+
+/* Table Background */
+.page-columns table {
+    background: white;
+}
+
+/* Sidebar Background */
+nav.sidebar.sidebar-navigation:not(.rollup) {
+    background-color: white;
+}

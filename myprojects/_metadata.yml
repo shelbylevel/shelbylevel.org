@@ -14,8 +14,8 @@ execute:
 # enable banner style title blocks (see https://quarto.org/docs/authoring/title-blocks.html)
 title-block-banner: true
 
-# set theme to custom sl theme
-# css: css/sl_theme.css
+# add in custom CSS for the blog and project pages
+css: ../css/blogs-projects.css
 
 # set citation style to APA with number superscript
 csl: citation-styles/APA Numeric Superscript Style.csl

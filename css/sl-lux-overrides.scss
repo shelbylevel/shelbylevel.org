@@ -55,11 +55,16 @@ $link-color: $deep-jade;
 
 // Code styling
 // Inline code
-$code-bg: $timberwolf-50;
+$code-bg: $faded-jade-50;
 $code-color: $plum-crazy;
 
 // Code blocks
-$code-block-bg: $timberwolf-50;
+$code-block-bg: $edgewater-20;
+
+// Round corners of code blocks
+div.sourceCode {
+  border-radius: 4px;
+}
 
 // Fonts — Lux 5.3.2 ships "Nunito Sans" for body text; reverting to Lato
 // stylelint-disable-next-line value-keyword-case
@@ -103,6 +108,15 @@ h1,
   //color: $faded-jade;
   //font-family: "Nunito Sans", sans-serif;
   letter-spacing: 3px;
+}
+
+h2,
+.h2 {
+  border-bottom: 1px solid $faded-jade-50;
+}
+
+.header-section-number {
+  color: $deep-jade;
 }
 
 .navbar {
@@ -156,11 +170,6 @@ div.quarto-post .listing-categories .listing-category,
   }
 }
 
-// // Citations and Appendicies
-// #quarto-appendix.default {
-//   background-color: white;
-// }
-
 // // Make blog post content white
 // body:not(.quarto-listing-page) #quarto-content.page-layout-full {
 //   background-color: $white;
@@ -171,10 +180,10 @@ div.quarto-post .listing-categories .listing-category,
 // PAGE-SPECIFIC STYLES (imported from partials)
 // =============================================================================
 
-// @import "scss/blog";
+// @import "projects";
 
 // =============================================================================
-// NAVIGATION
+// NAVBAR
 // =============================================================================
 
 .menu-text {
@@ -226,4 +235,9 @@ nav .nav-item.compact .nav-link {
   &:hover {
     color: $link-hover-color;
   }
+}
+
+.quarto-title-banner {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
