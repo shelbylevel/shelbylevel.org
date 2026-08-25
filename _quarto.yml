@@ -13,7 +13,7 @@ website:
 
       - href: blog.qmd
         text: Blog
-      - href: myprojects.qmd
+      - href: projects.qmd
         text: "Past Projects"
       - icon: github
         href: https://github.com/shelbylevel
@@ -32,23 +32,9 @@ website:
         href: https://www.linkedin.com/in/shelby-level/
   #reader-mode: true
 
-#format:
-  #html:
-    #theme: sl-theme-light.scss
-    #css: sl-style.css
-    #toc: true
-
 format:
   html:
-    theme: [lux, css/sl-lux-overrides.scss]
-      # -  lux
-      # -  ../scss-branding-project/css/sl-theme.scss
-      # -  css/sl-lux-variables.scss
-    # css:
-    #   - css/sl-theme-simple.css
-      # -  ../scss-branding-project/css/sl-theme.css
-      # -  css/sl-lux-bootstrap.css #bold font weight and hover color for header
-      # -  css/sl-bootstrap.min.css #header color
+    theme: [lux, css/sl-styles.scss]
     toc: true
     page-layout: full
 

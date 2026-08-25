@@ -4,4 +4,4 @@
 .Ruserdata
 /.quarto/
 **/*.quarto_ipynb
-myprojects/qihub23/data/*
+projects/qihub23/data/*
