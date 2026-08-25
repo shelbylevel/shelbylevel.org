@@ -4,15 +4,16 @@ project:
 
 website:
   # title: "Shelby Level"
-  favicon: logos/sl-hex-sticker.png
+  favicon: inst/logos/sl-hex-sticker.png
   navbar:
+    logo: inst/logos/sl.png # placeholder to be replaced by animated SVG logo
     right:
       - href: index.qmd
         text: "About Me"
 
       - href: blog.qmd
         text: Blog
-      - href: myprojects.qmd
+      - href: projects.qmd
         text: "Past Projects"
       - icon: github
         href: https://github.com/shelbylevel
@@ -32,22 +33,11 @@ website:
   google-analytics: "G-S8RJYVFCYL"
   #reader-mode: true
 
-#format:
-  #html:
-    #theme: sl-theme-light.scss
-    #css: sl-style.css
-    #toc: true
-
 format:
   html:
+    theme: [lux, css/sl-styles.scss]
     include-in-header:
       - _extensions/shelbylevel/brand/logo-header.html
-    theme:
-      -  lux
-      -  css/sl-lux-variables.scss
-    css:
-      #-  css/sl-bootstrap.min.css #header color
-      -  css/sl-lux-bootstrap.css #bold font weight and hover color for header
     toc: true
     page-layout: full
 

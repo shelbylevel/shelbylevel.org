@@ -1,0 +1,209 @@
+/*-- scss:mixins --*/
+
+@mixin btn-inverse {
+  transition-delay: 0s;
+  transition-duration: 0.15s;
+  transition-property: color;
+  transition-timing-function: ease-in;
+
+  &:hover {
+    background-color: $faded-jade;
+    color: $faded-jade-10;
+    border-color: $faded-jade;
+  }
+}
+
+/*-- scss:defaults --*/
+
+// Shelby Level brand overrides on top of stock Bootswatch Lux
+// Call this alongside the theme itself, e.g. in _quarto.yml:
+//   theme: [lux, sl-styles.scss]
+
+// =============================================================================
+// BRAND COLOR PALETTE
+// =============================================================================
+
+$deep-jade: #254D56;
+$faded-jade: #45767a;
+$faded-jade-50: #a2bbbd;
+$faded-jade-10: #ecf1f2;
+$gulfstream: #7fa6ad;
+$edgewater: #d3dfdd;
+$edgewater-20: #dce5e4;
+$cascade: #b3c2c9;
+$boulder: #727E70;
+$spring-rain: #b2c5b4;
+$timberwolf: #D8D5CE;
+$timberwolf-50: #eceae7;
+$almond-dust: #B8AEA8;
+$moonstone: #969996;
+$storm-cloud: #64635E;
+$plum-crazy: #59224A;
+
+// =============================================================================
+// BASE DOCUMENT COLORS
+// =============================================================================
+
+$navbar-bg: $faded-jade-10; // navbar
+$navbar-fg: $faded-jade; // navbar foreground elements
+$navbar-hl: $deep-jade; // highlight color when hovering over navbar links
+$body-color: $deep-jade; // body text color
+$body-bg: $faded-jade-10; // page background
+$footer-bg: $faded-jade-50; // footer background
+$footer-fg: $deep-jade;
+$link-color: $faded-jade;
+$link-hover-color: $deep-jade;
+
+// =============================================================================
+// CODE STYLING
+// =============================================================================
+
+// Inline code
+$code-bg: $edgewater-20;
+$code-color: $plum-crazy;
+
+// Code blocks
+$code-block-bg: $edgewater-20;
+
+// Fonts — Lux 5.3.2 ships "Nunito Sans" for body text; reverting to Lato
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
+
+$font-family-sans-serif: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Montserrat, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace: "Open Sans", "Fira Mono", monospace;
+$headings-font-family: "Nunito Sans", sans-serif !default;
+$headings-color: $faded-jade;
+$headings-margin-bottom: 0.5rem;
+
+$btn-font-weight: 500;
+
+// Navbar — Lux default is 1.5rem, tightened for the brand navbar
+$navbar-padding-y: 0.5rem;
+
+/*-- scss:rules --*/
+
+// =============================================================================
+// HEADINGS
+// =============================================================================
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  font-weight: 300;
+  letter-spacing: 3px;
+  //color: $faded-jade;
+}
+
+// =============================================================================
+// NAVBAR
+// =============================================================================
+
+/* Nav tab animated underline on hover */
+.menu-text {
+  display: block;
+  position: relative;
+  font-weight: 500;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: $link-hover-color;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  /* Animate expansion on hover and focus */
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Permanently show line on active page link */
+  .nav-link.active &,
+  .nav-link[aria-current="page"] & {
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+// Navbar icons
+nav .nav-item.compact .nav-link:hover,
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon:hover {
+  color: $link-hover-color;
+}
+
+// =============================================================================
+// BUTTONS
+// =============================================================================
+
+/* div.quarto-about-solana .about-entity .about-link - social buttons used in about.qmd */
+/* div.quarto-post .listing-categories .listing-category - category tags on listing cards */
+/* .btn-links - buttons used in posts */
+/* .project-buttons>p>a - buttons used in posts */
+div.quarto-about-solana .about-entity .about-link,
+div.quarto-post .listing-categories .listing-category,
+.btn-links,
+.project-buttons>p>a {
+  color: $deep-jade;
+  border-color: $deep-jade;
+  font-weight: 400;
+  background-color: transparent;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+
+  @include btn-inverse;
+
+  i {
+    margin-right: 8px;
+  }
+}
+
+.btn,
+.quarto-title .quarto-category {
+  background-color: transparent;
+  color: $faded-jade;
+  border-color: $faded-jade;
+  border: solid 1px;
+  border-radius: 4px;
+  font-size: 1rem;
+
+  @include btn-inverse;
+
+  i {
+    margin-right: 8px;
+  }
+}
+
+// =============================================================================
+// PAGE-SPECIFIC STYLES
+// =============================================================================
+
+@import "posts";

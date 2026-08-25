@@ -2,7 +2,7 @@
 title: "Shelby Level"
 about:
   template: solana
-  image: /logos/headshot_sm.png
+  image: /inst/img/headshot_sm.png
   links:
    - icon: github
      text: Github
@@ -30,7 +30,7 @@ Prior to my current role, I received a Master of Public Administration (2024) fr
 
 Outside of RStudio, I take adult learn to skate lessons, own a precious but patience-testing grey tabby named Pesto, spend my summers sailing on the Great Lakes, and love to cross stitch!
 
-Check out my resume below and example work in my [Past Projects](myprojects.qmd) and [Blog](blog.qmd)!
+Check out my resume below and example work in my [Past Projects](projects.qmd) and [Blog](blog.qmd)!
 
 ```{css echo=FALSE}
 .embed-container {
@@ -53,8 +53,8 @@ Check out my resume below and example work in my [Past Projects](myprojects.qmd)
 
 ```{=html}
 <p class="text-center">
-  <a class="btn btn-primary btn-default cv-download" href="cv/shelby-level-resume.pdf" target="_blank">
-    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Current Resume
+  <a class="btn btn-primary" href="cv/shelby-level-resume.pdf" target="_blank">
+    <i class="bi bi-file-earmark-person fs-5"></i>&ensp;Current Resume
   </a>
 </p>
 
