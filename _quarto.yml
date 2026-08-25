@@ -4,7 +4,7 @@ project:
 
 website:
   # title: "Shelby Level"
-  favicon: logos/sl-hex-sticker.png
+  favicon: inst/logos/sl-hex-sticker.png
   navbar:
     logo: inst/logos/sl.png # placeholder to be replaced by animated SVG logo
     right:

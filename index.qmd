@@ -2,7 +2,7 @@
 title: "Shelby Level"
 about:
   template: solana
-  image: /logos/headshot_sm.png
+  image: /inst/img/headshot_sm.png
   links:
    - icon: github
      text: Github
