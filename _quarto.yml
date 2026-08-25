@@ -3,10 +3,10 @@ project:
   output-dir: _site
 
 website:
-  title: "Shelby Level"
+  # title: "Shelby Level"
   favicon: logos/sl-hex-sticker.png
   navbar:
-    title: "<span class='first-name' >SHELBY</span><span class='icon-line' ></span><span class ='icon-line2'></span> <span class='last-name' >LE</span><span class='v' >v</span> <span class='last-name2' >EL</span>"
+    logo: inst/logos/sl.png # placeholder to be replaced by animated SVG logo
     right:
       - href: index.qmd
         text: "About Me"
@@ -30,13 +30,18 @@ website:
         href: https://github.com/shelbylevel
       - icon: linkedin
         href: https://www.linkedin.com/in/shelby-level/
+  google-analytics: "G-S8RJYVFCYL"
   #reader-mode: true
 
 format:
   html:
     theme: [lux, css/sl-styles.scss]
+    include-in-header:
+      - _extensions/shelbylevel/brand/logo-header.html
     toc: true
     page-layout: full
 
 editor: source
+execute:
+  freeze: auto
 
