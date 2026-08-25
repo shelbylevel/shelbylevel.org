@@ -1,7 +1,9 @@
 .Rproj.user
 .Rhistory
 .RData
+.rda
 .Ruserdata
 /.quarto/
 **/*.quarto_ipynb
 myprojects/qihub23/data/*
+.DS_Store
