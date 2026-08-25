@@ -1,0 +1,8 @@
+---
+#title: "past-projects"
+listing:
+  contents: projects
+  sort: "date desc"
+  type: default  #grid or default
+  categories: unnumbered
+---
