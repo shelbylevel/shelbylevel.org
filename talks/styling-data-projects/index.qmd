@@ -1,0 +1,22 @@
+---
+title: "First Impressions Matter"
+description: "Styling Data Projects People Actually Want to Use"
+author: 
+  - name: Shelby Level
+    url: https://github.com/shelbylevel
+date: 9-16-2024
+categories: [Talk]
+#citation: 
+  #url: 
+#image: preview-image.png
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    self-contained: true
+draft: true
+execute:
+  freeze: true
+---
+

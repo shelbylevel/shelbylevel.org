@@ -4,6 +4,12 @@
     "items": []
   },
   {
+    "listing": "/talks.html",
+    "items": [
+      "/talks/2026-09-16-styling-data-projects/index.html"
+    ]
+  },
+  {
     "listing": "/projects.html",
     "items": [
       "/projects/lyme-disease-dashboard/index.html",
