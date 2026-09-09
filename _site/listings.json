@@ -1,7 +1,9 @@
 [
   {
     "listing": "/blog.html",
-    "items": []
+    "items": [
+      "/blogs/tomorrow-night-eighties/index.html"
+    ]
   },
   {
     "listing": "/talks.html",

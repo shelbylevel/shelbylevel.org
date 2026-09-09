@@ -39,6 +39,10 @@ format:
     theme: [lux, css/sl-styles.scss]
     include-in-header:
       - _extensions/shelbylevel/brand/logo-header.html
+    css: /_extensions/quarto-codewindow/quarto-codewindow.css
+    include-after-body:
+      text: |
+        <script src="/_extensions/quarto-codewindow/quarto-codewindow.js"></script>
     toc: true
     page-layout: full
 

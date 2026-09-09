@@ -17,3 +17,7 @@ body {
 nav.sidebar.sidebar-navigation:not(.rollup) {
     background-color: white;
 }
+
+.btn .btn-primary {
+    padding: 0.5rem 1rem;
+}

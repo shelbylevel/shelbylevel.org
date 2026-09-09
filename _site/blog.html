@@ -86,9 +86,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -221,6 +221,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="site_libs/quarto-contrib/quarto-project/quarto-codewindow/quarto-codewindow.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -280,7 +281,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="UG9zaXRyb24=">Positron</div><div class="category" data-category="VlMlMjBDb2Rl">VS Code</div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
@@ -294,7 +295,38 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="UG9zaXRyb24lMkNWUyUyMENvZGU=" data-listing-date-sort="1785474000000" data-listing-file-modified-sort="1787884768858" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1197">
+<div class="thumbnail"><a href="./blogs/tomorrow-night-eighties/index.html" class="no-external">
 
+<p class="card-img-top"><img loading='lazy' src="blogs/tomorrow-night-eighties/data:image/png;base64,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"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/tomorrow-night-eighties/index.html" class="no-external">Porting my favorite RStudio color theme to Positron</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UG9zaXRyb24='); return false;">Positron</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VlMlMjBDb2Rl'); return false;">VS Code</div>
+
+</div>
+<div class="delink listing-description"><a href="./blogs/tomorrow-night-eighties/index.html" class="no-external">
+<p>Tomorrow night will always be bright, but now it can be muted too</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./blogs/tomorrow-night-eighties/index.html" class="no-external">
+<div class="listing-date">
+Jul 31, 2026
+</div>
+<div class="listing-author">
+Shelby Level
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
@@ -729,6 +761,7 @@ window.Quarto = {
     </div>
   </div>
 </footer>
+<script src="site_libs/quarto-contrib/quarto-project/quarto-codewindow/quarto-codewindow.js"></script>
 
 
 
