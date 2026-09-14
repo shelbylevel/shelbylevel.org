@@ -12,11 +12,266 @@ categories: [Talk]
 format: 
   html:
     toc: true
-    toc-depth: 2
-    toc-location: left
+    toc-depth: 3
+    toc-location: right
     self-contained: true
+
 draft: false
 execute:
   freeze: true
 ---
 
+## Talk Materials
+
+### Slide Deck
+
+```{=html}
+<div class="dashboard-container" style="margin: 2rem 0;">
+  <iframe 
+    src="https://shelbylevel.github.io/styling-data-products/"
+    width="100%" 
+    height="800px"
+    style="border: 2px solid #B2C5B4; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+    title="Lyme Disease Dashboard"
+    data-external="1"
+    allowfullscreen>
+  </iframe>
+</div>
+```
+
+```{=html}
+<a 
+  class="btn btn-primary" 
+  href="https://shelbylevel.github.io/styling-data-products/" 
+  target="_blank"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0.9em" height="0.9em" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: -0.05em;">
+  <path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5M.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5"/>
+</svg>&ensp;Fullscreen
+</a>
+```
+
+```{=html}
+<a 
+  class="btn btn-primary" 
+  href="https://github.com/shelbylevel/styling-data-products/blob/main/index.qmd" 
+  target="_blank"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0.9em" height="0.9em" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: -0.05em;"><path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/></svg>&ensp;Source
+</a>
+```
+### References
+
+```{=html}
+<div class="ref-cards">
+
+  <a class="ref-card" href="https://www.datawrapper.de/blog/text-in-data-visualizations" target="_blank">
+    <div class="ref-card-source">datawrapper.de</div>
+    <div class="ref-card-title">What to Consider When Using Text in Data Visualization</div>
+    <div class="ref-card-desc">A practical guide covering labels, annotations, titles, and captions — how to use text to clarify rather than clutter your charts.</div>
+  </a>
+
+  <a class="ref-card" href="https://nightingaledvs.com/what-are-data-visualization-style-guidelines/" target="_blank">
+    <div class="ref-card-source">nightingaledvs.com</div>
+    <div class="ref-card-title">What Are Data Visualization Style Guidelines?</div>
+    <div class="ref-card-desc">An introduction to dataviz style guides — what they are, how they fit into broader design systems, and real-world examples from organizations like Google, the BBC, and the Sunlight Foundation.</div>
+  </a>
+
+  <a class="ref-card" href="https://nightingaledvs.com/core-dataviz-style-guide-components/" target="_blank">
+    <div class="ref-card-source">nightingaledvs.com</div>
+    <div class="ref-card-title">Core Dataviz Style Guide Components</div>
+    <div class="ref-card-desc">A practical framework for building a dataviz style guide from scratch — covering accessibility audits, color, typography, and chart layout, with step-by-step exercises for each component.</div>
+  </a>
+
+  <a class="ref-card" href="https://medium.com/@antonioneto_17307/data-visualization-colors-matter-but-what-about-typography-8ad034ff28be" target="_blank">
+    <div class="ref-card-source">medium.com</div>
+    <div class="ref-card-title">Data Visualization: Colors Matter, but What About Typography?</div>
+    <div class="ref-card-desc">A reflection on typography as an underappreciated design element in data visualization — exploring how font choices shape readability, hierarchy, and chart effectiveness alongside color decisions.</div>
+  </a>
+
+  <a class="ref-card" href="https://www.datawrapper.de/blog/emphasize-with-color-in-data-visualizations" target="_blank">
+    <div class="ref-card-source">datawrapper.de</div>
+    <div class="ref-card-title">Emphasize What You Want Readers to See with Color</div>
+    <div class="ref-card-desc">How to use gray and desaturation strategically to create visual hierarchy — directing readers' attention to what matters most through saturation and contrast rather than by adding more colors.</div>
+  </a>
+
+  <a class="ref-card" href="https://data.london.gov.uk/dataset/city-intelligence-data-design-guidelines-e6wyz" target="_blank">
+    <div class="ref-card-source">data.london.gov.uk</div>
+    <div class="ref-card-title">City Intelligence Data Design Guidelines</div>
+    <div class="ref-card-desc">The Greater London Authority's publicly available dataviz style guide (PDF), covering color palettes, chart types, typography, and accessibility principles for GLA data products — a frequently cited real-world example.</div>
+  </a>
+
+  <a class="ref-card" href="https://www.datawrapper.de/blog/which-color-scale-to-use-in-data-vis" target="_blank">
+    <div class="ref-card-source">datawrapper.de</div>
+    <div class="ref-card-title">Which Color Scale to Use When Visualizing Data</div>
+    <div class="ref-card-desc">An overview of categorical, sequential, and diverging color scales — when to use each, how highlighting and de-emphasizing work, and why the "right" choice is often less clear-cut than textbooks suggest.</div>
+  </a>
+
+  <a class="ref-card" href="https://github.com/glosophy/CatoDataVizGuidelines/tree/master" target="_blank">
+    <div class="ref-card-source">github.com</div>
+    <div class="ref-card-title">Cato Institute Data Visualization Guidelines</div>
+    <div class="ref-card-desc">A pocket style guide from the Cato Institute with chart-by-chart graphic guidelines and design justifications — aimed at making data visualization clearer and more effective for readers and communicating the organization's mission.</div>
+  </a>
+
+  <a class="ref-card" href="https://dl.acm.org/doi/10.1145/3025453.3026041" target="_blank">
+    <div class="ref-card-source">dl.acm.org</div>
+    <div class="ref-card-title">Affective Color in Visualization</div>
+    <div class="ref-card-desc">A study on how colors convey affects — playfulness, calm, seriousness, trustworthiness — in data visualizations, with implications for choosing palettes that match the intended tone of a chart.</div>
+  </a>
+
+  <a class="ref-card" href="https://dl.acm.org/doi/10.1145/3706598.3713824" target="_blank">
+    <div class="ref-card-source">dl.acm.org</div>
+    <div class="ref-card-title">Trustworthy by Design: The Viewer's Perspective on Trust in Data Visualization</div>
+    <div class="ref-card-desc">The qualitative study behind the talk's trust framework — how viewers describe their own trust in visualizations, why their reasoning is surprisingly consistent yet individually diverse, and actionable guidelines for designing more trustworthy visualizations.</div>
+  </a>
+
+</div>
+```
+
+## After the Talk: Where to Start
+
+If you want to bring these ideas into your own work, don't try to redesign everything at once. Styling works best as a series of layers, each one building on the last:
+
+1. **Bootstrap is your foundation.** If you're building HTML output with Quarto or Shiny, you already have it — structure, components, and sensible defaults come for free.
+2. **A Bootswatch theme gives you a better starting point.** One line changes the look and feel of the entire product.
+3. **A `_brand.yml` file makes it *yours*.** Define your colors and typography once, then reuse them across dashboards, reports, and slides.
+4. **Polish selectively.** Custom CSS and per-chart adjustments are the final layer, reserved for the details specific to that product and audience.
+
+Below are resources for each layer, plus deeper reading on color and typography for when you're ready to go further.
+
+### Bootswatch Themes
+
+The fastest way to move from "good enough" to "intentional." Pick a preset, apply it, and every styled component updates at once.
+
+**Quarto:**
+
+```yaml
+format:
+  html:
+    theme: flatly
+```
+
+**Shiny (bslib):**
+
+```r
+library(bslib)
+
+page_navbar(
+  title = "Dashboard",
+  theme = bs_theme(preset = "lux"),
+  ...
+)
+```
+
+```{=html}
+<div class="ref-cards">
+
+  <a class="ref-card" href="https://bootswatch.com/" target="_blank">
+    <div class="ref-card-source">bootswatch.com</div>
+    <div class="ref-card-title">Bootswatch Theme Gallery</div>
+    <div class="ref-card-desc">Browse all 25+ free Bootstrap themes with live previews of every component — buttons, navbars, tables, forms — so you can see exactly what a preset will do to your product before you apply it.</div>
+  </a>
+
+  <a class="ref-card" href="https://rstudio.github.io/bslib/articles/theming/index.html" target="_blank">
+    <div class="ref-card-source">rstudio.github.io/bslib</div>
+    <div class="ref-card-title">Theming with bslib</div>
+    <div class="ref-card-desc">How to apply Bootswatch presets and customize themes in Shiny apps and R-based Quarto documents with <code>bs_theme()</code>, including runtime theme switching for quick experimentation.</div>
+  </a>
+
+  <a class="ref-card" href="https://quarto.org/docs/output-formats/html-themes.html" target="_blank">
+    <div class="ref-card-source">quarto.org</div>
+    <div class="ref-card-title">Quarto HTML Theming</div>
+    <div class="ref-card-desc">Quarto's guide to applying Bootswatch themes to HTML documents, websites, and dashboards — plus how to layer custom SCSS on top of a preset.</div>
+  </a>
+
+</div>
+```
+
+### Brand.yml
+
+A Bootswatch preset doesn't know your organization's colors or fonts. A `_brand.yml` file records those decisions once so every product can reuse them — which is also what makes work from the same source recognizable over time.
+
+```yaml
+brand:
+  color:
+    palette:
+      deep-jade: "#254D56"
+      spring-rain: "#B2C5B4"
+    foreground: deep-jade
+    primary: "#45767A"
+  typography:
+    fonts:
+      - family: Lato
+        source: google
+        weight: [300, 400, 600]
+    base:
+      family: Lato
+      line-height: 1.6
+```
+
+Apply it on top of a Bootswatch preset in Quarto:
+
+```yaml
+format:
+  html:
+    theme: flatly
+    brand: _brand.yml
+```
+
+```{=html}
+<div class="ref-cards">
+
+  <a class="ref-card" href="https://posit-dev.github.io/brand-yml/" target="_blank">
+    <div class="ref-card-source">posit-dev.github.io/brand-yml</div>
+    <div class="ref-card-title">brand.yml Documentation</div>
+    <div class="ref-card-desc">The official reference for the brand.yml format — how to define brand colors, typography, and logos in one portable file that works across Quarto, Shiny, and other tools.</div>
+  </a>
+
+  <a class="ref-card" href="https://quarto.org/docs/authoring/brand.html" target="_blank">
+    <div class="ref-card-source">quarto.org</div>
+    <div class="ref-card-title">Quarto Brand Support</div>
+    <div class="ref-card-desc">How Quarto applies a <code>_brand.yml</code> file to documents, dashboards, websites, and presentations — including how brand colors flow into plots and tables.</div>
+  </a>
+
+  <a class="ref-card" href="https://rstudio.github.io/bslib/articles/brand-yml/index.html" target="_blank">
+    <div class="ref-card-source">rstudio.github.io/bslib</div>
+    <div class="ref-card-title">brand.yml in Shiny with bslib</div>
+    <div class="ref-card-desc">Using a brand.yml file to theme Shiny apps — bslib reads the same file Quarto uses, so one brand definition covers your apps and your documents.</div>
+  </a>
+
+</div>
+```
+
+### Colors
+
+```{=html}
+<div class="ref-cards">
+
+  <a class="ref-card" href="https://nightingaledvs.com/how-to-create-brand-colors-for-data-visualization-style-guidelines/" target="_blank">
+    <div class="ref-card-source">nightingaledvs.com</div>
+    <div class="ref-card-title">How to Create Brand Colors for Data Visualization Style Guidelines</div>
+    <div class="ref-card-desc">Why your brand colors often don't translate to charts, and how to build accessible, functional color palettes — for categorical, sequential, and diverging data — while preserving brand identity.</div>
+  </a>
+
+  <a class="ref-card" href="https://www.datawrapper.de/blog/colors-for-data-vis-style-guides" target="_blank">
+    <div class="ref-card-source">datawrapper.de</div>
+    <div class="ref-card-title">A Detailed Guide to Colors in Data Vis Style Guides</div>
+    <div class="ref-card-desc">A comprehensive deep-dive into building organizational color palettes — from four palette approaches (minimalist to expansive) to considerations like accessibility, brand alignment, dark mode, and color ordering.</div>
+  </a>
+
+</div>
+```
+
+### Typography
+
+```{=html}
+<div class="ref-cards">
+
+  <a class="ref-card" href="https://www.datawrapper.de/blog/fonts-for-data-visualization" target="_blank">
+    <div class="ref-card-source">datawrapper.de</div>
+    <div class="ref-card-title">Which Fonts to Use for Your Charts and Tables</div>
+    <div class="ref-card-desc">A guide to choosing and adjusting fonts for data visualization — covering typeface categories, figure styles (lining vs. oldstyle, tabular vs. proportional), weight, sizing, and when uppercase text works.</div>
+  </a>
+
+</div>
+```
