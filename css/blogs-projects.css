@@ -9,7 +9,7 @@ body {
 }
 
 /* Table Background */
-.page-columns table {
+.page-columns .column-page-left table {
     background: white;
 }
 

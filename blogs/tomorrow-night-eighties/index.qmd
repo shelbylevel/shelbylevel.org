@@ -8,7 +8,7 @@ date: 7-31-2026
 categories: [Positron, VS Code] # self-defined categories
 #citation: 
   #url: 
-#image: preview-image.png
+image: img/logo.png
 format: 
   html:
     toc: true
@@ -21,10 +21,9 @@ format:
 filters:
   - preview-colour
 extensions:
-  - quarto-codewindow
-  - preview-colour:
-      code: true
-      text: true
+  preview-colour:
+    code: false
+    text: false
 draft: false
 execute:
   freeze: false
@@ -35,6 +34,12 @@ execute:
   <i class="bi bi-github fs-5"></i>&ensp;GitHub
 </a>
 ``` -->
+
+```{r}
+#| echo: false
+#| message: false
+source(here::here("blogs", "tomorrow-night-eighties", "R", "pluck_colors.R"))
+```
 
 ## My favorite RStudio theme
 
@@ -82,136 +87,61 @@ I also wanted to make the syntax highlighting more similar to RStudio’s Tomorr
 
 I also have rainbow parentheses enabled by default within the theme.
 
-:::: {.codewindow}
-::: {.editor .yaml name="00-load.R"}
-```yaml
-meta:
-  name: shelbylevel
-  link: https://www.shelbylevel.org
-
-color:
-  palette:
-    deep-jade: "#254D56"
-    faded-jade: "#45767a"
-    faded-jade-50: "#a2bbbd"
-    faded-jade-30: "#c7d6d7"
-    faded-jade-10: "#ecf1f2"
-    gulfstream: "#7fa6ad"
-    edgewater: "#d3dfdd"
-    edgewater-20: "#dce5e4"
-    cascade: "#b3c2c9"
-    boulder: "#727E70"
-    spring-rain: "#b2c5b4"
-    timberwolf: "#D8D5CE"
-    timberwolf-50: "#eceae7"
-    almond-dust: "#B8AEA8"
-    moonstone: "#969996"
-    storm-cloud: "#64635E"
-    plum-crazy: "#59224A"
-  
-  foreground: $brand-deep-jade       # main text color
-  background: $brand-faded-jade-10     # background
-  primary: "#45767a"            # primary brand color
-  secondary: "#7fa6ad"          # secondary accent
-  tertiary: "#a2bbbd"           # tertiary accent
-  success: "#727E70"            # success states
-  info: "#b2c5b4"               # info messages
-  warning: "#B8AEA8"            # warnings
-  danger: "#6f4a64"             # errors/danger
-  light: "#ecf1f2"              # light backgrounds
-  dark: "#64635E"               # dark elements
-```
-:::
-
-::: {.editor .yaml name="01-clean.R"}
-```yaml
-typography:
-  fonts:
-    - family: "Lato"
-      source: google
-      weight: [200, 300, 400, 600]
-    - family: "Nunito Sans"
-      source: google
-      weight: [400, 600]
-  
-  base:
-    family: "Lato"
-    size: "1rem"
-    line-height: 1.6
-    weight: 300
-  
-  headings:
-    family: "Nunito Sans"
-    style: normal
-    weight: 600
-    line-height: 1.2
-    color: primary
-```
-:::
-::::
-
 ## Editor Colors
+
+Below are the editor (syntax highlighting) colors from the two theme JSON files: the pristine Yeoman import of the original `Tomorrow-Night-Eighties.tmTheme`, which is exactly what Microsoft's port ships, and the customized Tomorrow Night Eighties (R Classic) theme.
 
 ::: {.panel-tabset}
 
-### Tomorrow Night Eighties (RStudio)
+### Microsoft Port
 
-```{r eval=FALSE}
+```{r}
 #| echo: false
 #| warning: false
-tnb_original_tokencolors3 |>
-  knitr::kable() |>
+tne_original_tokencolors3 |>
+  dplyr::mutate(color = add_colour_dots(color)) |>
+  knitr::kable(format = "html", escape = FALSE) |>
   kableExtra::column_spec(1, width = "8em")
-```
-
-### GitHub Dark Default
-
-```{r eval=FALSE}
-#| echo: false
-#| warning: false
-gdd_tokencolors3 |> knitr::kable() |> kableExtra::column_spec(1, width = "8em")
 ```
 
 ### Tomorrow Night Eighties (R Classic)
 
-```{r eval=FALSE}
+```{r}
 #| echo: false
 #| warning: false
-tnb_rclassic_tokencolors3 |>
-  knitr::kable() |>
+tne_rclassic_tokencolors3 |>
+  dplyr::mutate(color = add_colour_dots(color)) |>
+  knitr::kable(format = "html", escape = FALSE) |>
   kableExtra::column_spec(1, width = "8em")
 ```
 
 :::
 
-### Workbench Colors
+## Workbench Colors
+
+And here are the workbench (chrome) colors. Note that the Microsoft port is a `.tmTheme` file, which only defines editor token colors, so its only workbench colors are the handful of `editor.*` settings Yeoman derived from the theme when importing it; everything else falls back to the base dark theme.
 
 ::: {.panel-tabset}
 
-### RStudio
-```{r eval=FALSE}
+### Microsoft Port
+
+```{r}
 #| echo: false
 #| warning: false
-tnb_original_colors |>
-  knitr::kable() |>
+tne_original_colors |>
+  dplyr::mutate(color = add_colour_dots(color)) |>
+  knitr::kable(format = "html", escape = FALSE) |>
   kableExtra::column_spec(1, width = "8em")
 ```
 
-### Microsoft Port
+### Tomorrow Night Eighties (R Classic)
 
-```{r eval=FALSE}
+```{r}
 #| echo: false
 #| warning: false
-gdd_colors |> knitr::kable() |> kableExtra::column_spec(1, width = "8em")
-```
-
-### R Classic
-
-```{r eval=FALSE}
-#| echo: false
-#| warning: false
-tnb_rclassic_colors |>
-  knitr::kable() |>
+tne_rclassic_colors |>
+  dplyr::mutate(color = add_colour_dots(color)) |>
+  knitr::kable(format = "html", escape = FALSE) |>
   kableExtra::column_spec(1, width = "12em")
 ```
 
