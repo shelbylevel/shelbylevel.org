@@ -15,7 +15,6 @@ format:
     toc-depth: 2
     toc-location: left
     self-contained: true
-    css: ../../css/sl-lux-bootstrap.css
 draft: true
 execute:
   freeze: true

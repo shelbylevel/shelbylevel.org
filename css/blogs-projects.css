@@ -9,11 +9,15 @@ body {
 }
 
 /* Table Background */
-.page-columns table {
+.page-columns .column-page-left table {
     background: white;
 }
 
 /* Sidebar Background */
 nav.sidebar.sidebar-navigation:not(.rollup) {
     background-color: white;
+}
+
+.btn .btn-primary {
+    padding: 0.5rem 1rem;
 }

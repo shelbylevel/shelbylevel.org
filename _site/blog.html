@@ -86,9 +86,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -221,6 +221,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="site_libs/quarto-contrib/quarto-project/quarto-codewindow/quarto-codewindow.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -280,7 +281,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="UG9zaXRyb24=">Positron</div><div class="category" data-category="VlMlMjBDb2Rl">VS Code</div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
@@ -294,7 +295,38 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="UG9zaXRyb24lMkNWUyUyMENvZGU=" data-listing-date-sort="1785474000000" data-listing-file-modified-sort="1789568324614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="913">
+<div class="thumbnail"><a href="./blogs/tomorrow-night-eighties/index.html" class="no-external">
 
+<img loading="lazy" src="./blogs/tomorrow-night-eighties/img/logo.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/tomorrow-night-eighties/index.html" class="no-external">Porting my favorite RStudio color theme to Positron</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UG9zaXRyb24='); return false;">Positron</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('VlMlMjBDb2Rl'); return false;">VS Code</div>
+
+</div>
+<div class="delink listing-description"><a href="./blogs/tomorrow-night-eighties/index.html" class="no-external">
+<p>Tomorrow night will always be bright, but now it can be muted too</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./blogs/tomorrow-night-eighties/index.html" class="no-external">
+<div class="listing-date">
+Jul 31, 2026
+</div>
+<div class="listing-author">
+Shelby Level
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
@@ -729,6 +761,7 @@ window.Quarto = {
     </div>
   </div>
 </footer>
+<script src="site_libs/quarto-contrib/quarto-project/quarto-codewindow/quarto-codewindow.js"></script>
 
 
 
