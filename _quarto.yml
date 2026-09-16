@@ -20,7 +20,7 @@ website:
         href: https://github.com/shelbylevel
         aria-label: GitHub
       - icon: linkedin
-        href: https://www.linkedin.com/in/shelby-level/
+        href: https://www.linkedin.com/in/shelbylevel
         aria-label: LinkedIn
   page-footer:
     background: light # or dark
@@ -30,7 +30,7 @@ website:
       - icon: github
         href: https://github.com/shelbylevel
       - icon: linkedin
-        href: https://www.linkedin.com/in/shelby-level/
+        href: https://www.linkedin.com/in/shelbylevel
   google-analytics: "G-S8RJYVFCYL"
   #reader-mode: true
 
