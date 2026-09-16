@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: _site
+  post-render: R/postprocess_code_highlighting.R
 
 website:
   # title: "Shelby Level"

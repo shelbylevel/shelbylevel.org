@@ -15,6 +15,79 @@ format:
     toc-depth: 3
     toc-location: right
     self-contained: true
+    header-includes:
+      - |
+        <style>
+          /* Tomorrow Night Eighties codewindows */
+          .codewindow {
+            font-size: 1.05em;
+            --codewindow-bg: #2d2d2d;
+            --codewindow-header-bg: #1f1f1f;
+            --codewindow-tab-bg: #393939;
+            --codewindow-color: #cccccc;
+            --codewindow-shadow-color: rgba(0, 0, 0, 0.5);
+            --codewindow-tab-focus-color: #6699cc;
+          }
+
+          .codewindow code,
+          .codewindow code span {
+            color: var(--codewindow-color);
+          }
+
+          /* Token colors mapped from Tomorrow Night Eighties (R Classic):
+             blogs/tomorrow-night-eighties/data/tomorrow-night-eighties-r-classic.json */
+
+          /* keyword, storage -> CC99CC */
+          .codewindow code span.kw,
+          .codewindow code span.cf,
+          .codewindow code span.im { color: #CC99CC; }
+
+          /* YAML keys are plain foreground in the theme
+             (string.unquoted.plain.out.yaml), not keyword purple */
+          .codewindow code.yaml span.kw { color: #CCCCCC; }
+
+          /* string -> 99CC99 */
+          .codewindow code span.st,
+          .codewindow code span.ch,
+          .codewindow code span.vs,
+          .codewindow code span.ss { color: #99CC99; }
+
+          /* constant.numeric, constant.language -> F99157 */
+          .codewindow code span.dv,
+          .codewindow code span.bn,
+          .codewindow code span.fl,
+          .codewindow code span.cn { color: #F99157; }
+
+          /* comment -> 999999 */
+          .codewindow code span.co,
+          .codewindow code span.do { color: #999999; }
+
+          /* entity.name.function, support.function -> 6699CC */
+          .codewindow code span.fu,
+          .codewindow code span.bu { color: #6699CC; }
+
+          /* support.type, entity.name.class -> FFCC66 */
+          .codewindow code span.dt { color: #FFCC66; }
+
+          /* variable, entity.other.attribute-name -> F2777A */
+          .codewindow code span.va { color: #F2777A; }
+
+          /* function arguments and YAML attribute keys are plain foreground
+             (variable.parameter / string.unquoted.plain.out.yaml) */
+          .codewindow code span.at { color: #CCCCCC; }
+
+          /* keyword.operator -> 66CCCC (includes the :: that skylighting
+             tags as SpecialChar in R) */
+          .codewindow code span.op,
+          .codewindow code span.ot,
+          .codewindow code span.pp,
+          .codewindow code span.sc { color: #66CCCC; }
+
+          /* invalid -> CDCDCD */
+          .codewindow code span.al,
+          .codewindow code span.er,
+          .codewindow code span.wa { color: #CDCDCD; }
+        </style>
 
 draft: false
 execute:
@@ -145,13 +218,20 @@ The fastest way to move from "good enough" to "intentional." Pick a preset, appl
 
 **Quarto:**
 
+::: {.codewindow .yaml}
+_quarto.yml_
+
 ```yaml
 format:
   html:
-    theme: flatly
+    theme: lux
 ```
+:::
 
 **Shiny (bslib):**
+
+::: {.codewindow .r}
+_app.R_
 
 ```r
 library(bslib)
@@ -162,6 +242,7 @@ page_navbar(
   ...
 )
 ```
+:::
 
 ```{=html}
 <div class="ref-cards">
@@ -191,32 +272,68 @@ page_navbar(
 
 A Bootswatch preset doesn't know your organization's colors or fonts. A `_brand.yml` file records those decisions once so every product can reuse them — which is also what makes work from the same source recognizable over time.
 
+::: {.codewindow .yaml}
+_brand.yml_
+
 ```yaml
-brand:
-  color:
-    palette:
-      deep-jade: "#254D56"
-      spring-rain: "#B2C5B4"
-    foreground: deep-jade
-    primary: "#45767A"
-  typography:
-    fonts:
-      - family: Lato
-        source: google
-        weight: [300, 400, 600]
-    base:
-      family: Lato
-      line-height: 1.6
+meta:
+  name: shelbylevel
+  link: https://www.shelbylevel.org
+
+color:
+  palette:
+    deep-jade: "#254D56"
+    faded-jade: "#45767a"
+    gulfstream: "#7fa6ad"
+    edgewater: "#d3dfdd"
+    storm-cloud: "#64635E"
+    plum-crazy: "#59224A"
+  
+  foreground: deep-jade
+  background: edgewater
+  primary: faded-jade
+  secondary: gulfstream
+  success: "#b2c5b4"
+  warning: "#B8AEA8"
+  danger: plum-crazy
+  light: "#ecf1f2"
+  dark: storm-cloud
+
+typography:
+  fonts:
+    - family: "Lato"
+      source: google
+      weight: [200, 300, 400, 600]
+    - family: "Nunito Sans"
+      source: google
+      weight: [400, 600]
+  
+  base:
+    family: "Lato"
+    size: "1rem"
+    weight: 300
+    line-height: 1.6
+  
+  headings:
+    family: "Nunito Sans"
+    weight: 600
+    line-height: 1.2
+    color: primary
 ```
+:::
 
 Apply it on top of a Bootswatch preset in Quarto:
+
+::: {.codewindow .yaml}
+_quarto.yml_
 
 ```yaml
 format:
   html:
-    theme: flatly
+    theme: lux
     brand: _brand.yml
 ```
+:::
 
 ```{=html}
 <div class="ref-cards">

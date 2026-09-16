@@ -286,6 +286,27 @@ div.quarto-about-solana .about-entity .about-image {
 }
 
 // =============================================================================
+// POST-RENDER CODE HIGHLIGHTING (R/postprocess_code_highlighting.R)
+// =============================================================================
+// The script sets colors inline; these rules supply the shape/spacing.
+
+.hex-pill {
+  display: inline-block;
+  padding: 0 0.45em;
+  border-radius: 1em;
+  margin: 0 0.05em;
+  line-height: 1.5;
+}
+
+.bracket-depth {
+  font-weight: 600;
+}
+
+.codewindow {
+  font-size: 1em !important;
+}
+
+// =============================================================================
 // PAGE-SPECIFIC STYLES
 // =============================================================================
 
