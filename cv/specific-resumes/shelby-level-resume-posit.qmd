@@ -1,0 +1,285 @@
+---
+author: Shelby L Level
+#title: 
+format:
+  classic-cv-pdf: default
+cvfooter:
+  left: "shelbylevel.org"
+  right: "github.com/shelbylevel"
+cvcolor: 45767A #without `#`
+cvfont: lato #texlive fonts like raleway,fetamont,comfortaa,inconsolata
+cvmeta:
+  - title: Current Role
+    left: Senior R Shiny Designer and Developer
+    right: '__Email__: slevel20@gmail.com'
+  - title: Focus
+    left: Application Engineering, Accessibility, AI-Assisted Development
+    right: '__Website__: www.shelbylevel.org'
+  - title: Core Tech
+    left: R, Shiny, bslib, leprechaun, Quarto, Git, Docker
+    right: '__GitHub__: www.github.com/shelbylevel'
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: cvevents
+cvevents <- function(tbl, when, what, where, details) {
+  command_start <- "\\cvevent"
+
+  res <- paste0(
+    command_start,
+    "{",
+    tbl[[when]],
+    "}",
+    "{",
+    tbl[[what]],
+    "}",
+    "{",
+    tbl[[where]],
+    "}"
+  )
+
+  tbl[[details]] <- sapply(tbl[[details]], function(x) {
+    paste0("{", x, "}", collapse = ",")
+  })
+  res <- paste0(res, "{", tbl[[details]], "}")
+
+  cat(res, sep = "\n")
+}
+```
+
+```{r}
+#| label: cvposit
+# Bullet list only, matching the body of \cvskill but without its
+# (empty) header row and horizontal rule
+cvposit <- function(tbl, when, what, where, details) {
+  items <- unlist(tbl[[details]])
+  cat(paste0(
+    "\\begin{itemize}\n",
+    paste0("\\item ", items, collapse = "\n"),
+    "\n\\end{itemize}"
+  ))
+}
+```
+
+```{r}
+#| label: cvskills
+
+escape_cv_latex <- function(x) {
+  # fixed=TRUE treats the replacement literally, so use single backslashes
+  x <- gsub("&", "\\&", x, fixed = TRUE)
+  x <- gsub("%", "\\%", x, fixed = TRUE)
+  x <- gsub("#", "\\#", x, fixed = TRUE)
+  x <- gsub("_", "\\_", x, fixed = TRUE)
+  x
+}
+
+cvskills <- function(tbl, area, details) {
+  area_values <- escape_cv_latex(tbl[[area]])
+  detail_values <- escape_cv_latex(tbl[[details]])
+
+  rows <- paste0(
+    "\\textbf{\\textcolor[HTML]{45767A}{",
+    area_values,
+    "}} & ",
+    detail_values,
+    " \\\\[12pt]"
+  )
+
+  output <- paste0(
+    "\\small\n",
+    "\\begin{tabular}{@{}>{\\raggedright\\arraybackslash}p{0.25\\linewidth}",
+    ">{\\raggedright\\arraybackslash}p{0.70\\linewidth}@{}}\n",
+    paste(
+      rows,
+      collapse = "\n\\noalign{\\color[HTML]{D9D9D9}\\hrule height 0.4pt\\vspace{2pt}}\n"
+    ),
+    "\n\\end{tabular}\n\\normalsize\n\\vspace{10pt}"
+  )
+
+  cat(output)
+}
+```
+
+# Summary
+
+Product-minded R software engineer and technical lead who builds accessible, reproducible analytical applications and data tooling for statewide public-health programs. Experienced owning ambiguous work from stakeholder discovery and prototyping through implementation, documentation, delivery, and ongoing maintenance. Known for modernizing shared systems, creating reusable frameworks, mentoring developers, and translating user needs into trustworthy data products. \newline
+
+# Technical Skills
+
+```{r}
+#| label: skills
+#| output: asis
+#| echo: false
+# fmt: skip
+tibble::tribble(
+  ~area, ~details,
+
+  "Application Engineering",
+  paste(
+    "R",
+    "Shiny",
+    "bslib",
+    "leprechaun",
+    "modular application architecture",
+    "package-based development",
+    "reactive programming",
+    "reusable components and functions",
+    sep = ", "
+  ),
+
+  "Data Systems & Automation",
+  paste(
+    "SQL-backed workflows",
+    "dplyr",
+    "tidyr",
+    "parameterized data pipelines",
+    "automated validation",
+    "record linkage",
+    "reproducible reporting",
+    sep = ", "
+  ),
+
+  "Testing, Quality & Accessibility",
+  paste(
+    "testthat",
+    "code review",
+    "debugging",
+    "application testing",
+    "WCAG-informed development",
+    "keyboard and screen-reader accessibility",
+    "accessible tables and visualizations",
+    sep = ", "
+  ),
+
+  "Developer Tools & Delivery",
+  paste(
+    "Git",
+    "GitHub",
+    "GitLab",
+    "Docker",
+    "collaborative branching and merge-request workflows",
+    "technical documentation",
+    "developer onboarding",
+    sep = ", "
+  ),
+
+  "Front-End & Data Products",
+  paste(
+    "HTML",
+    "CSS",
+    "SCSS/Sass",
+    "Quarto",
+    "R Markdown",
+    "brand.yml",
+    "data.table",
+    "ggplot2",
+    "leaflet",
+    "highcharter",
+    "plotly",
+    "echarts4r",
+    sep = ", "
+  ),
+
+  "AI-Assisted Engineering",
+  paste(
+    "LLM-assisted software development",
+    "code generation and review",
+    "documentation support",
+    "structured prompting and output validation",
+    "privacy-aware AI use",
+    sep = ", "
+  ),
+) |>
+  cvskills(
+    area = "area",
+    details = "details"
+  )
+```
+
+# Open Source \\& Posit Community Contributions
+
+```{r}
+#| label: posit
+#| output: asis
+# fmt: skip
+tibble::tribble(
+  ~area, ~uni , ~loc , ~dates , ~details,
+  "", "", "", "", c("bslib accessibilty contributor, Tidy Dev Day 2026: collaborated with Joe Cheng and Garrick Aden-Buie to remediate accessibility issues for Shiny users", "posit::conf(2026) speaker: 'First Impressions Matter: Styling Data Products That People Actually Want to Use', focused on user trust, accessible design, typography, color, and brand systems for data products", "R Shiny dashboard featured in the April 2026 posit::glimpse() newsletter", "Active weekly participant in the Data Science Hangout and Data Science Lab communities")
+) |>
+  cvposit(when = "dates", what = "area", where = "uni", details = "details")
+```
+
+# Experience
+
+```{r}
+#| label: experience
+#| output: asis
+# fmt: skip
+tibble::tribble(
+  ~role, ~institution, ~dates, ~details, ~tasks,
+  "Senior Research Analyst (S3)",
+  "Ohio Colleges of Medicine Government Resource Center",
+  "Feb. 2026 - Present",
+  "",
+  c("Serving as a technical lead for interactive dashboards, analytical applications, and reporting systems, guiding architecture, implementation, code review, documentation, and maintainable delivery across public-health and healthcare projects", "Operationalizing the leprechaun framework as a standard architecture for package-based Shiny application development, improving code organization, reuse, testing, documentation, and developer onboarding across projects", "Designing a reusable brand.yml-based theming framework spanning Shiny, Quarto HTML, and revealjs outputs; partnered with communications stakeholders to turn evolving brand requirements into a consistent cross-product design system", "Leading accessibility modernization across public-facing data products: migrated legacy Shiny interfaces from shinyBS to bslib, standardized accessible tables through shared modules, and evaluated visualization libraries for keyboard and screen-reader support", "Owning stakeholder-facing feature discovery for dashboard enhancements, translating unclear needs into practical iterations while communicating tradeoffs, progress, and revised delivery plans", "Mentoring analysts and developers through structured onboarding, Git setup and workflows, local application development, coding standards, code review, troubleshooting, and project documentation", "Evaluating and applying AI-assisted development workflows to accelerate prototyping, debugging, code review, and documentation while maintaining human review and organizational data-security requirements"),
+  "Research Analyst (S2)",
+  "Ohio Colleges of Medicine Government Resource Center",
+  "Jun. 2024 - Feb 2026",
+  "",
+  c("Built and maintained modular, multi-tab R Shiny applications and reusable data pipelines used to communicate statewide health and healthcare measures", "Automated validation reports for infant health, chronic condition, behavioral health, and substance-use measures, checking source structure, completeness, logical consistency, dates, and file-path changes to improve QA traceability", "Created a reproducible public-use analytics-file workflow with independently controlled transformations, parameterized generation, alignment to internal pipelines, and accessible branded reference documentation", "Engineered repeatable sample-frame pipelines on a changed Medicaid claims structure; automated EVV data cleaning and applied fuzzy matching and probabilistic linkage to deduplicate individual records, with documentation for future maintainers", "Led adoption of Git-based collaboration on a cross-functional project and trained staff in consistent version-control practices")
+) |>
+  cvevents(
+    when = "dates",
+    what = "role",
+    where = "institution",
+    details = "tasks"
+  )
+```
+
+# Earlier Experience
+
+```{r}
+#| label: early-experience
+#| output: asis
+# fmt: skip
+tibble::tribble(
+  ~role, ~institution, ~dates, ~details, ~tasks,
+  "Research Assistant",
+  "Ohio University, Voinovich School of Leadership \\& Public Service",
+  "Jul. 2023 - May 2024",
+  "",
+  c("Built Shiny applications and analyzed survey, social vulnerability, Census, transportation, and accessibility data for public-sector partners; produced maps, reports, and stakeholder-ready findings"),
+  "Research Staff",
+  "Ohio University, Ohio Alliance for Population Health (OAPH)",
+  "Jul. 2023 - May 2024",
+  "Ohio University College of Health Sciences and Professions",
+  c("Created reproducible R workflows for Census, NSDUH, state health, and CDC WONDER mortality data; authored and supported reports on health outcomes and geographic disparities"),
+  "Health Policy Intern", "Health Policy Institute of Ohio (HPIO)",
+  "Jan. 2023 - Jun. 2023",
+  "Data Intern",
+  c("Produced county-, ZIP-code-, and census-tract-level visualizations and supported quality control for calculations, data entry, and citations")
+) |>
+  cvevents(
+    when = "dates",
+    what = "role",
+    where = "institution",
+    details = "tasks"
+  )
+```
+
+# Education
+
+```{r}
+#| label: education
+#| output: asis
+# fmt: skip
+tibble::tribble(
+  ~degree, ~uni, ~loc, ~dates, ~details,
+  "Biostatistics Graduate Certificate", "The Ohio State University", "Columbus, Ohio", "Jan. 2025 - Dec 2026", "Ongoing coursework",
+  "Master of Public Administration", "Ohio University", "Athens, Ohio", "Jul. 2023 - May 2024", c("Graduate Research Assistant"),
+  "Bachelor of Science in Public Health", "University of Toledo", "Toledo, Ohio", "Aug. 2020 - May 2023", c("Magna cum laude")
+) |>
+  cvevents(when = "dates", what = "degree", where = "uni", details = "details")
+```

@@ -6,12 +6,6 @@
     ]
   },
   {
-    "listing": "/talks.html",
-    "items": [
-      "/talks/styling-data-projects/index.html"
-    ]
-  },
-  {
     "listing": "/projects.html",
     "items": [
       "/projects/lyme-disease-dashboard/index.html",
@@ -19,6 +13,12 @@
       "/projects/research-poster/index.html",
       "/projects/qihub23/index.html",
       "/projects/diabetes-report/index.html"
+    ]
+  },
+  {
+    "listing": "/talks.html",
+    "items": [
+      "/talks/styling-data-projects/index.html"
     ]
   }
 ]
