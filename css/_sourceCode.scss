@@ -1,0 +1,209 @@
+/*-- scss:defaults --*/
+
+$code-bg: #2D2D2D;
+$code-fg: #CCCCCC;
+$code-selection: #515151;
+$code-line: #393939;
+$code-comment: #999999;
+$code-red: #F2777A;
+$code-orange: #F99157;
+$code-yellow: #FFCC66;
+$code-green: #99CC99;
+$code-aqua: #66CCCC;
+$code-blue: #6699CC;
+$code-purple: #CC99CC;
+
+$code-block-bg: $code-bg;
+
+/*-- scss:rules --*/
+
+.codewindow {
+    --codewindow-bg: $code-bg;
+    --codewindow-header-bg: #252525;
+    --codewindow-tab-bg: $code-bg;
+    --codewindow-color: #cccccc;
+    --codewindow-shadow-color: #93a1a1;
+    // --codewindow-shadow-color: rgba(0, 0, 0, 0.5);
+    --codewindow-tab-focus-color: #6699cc;
+}
+
+.codewindow code,
+.codewindow code span {
+    color: var(--codewindow-color);
+}
+
+code.sourceCode.r {
+    // Base text color for tokens skylighting leaves unwrapped (commas,
+    // dashes in argument lists, etc.). Setting `color` here alone isn't
+    // enough: Quarto's baked-in stylesheet has `code span { color: ... }`,
+    // which directly matches the plain wrapper <span> elements that
+    // postprocess_code_highlighting.R inserts around such text (e.g. for
+    // bracket-depth coloring), and that direct match beats inheritance
+    // from this rule. Target `span` directly so it outranks `code span`.
+    color: $code-fg;
+
+    span {
+        color: $code-fg;
+    }
+
+    // Named function arguments (e.g. `title =`) — plain foreground
+    span.va,
+    span.at {
+        color: $code-fg;
+    }
+
+    // R package namespace before `::`/`:::` — Tomorrow's Class/Support
+    // group (yellow, matching "entity.name.namespace.r" in the theme JSON)
+    span.dt {
+        color: $code-yellow;
+    }
+
+    // Keywords, control flow, "other" tokens — Tomorrow's Keyword/Storage group
+    span.cf,
+    span.kw {
+        color: $code-purple;
+    }
+
+    // Functions and imports — Tomorrow's Function/Special Method group
+    span.fu,
+    span.im {
+        color: $code-blue;
+    }
+
+    // Strings, chars, special strings — Tomorrow's String group
+    span.ss,
+    span.st,
+    span.vs,
+    span.ch {
+        color: $code-green;
+    }
+
+    // Numbers, constants, preprocessor — Tomorrow's Number/Constant group
+    span.bn,
+    span.pp,
+    span.fl,
+    span.dv,
+    span.cn {
+        color: $code-orange;
+    }
+
+    // Operators — Tomorrow's Operator/Misc group
+    span.ot,
+    span.op,
+    span.sc {
+        color: $code-aqua;
+    }
+
+    // Variables, attributes, alerts, errors — Tomorrow's Variable group
+    span.al,
+    span.er {
+        color: $code-red;
+    }
+
+    // Comments, annotations, documentation — muted grey
+    span.an,
+    span.in,
+    span.wa,
+    span.do,
+    span.cv,
+    span.co {
+        color: $code-comment;
+    }
+}
+
+code.sourceCode.yaml {
+    color: $code-fg; // base text color (commas, dashes, etc.)
+
+    span {
+        color: $code-fg;
+    }
+
+    // outranks Quarto's `code span { color }` default
+    span.fu {
+        color: $code-red;
+    }
+
+    // YAML keys
+    span.pp {
+        color: $code-blue;
+    }
+
+    // YAML directives (---, ...)
+    span.kw {
+        color: $code-aqua;
+    }
+
+    // YAML operators (incl. "-" list markers)
+    span.op {
+        color: $code-fg;
+    }
+
+    // YAML "-" (list item)
+    span.at {
+        color: $code-fg;
+    }
+
+    // YAML anchors
+    span.st {
+        color: $code-green; // surrounding quotes render as plain fg by default...
+
+        // ...but the quotes wrapping a hex-color literal (which
+        // postprocess_code_highlighting.R turns into a .hex-pill) should read
+        // as a string, i.e. green -- matching the theme's String scope. The
+        // post-process script wraps the quote text in its own nested <span>,
+        // which needs to inherit explicitly since Quarto's baked-in
+        // `code span { color }` rule otherwise wins on that inner element.
+        &:has(.hex-pill) {
+            color: $code-green;
+
+            span {
+                color: inherit;
+            }
+        }
+    }
+
+    span.dv,
+    span.fl {
+        color: $code-orange;
+    }
+
+    // YAML numbers
+    span.co,
+    span.cv {
+        color: $code-comment;
+    }
+
+    // YAML comments
+}
+
+.codewindow code a:any-link {
+    color: $code-yellow;
+    text-decoration: none;
+}
+
+code {
+    ::selection {
+        background: $code-selection;
+    }
+}
+
+// =============================================================================
+// POST-RENDER CODE HIGHLIGHTING (R/postprocess_code_highlighting.R)
+// =============================================================================
+// The script sets colors inline; these rules supply the shape/spacing.
+
+.hex-pill {
+    display: inline-block;
+    padding: 0 0.45em;
+    border-radius: 1em;
+    margin: 0 0.05em;
+    line-height: 1.5;
+}
+
+.bracket-depth {
+    font-weight: 400;
+}
+
+.codewindow {
+    font-size: 1em !important;
+}

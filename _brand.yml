@@ -1,0 +1,161 @@
+meta:
+  name: shelbylevel
+  link: https://www.shelbylevel.org
+
+color:
+  palette:
+    deep-jade: "#254D56"
+    faded-jade: "#45767a"
+    faded-jade-50: "#a2bbbd"
+    faded-jade-10: "#ecf1f2"
+    gulfstream: "#7fa6ad"
+    edgewater: "#d3dfdd"
+    edgewater-20: "#dce5e4"
+    cascade: "#b3c2c9"
+    boulder: "#727E70"
+    spring-rain: "#b2c5b4"
+    timberwolf: "#D8D5CE"
+    timberwolf-50: "#eceae7"
+    almond-dust: "#B8AEA8"
+    moonstone: "#969996"
+    storm-cloud: "#64635E"
+    plum-crazy: "#59224A"
+
+  foreground: deep-jade
+  background: faded-jade-10
+  primary: faded-jade
+  secondary: gulfstream
+  tertiary: faded-jade-50
+  success: boulder
+  info: spring-rain
+  warning: almond-dust
+  danger: plum-crazy
+  light: faded-jade-10
+  dark: storm-cloud
+
+typography:
+  fonts:
+    - family: Lato
+      source: google
+      weight: [200, 300, 400, 600]
+    - family: Nunito Sans
+      source: google
+      weight: [400, 600]
+    - family: Open Sans
+      source: google
+      weight: [200, 300, 400, 500, 600, 700]
+
+  base:
+    family: Lato
+    weight: 300
+    size: "1rem"
+    line-height: 1.6
+    # color: deep-jade
+
+  headings:
+    family: Nunito Sans
+    weight: 300
+    style: normal
+    line-height: 1.2
+    color: faded-jade
+
+  monospace: Open Sans
+  monospace-inline:
+    color: plum-crazy
+    background-color: edgewater-20
+  monospace-block:
+    background-color: edgewater-20
+
+  link:
+    color: faded-jade
+
+defaults:
+  bootstrap:
+    defaults: # defaults also supports a string as its value
+      # BASE DOCUMENT COLORS #################################
+      navbar-bg: $brand-faded-jade-10
+      navbar-fg: $brand-faded-jade # navbar foreground elements
+      # navbar-hl: $brand-deep-jade; # highlight color when hovering over navbar links
+      footer-bg: $brand-faded-jade-50
+      footer-fg: $brand-deep-jade
+      link-hover-color: $brand-deep-jade
+      # TYPOGRAPHY #########################################
+      navbar-padding-y: 0.5rem
+      # btn-font-weight: 500
+      # headings-margin-bottom: 0.5rem
+    rules: |
+      // =============================================================================
+      // ABOUT PAGE
+      // =============================================================================
+
+      div.quarto-about-solana .about-entity .about-image {
+        width: 25em !important;
+        max-width: 100%;
+        height: auto;
+      }
+
+      // =============================================================================
+      // PAGE-SPECIFIC STYLES
+      // =============================================================================
+
+      @import "posts";
+      @import "sourceCode";
+      
+  shiny:
+    defaults:
+      navbar-light-hover-color: $brand-faded-jade
+    theme:
+      preset: shiny # base
+      rules: | # CSS rules
+        /* Remove flex from tab content */
+        .tab-pane.html-fill-container {
+          display: block !important;
+        }
+
+        /* Ensure inactive tabs are hidden */
+        .tab-pane:not(.active) {
+          display: none !important;
+        }
+      
+        .tab-pane.active {
+          display: block !important;
+        }
+      
+        /* Remove equal-height rows in grid */
+        .bslib-grid {
+          grid-auto-rows: auto !important;
+        }
+      
+        /* Remove gap spacing between grid items */
+        .bslib-gap-spacing {
+          gap: 0 !important;
+        }
+      
+        /* Remove fixed heights, let cards expand naturally */
+        .bslib-page-navbar .tab-content {
+          height: auto !important;
+          overflow-y: visible !important;
+        }
+      
+        .card {
+          height: auto !important;
+          min-height: auto !important;
+          max-height: none !important;
+        }
+      
+        .card-body {
+          height: auto !important;
+          min-height: auto !important;
+          overflow-y: visible !important;
+        }
+      
+        /* Ensure page scrolls normally */
+        body, html {
+          height: auto;
+          overflow-y: auto;
+        }
+      
+        .bslib-page-navbar {
+          height: auto !important;
+          min-height: 100vh;
+        }

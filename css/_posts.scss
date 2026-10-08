@@ -4,33 +4,30 @@
 
 h2,
 .h2 {
-    border-bottom: 1px solid $faded-jade-50;
+    border-bottom: 1px solid $brand-faded-jade-50;
 }
 
 .header-section-number {
-    color: $deep-jade;
+    color: $brand-deep-jade;
 }
 
 // =============================================================================
 // BUTTONS
 // =============================================================================
 
-.quarto-title .quarto-categories .quarto-category {
-    opacity: 1;
+.quarto-title {
+    .quarto-categories .quarto-category {
+        opacity: 1;
+    }
+
+    .quarto-category a {
+        font-weight: 400;
+    }
 }
 
 .quarto-title-banner {
     padding-top: 1em;
     padding-bottom: 1em;
-}
-
-// =============================================================================
-// CODE BLOCKS
-// =============================================================================
-
-// Code blocks - round corners
-div.sourceCode {
-    border-radius: 4px;
 }
 
 // =============================================================================

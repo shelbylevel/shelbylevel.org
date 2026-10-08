@@ -37,7 +37,7 @@ website:
 
 format:
   html:
-    theme: [lux, css/sl-styles.scss]
+    theme: [lux, brand, css/sl-styles.scss]
     include-in-header:
       - _extensions/shelbylevel/brand/logo-header.html
     css: /_extensions/quarto-codewindow/quarto-codewindow.css

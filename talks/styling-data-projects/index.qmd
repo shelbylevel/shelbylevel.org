@@ -20,9 +20,8 @@ format:
         <style>
           /* Tomorrow Night Eighties codewindows */
           .codewindow {
-            font-size: 1.05em;
             --codewindow-bg: #2d2d2d;
-            --codewindow-header-bg: #1f1f1f;
+            --codewindow-header-bg: #252525;
             --codewindow-tab-bg: #393939;
             --codewindow-color: #cccccc;
             --codewindow-shadow-color: rgba(0, 0, 0, 0.5);
@@ -33,60 +32,6 @@ format:
           .codewindow code span {
             color: var(--codewindow-color);
           }
-
-          /* Token colors mapped from Tomorrow Night Eighties (R Classic):
-             blogs/tomorrow-night-eighties/data/tomorrow-night-eighties-r-classic.json */
-
-          /* keyword, storage -> CC99CC */
-          .codewindow code span.kw,
-          .codewindow code span.cf,
-          .codewindow code span.im { color: #CC99CC; }
-
-          /* YAML keys are plain foreground in the theme
-             (string.unquoted.plain.out.yaml), not keyword purple */
-          .codewindow code.yaml span.kw { color: #CCCCCC; }
-
-          /* string -> 99CC99 */
-          .codewindow code span.st,
-          .codewindow code span.ch,
-          .codewindow code span.vs,
-          .codewindow code span.ss { color: #99CC99; }
-
-          /* constant.numeric, constant.language -> F99157 */
-          .codewindow code span.dv,
-          .codewindow code span.bn,
-          .codewindow code span.fl,
-          .codewindow code span.cn { color: #F99157; }
-
-          /* comment -> 999999 */
-          .codewindow code span.co,
-          .codewindow code span.do { color: #999999; }
-
-          /* entity.name.function, support.function -> 6699CC */
-          .codewindow code span.fu,
-          .codewindow code span.bu { color: #6699CC; }
-
-          /* support.type, entity.name.class -> FFCC66 */
-          .codewindow code span.dt { color: #FFCC66; }
-
-          /* variable, entity.other.attribute-name -> F2777A */
-          .codewindow code span.va { color: #F2777A; }
-
-          /* function arguments and YAML attribute keys are plain foreground
-             (variable.parameter / string.unquoted.plain.out.yaml) */
-          .codewindow code span.at { color: #CCCCCC; }
-
-          /* keyword.operator -> 66CCCC (includes the :: that skylighting
-             tags as SpecialChar in R) */
-          .codewindow code span.op,
-          .codewindow code span.ot,
-          .codewindow code span.pp,
-          .codewindow code span.sc { color: #66CCCC; }
-
-          /* invalid -> CDCDCD */
-          .codewindow code span.al,
-          .codewindow code span.er,
-          .codewindow code span.wa { color: #CDCDCD; }
         </style>
 
 draft: false
