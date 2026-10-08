@@ -267,7 +267,7 @@ typography:
 ```
 :::
 
-Apply it on top of a Bootswatch preset in Quarto:
+Apply it on top of a Bootswatch preset in Quarto and Shiny:
 
 ::: {.codewindow .yaml}
 _quarto.yml_
@@ -277,6 +277,23 @@ format:
   html:
     theme: lux
     brand: _brand.yml
+```
+:::
+
+::: {.codewindow .r}
+_app.R_
+
+```r
+library(bslib)
+
+page_navbar(
+  title = "Dashboard",
+  theme = bs_theme(
+    preset = "lux",
+    brand = "_brand.yml"
+  ),
+  ...
+)
 ```
 :::
 
