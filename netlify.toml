@@ -3,3 +3,6 @@
 
 [[plugins]]
   package = "@quarto/netlify-plugin-quarto"
+
+[build.environment]
+  QUARTO_TINYTEX_AUTO_INSTALL = "true"
