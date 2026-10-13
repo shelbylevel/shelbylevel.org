@@ -1,11 +1,6 @@
 [build]
   publish = "_site"
-
-[[plugins]]
-  package = "@quarto/netlify-plugin-quarto"
-  [plugins.inputs]
-    version = "v1.10.18"
-    cmd = "install tinytex --no-prompt"
+  command = "/tmp/quarto/bin/quarto install tinytex --no-prompt"
 
 [[plugins]]
   package = "@quarto/netlify-plugin-quarto"
