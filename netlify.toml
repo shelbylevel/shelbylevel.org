@@ -4,4 +4,5 @@
 [[plugins]]
   package = "@quarto/netlify-plugin-quarto"
   [plugins.inputs]
+    version = "v1.10.18"
     cmd = "install tinytex --no-prompt && /tmp/quarto/bin/quarto render"
