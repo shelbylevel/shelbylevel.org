@@ -85,6 +85,48 @@ defaults:
       # headings-margin-bottom: 0.5rem
     rules: |
       // =============================================================================
+      // NAVBAR
+      // =============================================================================
+
+      /* Text Menus and Underline Animation */
+      .menu-text {
+        display: inline-block;
+        position: relative;
+        font-weight: 500;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.1em;
+          background-color: $link-hover-color;
+          transform: scaleX(0);
+          transition: transform 300ms ease;
+        }
+
+        &:hover,
+        &:focus,
+        .nav-link.active &,
+        .nav-link[aria-current="page"] & {
+          color: $link-hover-color;
+
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+
+      /* Icon hover color */
+      .nav-item.compact .nav-link:hover,
+      #quarto-search:hover svg,
+      #quarto-search:focus-within svg {
+        color: $link-hover-color;
+        fill: $link-hover-color !important;
+      }
+
+      // =============================================================================
       // ABOUT PAGE
       // =============================================================================
 

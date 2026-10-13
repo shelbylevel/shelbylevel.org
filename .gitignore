@@ -1,9 +1,18 @@
-.Rproj.user
-.Rhistory
-.RData
-.rda
-.Ruserdata
+# Quarto internal cache and configuration
 /.quarto/
 **/*.quarto_ipynb
-projects/qihub23/data/*
+/_*.local
+# Generated site output (Netlify builds this on server)
+/_site/
+/_book/
+# R-specific files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.rda
+# System / OS files
 .DS_Store
+Thumbs.db
+# Large data files
+projects/qihub23/data/*
