@@ -2,7 +2,7 @@
   publish = "_site"
 
 [build.environment]
-  QUARTO_TINYTEX_AUTO_INSTALL = "true"
+  QUARTO_CMD = "install tinytex --no-prompt && /tmp/quarto/bin/quarto render"
 
 [[plugins]]
   package = "@quarto/netlify-plugin-quarto"
