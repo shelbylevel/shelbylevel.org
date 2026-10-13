@@ -1,4 +1,5 @@
 [build]
+  command = "quarto install tinytex --update-path && quarto render"
   publish = "_site"
 
 [[plugins]]
