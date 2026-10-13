@@ -1,9 +1,8 @@
 [build]
-  command = "quarto install tinytex --update-path && quarto render"
   publish = "_site"
-
-[[plugins]]
-  package = "@quarto/netlify-plugin-quarto"
 
 [build.environment]
   QUARTO_TINYTEX_AUTO_INSTALL = "true"
+
+[[plugins]]
+  package = "@quarto/netlify-plugin-quarto"
