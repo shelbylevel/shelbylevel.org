@@ -1,8 +1,5 @@
 # Quarto internal cache and configuration
 /.quarto/
-# renv library (lockfile is committed)
-renv/library/
-renv/staging/
 **/*.quarto_ipynb
 /_*.local
 # Generated site output (Netlify builds this on server)

@@ -1,4 +1,9 @@
-# Site is built by GitHub Actions (.github/workflows/publish.yml) and deployed
-# via the Netlify CLI. This config only applies to manual/CLI deploys.
 [build]
   publish = "_site"
+  command = "/tmp/quarto/bin/quarto install tinytex --no-prompt"
+
+[[plugins]]
+  package = "@quarto/netlify-plugin-quarto"
+  [plugins.inputs]
+    version = "v1.10.18"
+    cmd = "render"
