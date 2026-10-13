@@ -2,9 +2,6 @@
 /.quarto/
 **/*.quarto_ipynb
 /_*.local
-# Generated site output (Netlify builds this on server)
-/_site/
-/_book/
 # R-specific files
 .Rproj.user/
 .Rhistory
