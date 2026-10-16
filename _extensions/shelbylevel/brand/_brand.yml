@@ -136,13 +136,6 @@ defaults:
         height: auto;
       }
 
-      // =============================================================================
-      // PAGE-SPECIFIC STYLES
-      // =============================================================================
-
-      @import "posts";
-      @import "sourceCode";
-      
   shiny:
     defaults:
       navbar-light-hover-color: $brand-faded-jade

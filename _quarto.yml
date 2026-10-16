@@ -1,3 +1,5 @@
+brand: _extensions/shelbylevel/brand/_brand.yml
+
 project:
   type: website
   output-dir: _site
@@ -37,7 +39,12 @@ website:
 
 format:
   html:
-    theme: [lux, brand, css/sl-styles.scss]
+    theme:
+      - lux
+      - brand
+      - _extensions/shelbylevel/brand/sl-styles.scss
+      - _extensions/shelbylevel/brand/_posts.scss
+      - _extensions/shelbylevel/brand/_sourceCode.scss
     include-in-header:
       - _extensions/shelbylevel/brand/logo-header.html
     css: /_extensions/quarto-codewindow/quarto-codewindow.css
