@@ -17,6 +17,10 @@
 #      (entity.name.namespace.r in the VS Code theme), since skylighting
 #      only tokenizes the `::` operator and the function name, not the
 #      package name.
+#   4. Assignment operators (`=`, `<-`, `<<-`, `->`) in R code get the
+#      operator color. Skylighting folds the `=` of a named argument into
+#      the preceding `span.at` ("preset ="), and leaves a bare `<-` or `=`
+#      as plain text, so CSS alone cannot color them.
 #
 # This runs once per rendered .html file, AFTER Quarto/Pandoc have already
 # produced final skylighting-tokenized output. It never touches source
@@ -56,6 +60,7 @@ bracket_colors <- c(
 )
 
 namespace_color <- "#FFCC66"
+operator_color <- "#66CCCC" # same as $code-aqua in _sourceCode.scss
 
 hex_pattern <- "#(?:[0-9A-Fa-f]{3}){1,2}\\b"
 
@@ -223,6 +228,53 @@ add_namespace_coloring <- function(code_node) {
   }
 }
 
+# ---- 4. Assignment operators (=, <-, <<-, ->) ---------------------------
+
+# Token classes whose text must be left alone (strings, comments, etc.)
+skip_token_classes <- c("st", "ss", "vs", "ch", "co", "do", "an", "in", "wa", "cv")
+
+assignment_pattern <- "<<-|<-|->|(?<![=!<>])=(?![=])"
+
+add_assignment_operators <- function(code_node) {
+  text_nodes <- xml_find_all(code_node, ".//text()")
+  for (tn in text_nodes) {
+    txt <- xml_text(tn)
+    if (!grepl(assignment_pattern, txt, perl = TRUE)) {
+      next
+    }
+
+    # Skip text inside strings/comments (any ancestor span with those classes)
+    anc <- xml_attr(xml_find_all(xml_parent(tn), "ancestor-or-self::span"), "class")
+    if (any(anc %in% skip_token_classes, na.rm = TRUE)) {
+      next
+    }
+
+    pos <- gregexpr(assignment_pattern, txt, perl = TRUE)[[1]]
+    len <- attr(pos, "match.length")
+    pieces <- character(0)
+    cursor <- 1L
+    for (i in seq_along(pos)) {
+      if (pos[i] > cursor) {
+        pieces <- c(pieces, escape_html(substr(txt, cursor, pos[i] - 1)))
+      }
+      op <- substr(txt, pos[i], pos[i] + len[i] - 1)
+      pieces <- c(
+        pieces,
+        sprintf(
+          '<span class="assign-op" style="color:%s;">%s</span>',
+          operator_color,
+          escape_html(op)
+        )
+      )
+      cursor <- pos[i] + len[i]
+    }
+    if (cursor <= nchar(txt)) {
+      pieces <- c(pieces, escape_html(substr(txt, cursor, nchar(txt))))
+    }
+    replace_node_with_html(tn, paste(pieces, collapse = ""))
+  }
+}
+
 # ---- Orchestration -------------------------------------------------------
 
 process_code_block <- function(code_node, is_r) {
@@ -231,6 +283,9 @@ process_code_block <- function(code_node, is_r) {
   } # must run first: needs
   # original span.sc text
   # nodes still intact
+  if (is_r) {
+    add_assignment_operators(code_node) # then =, <-, -> (R only)
+  }
   add_hex_pills(code_node) # then hex literals
   add_rainbow_brackets(code_node) # brackets last: depth must
   # be tracked across whatever
