@@ -3,7 +3,7 @@ brand: _extensions/shelbylevel/brand/_brand.yml
 project:
   type: website
   output-dir: _site
-  post-render: R/postprocess_code_highlighting.R
+  post-render: _extensions/shelbylevel/brand/postprocess_code_highlighting.R
 
 website:
   # title: "Shelby Level"

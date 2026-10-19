@@ -34,7 +34,7 @@
 # Wire it up in _quarto.yml:
 #
 #   project:
-#     post-render: R/postprocess_code_highlighting.R
+#     post-render: _extensions/shelbylevel/brand/postprocess_code_highlighting.R
 #
 # Quarto runs this script with Rscript after every render (including
 # `quarto preview`). It receives no file arguments -- it discovers the
